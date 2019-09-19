@@ -1,0 +1,2 @@
+Test to make sure that the stochastic error term does indeed work on the
+COMPASS model.

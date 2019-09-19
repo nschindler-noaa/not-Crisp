@@ -1,0 +1,19 @@
+#ifndef _qDefines_
+#define _qDefines_
+
+#define Q_ZABELSLIDER		 5000
+#define Q_DOUBLEEDITSLIDER 5050
+#define Q_LONGEDITSLIDER   5100
+#define Q_EDITSLIDERBASE   5150
+#define Q_STATICTEXT		 5025
+#define Q_LABELTEXT		 5030
+#define Q_CHECKBOXGROUP	 5200
+#define Q_CHECKBOXDELTA	 5400
+#define Q_CHECKBOXALL		 5600
+#define Q_ROWCOLUMNBOX	 5800
+#define Q_IMPLICITSCROLLER 6000
+#define Q_GRAPHDIALOG		 6200
+#define Q_STANDARDDIALOG	 6400
+#define Q_TABDIALOG		 6600
+
+#endif

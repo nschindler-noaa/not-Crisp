@@ -1,0 +1,8 @@
+version 9
+alternative "io-altern"
+	use_flow_from user_data
+	ngames 2
+	input_files 1
+		"C:/Documents and Settings/jkrinke/cvs/crisp/io-altern/input.scn"
+end alternative (io-altern)
+

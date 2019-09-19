@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Monte Alt. Comparison: Comparing Two Distributions</title>
+</head>
+<body>
+<h3>Monte Alt. Comparison: Comparing Two Distributions</h3>
+<p>
+Selecting <a href="390.html"><strong>Analysis</strong></a><strong><img src="subm.jpg">Monte Alt. Comparison</strong> opens the <strong>Alternative Comparison</strong> window for comparing two alternatives. You can compare two alternatives to determine if the probability distributions are statistically different.
+</p><p>
+<b>Alternative Comparison features</b>
+</p><ul>
+<li><strong>Alternative 1 and 2</strong>: Select alternatives to be compared.
+
+<li><strong>Year</strong>: Select (power) year for each alternative.
+
+<li><strong>Release</strong>: Select release points for each alternative.
+
+<li><strong>Passage Point</strong>: Select passage point.
+
+<li><strong>Data Type</strong>: Select Survival or Travel Time.
+
+<li><strong>Compute</strong>: Performs the Kolmogorov-Smirnov test for the selections made.
+
+<li><strong>Done</strong>: Closes the Alternative Comparison window.
+
+<li><strong>Help</strong>: Opens context-sensitive help window.
+</ul>
+<p>
+The <strong>Alternative Comparison</strong> window uses the Kolmogorov-Smirnov test. The <strong>null hypothesis</strong> tested is that the two distributions are drawn from the same population, i.e. they are identical. To test this hypothesis, the <strong>d</strong> statistic is used. Results from the Kolmogorov-Smirnov test are displayed in the lower-left corner of the window.
+</p>
+<ul>
+<li>The <strong>d</strong> statistic is the maximum value of the absolute difference between the two cumulative distributions being tested.
+
+<li>The <strong>probability</strong> measure is the fraction of times that a sample drawn from a distribution would be less than <strong>d</strong> if the two distributions were the same.
+<br>Probability (<strong>d</strong> &gt; observed by chance if pdf the same)
+</ul>
+<p>
+The closer the probability is to zero the more likely the two distributions are statistically different. As a typical example, we would reject the hypothesis that the two distributions are the same for <strong>probability</strong> &lt; 0.01.
+</p><p>
+<img src="altcomp.jpg"><br>
+Alternative Comparison window
+</p>
+
+
+</body>
+</html>

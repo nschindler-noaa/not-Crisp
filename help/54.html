@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Predation Coef: Reach Activity, Forebay, and Tailrace</title>
+</head>
+<body>
+<h3>Predation Coef: Reach Activity, Forebay, and Tailrace</h3>
+<p>
+Predation coefficients effect the rate of predation activity by northern pikeminnows on smolt for a given predator density. The coefficients are species specific and are defined separately for reaches, dam forebays and dam tailraces. Predation mortality in COMPASS is related to predator abundance, predator temperature response, and a predator activity coefficient. These factors combine to determine a predation rate which is applied to the smolt population on a time-step basis.
+</p><p>
+<a href="363.html"><strong>Behavior</strong></a><strong><img src="subm.jpg">Predation Coef<img src="subm.jpg">Reach Activity </strong>opens a window for setting the predator activity coefficient which scales the maximal consumption rate to represent <em>in situ</em> conditions where predator-prey encounters may be less frequent, alternative prey may exist, and predators may not be feeding to satiation. Functions with settings in <a href="49.html">Reach Predator Density</a> and <a href="89.html">Predation Temperature Response Equation</a> to set a rate of predation mortality. To use these parameter values during a run, select <strong>Gas and Pred Mortality</strong> for the <a href="389.html">Mortality Model</a> in <strong>Run<img src="subm.jpg">Runtime Settings</strong>. This is a Slider Input window.
+</p><p>
+Selecting <strong>Behavior</strong><strong><img src="subm.jpg">Predation Coef<img src="subm.jpg">Forebay</strong> or <strong>Behavior</strong><strong><img src="subm.jpg">Predation Coef<img src="subm.jpg">Tailrace</strong> opens a Slider Input window for setting the predation coefficients in dam forebays or tailraces, respectively, which effect the rate of predation activity on a species as they travel through that segment.
+</p><p>
+Each Slider Input window contains three sliders for setting mean, low, and high values by species. When the low and high values are set to zero, or when the low and high are set to the mean value, COMPASS uses the mean value at all times (the term becomes deterministic). When the low and high values are not equal, COMPASS uses the mean, low and high values to randomly generate a value when executed with <strong>variance suppression</strong> turned off in the <a href="76.html">Runtime Settings</a> window under the Run Menu. With <strong>variance suppression</strong> turned on, COMPASS uses the mean value and ignores the high and low values. In either case, the mean value must lie within the central two quartiles of the distribution (i.e., the middle 50%). For example, if the low value is set to 0 and the high value is set to 100 then the mean value must be set between 25 and 75. If values are set that do not conform to this restriction, COMPASS will abort the run and generate an error message in the <a href="84.html">Message Log</a> (if open) specifying which species have bad parameters.
+</p><pre>	ERROR: bad stochastic param reach pred coeff for Chinook 0.
+--&gt;mean not in range 12.386550 &lt;= mean &lt;= 17.341249
+ERROR: aborting run due to bad parameter values.
+</pre>
+<p>
+<a href="331.html">Slider Input</a> window features.
+</p><ul>
+<li><a href="332.html">Edit Single Slider Value</a>
+
+<li><a href="333.html">Edit Multiple Slider Values Simultaneously</a>
+
+<li><a href="334.html">Edit All Slider Values Simultaneously</a>
+
+<li><a href="335.html">Slider Input Additional Features</a>
+</ul>
+<p>
+<img src="crisp241.jpg"><br>
+Predation Coefficient Reach, Forebay and Tailrace windows
+</p>
+
+
+</body>
+</html>

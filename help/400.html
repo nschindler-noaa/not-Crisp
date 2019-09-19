@@ -1,0 +1,198 @@
+<html>
+<head>
+<title>Dam Tokens and Parameters</title>
+</head>
+<body>
+<h3>Dam Tokens and Parameters</h3>
+<p>
+The following is an example of a dam specification from a Yearly Input Data file (<code>.dat</code>).
+</p><pre>	dam Bonneville_Dam
+output_settings 7
+tailrace_length 1000.00
+mod_ou_r 0.50
+mod_ou_sigma 12.00
+mod_norm_sigma 11.00
+mod_weekly_amp 0.00
+nsat_day_equation  29
+[cut] 
+end nsat_day_equation ( )
+
+nsat_night_equation  29
+[cut] 
+end nsat_night_equation ( )
+
+nsat_backup_equation  12
+[cut] 
+end nsat_backup_equation ( )
+
+gas_theta 10.000000
+k_entrain 0.000000
+spill_mort_mean Chinook_0  0.020000
+spill_mort_low Chinook_0  0.000000
+spill_mort_high Chinook_0  0.070000
+bypass_mort_mean Chinook_0  0.020000
+bypass_mort_low Chinook_0  0.000000
+bypass_mort_high Chinook_0  0.080000
+turbine_mort_mean Chinook_0  0.070000
+turbine_mort_low Chinook_0  0.010000
+turbine_mort_high Chinook_0  0.100000
+transport_mort_mean Chinook_0  0.170000
+transport_mort_low Chinook_0  0.000000
+transport_mort_high Chinook_0  0.340000
+pred_density_forebay Chinook_0  6221.540039
+pred_density_tailrace Chinook_0  17658.000000
+mean_forebay_transit_time Chinook_0  2.000000
+separation_prob Chinook_0  0.800000
+predation_prob Chinook_0   [*] 1.000000
+day_fge_mean Chinook_0  0.160000
+day_fge_low Chinook_0  0.080000
+day_fge_high Chinook_0  0.240000
+night_fge_mean Chinook_0  0.160000
+night_fge_low Chinook_0  0.080000
+night_fge_high Chinook_0  0.240000
+spill_equation Chinook_0  1
+[cut] 
+end spill_equation (Chinook_0)
+
+fge_equation Chinook_0  22
+[cut]
+end fge_equation (Chinook_0)
+
+trans_mort_equation Chinook_0  28
+[cut] 
+end trans_mort_equation (Chinook_0)
+
+delay_equation Chinook_0  46
+[cut] 
+end delay_equation ( )
+[cut]
+powerhouse_capacity 136.00
+powerhouse_schedule 0:365 (0:24)
+powerhouse_priority 0
+powerhouse_threshold 0.00
+additional_powerhouse Bonneville_Dam_2
+powerhouse_capacity 152.00
+powerhouse_priority 1
+powerhouse_threshold 75000.00
+[cut]
+end additional_powerhouse (Bonneville_Dam_2)
+
+spill_cap 1000.00
+fish_spill 0:365 (0:24)
+planned_spill 0:7 =  0.00, 8:8 =  0.04, 9:9 =  0.08,
+10:21 =  0.00, 22:23 =  0.05, 24:31 =  0.00,
+[cut]
+360:360 =  0.02, 361:361 =  0.05, 362:363 =  0.06,
+364:365 =  0.05
+flow_min 100.00
+output_gas Off
+end dam (Bonneville_Dam)
+</pre><h4>
+Keywords and descriptions for dam tokens and parameters
+</h4><ul>
+<li><strong>dam</strong>: Names the dam and marks the beginning of parameter data for the dam. The dam name must be present in the <code>columbia.desc</code> file, and must be paired with an end statement.
+
+<li><strong>output_settings</strong>: Specifies what detailed information is output for a given reach, dam, or headwater during both Scenario and Monte Carlo runs. The single value is a combination of up to 10 flags, each of which is a single binary digit, arithmetically added together. Thus a value of "41" would indicate that flags "1", "8", and "32" were set, requesting output of passage, flow, and TDG saturation. Flags which are declared for the wrong type of river feature (e.g. spill at a reach) are silently ignored. The following is a list of flags that can be designated for a dam:
+<br> - 1 = passage (d, r)
+<br> - 2 = transport passage (d)
+<br> - 4 = routing (d)
+<br> - 8 = flow (d, r, h)
+<br> - 16 = water temperature (d, r, h)
+<br> - 32 = TDG saturation (d, r)
+<br> - 256 = spill (d).
+
+<li><strong>pred_density_forebay</strong> (Species): Species-specific parameter describing the density of predators in the forebay.
+
+<li><strong>pred_density_tailrace</strong> (Species): Species-specific parameter describing the total predator population in the tailrace.
+
+<li><strong>mod_*</strong>: Parameters used in modulation of flows.
+
+<li><strong>mod_ou_r</strong>: Specifies correlation of flow from one day to the next.
+
+<li><strong>mod_ou_sigma</strong>: Standard deviation to use when modulating flows at farthest upstream dams.
+
+<li><strong>mod_norm_sigma</strong>: Standard deviation to use when modulating flows at downstream dams.
+
+<li><strong>mod_weekly_amp</strong>: Amplitude of weekly variation imposed on modulation.
+
+<li><strong>nsat_day_equation</strong>: Defines the production of total dissolved gas supersaturation due to spilling at dams during day hours (6-18). This is one of three equations which defines gas production at a dam. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>nsat_night_equation</strong>: Defines the production of total dissolved gas supersaturation due to spilling at dams during night hours (0-6 and 18-24). This is one of three equations which defines gas production at a dam. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>nsat_backup_equation</strong>: Defines the production of total dissolved gas supersaturation due to spilling at dams when the spill value falls out of a reasonable range for the equations provided for Day and Night characteristics. This is one of three equations which defines gas production at a dam. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>gas_theta</strong>: Gas theta determines the level of mixing between the left-bank and right-bank flows in the tailrace of the dam and the resulting gas levels in each flow upon exiting the dam. This essentially determines the amount of mixing between the spill flow and the powerhouse flow in the tailrace. See the <a href="15.html">TDG Saturation &gt; 100%: Dam</a> section to determine whether the spill side is left or right, facing downstream, at a specific dam.
+
+<li><strong>k_entrain</strong>: Determines how much gas is added to the powerhouse flow because of amount of spill going over the spillway into the tailrace of the dam. The higher the spill the more gas that is added to the powerhouse flow, with the level of total dissolved gas (tdg) in the powerhouse flow ranging from the forebay tdg level to the tdg level in the spill flow.
+
+<li><strong>spill_mort_*</strong> (Species): Species-specific value for mortality suffered as fish pass through the spillway. This is a stochastic parameter.
+
+<li><strong>bypass_mort_*</strong> (Species): Species-specific value for mortality suffered in the bypass system. This is a stochastic parameter.
+
+<li><strong>turbine_mort_*</strong> (Species): Species-specific value for mortality suffered during turbine passage. This is a stochastic parameter.
+
+<li><strong>transport_mort_*</strong> (Species): Species-specific value for mortality suffered during the entire transport process. This is a stochastic parameter.
+
+<li><strong>mean_forebay_transit_time</strong> (Species): Species-specific average time (in hours) that it takes the fish to travel from the entry point of the dam segment to the dam face where it will enter the bypass, spillway or turbine passage route. The default for each species at each dam is 2 hours. This measure is used in calculating passage mortality and is part of the dam delay model. There is no GUI for this parameter.
+
+<li><strong>separation_prob</strong> (Species): Species-specific parameter for ability to separate individuals of that species during bypass, in percentage. This is used in transport operations.
+
+<li><strong>predation_prob</strong> (Species): Species-specific array of values describing the relative success of predators during each 6-hour segment of the day; generally this is 1 for all periods.
+
+<li><strong>day_fge_*</strong> (Species): Species-specific parameter describing fge during daylight hours. This is a stochastic parameter.
+
+<li><strong>night_fge_*</strong> (Species): Species-specific parameter describing fge during nighttime hours. This is a stochastic parameter.
+
+<li><strong>spill_equation</strong> (Species): Equation describing the spill efficiency at the dam. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>fge_equation</strong> (Species): Equation defining time varying fge which differs from constant fge. Used when <a href="388.html">age dependent fge</a> is turned on. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>trans_mort_equation</strong> (Species): Defines the relationship between water particle travel time (WPTT) and transport survival based on the assumption that changes in flow affect how well fish survive transportation. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>delay_equation</strong> (Species): Defines the delay of fish at a dam depending on the species, time of day, season, and flow relative to hydraulic capacity. The delay is expressed in terms of a passage probability, not in terms of observed passage. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>powerhouse_capacity</strong>: Total hydraulic capacity, in kcfs.
+
+<li><strong>powerhouse_schedule</strong>: Array of hours during which a powerhouse may operate. This generally defaults to 24 hours year round.
+
+<li><strong>powerhouse_priority</strong>: Dictates whether the powerhouse is the primary or secondary powerhouse.
+
+<li><strong>powerhouse_threshold</strong>: Amount of spill allowed over primary powerhouse capacity before secondary powerhouse is turned on.
+
+<li><strong>additional_powerhouse</strong>: Names a second powerhouse if one exists at the project. This powerhouse has separate specifications for capacity, priority, schedule, threshold, passage mortalities, and fge. This must be paired with an end statement.
+
+<li><strong>transport</strong>: Defines transport operations.
+<br> - <strong>start_by_date</strong>: 0 = start transportation if daily counts exceed a specified number (start_count) in a day; 1 = start transportation on a specified day (start_date).
+<br> - <strong>start_date</strong>: Specific Julian day to start transportation.
+<br> - <strong>start_count</strong>: Start transportation when this number of fish pass the dam in a day.
+<br> - <strong>max_restarts</strong>: 0 = transportation cannot be restarted; 1 = transportation can be restarted exactly once; -1 = transport can be restarted as often as the conditions are met.
+<br> - <strong>restart_by_date</strong>: 0 = restart transportation if daily count exceeds a specified number (restart_count); 1 = restart transportation on a specified day (restart_date).
+<br> - <strong>restart_date</strong>: Specific Julian day to restart transportation.
+<br> - <strong>restart_count</strong>: Restart transportation when this number of fish pass the dam in a day.
+<br> - <strong>end_date</strong>: Specific Julian day to stop transportation.
+<br> - <strong>end_count</strong>: Stop transportation if the daily fish count drops below this number for a given number of sequential days (num_low_days).
+<br> - <strong>num_low_days</strong>: Stop transportation if the daily fish count drops below a given number for this number of sequential days.
+<br> - <strong>hfl_passed_perc</strong>: Identifies what percent of the indicator species (high_flow_species) must pass to terminate separation. Separators in bypass systems of dams will separate and return smaller fish to the tailrace when flow is above a specified level. The separation is terminated and all fish are collected when passage of a specified stock exceeds a specified percentage.
+<br> - <strong>high_flow</strong>: Identifies flows above which separation starts. Separators in bypass systems of dams will separate and return smaller fish to the tailrace when flow is above a specified level. The separation is terminated and all fish are collected when passage of a specified stock exceeds a specified percentage.
+<br> - <strong>high_flow_species</strong> (Species): Identifies indicator species (Chinook 0, Chinook 1, Steelhead) for which its passage will terminate separation. Separators in bypass systems of dams will separate and return smaller fish to the tailrace when flow is above a specified level (high_flow). The separation is terminated and all fish are collected when passage of a specified stock exceeds a specified percentage (hfl_passed_perc).
+<br> - <strong>transport_rate</strong>: Barge or truck transportation speed in miles per day from collection site to release site.
+<br> - <strong>release_point</strong>: River reach into which fish are released.
+
+<li><strong>spill_cap</strong>: Maximum allowable flow that is allowed to pass through spill.
+
+<li><strong>fish_spill</strong>: Days and hours of the day during which planned spill is allocated. These periods indicate the actual hours and days that spill will occur. See <a href="371.html">Planned Spill</a> section for more information on how fish_spill and planned_spill work together to determine spill operations.
+
+<li><strong>planned_spill</strong>: Periods of days when spill fractions are planned as part of the water budget and spill allocation agreements and an associated fraction of river flow spilled on an instantaneous basis. Different fractions can be set for different blocks of days. See <a href="371.html">Planned Spill</a> section for more information on how fish_spill and planned_spill work together to determine spill operations.
+
+<li><strong>storage_volume</strong>: Water volume in the reservoir, in kiloacre-feet (kaf), specified by period (single day or range of days). This token only occurs in specifications for dams that are storage reservoirs as defined in the <code>columbia.desc</code> file, i.e. Hells Canyon, Dworshak, and Chief Joseph.
+
+<li><strong>flow_min</strong>: Minimum flow allowed at a dam, in kcfs.
+
+<li><strong>output_gas</strong>: The default setting is off. If output_gas is turned on, it replaces the dissolved gas data at the output of the feature (dam, reach, or headwater). One set of numbers are given, for each dam time slice in the season (366*4, currently). The numbers are applied to both sides of the feature. There is no GUI for this parameter.
+
+<li>tailrace_length: Not in use. Length of the tailrace in feet. COMPASS previously determined the residence time of fish in the tailrace in terms of the flow, the width of the dam, and a tailrace length. This time was used in calculating predation in the tailrace. The time was set by adjusting the tailrace length. Tailrace length was set to conform to the region of high flows immediately below the dam. This region also contains elevated predator densities.
+</ul>
+
+
+</body>
+</html>

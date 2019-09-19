@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Flow Archive File Structure</title>
+</head>
+<body>
+<h2>Flow Archive File Structure</h2>
+<p>
+The <strong>Flow Archive File</strong> (<code>flow.archive</code>) contains flow, spill and elevation data generated from hydroregulation models such as SAM, HYSSR or HYDROSIM. The flow archive file can be used in <a href="75.html">Monte Carlo Mode</a> as the source for flow, planned spill, and elevation data. Users are unlikely to create flow archive files from scratch, but the format of such a file is described in this section. Information contained in a <code>flow.archive</code> file includes:
+</p><ul>
+<li>number of games (water years)
+
+<li>number of years (power years)
+
+<li>number of dams
+
+<li>number of periods within years (i.e. weeks, months)
+
+<li>spill information
+
+<li>reservoir elevation information
+
+<li>flow information.
+</ul>
+<p>
+<b>Sample portion of <code>flow.archive</code></b>
+</p><pre>V0.9 CRiSP Flow Archive Fri Apr  2 17:07:59 1993 SOR sos2c 
+
+games	49	 # number of games
+years	1	 # number of years
+
+dams 19 BON TDA JDA MCN IHR LMN LGS LWG DWR PRD WAN RIS RRH WEL CHJ GCL ALF 
+HGH LIB 
+
+periods 14 0:31, 32:59, 60:90, 91:105, 106:120, 121:151, 152:181, 182:212, 
+213:228, 229:243, 244:273, 274:304, 305:334, 335:365
+
+#period water   power   dam       elev   plan   over      tot
+#       year    year                    spill  spill     flow
+
+DATA
+JAN     1929    0       BON        0.0 0.0000 0.0000 122135.0
+JAN     1929    0       TDA        0.0 0.0000 0.0000 118805.0
+JAN     1929    0       JDA      263.5 0.0000 0.0000 114350.0
+JAN     1929    0       MCN      339.0 0.0000 0.0000 116620.0
+JAN     1929    0       IHR      438.7 0.0000 0.0000  22813.0
+JAN     1929    0       LMN      538.7 0.0000 0.0000  22813.0
+JAN     1929    0       LGS      636.2 0.0000 0.0000  22313.0
+JAN     1929    0       LWG      735.3 0.0000 0.0000  22313.0
+JAN     1929    0       DWR     1556.9 0.0000 0.0000   1200.0
+JAN     1929    0       PRD        0.0 0.0000 0.0000  88937.0
+JAN     1929    0       WAN        0.0 0.0000 0.0000  88747.0
+JAN     1929    0       RIS        0.0 0.0000 0.0000  88687.0
+JAN     1929    0       RRH        0.0 0.0000 0.0000  86847.0
+JAN     1929    0       WEL        0.0 0.0000 0.0000  87018.0
+JAN     1929    0       CHJ      953.2 0.0000 0.0000  85108.0
+JAN     1929    0       GCL     1287.0 0.0000 0.0000  85108.0
+JAN     1929    0       ALF     2051.0 0.0000 0.0000  11887.0
+JAN     1929    0       HGH     3486.7 0.0000 0.0000   8400.0
+JAN     1929    0       LIB     2388.6 0.0000 0.0000   7232.0
+FEB     1929    0       BON        0.0 0.0000 0.0000 118790.0
+FEB     1929    0       TDA        0.0 0.0000 0.0000 115170.0
+</pre>
+<h3>Flow Archive Header</h3>
+<ul>
+<li><strong>V0.9</strong>: Specifies the version number of the crisppp utility used. (We have written a utility called crisppp, CRiSP pre-processor, which takes input files from SAM, HYSSR and HYDROSIM and converts them into standard archive format that COMPASS can read.) The date in the top line is the date the file was created. "sos2c" is the name of the original file from which the archive was created.
+
+<li><strong>games</strong>: Indicates the number of different <em>water</em> years included in the file.
+
+<li><strong>years</strong>: Indicates the number of <em>power</em> years included in the file.
+
+<li><strong>dams</strong>: Specifies how many projects are described in the archive and gives the abbreviations, in order, for the dams. These abbreviations must match up with the dam abbreviations given in the <code>columbia.desc</code> file. Dams described in the archive but not present in the <code>columbia.desc</code> file will be discarded. Dams in the <code>columbia.desc</code> file that are not covered in the flow archive will be given the same flow as the nearest downstream dam that is present in the archive.
+
+<li><strong>periods</strong>: Specifies how many time periods are contained in the file and lists the Julian days covered by each period.
+</ul>
+<h3>Flow Archive Data</h3>
+<p>
+The flow archive itself is a long array of numeric data, and contains eight columns, delimited by tabs or spaces. This array must be preceded by the text "DATA." COMPASS expects the data to be in the following order.
+</p><ul>
+<li><strong>period</strong>: This is any useful period abbreviation; we generally use Jan, Feb, Mar, and so forth.
+
+<li><strong>water year</strong>: This is up to 4 digits naming the water year, usually something like 1931, 1956.
+
+<li><strong>power year</strong>: This marks different conditions under which the hydro regulation was done, and thus can be numbered arbitrarily. We begin at 0 and count upwards. If there is more than one power year in the flow archive, then there must be a long array of numeric data for each power year. This should match with the number that is indicated in the header of the archive. If power year is more than one, the number of yearly input data files used in Monte Carlo runs needs to match the number of power years specified in the archive.
+
+<li><strong>dam</strong>: A column of dam abbreviations. These abbreviations must match up with the dam abbreviations given in the <code>columbia.desc</code> file and appear in the same order as listed in the flow archive header.
+
+<li><strong>elev</strong>: Period-averaged pool elevation of the dam forebay during that period. (Older versions of crisppp did not retain this information in the flow archive.)
+
+<li><strong>plan spill</strong>: Period-averaged planned spill, as a fraction of total flow, for this period, for this dam; the ratio of volume spilled to the total flow passed during the period.
+
+<li><strong>over spill</strong>: Period-averaged overgeneration spill as a fraction of total flow. This is generally zero.
+
+<li><strong>tot flow</strong>: Total flow, in <em>cfs</em> (not kcfs), at the dam during that period.
+</ul>
+
+
+</body>
+</html>

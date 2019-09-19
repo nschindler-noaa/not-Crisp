@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>FGE: Constant Fish Guidance Efficiency</title>
+</head>
+<body>
+<h3>FGE: Constant Fish Guidance Efficiency</h3>
+<p>
+Selecting <a href="366.html"><strong>Dam</strong></a><strong><img src="subm.jpg">FGE</strong> opens a window for defining the fish guidance efficiency of the bypass systems at dams for day and night periods.
+</p><p>
+One of two possible functional relationships can be specified for fge: constant fge or time varying fge (see <a href="25.html">FGE Equation</a>). When <a href="388.html"><strong>age dependent fge</strong></a> is turned off (<strong>Run<img src="subm.jpg">Runtime Settings</strong>), the model will use the constant fge condition and the values set in this window. Day and night fge then vary randomly on each dam time interval according to a fixed probability distribution, i.e. the distribution has no seasonal trend. Fge is specific to a given dam and species and its random variations occur for each dam time interval (6 hours).
+</p><p>
+The probability distribution of constant fge is defined by a piecewise linear distribution within the range identified by the low and high values. When the low and high values are set to zero, or when the low and high are set to the mean value, COMPASS uses the mean value at all times (the term becomes deterministic). When the low and high values are not equal, COMPASS uses the mean, low and high values to randomly generate a value when executed with <a href="386.html"><strong>variance suppression</strong></a> turned off (<strong>Run<img src="subm.jpg">Runtime Settings</strong>). With <strong>variance suppression</strong> turned on, COMPASS uses the mean value and ignores the high and low values. In either case, the mean value must lie within the central two quartiles of the distribution (i.e., the middle 50%). For example, if the low value is set to 0 and the high value is set to 100 then the mean value must be set between 25 and 75. If values are set that do not conform to this restriction, COMPASS will abort the run and generate an error message in the <a href="84.html">Message Log</a> (if open) specifying which species at which dams have bad values.
+</p><p>
+The probability distributions for day and night fge set in this window are used in the calculation of time varying fge and the night fge values are displayed in the <strong>FGE Equation</strong> window. Changes applied to the probability distributions will automatically update the display in the <strong>FGE Equation</strong> window.
+</p><p>
+This is a <a href="331.html">Slider Input</a> window.
+</p><ul>
+<li><a href="332.html">Edit Single Slider Value</a>
+
+<li><a href="333.html">Edit Multiple Slider Values Simultaneously</a>
+
+<li><a href="334.html">Edit All Slider Values Simultaneously</a>
+
+<li><a href="335.html">Slider Input Additional Features</a>
+</ul>
+<p>
+<img src="fge.jpg"><br>
+Fge window
+</p>
+
+
+</body>
+</html>

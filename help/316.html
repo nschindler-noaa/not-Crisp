@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Starting from the Command Prompt</title>
+</head>
+<body>
+<h2>Starting from the Command Prompt</h2>
+<p>
+To start COMPASS from a command prompt, the model must be in the current directory (or, on Unix only, in the path). At a command prompt, type a command with the following syntax:
+</p><pre>crisp1 [-l{wmrd}] [-bsmi] [-r river_desc] [-f data_file] [-o output_file] [-c output_control_file] [-u]
+</pre>
+<p>
+The arguments delimited by "[ ]" are all optional and can be given in any order. If an argument is not present, the default value is used.
+</p>
+<ul>
+<li><code>-l{wmrd}</code> controls the logging level. Five separate classes of logging messages are defined: Errors which are always logged, Warnings, Messages, Raw output, and Debug output. By default, Warnings are logged and the others are not. If <code>-l</code> is given, then the default is ignored and the characters which follow define what is logged. For example <code>-lwm</code> causes Warnings and Messages to be logged, <code>-l</code> causes nothing (except Errors) to be logged, <code>-ld</code> causes only Debug output to be logged, and <code>-lr</code> causes Raw output to be logged.
+
+<li><code>-bsmi</code> controls the running mode. <code>b</code> selects Batch Mode (the default is Graphical User Interface mode). <code>s</code> selects Scenario Mode. <code>m</code> selects Monte Carlo Mode (which is the default in Batch Mode). <code>i</code> selects Realtime Mode. The letters can be combined in various ways and not all need to be included. <code>-bsi</code> would select Batch Realtime Scenario Mode. <code>-b</code> selects Batch Monte Carlo Mode (since Monte Carlo Mode is the default for Batch Mode). Batch Monte Carlo Mode runs depend on the existence of a <code>.crisp-alts</code> file which specifies which alternatives to run.
+<br><strong>Note. </strong>Please see the <a href="317.html">Running in Batch Mode</a> section for special instructions on running COMPASS in batch mode.
+<br><strong>Note. </strong>Realtime Mode is only active in batch mode, not through the GUI. In either Scenario or Monte Carlo mode, the model default is to run with a yearly data file <code>realtime.dat</code> unless an alternate yearly data file is indicated with the <code>-f</code> flag. Running in Realtime Mode will create a <code>realtime</code> subdirectory with several default files, of particular interest is <code>realtime.real</code> file which is the output file. For Realtime Monte Carlo mode runs, a flow file named <code>flow.archive</code> must reside in the run directory. In Realtime Monte Carlo Mode, the model does not depend on the <code>.crisp-alts</code> file to determine which alternative and which files to use.
+
+<li><code>-r river_desc</code> specifies the name of the river description file. The default file is <code>columbia.desc</code>.
+
+<li><code>-f data_file</code> specifies the name of the yearly data file. The default file is <code>base.dat</code>.
+
+<li><code>-o output_file</code> specifies the name of the parameter data file to output at the end of a batch run. This option can only be used in conjunction with the <code>-b</code> argument. Only one <code>-o</code> option is allowed for any given batch run. The extension of the output filename determines what parameter data used during the model run will be written to the file. See the <a href="321.html">Model Parameter Data Files</a> section for further details. For example,
+<br> - <code>name.dat</code> writes out a parameter data file with all information in it
+<br> - <code>name.rls</code> writes out a parameter data file with only the release information
+<br> - <code>name.ctrl</code> writes out a control file with "include" directives and the 8 parameter data subset files which contain the whole database between them.
+
+<li><code>-c output_control_file</code> gives the name of the parameter data configuration file to be used for the entire batch run. This option can only be used in conjunction with the <code>-b</code> argument. Either a file of type <code>.dat</code> or <code>.cnf</code> may be specified. If this option is given, the program as it starts up first reads <code>columbia.desc</code>, then it reads the "output_control_file" and turns on the <a href="385.html">Lock Output Settings</a> feature, then it reads the yearly input data file (ignoring any output settings contained therein), and then it runs the model in batch mode, as specified by the other command line arguments. This option is intended to facilitate control of data output in batch mode processing.
+
+<li><code>-u</code><code> </code>indicates that a <code>summary.alt#</code> file should be written for each alternative run, exactly as if the "Write Supplemental Data" check box had been checked in the GUI <a href="75.html">Monte Carlo</a> window. Data written to the file is based on the output settings in the yearly input data file(s) specified in each alternative. This option can only be used in conjunction with the <code>-b</code>{<code>mi}</code> argument.
+</ul><p>
+<b>Example commands that open the COMPASS Graphical User Interface</b>
+</p><pre>	crisp1
+crisp1 -lmw -r columbia_drawdown.desc -f new.dat
+crisp1 -f test.dat</pre>
+<p>
+<b>Example commands that run COMPASS in batch mode</b>
+</p><pre>	crisp1 -b -o batch.ctrl
+crisp1 -b -c batch.dat
+crisp1 -bsi -f realtime.alt.dat
+crisp1 -b -u</pre>
+
+
+
+</body>
+</html>

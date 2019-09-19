@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Species, Stock, Release, and River Parameters</title>
+</head>
+<body>
+<h3>Species, Stock, Release, and River Parameters</h3>
+<p>
+The following are species, stock, release and river tokens found in a River Description File (<code>.desc</code>).
+</p><ul>
+<li><strong>river</strong>: This defines a collection of reaches and assumes that some headwater exists for the river. A river may consist of a number of reaches (e.g. Columbia or Snake) or a single reach (e.g. Imnaha or Grande Ronde).
+
+<li><strong>flow_max</strong>: This defines a value for the maximum flow measured in a river over the last century. COMPASS uses this value to calculate how to divide up flows that are propagated upstream. This should follow the river designation.
+
+<li><strong>flow_min</strong>: This defines the lowest flow allowed in a river. This should follow the river designation.
+
+<li><strong>release_site</strong>: This defines the name of a release site in the system. A release site must have a location associated with it in the latitude/longitude format; it must also coincide with a point also defined in a reach, i.e. release sites must lie exactly on a river point.
+
+<li><strong>species</strong>: Species tokens must appear first in the file. Any species to be used in the model must be identified by the species token, e.g. species Steelhead. There is no fixed limit on the number of species that can be specified.
+
+<li><strong>stock</strong>: Stock tokens appear after the species tokens in the file. Any specific stock to be used in the model must be identified by the stock token, e.g. stock Catherine Creek Ch1. There is no fixed limit on the number of stocks that can be specified.
+</ul>
+
+
+</body>
+</html>

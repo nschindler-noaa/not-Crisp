@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Run Monte Carlo in Batch Mode</title>
+</head>
+<body>
+
+<h4>Run Monte Carlo in Batch Mode</h4>
+<p>
+<a href="75.html">Monte Carlo</a> alternatives can be run in batch mode. The steps to running COMPASS in batch mode are as follows:
+</p><ol>
+
+<li>Use the graphical user interface to <a href="378.html">Create New Alternatives</a> and <a href="380.html">Set Monte Carlo Parameters</a>, making sure to specify the flow archive, the yearly input data files, and the desired output data. All alternatives must be saved on disk.
+
+<li>Create or modify a file named <code>.crisp1-alts</code>. The file must exist in the same directory where your COMPASS program and all the alternatives reside. The model will run all the alternatives listed in the <code>.crisp1-alts</code> file before concluding. This file can be created using any text editing tool. It simply contains a list of the names of the alternatives to be run, one on each line. For example,
+<pre>	altern1
+altern2
+...</pre>
+
+<li>Once you create your alternatives and a <code>.crisp1-alts</code> file in place, COMPASS can be run in batch mode from a shell which would otherwise not be able to run the model using the graphical user interface. Batch mode is executed from the command prompt. Please see the <a href="317.html">Running in Batch Mode</a> section for special instructions on batch mode operations. You can start batch Monte Carlo mode runs from the command prompt by typing any of the following example commands.
+<br> - Unix using <code>crisp1</code>
+<br><code>crisp1 -b -u</code>
+<br> - Unix using the batch mode only program, <code>crisp1bat</code>
+<br><code>crisp1bat -c batch.cnf</code>
+<br> - Windows 95/NT using <code>crisp1</code> (redirects both output streams to the same file)
+<br><code>crisp1 -bm 1&gt;output.txt 2&gt;&amp;1</code>
+<br> - Windows 95/NT using <code>crisp1b</code> (redirects output streams to shell)
+<br><code>crisp1b -r columbia.desc -u</code>
+
+<li>View <a href="384.html">Monte Carlo Results</a>.
+</ol>
+<p>
+See the <a href="316.html">Starting from the Command Prompt</a> section for further information on command line options for COMPASS. 
+</p><p>
+Monte Carlo runs are time-consuming. A 500-game run may take several hours, or more, to run. It is recommended that you select several alternatives to run, start the run, and let it run overnight. <strong>Windows 95/NT users, do not quit while the model is running</strong>.
+</p><p>
+See the <a href="75.html">Monte Carlo</a> section for the list of related sections.
+</p>
+
+</body>
+</html>

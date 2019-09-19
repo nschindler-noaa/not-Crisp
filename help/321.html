@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Model Parameter Data Files</title>
+</head>
+<body>
+<h3>Model Parameter Data Files</h3>
+<p>
+COMPASS contains eight predefined model parameter data file name extensions. The model parameter data files are subsets of the data in COMPASS. All data in COMPASS can be contained in these eight parameter data file types. All eight files combined would contain the same information as a <a href="320.html">Yearly Input Data File</a> (<code>.dat</code>). By using <strong>Save As</strong> and a predefined extension, specific model parameter data groupings can be saved to a file for future use. In a similar manner, specific model parameter data groupings can be read into COMPASS by using <strong>Open</strong>. See the <a href="325.html">Reading Data into COMPASS</a> section for further details. All eight parameter data files can be written out simultaneously using a <a href="322.html">Control File</a>.
+</p><p>
+The following is a list of data parameters stored in each file as determined by the file name extension. Following each extension is a short description and in parentheses is the GUI menu location for editing these parameters.
+</p><ul>
+<li><code>.rls</code>: release information (<a href="356.html">Release</a>)
+<br> - species and stock
+<br> - day of the start of release
+<br> - number released each day
+<br> - day of the smoltification onset and finish
+<br> - smolt length and vitality
+
+<li><code>.res</code>: reservoir parameters (<a href="362.html">Reservoir</a>)
+<br> - predator densities in reaches
+<br> - reach gas theta
+<br> - delta water temperature
+
+<li><code>.beh</code>: behavior parameters (<a href="363.html">Behavior</a>)
+<br> - predation coefficient in reach, forebay and tailrace
+<br> - migration variance
+<br> - migration equation coefficients 
+<br> - gas mortality equation parameters
+<br> - fish depth equation parameters
+<br> - predator temperature response equation parameters
+<br> - simple mortality equation parameters
+<br> - FLUSH transport figure of merit equation parameters
+
+<li><code>.flow</code>: flow parameters (<a href="364.html">Flow</a>)
+<br> - headwater flow
+<br> - headwater modulation
+<br> - reservoir and reach loss (kcfs) on a daily basis
+<br> - reservoir and reach elevation below full pool (ft) on a daily basis
+<br> - flow maximum in headwaters (kcfs)
+<br> - daily storage reservoir volume and output flow
+<br> - reservoir output gas on a daily basis (if desired)
+
+<li><code>.dam</code>: dam guidance and mortality factors (<a href="366.html">Dam</a>)
+<br> - transportation parameters
+<br> - mortality in dam passage routes 
+<br> - tdg saturation equation parameters
+<br> - predator density in forebay, and tailrace
+<br> - predation probability
+<br> - separation probability
+<br> - day and night fish guidance efficiency
+<br> - spill equation parameters
+<br> - fge equation parameters
+<br> - transportation mortality equation parameters
+<br> - powerhouse capacity and schedule
+<br> - additional powerhouse information if any
+
+<li><code>.spill</code>: spill information at each dam (<a href="366.html">Dam</a>)
+<br> - spill cap
+<br> - planned spill schedule information
+
+<li><code>.river</code>: river information (<a href="362.html">Reservoir</a>)
+<br> - gas dissipation exponent
+<br> - headwater flow proportion
+<br> - ufree
+<br> - headwater temperature
+
+<li><code>.cnf</code>: config information (<a href="372.html">Run</a>)
+<br> - runtime settings
+<br> - output settings
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>variance suppression</title>
+</head>
+<body>
+<h4>variance suppression</h4>
+<p>
+The <strong>variance suppression</strong> option in <a href="76.html">Runtime Settings</a> controls the stochastic parts of the model. When <strong>variance suppression</strong> is turned on, each subsequent run of the model uses exactly the same value for parameters that would otherwise be drawn from a distribution (the term becomes deterministic). This is useful for doing quick tests of sensitivity. By default, it is turned on. Variance suppression should be turned off when running multiple games in <a href="75.html">Monte Carlo Mode</a>. Any <strong>Runtime Settings</strong> you want to take effect during a Monte Carlo Mode run must be applied and saved to a yearly input data file (<code>.dat</code> or <code>.cnf</code>) specified in the Monte Carlo alternative.
+</p><p>
+<a href="52.html">Predation Coef</a>, <a href="56.html">Migration Rate Variance</a>, <a href="69.html">Mortality</a>, and <a href="71.html">FGE</a> are examples of stochastic parameters in COMPASS. Each window contains sliders for setting the mean, low, and high values by species or by dam and species. When the low and high values are set to zero or the low and high are set to the mean value, COMPASS uses the mean value at all times (the term becomes deterministic). When the low and high values are not equal, COMPASS uses the mean, low and high values to randomly generate a value when executed with <strong>variance suppression</strong> turned off. With <strong>variance suppression</strong> turned on, COMPASS uses the mean value and ignores the high and low values. In either case, the mean value must lie within the central two quartiles of the distribution (the middle 50%). For example, if the low value is set to 0 and the high value is set to 100, the mean value must be set between 25 and 75. If values are set that do not conform to this restriction, COMPASS will abort the run and generate an error message in the <a href="84.html">Message Log</a> (if open) specifying which parameters have bad values.
+</p><pre><code>	ERROR: bad stochastic param reach pred coeff for Chinook 0.
+--&gt;mean not in range 12.386550 &lt;= mean &lt;= 17.341249
+ERROR: aborting run due to bad parameter values.</code></pre>
+
+
+</body>
+</html>

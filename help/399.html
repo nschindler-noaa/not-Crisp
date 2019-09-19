@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Reach Tokens and Parameters</title>
+</head>
+<body>
+<h3>Reach Tokens and Parameters</h3>
+<p>
+The following are examples of reach specifications from a Yearly Input Data file (<code>.dat</code>).
+</p><pre>	reach Bonneville_Tailrace
+output_settings 0
+pred_mean Chinook_0  8244.910156
+pred_mean Chinook_1  1949.719971
+pred_mean Steelhead  1949.719971
+pred_dist 1.00
+gas_theta 0.075000
+delta_water_temp [*] 0.00
+loss_max 280.00
+loss_min -280.00
+loss [*] 0.00
+elevation_change [*] 0.00
+output_gas Off
+end reach (Bonneville_Tailrace)
+
+reach Lower_Granite_Pool
+output_settings 1
+pred_mean Chinook_0  2590.510010
+pred_mean Chinook_1  808.900024
+pred_mean Steelhead  808.900024
+pred_dist 1.00
+gas_theta 0.075000
+delta_water_temp 0.00 -0.01 0.03 -0.03 
+-0.04 -0.01 0.02 0.00 
+[cut]
+0.00 0.00 -0.03 0.03 
+0.04 -0.03 
+loss_max 100.00
+loss_min -100.00
+loss [*] 0.00
+elevation_change -3.10 -3.10 -3.20 -2.80 
+-2.30 -1.50 -1.80 -1.60 
+-1.70 -2.40 -2.10 -2.20 
+[cut]
+-1.70 -1.60 -1.50 -1.40 
+-1.50 -1.60 -1.90 -1.80 
+-1.70 
+output_gas On  [0:7] 1.10 [8:11] 0.90 
+[12:15] 1.10 [16:19] 1.20 
+[20:23] 0.20 [24:27] 0.25 
+[cut]
+[728:851] 3.80 [852:975] 3.00 
+[976:1095] 2.60 [1096:1463] 0.00 
+end reach (Lower_Granite_Pool)
+</pre><h4>
+Keywords and descriptions for reach tokens and parameters
+</h4><ul>
+<li><strong>reach</strong>: Defines a reach name, e.g. reach Estuary which matches a name defined in the <code>columbia.desc</code> file, and is paired with an "end" statement, e.g. end reach (Estuary).
+
+<li><strong>output_settings</strong>: Specifies what detailed information is output for a given reach, dam, or headwater during both Scenario and Monte Carlo runs. The single value is a combination of up to 10 flags, each of which is a single binary digit, arithmetically added together. Thus a value of "41" would indicate that flags "1", "8", and "32" were set, requesting output of passage, flow, and TDG saturation. Flags which are declared for the wrong type of river feature (e.g. spill at a reach) are silently ignored. The following is a list of flags and where they are allowed (Dam, Reach, and/or Headwater):
+<br> - 1 = passage (d, r)
+<br> - 2 = transport passage (d)
+<br> - 4 = routing (d)
+<br> - 8 = flow (d, r, h)
+<br> - 16 = water temperature (d, r, h)
+<br> - 32 = TDG saturation (d, r)
+<br> - 64 = velocity (r)
+<br> - 128 = loss (r)
+<br> - 256 = spill (d)
+<br> - 512 = elevation (r).
+
+<li><strong>pred_mean</strong> (Species): Species-specific parameter describing the predator density in each river segment. Densities are given as the number of northern pikeminnows per square kilometer of reservoir. This measure, based on full pool dimensions, is effectively a measure of the total number of predators in a river segment. Used as part of the <a href="389.html">Gas and Predation Mortality Model</a>.
+
+<li><strong>pred_dist</strong>: The Predator Distribution Coefficient of the predator density/volume interaction for each river segment. The main purpose of the predator density/volume interaction is to properly scale the effect of initial predator densities on predation rate during reservoir drawdown. Used when <a href="387.html">predator density / volume interaction</a> is turned on.
+
+<li><strong>gas_theta</strong>: Gas theta determines the rate of mixing between the gas levels in the left-bank and right-bank flows of the river (facing downstream). These flows often have different levels of gas upon exiting a dam and become more mixed as the river flows downstream. The mixing rate is with respect to time and is set by default to be 0.075 (mile)^-1, which leads to roughly 95% mixing after 40 miles.
+
+<li><strong>delta_water_temp</strong>: Array of values (can be positive or negative) in degrees Celsius to be applied to the water temperature that comes from upstream. For example, if this is set to 1 then the water temperature in the reach will be adjusted to be 1 degree Celsius warmer than the value that COMPASS calculates for the reach. There is no GUI for this parameter.
+
+<li><strong>loss_max</strong>: The maximum amount of flow allowed to be removed from the reach during model operations.
+
+<li><strong>loss_min</strong>: The maximum amount of flow allowed to be added to the reach during model operations.
+
+<li><strong>loss</strong>: Daily loss records, in kcfs, for the reach. This is often 0.
+
+<li><strong>elevation_change</strong>: Deviation in elevation from full pool, on a daily basis. The value for elevation_change is zero or less, pools may be drawn down but not over-filled.
+
+<li><strong>output_gas</strong>: The default setting is off. If output_gas is turned on, it replaces the dissolved gas data at the output of the feature (dam, reach, or headwater). One set of numbers are given, for each dam time slice in the season (366*4, currently). The numbers are applied to both sides of the feature. There is no GUI for this parameter.
+</ul>
+
+
+</body>
+</html>

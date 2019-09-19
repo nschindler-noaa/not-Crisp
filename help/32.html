@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Elevation: Reservoir Elevation</title>
+</head>
+<body>
+<h3>Elevation: Reservoir Elevation</h3>
+<p>
+Selecting a Reach from <a href="364.html"><strong>Flow</strong></a><strong><img src="subm.jpg">Elevation</strong> opens a window for setting the elevation of the selected reach on a daily basis. For storage reservoirs, see <a href="44.html">Reservoirs</a>. In <a href="373.html">Scenario Mode</a>, the values set in this window are used to control the reservoir elevation. In <a href="75.html">Monte Carlo Mode</a>, the reservoir elevation can be input from the <a href="323.html">Flow Archive File</a> if it contains reservoir elevation, otherwise, it is taken from the specified <a href="320.html">Yearly Input Data File</a>.
+</p><p>
+This is an <a href="336.html">Editable Graph</a> window.
+</p><ul>
+<li><a href="337.html">Editable Graph Viewing Features</a>
+
+<li><a href="338.html">Editable Graph Input Features</a>
+
+<li><a href="339.html">Editable Graph Additional Features</a>
+
+<li><a href="95.html">Schedule Tool</a>
+</ul>
+<h4>Drawdown Alternatives Information</h4>
+<ul>
+<li>In the <a href="319.html"><code>columbia.desc</code></a> file, full pool reservoir elevations are defined using <code>forebay_elevation</code> and <code>tailrace_elevation</code>. Reservoir elevations may be computed from volume and surface area if no other information is present. They may also be input directly as average depth using the <code>depth</code> token.
+<br><b>Note.</b> Additional <b>River Description Files</b> are also available in the COMPASS distribution that simulate drawdown alternatives for the Snake and Columbia rivers. See the <a href="319.html">River Description File</a> section for more information.
+
+<li>Elevation changes at full pool are designated zero feet with drawdowns below full pool measured in negative feet.
+
+<li>Effective predator density can increase as the reservoir elevation (and volume) is lowered. Turning on <a href="387.html">predator density / volume interaction</a> in <strong>Run<img src="subm.jpg">Runtime Settings</strong> causes predator density to increase with elevation lowering. This increase may counteract the benefits of faster migration velocity and may result in no change in smolt survival.
+</ul>
+<p>
+<img src="elev.jpg"><br>
+Elevation window for McNary Pool
+</p>
+
+
+</body>
+</html>

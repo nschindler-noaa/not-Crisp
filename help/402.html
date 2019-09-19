@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Global Tokens</title>
+</head>
+<body>
+<h3>Global Tokens</h3>
+<p>
+The following is an example of the global parameters specification from a Yearly Input Data file (<code>.dat</code>).
+</p><pre>	gas_dissp_exp 0.20
+hw_flow_prop 1.00
+ufree 0.045000
+fork_threshold 0.100000
+water_travel_upper_segment Little_Goose_Pool
+water_travel_lower_segment Estuary
+water_travel_first_day 1
+water_travel_last_day 365
+runtime_settings 1
+mortality_class gas_pred
+</pre><h4>
+Keywords and descriptions for global tokens and parameters
+</h4><ul>
+<li><strong>gas_dissp_exp</strong>: An exponent controlling degassing of total dissolved gas from the water (*10^-4cm^2/sec). This depends on river velocity and depth.
+
+<li><strong>hw_flow_prop</strong>: Specifies overall water availability in the system relative to an average water year for <a href="373.html">Scenario Mode</a> runs. This is a portion of mean flow as the fraction of an average water year. Set in the <a href="47.html">Headwater Modulation</a> window.
+
+<li><strong>ufree</strong>: River velocity in free flowing portions of river (in kfs*10^-1).
+
+<li><strong>fork_threshold</strong>: Defines how big a river fork must be before elevation changes propagate up it. See <a href="46.html">River Parameters</a> for further details on how this is used in COMPASS operations.
+
+<li><strong>water_travel_upper_segment</strong>: Used in transport mortality calculations. Set by COMPASS to be Little Goose Pool. There is no GUI to set this parameter.
+
+<li><strong>water_travel_lower_segment</strong>: Used in transport mortality calculations. Set by COMPASS to be Estuary. There is no GUI to set this parameter.
+
+<li><strong>water_travel_first_day</strong>: Used in transport mortality calculations. Set by COMPASS to be 1. There is no GUI to set this parameter.
+
+<li><strong>water_travel_last_day</strong>: Used in transport mortality calculations. Set by COMPASS to be 365. There is no GUI to set this parameter.
+
+<li><strong>runtime_settings</strong>: Specifies what functional relationships to consider during both Scenario and Monte Carlo runs. The single value is a combination of up to 3 flags, each of which is a single binary digit, arithmetically added together.
+<br> - 1 = <a href="386.html">variance suppression</a> turned on
+<br> - 2 = <a href="387.html">predator density / volume interaction</a> turned on
+<br> - 4 = <a href="388.html">age dependent fge</a> turned on
+
+<li><strong>mortality_class</strong>: Indicates which <a href="389.html">Mortality Model</a> is being used during Scenario and Monte Carlo runs: Gas &amp; Pred Mortality (gas_pred) or Simple Mortality (simple). The currently calibrated Mortality Model is <b>Gas &amp; Pred Mortality</b>.
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+/**
+\page test Testing and Debugging
+COMPASS is big enough and will hopefully have enough users that quality assurance is a high priority activity. To that end, COMPASS uses source control (see \ref source), a bug tracker (see \ref bugs), automated testing (see \ref test_cases), and debugging tools (see \ref debug).
+
+\section bugs Issue Tracker
+COMPASS currently uses the Roundup issue tracker on this Linux machine (elmer.cbr.washington.edu) although it is possible that if Python support is available on gandhi, the bug tracker could later be moved to it.
+
+The bug tracker is currently run from my home directory ~jkrinke/roundup and it has a web interface running on port 1234, as in the URL "http://elmer.cbr.washington.edu:1234". The bug tracker is started (and run as user jkrinke) when elmer boots and there is an entry in "/etc/rc.local" that looks like the following:
+\code
+# Start up the issue tracker with the web interface
+su -c /home/jkrinke/roundup/bin/start-general jkrinke &
+\endcode
+
+Roundup is fairly simple to use and there is no need to document most of its features here. Features of note include being able to save issue searches as well as searching all the text in the bug tracker with the search box.
+
+When creating new issues, be sure to tag them with the appropriate keywords (for example, "COMPASS" for COMPASS issues or "JavaDART" for JavaDART issues). 
+
+If you run into new problems, I would suggest searching the issue tracker to see if anything similar has been noted before.
+
+\section debug Debugging
+When there are issues with COMPASS it's usually a good idea to start with the most general problems and then move on to more specific problems. Here's a quick checklist to follow when starting with a problem:
+-# Is there actually a problem? Is the user simply just not understanding what is going on? This could indicate a non-programming problem if the feature does not have an obvious use or has documentation that is not clear.
+-# Check to make sure that data is being read in properly and written out properly. Are all the tokens involved actually getting read in or is there a bug in the parser somewhere? Is the data that is written out actually what it appears to be? Or is there a bug in the output routines that produces incorrect output from correct results?
+-# Where is the problem occurring? Try disabling as many features as possible until you find out what input tokens/modes are actually causing the erroneous results. Keep in mind that just because you only see the error with one token turned on doesn't necessarily mean that that particular token is causing the problem.
+-# Use the debugger (probably the one in Visual C++ since it's easier to use than GDB) and follow along to see if the control flow acts as you would expect.
+-# Check to make sure that this problem occurs on other platforms and check debug vs. release modes.
+
+After that you probably just want to start checking the code that seems to contain the problem and proceed from there.
+
+\section debug_gdb Debugging with GDB
+Personally I would advise that you use the debugger in Visual C++ whenever possible, but when the problem only occurs on UNIX that's not an option. If you compile the application on UNIX with the environment variable DEBUG set, then optimizations are turned off and debugging information is added to the executables.
+
+To run COMPASS in GDB and find out where a crash is occurring, just do something like the following (note that the last 3 lines are typed into GDB, not the shell):
+\code
+gdb compass
+run
+bt
+quit
+\endcode
+
+I put the 3 last commands into a file called "bt.txt" so that I can just easily see where a crash is happening without using the interactive console in GDB:
+\code
+gdb compass < bt.txt
+\endcode
+
+There's obviously a lot more to GDB, but finding out where crashes are occurring is the only thing that I have ever really used it for.
+
+\section debug_valgrind Debugging Memory Problems with Valgrind
+Valgrind is a tool for debugging memory problems in applications. It detects leaks, writing to unallocated memory, deleting NULLs, and all sorts of other problems.
+
+Valgrind is a Linux application that only works on 32-bit applications for x86 processors (i.e. not on Solaris or Windows), so on Linux make sure that you're using "Makefile.linux32" for compilation.
+
+Valgrind can be run like this:
+\code
+valgrind --tool=memcheck ./compassb
+\endcode
+
+Valgrind spits out all kinds of messages all over the place when it's run. When debugging the GUI, there are lots of falsely reported errors in the X and Qt libraries which you should ignore. Try to only look for problems in the COMPASS code because those are the only ones we can fix anyway.
+
+Unfortunately there is one problem that currently exists. The Linux GUI has a strange bug that only appears when running in Valgrind where the cells in the I/O sheets constantly recalculate. While this is very annoying it doesn't make debugging with Valgrind impossible so you should still do it. I have used Valgrind to find problems that caused crashes on exit that only happened on Windows in release mode. If things crash at exit, memory problems are the likely culprit and Valgrind can help.
+
+Testing on the batch version should work fine and be very helpful.
+
+\section test_cases Unit Testing and Test Cases
+COMPASS didn't originally have a testing framework so I went ahead and created a very simple one. It's not nearly as powerful as something like JUnit, but C is also a lot simpler than Java. When you have spare time, it would be a good idea to develop test cases so that later down the road when a change is made and things start to break, you notice that they're breaking earlier and hopefully you have a better idea why things are going wrong.
+
+All of the test case-related code is in the "test/" subdirectory. Note that the documentation for the testing framework is actually separate from this main documentation and can be generated using Doxygen.
+
+The actual testing framework is contained in "test/" in the following files: "test.c", "test.h", "Makefile", and "run_tests.sh" with the Doxygen configuration in "Doxyfile" and some visualization stuff for R in "graphs.r".
+
+Some example unit tests would be like "test-string-tree.c" (which does not pass, by the way) or "test-floating-point.c". More integration-like tests would be like "test-flow-archive-daynight-input.c"
+
+When adding tests make sure that they start with "test-" and put them in CVS. There should be no need to update any Makefiles. If code from the main COMPASS source needs to be used, simply place those objects into the list of foreign objects in "test/Makefile".
+
+Beyond that, read the testing framework documentation and that should be enough to get started. Make sure to run the tests on as many platforms as you can.
+
+*/
+

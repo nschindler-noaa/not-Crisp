@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Mortality: Mortality in Dam Passage</title>
+</head>
+<body>
+<h3>Mortality: Mortality in Dam Passage</h3>
+<p>
+Selecting <a href="366.html"><strong>Dam</strong></a><strong><img src="subm.jpg">Mortality</strong> opens a window for setting the fish mortality rates for each dam and species in the various passage routes: spillway, bypass, turbine, and transport. Transportation mortality can be altered using parameters available in the <a href="22.html">Transport Mortality Equation</a> window.
+</p><p>
+The probability distribution of mortality for each passage route is defined by a piecewise linear distribution within the range identified by low and high values. When the low and high values are set to zero or when the low and high values are set to the mean value, COMPASS uses the mean value at all times (the term becomes deterministic). When the low and high values are not equal, COMPASS uses the mean, low and high values to randomly generate a value when executed with <strong>variance suppression</strong> turned off in <a href="76.html">Runtime Settings</a> (Run Menu). With <strong>variance suppression</strong> turned on, COMPASS uses the mean value and ignores the high and low values. In either case, the mean value must lie within the central two quartiles of the distribution (i.e., the middle 50%). For example, if the low value is set to 0 and the high value is set to 100 then the mean value must be set between 25 and 75. If the mean value does not conform to this restriction, COMPASS will abort the run and generate an error message in the <a href="84.html">Message Log</a> (if open) specifying which species at which dams have bad values.
+</p><p>
+This is a <a href="331.html">Slider Input</a> window. In this slider input window, you can group sliders by: Dam (<strong>D</strong>) or Species (<strong>S</strong>). If you group sliders by Dam (<strong>D</strong>), you are modifying the mean, low or high value for the corresponding passage routes for the specified Species at all dams. If you group sliders by Species (<strong>S</strong>), you are modifying the mean, low or high value for the corresponding passage routes at the specified Dam for all species.
+</p><ul>
+<li><a href="332.html">Edit Single Slider Value</a>
+
+<li><a href="333.html">Edit Multiple Slider Values Simultaneously</a>
+
+<li><a href="334.html">Edit All Slider Values Simultaneously</a>
+
+<li><a href="335.html">Slider Input Additional Features</a>
+</ul>
+<p>
+<img src="mortd.jpg"><br>
+Dam Mortality window
+</p> 
+
+
+</body>
+</html>

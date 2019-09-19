@@ -1,0 +1,221 @@
+version 9
+
+num_reach_classes 3
+	reach_class_name 0 Class_0
+	reach_class_name 1 Col_Riv
+	reach_class_name 2 LGR_Pool
+
+stock Snaketrap_Ch1
+
+	migration_eqn LGR_Pool 52
+		parameter 0 100.0 
+		parameter 1 0.000000 
+		parameter 2 0.000000 
+		parameter 3 0.000000 
+		parameter 4 0.000000 
+		parameter 5 5.00000 
+		parameter 6 0.000000 
+	end migration_eqn()
+	v_var LGR_Pool 0.0
+
+	migration_eqn Class_0 60
+		parameter 0 0.931556
+		parameter 1 5.379288
+		parameter 2 0.706311
+		parameter 3 0.1838191
+		parameter 4 107.98275
+		parameter 5 0.4759405
+		parameter 6 2.114689 
+	end migration_eqn()
+	v_var Class_0 74.074219
+
+        migration_eqn Col_Riv 59
+		parameter 0 -5.477430 
+		parameter 1 9.174956 
+		parameter 2 3.411990 
+		parameter 3 0.03156359 
+		parameter 4 140.957291 
+       	end migration_eqn()
+	v_var Col_Riv 166.804810
+
+
+	custom_survival_eqn LGR_Pool 57
+		parameter 0 0.00
+		parameter 1 0.00
+		parameter 2 0.00
+		parameter 3 0.00
+		parameter 4 0.00
+		parameter 5 0.00
+		parameter 6 0.00
+		parameter 7 0.00
+		parameter 8 0.00
+		parameter 9 0.00
+		parameter 10 0.00
+		parameter 11 0.00
+		parameter 12 0.00
+		parameter 13 0.00
+		parameter 14 0.00
+        end custom_survival_eqn ( )
+
+
+	custom_survival_eqn Class_0 57
+		parameter 0 0.002812992000
+		parameter 1 -0.00001232003
+		parameter 2 0.000000000000
+		parameter 3 0.000000000000
+		parameter 4 0.000000000000
+		parameter 5 -0.00303705900
+		parameter 6 0.000000000000
+		parameter 7 0.052988540000
+		parameter 8 0.000000000000
+		parameter 9 0.000000000000
+		parameter 10 -0.01098526000
+		parameter 11 0.000554830600
+		parameter 12 0.000000000000
+		parameter 13 0.000000000000
+		parameter 14 0.000000000000
+	end custom_survival_eqn ( )
+
+
+	custom_survival_eqn Col_Riv 57
+		parameter 0 0.000000000000
+		parameter 1 0.000000000000
+		parameter 2 0.000000000000
+		parameter 3 0.000000000000
+		parameter 4 0.000000000000
+		parameter 5 0.000000000000
+		parameter 6 0.000000000000
+		parameter 7 0.021002673947
+		parameter 8 0.000000000000
+		parameter 9 0.000000000000
+		parameter 10 0.000000000000
+		parameter 11 0.000000000000
+		parameter 12 0.000000000000
+		parameter 13 0.000000000000
+		parameter 14 0.000000000000
+	end custom_survival_eqn ( )
+
+
+end stock (Snaketrap_Ch1)
+
+
+	release Chinook_1 Lower_Granite_Forebay 85
+		stock Snaketrap_Ch1
+		smolt_onset 40
+		smolt_finish 40
+		initial_spill_experience 0.90
+		add_setting 1
+		length 100.00
+		number 40 121 302 2000 
+			202 599 1624 7417 
+			9512 11132 11654 10864 
+			13191 19253 21739 32287 
+			22374 24700 19792 16270 
+			17888 27477 33465 20417 
+			30387 23897 26786 20645 
+			34862 28797 34835 25596 
+			25485 21510 34761 50159 
+			50588 39542 29366 21053 
+			28362 22170 18410 27015 
+			22321 12665 8551 5778 
+			10063 10592 10149 16077 
+			26938 23789 34450 33333 
+			9249 7772 3279 3937 
+			5808 4600 5091 3922 
+			5075 5925 1641 4513 
+			4569 4448 6960 1674 
+			2355 2294 1379 2336 
+			3478 2044 1731 1341 
+			1576 2119 1465 1497 
+			5399 4727 1509 560 
+			1024 240 60 155 
+			61 31 13 62 
+			3 17 [98:365] 0 
+	end release (Chinook_1)
+
+
+
+reach Bonneville_Tailrace
+	reach_class LGR_Pool
+	output_settings 1
+end reach (Bonneville_Tailrace)
+
+dam Bonneville_Dam
+	output_settings 7
+end dam (Bonneville_Dam)
+
+reach Bonneville_Pool
+	reach_class Col_Riv
+	output_settings 1 
+end reach (Bonneville_Pool)
+
+dam The_Dalles_Dam
+	output_settings 7
+end dam (The_Dalles_Dam)
+
+reach The_Dalles_Pool
+	reach_class Col_Riv
+	output_settings 1 	
+end reach (The_Dalles_Pool)
+
+reach Deschutes_Confluence
+	reach_class Col_Riv
+	output_settings 1 
+end reach (Deschutes_Confluence)
+
+dam John_Day_Dam
+	output_settings 7
+end dam (John_Day_Dam)
+
+reach John_Day_Pool
+	reach_class Col_Riv
+	output_settings 1
+end reach (John_Day_Pool)
+
+dam McNary_Dam
+	output_settings 7
+end dam (McNary_Dam)
+
+reach McNary_Pool
+	reach_class Col_Riv
+	output_settings 1
+end reach (McNary_Pool)
+
+dam Ice_Harbor_Dam
+	output_settings 7
+end dam (Ice_Harbor_Dam)
+
+reach Ice_Harbor_Pool
+	reach_class Class_0
+	output_settings 1
+end reach (Ice_Harbor_Pool)
+
+dam Lower_Monumental_Dam
+	output_settings 7
+end dam (Lower_Monumental_Dam)
+
+reach Lower_Monumental_Pool
+	reach_class Class_0
+	output_settings 1
+end reach (Lower_Monumental_Pool)
+
+dam Little_Goose_Dam
+	output_settings 7
+end dam (Little_Goose_Dam)
+
+reach Little_Goose_Pool
+	reach_class Class_0
+	output_settings 1
+end reach (Little_Goose_Pool)
+
+dam Lower_Granite_Dam
+	output_settings 7
+end dam (Lower_Granite_Dam)
+
+reach Lower_Granite_Pool
+	reach_class LGR_Pool
+	output_settings 1
+end reach (Lower_Granite_Pool)
+
+runtime_settings 1
+mortality_class custom

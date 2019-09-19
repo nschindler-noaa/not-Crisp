@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Dam Parameters</title>
+</head>
+<body>
+<h3>Dam Parameters</h3>
+<p>
+The following are examples of dam specifications from a River Description File (<code>.desc</code>).
+</p><p>
+<em>Storage Basin Dam</em>
+</p><pre>	dam Chief Joseph Dam
+powerhouse_capacity 219
+floor_elevation 	743.0
+forebay_elevation	956.0
+tailrace_elevation	786.0
+spillway_width 		 1320
+spill_side		right
+pergate                   2.0
+ngates                    19
+gate_width               40.0
+basin_length 		  180
+sgr 			  1.0
+abbrev CHJ                    
+storage_basin		0.0 5185.5
+latlon 47 59 48 N 119 37 56 W
+end (Chief Joseph)
+</pre>
+<p>
+<em>Dam with two Powerhouses</em>
+</p><pre>	dam Bonneville Dam                    
+powerhouse_capacity 136
+powerhouse_2_capacity 152
+floor_elevation 	 -16.0
+forebay_elevation	  77.0
+tailrace_elevation	  14.5
+bypass_elevation          65.5
+spillway_width 		1080.0
+spill_side		right
+pergate                    2.9
+ngates                    18
+gate_width                60.0
+basin_length 		 144.5
+sgr 			   1.0
+abbrev BON                    
+latlon 45 38 41 N 121 56 21 W
+end (Bonneville)
+</pre>
+<h4>Keywords and descriptions for dam parameters</h4>
+<ul>
+<li><strong>dam</strong>: Marks the beginning of a dam specification and the name of the dam, e.g. dam Bonneville Dam.
+
+<li><strong>powerhouse_capacity</strong>: Total hydraulic capacity, in kcfs. Same for the second powerhouse (powerhouse_2_capacity).
+
+<li><strong>floor_elevation</strong>: Elevation in feet above sea level of the floor of the forebay above the dam as well as the tailrace downstream from the dam.
+
+<li><strong>forebay_elevation</strong>: Elevation of forebay, in feet above sea level, at full pool.
+
+<li><strong>tailrace_elevation</strong>: Elevation of tailrace, in feet above sea level, at full pool.
+
+<li><strong>bypass_elevation</strong>: The elevation, in feet, of the bypass orifice of a bypass system. When surface is below this level fish bypass is zero. When term is missing the bypass_elevation defaults to the floor_elevation.
+
+<li><strong>spillway_width</strong>: Total width, in feet, of the spillway.
+
+<li><strong>spill_side</strong>: Indicates which side looking downstream from a dam is the spill side. For dams, total dissolved gas saturation in percent above 100 is recorded for both the left-bank flow and right-bank flow levels. These flows often have different levels of gas upon exiting a dam because of the gas production from spill. At each dam the two flows are marked as either the powerhouse flow or the spill flow (spill_side). Consult the table in the <a href="15.html">TDG Saturation &gt; 100%: Dam</a> section to determine whether the spill side<em> </em>is left or right at a specific dam, looking downstream.
+
+<li><strong>pergate</strong>: Amount of flow passed through each spill gate, in kcfs.
+
+<li><strong>ngates</strong>: Number of spill gates at the dam.
+
+<li><strong>gate_width</strong>: Width, in feet, of each spill gate at the dam.
+
+<li><strong>basin_length</strong>: Length, in feet, of the stilling basin.
+
+<li><strong>sgr</strong>: Specific gravity of the roller; this can vary from 0 to 1.
+
+<li><strong>abbrev</strong>: Abbreviation by which this dam will be referred to in flow archives, e.g. BON for Bonneville.
+
+<li><strong>storage_basin</strong>: Defines storage behind headwater dams. Takes two parameters: the minimum and maximum storage capacity, in thousand acre feet (kaf), e.g. <code>storage_basin 0.0 5185.5</code>.
+
+<li><strong>latlon</strong>: Location of the dam in latitude and longitude.
+
+<li><strong>end</strong> (dam name): Marks the end of a dam specification.
+</ul>
+
+
+</body>
+</html>

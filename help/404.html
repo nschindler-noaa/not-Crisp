@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Time in COMPASS</title>
+</head>
+<body>
+<h2>Time in COMPASS</h2>
+<p>
+In COMPASS, fish move both spatially and temporally. A distribution of fish over time is typically represented by an array whose index is some unit of time. There are several different time scales and references used throughout the model.
+</p><ul>
+<li><code>DAYS_IN_SEASON</code> (366 days)
+<br>The number of days in the model season, beginning with the Julian day specified by <code>SEASON_START_DAY</code>.
+
+<li><code>STEPS_PER_DAY</code> (2 steps/day)
+<br>The number of system time steps per day. It is the resolution (12 hours) of time-based calculations for reach segments.
+
+<li><code>STEPS_IN_SEASON</code> (732 steps)
+<br>Total number of system time steps (<code>DAYS_IN_SEASON * STEPS_PER_DAY</code>)
+
+<li><code>DAYS_IN_RUN</code> (366 days)
+<br>The number of days for which a given release of fish remains in the system before becoming censored.
+
+<li><code>STEPS_IN_RUN</code> (732 steps)
+<br>The number of system steps during which a given release of fish is in the system. (<code>DAYS_IN_SEASON * STEPS_PER_DAY</code>)
+
+<li><code>DAM_TIME_SLC</code> (4 steps/day)
+<br>The number of dam time slices per day. It is the resolution (6 hours) of time-based calculations for dam segments. 
+
+<li><code>SLICES_IN_STEP</code> (2 steps)
+<br>This defines the number of dam time slices in a system time step.
+<br><code>(DAM_TIME_SLC / STEPS_PER_DAY</code>)
+
+<li><code>SEASON_START_DAY (0)</code>
+<br>This defines the Julian day of the season start (December 31st).
+</ul>
+
+
+</body>
+</html>

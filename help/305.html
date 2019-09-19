@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Passage Algorithms</title>
+</head>
+<body>
+<h2>Passage Algorithms</h2>
+<p>
+COMPASS calculates arrival of all fish on each day to each river segment (a section of river between confluences, dams, or headwaters) before calculating passage of fish to the next downstream segment. With this set of arrival information, it is possible to assign rules for fish transportation based on a percentage of the total run that will arrive at a dam. Thus, COMPASS moves fish downstream a segment at a time, adding smolts coming from tributaries or hatcheries on a daily basis. The number of fish leaving a river segment on any given day depends on: 
+</p><ul>
+<li>the number arriving on the same and previous days,
+
+<li>water flow rate in kcfs (1,000 cubic feet per second), and
+
+<li>mortality factors related to predation and gas bubble disease.
+</ul>
+<p>
+Dam operations control important variables of COMPASS. The three major variables are daily total flows, spills, and fish transportation.
+</p><p>
+Dam passage survival depends on the pathway fish take through a dam. At all dams, fish arriving at the forebay can pass over the spillway or through the powerhouse. The fraction of fish entering the spillway depends on:
+</p>
+<ul>
+<li>percentage of total flow spilled,
+
+<li>spill efficiency at the dam, and
+
+<li>timing of the spill period.
+</ul>
+<p>
+Fish entering the powerhouse can pass through the turbines or be guided by traveling screens. The propensity of a population to be guided is represented by a fish guidance efficiency (fge) which can be set constant or varied over a season for each project and population. (See <a href="71.html">FGE</a> and <a href="25.html">FGE Equation</a> sections for more details.) Mortality depends on the pathway chosen which accrues for spillway passage, collection, and turbine passage. Dam activities are calculated on a six hour basis and summed over a day to provide a daily fish input to the next reservoir.
+</p><p>
+Bypassed fish at specified dams may be transported in barges or trucks to any point in the river downstream of the collection site. Bypassed fish not transported are released into the tailrace. COMPASS removes transported fish at a dam, computes a mortality, and releases fish at the transportation site at a later time as determined by a transportation velocity. Whether collected fish are transported depends on rules developed to simulate actual transportation decisions. Transportation factors are set with the <a href="73.html">Transport Tool</a> and include:
+</p>
+<ul>
+<li>numbers of fish collected,
+
+<li>a fraction of the total run of a species passing a project,
+
+<li>fish arrival on a given Julian Day,
+
+<li>transport onset set by number of fish or Julian Day,
+
+<li>transport termination set by number of fish passing within a specified number of days or by Julian Day, and
+
+<li>separator operation determined by flow and fraction of run passing a project.
+</ul>
+
+
+</body>
+</html>

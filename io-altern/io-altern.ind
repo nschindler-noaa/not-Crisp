@@ -1,0 +1,30 @@
+# Monte Carlo Index file generated automatically by COMPASS
+# DO NOT EDIT; this file will be overwritten without warning
+ alternative io-altern
+ years 1
+ number_of_releases 1
+  release Lower_Granite_Forebay+Chinook_1+~85~
+ number_of_segments 22
+  segment Estuary
+  segment Jones_Beach
+  segment Columbia_Gorge
+  segment Bonneville_Tailrace
+  segment Bonneville_Dam
+  segment Bonneville_Pool
+  segment The_Dalles_Dam
+  segment The_Dalles_Pool
+  segment Deschutes_Confluence
+  segment John_Day_Dam
+  segment John_Day_Pool
+  segment McNary_Dam
+  segment McNary_Pool
+  segment Lower_Snake_River
+  segment Ice_Harbor_Dam
+  segment Ice_Harbor_Pool
+  segment Lower_Monumental_Dam
+  segment Lower_Monumental_Pool
+  segment Little_Goose_Dam
+  segment Little_Goose_Pool
+  segment Lower_Granite_Dam
+  segment Lower_Granite_Pool
+end

@@ -1,0 +1,27 @@
+#============================================================================#
+# COMPASS Post-Bonneville File                       COMPASS v0.33
+#
+#Written by user jfaulkner (James Faulkner - FE) on Wed May  7 13:54:16 2008
+#	from host unknown host.
+#============================================================================#
+version 9
+post_bonneville_hypothesis sar_vs_date
+
+species Chinook_1
+	inriver_latent_mort 0.000000
+	transport_latent_mort 0.000000
+	differential_return 1.000000
+	inriver_latent_mort_eqn	58
+	end inriver_latent_mort_eqn ( )
+
+end species (Chinook_1)
+
+species Steelhead
+	inriver_latent_mort 0.000000
+	transport_latent_mort 0.000000
+	differential_return 1.000000
+	inriver_latent_mort_eqn	58
+	end inriver_latent_mort_eqn ( )
+
+end species (Steelhead)
+

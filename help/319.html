@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>River Description File: <code>columbia.desc</title>
+</head>
+<body>
+<h2>River Description File: <code>columbia.desc</code></h2>
+<p>
+The <strong>River Description File</strong> (<code>columbia.desc</code>) contains all the information necessary to define the physical river system from the ocean to the various headwaters. This includes latitudes and longitudes of all possible release sites, dams, and river segments as well as many of the physical parameters of these features. All menus and input and output tools automatically configure from the information in this file. See the Technical Details section on the <a href="392.html">River Description File Structure</a> for details on file structure, rules of construction, and parameter definitions. The <a href="4.html">Parameter Glossary</a> contains definitions of the parameters and tokens found in this file.
+</p><p>
+The <code>columbia.desc</code> file is an ASCII file that you can edit and contains the following information:
+</p><ul>
+<li>names of species 
+
+<li>names and locations of release sites on the river
+
+<li>names of dams, positions on the river and basic dimensions
+
+<li>names of river segments, latitude, longitude, widths and depths.
+</ul>
+<p>
+The default <code>columbia.desc</code> file contains an abbreviated description of the Columbia Basin river system with about thirty fish release points and major dams. Some rivers in the basin are not represented in this map (for example, Imnaha River or Grande Ronde River).
+</p><p>
+Additional <strong>River Description Files</strong> are also available in the COMPASS distribution. They have been modified to reflect changes in the river that could occur under certain proposed management actions. The file <code>columbia_snakedraw.desc</code> does not have any of the Snake River dams in it. This simulates a Snake River drawdown in order to make the Snake River free-flowing. It has four dams removed that are in the default <code>columbia.desc</code> file: Lower Granite, Little Goose, Lower Monumental, and Ice Harbor dams. The file <code>columbia_drawdown.desc</code> is similar to <code>columbia_snakedraw.desc</code>. In addition to the removal of the four Snake River dams, it also has the John Day dam removed. This represents the most drawdown being considered. Five dams are removed that are in the default <code>columbia.desc</code> file. A <strong>River Description File</strong> can only be read when COMPASS is initially started. In order to use one of the alternative files, you must start COMPASS from a command prompt with the <code>-r</code> flag. See the <a href="316.html">Starting from the Command Prompt</a> section for more information.
+</p><p>
+<img src="rivermap.jpg"><br>
+Columbia River map showing potential release sites, dams, and rivers
+</p>
+
+
+</body>
+</html>

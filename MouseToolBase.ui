@@ -1,0 +1,244 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Mouse_Tool_Base</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>Mouse_Tool_Base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>661</width>
+            <height>244</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>0</hsizetype>
+            <vsizetype>0</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>0</width>
+            <height>0</height>
+        </size>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>750</width>
+            <height>270</height>
+        </size>
+    </property>
+    <property name="baseSize">
+        <size>
+            <width>0</width>
+            <height>0</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>Mouse Tool</string>
+    </property>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout16</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>10</y>
+                <width>650</width>
+                <height>180</height>
+            </rect>
+        </property>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="spacing">
+                <number>15</number>
+            </property>
+            <widget class="QLabel" row="4" column="0">
+                <property name="name">
+                    <cstring>textLabel7</cstring>
+                </property>
+                <property name="text">
+                    <string>On Headwater</string>
+                </property>
+                <property name="alignment">
+                    <set>AlignVCenter|AlignRight</set>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="1" column="1">
+                <property name="name">
+                    <cstring>comboBox1_0</cstring>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="4" column="3">
+                <property name="name">
+                    <cstring>comboBox4_3</cstring>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="2">
+                <property name="name">
+                    <cstring>textLabel2</cstring>
+                </property>
+                <property name="text">
+                    <string>Middle Button</string>
+                </property>
+                <property name="alignment">
+                    <set>AlignCenter</set>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="4" column="2">
+                <property name="name">
+                    <cstring>comboBox4_2</cstring>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="1">
+                <property name="name">
+                    <cstring>textLabel1</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>5</hsizetype>
+                        <vsizetype>1</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="text">
+                    <string>Left Buttton</string>
+                </property>
+                <property name="alignment">
+                    <set>AlignCenter</set>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="3" column="3">
+                <property name="name">
+                    <cstring>comboBox3_3</cstring>
+                </property>
+            </widget>
+            <widget class="QLabel" row="3" column="0">
+                <property name="name">
+                    <cstring>textLabel6</cstring>
+                </property>
+                <property name="text">
+                    <string>On Reach</string>
+                </property>
+                <property name="alignment">
+                    <set>AlignVCenter|AlignRight</set>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="2" column="1">
+                <property name="name">
+                    <cstring>comboBox2_0</cstring>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="3" column="1">
+                <property name="name">
+                    <cstring>comboBox3_0</cstring>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="1" column="2">
+                <property name="name">
+                    <cstring>comboBox1_2</cstring>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="1" column="3">
+                <property name="name">
+                    <cstring>comboBox1_3</cstring>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="4" column="1">
+                <property name="name">
+                    <cstring>comboBox4_0</cstring>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="2" column="3">
+                <property name="name">
+                    <cstring>comboBox2_3</cstring>
+                </property>
+            </widget>
+            <widget class="QLabel" row="2" column="0">
+                <property name="name">
+                    <cstring>textLabel5</cstring>
+                </property>
+                <property name="text">
+                    <string>On Release</string>
+                </property>
+                <property name="alignment">
+                    <set>AlignVCenter|AlignRight</set>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="3">
+                <property name="name">
+                    <cstring>textLabel3</cstring>
+                </property>
+                <property name="text">
+                    <string>Right Button</string>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignCenter</set>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="3" column="2">
+                <property name="name">
+                    <cstring>comboBox3_2</cstring>
+                </property>
+            </widget>
+            <widget class="QComboBox" row="2" column="2">
+                <property name="name">
+                    <cstring>comboBox2_2</cstring>
+                </property>
+            </widget>
+            <widget class="QLabel" row="1" column="0">
+                <property name="name">
+                    <cstring>textLabel4</cstring>
+                </property>
+                <property name="text">
+                    <string>On Dam</string>
+                </property>
+                <property name="alignment">
+                    <set>AlignVCenter|AlignRight</set>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>580</x>
+                <y>200</y>
+                <width>71</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Help</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>470</x>
+                <y>200</y>
+                <width>91</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Done</string>
+        </property>
+    </widget>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

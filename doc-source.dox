@@ -1,0 +1,136 @@
+/**
+\page source Source Control
+The COMPASS development effort uses CVS to keep track of revisions in the source tree. The CVS repository is located on gandhi in the /var/lib/cvs directory. When using bash the appropriate settings might look like the following:
+
+\code
+export CVSROOT=:ext:USER@gandhi.cbr.washington.edu:/var/lib/cvs
+export CVS_RSH=ssh
+\endcode
+
+Putting these into the ~/.bashrc file should make CVS use transparent (i.e. you don't need to always use the "-d" flag).
+
+Since COMPASS was originally based off of CRiSP and did not have a name initially, the source code is in the repository under the module (directory) "crisp" instead of something more obvious like "compass".
+
+The main development branch is "NOT_CRISP" since initially it was thought that CRiSP development would continue in parallel. Releases of COMPASS are tagged with names such as "COMPASS_0_27" for COMPASS version 0.27 (see \ref releasing). Here is an example of checking out the latest COMPASS source code:
+\code
+cvs co -r NOT_CRISP crisp
+\endcode
+
+Remember to update the "Changelog" file with any changes that have been made. The format that I have been using looks like the following:
+\code
+5/17: documentation.h
+Wrote documentation for source control
+Fixed a few little bugs
+\endcode
+
+Finally, always remember to add files to CVS that are considered part of the source code (using "cvs add"). Note that when adding files to CVS, also make sure that they are added to the appropriate build files (see \ref build_add_files).
+
+Help on CVS commands can be seen with:
+\code
+cvs --help-commands
+\endcode
+
+\section branch Using branches for development
+It is very useful to perform large changes on a branch of development because it is possible that you will need to apply bug fixes to the last release (and make a new release) before the major changes are completed. CVS supports the notion of branches, but it can easily be misused and so the following conventions are necessary.
+
+By convention, when a branch is made it is given a name like "NOT_CRISP_NEW_FEATURE" where the "NEW_FEATURE" part is the name of the feature (e.g. "PBN_HYPOTHESES" for post-Bonneville hypothesis support). Note that the -b flag is for making a branch rather than just a normal tag.
+\code
+cvs tag -b NOT_CRISP_PBN_HYPOTHESES	# Create the branch
+cvs up -r NOT_CRISP_PBN_HYPOTHESES	# Switch to this branch
+
+# To switch back to the main branch:
+cvs up -dPr NOT_CRISP
+\endcode
+
+Once the development on a branch is completed, it is necessary to tag everything before merging the changes back to the main branch. The convention that I use is something like "NOT_CRISP_BRANCH_MERGE" since this is easy to remember. Once the changes have been merged, you must tag the main branch to mark that changes have been merged (I use a tag with the past tense "merged" on the end as in "NOT_CRISP_PBN_HYPOTHESES_MERGED").
+\code
+cvs tag NOT_CRISP_PBN_HYPOTHESES_MERGE	# Mark as ready to merge
+cvs up -dPr NOT_CRISP	# Switch to main development branch
+cvs up -j NOT_CRISP_PBN_HYPOTHESES_MERGE	# Merge in the changes
+cvs ci -m'Merged in post-Bonneville branch'	# Commit the changes
+cvs tag NOT_CRISP_PBN_HYPOTHESES_MERGED		# Mark that changes were merged
+\endcode
+
+The reason for using all these tags is that if the branch needs to be removed or development continues on the branch these tags provide the ability to do so.
+\code
+cvs tag NOT_CRISP_PBN_HYPOTHESES_MERGE2	# Mark as ready to merge again
+cvs up -dPr NOT_CRISP	# Switch to main development branch
+cvs up -j NOT_CRISP_PBN_HYPOTHESES_MERGE2 -j NOT_CRISP_PBN_HYPOTHESES_MERGE	# Merge in the new changes
+cvs ci -m'Merged in post-Bonneville branch'	# Commit the new changes
+cvs tag NOT_CRISP_PBN_HYPOTHESES_MERGED2		# Mark that new changes were merged
+\endcode
+
+*/
+
+/**
+\page docs Documenting the Code
+This page documents how this documentation is generated from the code (see \ref doxygen) and how to document code for future use (see \ref doc_code). There is also information on where to find additional documentation that was created before the in-code documentation was set up (see \ref doc_extra).
+
+\section doxygen Generating Documentation with Doxygen
+The Doxygen documentation tool is used to generate documentation from the actual COMPASS source code. Actually adding documentation in the code is described in \ref doc_code and not here. Doxygen is free software under the GNU GPL license and can be downloaded from a number of sources (a web search for Doxygen should work fine for finding the home page).
+
+The Doxygen tool is mainly command line based but it also has a simple GUI for running the application (which coincidentally uses Trolltech's Qt library like COMPASS). The configuration information which is used to determine what files to parse and where to place the documentation is stored in a file called "Doxyfile" which is part of the COMPASS source. The configuration file uses relative paths so the actual application should be run from the top level directory of the COMPASS source code (the Doxygen GUI has a clear option for specifying the working directory).
+
+Here is an example of checking out the COMPASS source code and generating the HTML documentation from the code:
+\code
+# Check out the source code
+cvs -d :ext:gandhi.cbr.washington.edu:/var/lib/cvs export -r NOT_CRISP crisp
+cd crisp	# Enter the COMPASS source directory
+doxygen		# Run Doxygen
+ls docs/html	# Show the generated files
+\endcode
+
+Note that on Windows since you wouldn't use the command line you would probably checkout the source code using a Windows CVS client and then open Doxygen's GUI, load the Doxyfile, set the working directory, and then generate the documentation.
+
+\section doc_code Documenting the Code
+This section explains how to document the source code such that the documentation can be parsed using Doxygen to generate HTML documentation such as this.
+
+Although a lot of the COMPASS source code has documentation, sometimes it is located in unusual places (e.g. a separate Word docoument) or completely absent. To aid in these problems, Doxygen (see \ref doxygen) is now used to generate code documentation straight from the source code while hopefully providing enough power that outside documentation is less necessary. This helps to keep the documentation close to the code to make it harder to forget that changes and algorithms should be documented as soon as possible.
+
+Doxygen has helpful documentation which can be found on the Doxygen web site (and is usually installed along with Doxygen). The main points to keep in mind are the following:
+- Doxygen only parses comments that are in special documentation comment blocks. These look like Javadoc documentation blocks (i.e. "/ * *" without the spaces starts a documentation block and "* /" without the space ends the block).
+- Doxygen only puts documented functions/structures/fields/classes into the documentation rather than just everything. This option can be changed if it would be helpful and is described in the Doxygen documentation.
+- Doxygen will only add documentation for members defined in files that have a comment block with a "\file" directive in them.
+- To be clear, EVERY FILE WITH ANY DOCUMENTATION SHOULD HAVE A "\file" DIRECTIVE IN IT.
+- Documentation can be placed before a member or after the member on the same line.
+- The \\brief command can be used to specify the brief description for a member although it is set to automatically assume the first sentence is the brief description (as in Java).
+- Directives suchs as \\return and \\param work just as in Javadocs.
+- Pages and sections can be created using "\page id The Title" or "\section id A Section" where "id" is a textual name.
+- Pages and sections can be references elsewhere using "\ref id" where "id" is that textual name described above.
+- Formulas can be included using LaTeX and the \\f$ ... \\f$ directives (where the ellipsis represents the formula to include). There is an example of this in qIODamPassageCell.
+
+Here is an example (note the use of \\section and \\ref):
+\verbatim
+/** \file
+ * \brief This file is an example of using comments.
+ *
+ * Comment blocks in Doxygen start with slash, star, star and end with star, slash. There are also examples of a few other features (one example is \ref example_section).
+ *
+ * \section example_section An Example Section
+ * This section is just shown as an example. Usually you would want more material if you were going to make a section.
+ */
+
+/** Get a number. This method returns a number. The number also happens to be 1.
+ * \param p A parameter that's not used.
+ * \return A number.
+ */
+int get_number(int p) {
+	/* This only has 1 star for the comment block so it is not parsed by Doxygen. */
+	return 1;
+}
+
+/** This is a structure example. */
+struct test {
+	int p1; /** Field 1. */
+	int p2; /** Field 2. */
+};
+\endverbatim
+
+When in doubt consult the Doxygen documentation or the actual documentation in the COMPASS source code.
+
+For the main pages of documentation, rather than include them in an odd place I put them in a series of "*.dox" files which are also parsed by Doxygen. Doxygen parses them like C code so you still have to put everything in comment blocks. For example this file is "doc-source.dox".
+
+\section doc_extra
+There are a bunch of Word documents describing various changes and what they are for in the COMPASS directory on my desktop (~jkrinke/Desktop) in Windows on VMware. They describe things like the new dam delay support well. In the future it would be a good idea to attempt to write that kind of documentation actually in the code (since even equations can be put in with Doxygen), but I never had enough time to make that conversion. These documents are also in ~jkrinke/compass-docs on gandhi.cbr.washington.edu.
+*/
+

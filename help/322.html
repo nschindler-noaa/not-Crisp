@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Control File</title>
+</head>
+<body>
+<h3>Control File</h3>
+<p>
+A <strong>Control File</strong> allows you to write out or read in a set of parameter data files. In this manner, subsets of model parameter data can be replaced while other elements are unchanged. Control files are designated by the extension <code>.ctrl</code>.
+</p><p>
+Control files contain a list of <a href="321.html">Model Parameter Data Files</a> which are identified in the lines below the Control File line (see file sample). You can save to disk all eight parameter data files with the same base name as the Control File by selecting <strong>Control Files (*.ctrl)</strong> for Save as type (Unix users will need to specify the file name extension) from <strong>File<img src="subm.jpg">Save As</strong>.
+</p><p>
+When reading control files into COMPASS, the parameter data files specified in a Control File can have different base names. By editing the Control File, you can mix parameter data files from different alternatives and sessions. You can use any text editor to edit a Control File. Each specific combination of parameter data files listed in a Control File can be read into COMPASS by selecting the control file you want from <strong>File<img src="subm.jpg">Open</strong>.
+</p><p>
+Sample <strong>Control File</strong> with a list parameter data files from different alternatives.
+</p><pre>#===================================================#
+# CRiSP Control File 	 	    CRiSP v1.6.0 (Solaris 2.x)
+#
+#Written on Fri Jun 25 11:53:20 1999
+
+#===================================================#
+version 6
+include session.beh
+include session1.res
+include session3.spill
+include session.flow
+include session2.dam
+include session.rls
+include session4.river
+include session.cnf
+</pre>
+
+
+</body>
+</html>

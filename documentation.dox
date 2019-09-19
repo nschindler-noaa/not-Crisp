@@ -1,0 +1,277 @@
+/**
+\mainpage
+This is the code documentation for COMPASS. This documentation is generated automatically from the source code (using Doxygen, see \ref docs) and should not be edited by hand.
+
+The following topics explain the details of maintaining COMPASS:
+ - \ref overview
+   - \ref batch
+     - \ref scenario
+     - \ref monte
+       - \ref monte_spill
+       - \ref flow_archive
+     - \ref realtime
+     - \ref crisp_calib_note
+   - \ref gui
+     - \ref io_tool
+     - \ref crisp_gui
+   - \ref io
+     - \ref river_description_file
+     - \ref input_files
+     - \ref output_files
+   - \ref help
+     - \ref build_help
+ - \ref source
+   - \ref branch
+ - \ref build
+   - \ref build_unix
+   - \ref build_windows
+   - \ref build_add_files
+   - \ref build_qt
+   - \ref build_help
+   - \ref releasing
+ - \ref docs
+   - \ref doxygen
+   - \ref doc_code
+   - \ref doc_extra
+ - \ref test
+   - \ref bugs
+   - \ref debug
+     - \ref debug_gdb
+     - \ref debug_valgrind
+   - \ref test_cases
+ - \ref windows
+   - \ref windows_vmware
+ - \ref linux
+   - \ref linux_elmer
+ - \ref sunos
+
+*/
+
+/**
+\page overview Overview of COMPASS
+COMPASS is a model that was based off of the older CRiSP (Columbia River Salmon Passage Model) and is being updated for more widespread use. The model estimates survival of fish of different species (currently Chinook 0, Chinook 1, and Steelhead) through the dams on the Columbia river (as well as some tributaries).
+
+COMPASS runs and is tested on the following platforms:
+- Windows XP (perhaps others, but I haven't tested them) (see \ref windows)
+- Linux (specifically x86-64 Red Hat Linux) (see \ref linux)
+- SunOS 5.7 (SPARC) (see \ref sunos)
+
+The model consists of two main pieces:
+- The command (or batch) version which is written in C (see \ref batch)
+- The GUI interface which is written in C++ using the Qt GUI toolkit (see \ref gui and \ref help)
+
+Data is read into the model and output from the model as described in the \ref io section.
+
+The main logical components of a scenario in the model are listed here:
+- Run: parameters relating to the entire execution of the model (e.g. the list of releases).
+- River segments: sections of the river that may be of several different types. The segments form a tree with the Columbia river mouth (river_mouth in the code) being the root of the tree.
+  - Headwaters: waters that feed the parts of the river that are actually used in the model. These define parameters like water temperatures, flows, turbidity, etc.
+  - Reaches: stretches of the river between headwaters, dams, and the river mouth. Upstream from a dam this is called a pool or reservoir. Directly downstream of a dam this is called a tailrace.
+  - Dams: segments corresponding to dams on the river. These define passage routes and mortalities of fish through those routes.
+  - Powerhouses: for dams like Bonneville that have multiple powerhouses (that are mostly independent), powerhouse segments represent those other parts of the dam. Note that these segments are not really part of the river tree but are instead linked to dam segments on the river.
+- Species: stores parameters for an entire species of fish.
+- Stocks: stores parameters for fish that will be released at a specific place (this is to model the fact that fish coming from one area may have different characteristics than fish from another).
+- Releases: where fish are put into the model (this is not necessarily where the fish entered the river, just where they start being modeled).
+- Transport operations: at some dams, fish are collected in the bypass and then put on a barge and transported down river so as to avoid the need to pass through dams.
+
+*/
+
+/**
+\page batch Command line (batch) version
+The command line version of COMPASS reads in input files, runs the model (perhaps multiple times) and then outputs results (in multiple different formats).
+
+The main modes that the command line version can run in are:
+- Scenario mode: one input scenario is read in (possibly using multiple input files) and results are written to summary.dat (see \ref scenario)
+- Monte Carlo mode: a list of alternatives is read from .compass-alts (a hidden file on UNIX) and then each alternative may run the model multiples times producing output in alternative/alternative.out (see \ref monte)
+- Realtime mode: this is used less often and has narrowly-defined requirements about input and output (see \ref realtime)
+
+\section crisp_calib_note The crisp_calib program
+The crisp_calib program (which is implemented in crisp_calib.c and crisp_calib.h and uses the crisp_extract.c and crisp_extract.h files) is used while calibrating the model. I don't really know what the application does and I have never really touched the code, but if you're wondering what those files are now you have a vague idea. See \ref crisp_calib for more information.
+*/
+
+/**
+\page io Input/output
+\section river_description_file River description file
+The first input file that is always read in is the river description file. It contains information such as the geographical coordinates of parts of the river and the name/number of stocks and reach classes. This file is generally never modified (especially by users). After it is read in, the tree of river segments representing the river is created and the model is ready to load input files.
+
+\section input_files Input files
+Although there are different input and output formats for \ref monte and \ref realtime the main input and output formats are described here since they are the most often used and the most important to understand.
+
+Input files consist of tokens which are read in using a parser (in parse.c). Input files may be retrospective input files (which store all the data for a scenario in a single file) or component input files (which store the data in several separate files). It is important to note that the parser treats all of these files the same when they are read in so there is nothing stopping a user from putting species descriptions in a river environment file.
+
+Input files can be written out by the model (for example to confirm settings were read in correctly) and the code for this is in the dataio.c file. If the user attempts to write out a control file (file.ctrl) then a stub file is created along with one of each of the component input files which are included from the control file (this is logically just an entire scenario written across several different files).
+
+Currently the component input files are split up as follows (the assumed file extensions are parenthesized):
+- Calibration file (clb): parameters related to stocks and releases. These parameters come from calibration routines and are not changed by most users.
+- River environment (riv): parameters about the river conditions and environment (such as temperature, turbidity, headwaters).
+- Dam operations (ops): dam parameters as well as operations parameters at dams (such as spill schedules).
+- Post-Bonneville (pbn): parameters related to the modeling of fish below the last dam on the river, Bonneville.
+- Extra (etc): parameters that don't fit elsewhere such as mortality class.
+- Control files (ctrl): described above, when a .ctrl file is saved, it saves one of each of the component types and the control file simply points to the other input files.
+
+\section output_files Output files
+Output files are written out when the model is run. The code for this is in the summary.c file. These files summarize the results of a run and using output_settings tokens (see \ref output_settings) in river segments different pieces of data can be selected.
+*/
+
+/**
+\page scenario Scenario mode
+Scenario mode is the most straightforward mode to understand and it is probably the simplest. Scenario mode reads in a scenario from input files and runs the model. The output is written into summary.dat. As with all modes, the user has the option to have the model write out an input file that corresponds to the data that was read in by the model (for more information see \ref io).
+
+The model takes each release of fish and moves it downstream while calculating the outputs for each model time step.
+*/
+
+/**
+\page monte Monte Carlo mode
+At a high level, Monte Carlo mode runs the model multiple times to see how variance in parameters affects the output.
+
+Monte Carlo mode starts by reading in the list of alternatives (which is in a file called ".compass-alts"). A Monte Carlo alternative is just the word for a specific configuration of how to run Monte Carlo mode and can be thought of as analogous to an input file in scenario mode (although part of a Monte Carlo alternative is an input file). For each alternative it expects a directory to exist (e.g. altern1, altern2). In the alternative directory it reads in a .alt file which contains a few parameters (these are read in from the parse_alt.c file).
+
+The alternative description file can have some interesting settings that aren't possible in a scenario file. An example of this is the ability to read from a flow archive file instead of from the flow data in a scenario file (see \ref flow_archive).
+
+Monte Carlo runs can also be run with different river environments inputs ("yearly input files") which are based on specific years. Then for each year, it can run a specific number of "games" which is just another term for complete model executions/simulations. These options allow the user to see how the changes affect a release across different years (since river conditions vary from year to year).
+
+Monte Carlo mode also makes use of the ability to lock output settings. What this means is that output settings (see \ref output_settings) are read in and then not allowed to be changed by the input files so that each input file produces the same selection of outputs regardless of the output settings contained in the input file.
+
+Finally, Monte Carlo mode has an option for disabling variance suppression. Variance suppression makes it so that each run of the model on an input file should produce exactly the same output. In Monte Carlo mode, obviously, one usually does not want variance to be suppressed so disabling variance suppression essentially ignores the variance suppression specified in the input file (in a similar manner to the lock output settings described above).
+
+\section monte_spill Monte Carlo flow and spill
+Flows may be allocated differently in Monte Carlo mode than in scenario mode. For one, flows may come from a flow archive file (which may contain spill information as well).
+
+Flows are calculated using a backward propagation algorithm up to the headwaters. It is important to be aware that flow may be handled in more than one way (i.e. more than just the scenario mode way).
+
+Spills may also be read in differently for Monte Carlo mode and this can be observed in the fact that for Monte Carlo mode monte_spill.c is used as opposed to the regular spill.c for scenario mode.
+
+\section flow_archive Flow archive files
+Flow archive files are specially formatted files that contain flow information as well as spill data at dams. It is my understanding that these files are generated by other groups so the normal COMPASS input formatting is not used. Most of this code is in parse_archive.c and monte_spill.c for reference.
+
+Note that it is now possible to read in spill information from a flow archive file and then using the -o option write out a normal input file that contains the spill schedules from the flow archive file in normal COMPASS format. This hasn't been used much but I have found it to be very helpful since flow archive files can only be used in Monte Carlo mode whereas other input files can be used universally.
+*/
+
+/**
+\page realtime Realtime mode
+Realtime mode has a very specific use that I do not know a lot about. The bulk of the code is locate in the realtime.c file. It does not execute in real time or anything like that.
+
+Realtime mode takes many releases of a single type and collapses the resulting data from the releases into statistics like a single release. The output format is different from summary.c and is very rigidly defined.
+*/
+
+/**
+\page gui COMPASS GUI mode
+The COMPASS GUI consists of two main pieces:
+- The new I/O tool interface which looks like a spreadsheet (see \ref io_tool)
+- The old CRiSP interface (see \ref crisp_gui)
+
+Both the new and the old GUI support an interface that allows changes to be made but they are not immediately applied. In the GUI this is visualized by having red dots appear in the corners of windows (or highlighting input cells with red) before changes are explicitly applied by the user. This is done using IDCs which are described in more detail in \ref idc.
+
+\section io_tool I/O tool interface
+The I/O tool interface is the new interface. I believe it is intended to be the main interface for future use since it is smaller, simpler, and more Excel-like. The I/O tool is built on top of pieces of the old interface but is mostly new and separate. The code is mostly in the classes whose names start with "qIO" (as opposed to just a lowercase "q").
+
+The main pieces of the old GUI it relies upon are:
+- The log window (see \ref log)
+- Interface data controllers (see \ref idc)
+- The integrated help system (see \ref help)
+
+The I/O tool consists of the following logical pieces:
+- The I/O tool which is the top-level window and container (qIOTool in qIOTool.h)
+- I/O sheets which are inside the I/O tool (qIOSheet in qIOSheet.h as well as qIOSIMPASSheet, qIOPostBonnevilleSheet)
+- I/O cells that perform calculations and are displayed to the user (all in qIOCell.h)
+- Top-level "manager" classes such as qScenarioManager, qMonteCarloManager, qHelpManager, and qFileManager
+
+The I/O tool changes inputs using the IDCs (see \ref idc) and outputs are calcualted from rls_stats structures in river segments.
+
+Both scenario and Monte Carlo mode are supported. The I/O tool automatically creates an I/O alternative ("io-altern") which sets up the number of games to run and then executes them.
+
+\section crisp_gui Old CRiSP GUI
+The CRiSP GUI was originally written in C using the Rogue Wave toolkit. That toolkit was discontinued and the GUI was ported to zApp. Later, that toolkit was discontinued and the GUI was ported to C++ and the Qt 3.x toolkit (see \ref build_qt). The code has not been updated for Qt 4.x and there are no plans to do so at the moment. Understandably, the code can be a little confusing in places.
+
+The old GUI contains a helpful map interface to look at the river. It is not clear how much maintainance should be done on the old GUI. It is used by some people, but it's not the main goal of development at the moment. I personally only update it when it makes sense to me to do so or when I am told to update parts of it.
+
+The old GUI makes up the bulk of the C++ code in the source tree.
+
+\section Documentation of the GUI
+I never had enough time to document the GUI in depth, but hopefully a lot of it is straight-forward. The I/O cells for the I/O tool are mostly implemented using qIODamPassage cells in qIOCell.h.
+
+\section idc Interface Data Controllers
+The interface data controller interface was designed before I got here and it seems very complicated and convoluted. Basically what it does is it allows a buffer of modified data to be stored in memory before actually being applied to the model. This is used to implement the apply/reset buttons. Unfortunately, for single pieces of data IDCs are too heavy and don't even work, so I created a few simpler versions in qIdcData.cpp and qIdcData.h.
+*/
+
+/**
+\page help Integrated Help System
+The COMPASS GUI contains a great deal of documentation from the old CRiSP interface (although it is currently disabled, though this may change in the near future). The help files are stored in the "help/" directory and are currently only considered to be the ".html", ".jpg", and ".toc" files in that folder. Note that help files should be placed in CVS for version control (but not anything in "help/output/").
+
+The help files are actually compiled into the main executable using static data in C (see \ref build_help). The help files are then read in using the qHelpMimeSourceFactory class in qHelpWindow.cpp (which in turn uses a Qt text area widget that acts as a browser). The table of contents is stored in an XML file called "help/crisp.toc" whose format should be self-explanatory.
+
+The details of all of this are probably not terribly important but things of note are that the "search" feature in the GUI help system actually only searches the table of contents and not keywords or actual contents. Better searching may be helpful in the future but since the help system is currently disabled anyway, this is not a high-priority task.
+
+\section build_help Building the Help System
+Since the help system is compiled directly into an executable, there needed to be a way to bridge the gap from a directory of help files to data that is stored inside the executable.
+
+To this end, the bin2c program (in the "bin2c_src" directory) was written. This program reads in a file and outputs a C source file (with a given variable name) and optionally a C header file.
+
+The help_index.sh script is a GNU BASH (Bourne shell) script that runs bin2c and creates the necessary header files for using the static data. Note that this means that the bin2c program must be compiled before help_index.sh can be run (this is really only an issue on the Windows platform since the Makefiles handle this on UNIX). The help_index.sh script can be run from Windows using the Cygwin UNIX emultation environment with BASH installed.
+
+All output is written to the "help/output/" directory so that folder can be safely deleted to clean out stale data.
+
+The main header file that is written out is called "help/output/help_include.h". Note that this file does not actually include all the data files (they are compiled separately) because the C compiler (specifically its parser) cannot handle the extremely large arrays that are created by the bin2c program.
+
+The consequence of this is that all the C files that fill in the data files must be compiled separately (this is handled in the Makefiles on UNIX platforms). On Windows, this means that the help files must be added to the "Source Files\help_compiled" folder in order to be compiled and then linked in.
+*/
+
+/**
+\page windows COMPASS on Windows
+The COMPASS GUI is mainly used on Windows whereas the other platforms are mainly for testing the GUI (but no one actually uses the GUI on them).
+
+The main issues when working with Windows seem to revolve around the fact that it's not based on UNIX so common UNIX assumptions are not necessarily valid.
+
+For example, standard input and output are not automatically opened in release mode on Windows. For Windows debug mode, a terminal is automatically opened which is not useful except to debug using printf() statements.
+
+Note that the Qt library is compiled in statically so the COMPASS GUI is not dependent on the Qt DLL being present on the machine. Also note that the version of Qt that is used is not free on Windows, so don't lose the copy of Qt that CBR has! Also read \ref build_windows.
+
+One final point is that the erf() and erfc() functions (defined in travel_table.c for Windows) are not implemented by default on Windows, but they are implemented by default on both Linux and Solaris (Linux and Solaris actually use the same implementation), so if there are slight calculation differences between Windows and the UNIX versions, this may be the likely culprit.
+
+\section windows_vmware Using Windows from VMware
+Most COMPASS development is done on a Linux machine (elmer.cbr.washington.edu) that runs Windows simultaneously using VMware's machine virtualization software.
+
+The actual system image (which resides in the Linux filesystem as regular files) was created with a trial version of VMware Workstation for Linux. The system can be started and run completely using the free VMware Player software, so I don't consider it necessary to purchase VMware Workstation (it was $150 last time I checked) unless additional systems are created (although it's important to keep in mind Microsoft's Windows licensing restrictions in this case--each virtual machine has to be licensed like a normal machine).
+
+The Windows system that runs inside VMware is pretty much just like a normal system--it can be accessed through the network (as pooh.cbr.washington.edu) and it's possible to use the normal SSH toolkit to send and receive files (in order to pass data between Windows and Linux if necessary). The Windows system also has its own licensed copies of Windows XP Professional and Microsoft Office (I believe Christine has all the information on these).
+
+All the files are currently in my home directory on elmer.cbr.washington.edu in "~jkrinke/vmware/Windows XP Professional Development/" and the file that is opened with VMware player is "Windows XP Professional Development.vmx".
+*/
+
+/**
+\page linux COMPASS on Linux
+A lot of development is done on Linux simply because the main development machine runs Linux natively and some of the command line tools are a little easier to use than anything I have found under Windows.
+
+When compiling for Linux, it is very important to look at the libraries that are linked with (using the "ldd" command) so that the executables are portable to other Linux users. Linux is very unlike Windows because on Windows executables just seem to work on any computer.
+
+Read more about compiling in \ref build_unix.
+
+\section linux_elmer Running/Maintaining Linux on elmer
+The Linux machine elmer.cbr.washington.edu was added while I worked here and some documentation on how it all works is probably in order. The machine runs Red Hat Linux and is mostly straightforward to use. Logging in and out and shutting down/bringing up the machine can all be done graphically. If the system locks up, ctrl-alt-del should cause it to restart unless it is completely locked up at which point the power button should do the trick.
+
+Red Hat sells an update service which I believe the free trial (that came with the machine) is going to run out soon. It is my understanding that essential updates (to fix security problems) are available for free and it is only software feature upgrades that would not be available if a paid subscription is not set up. I personally don't see a reason to set up the paid subscription (and I don't know how to set it up), but you might want to talk to the other people running Linux at NOAA and see what they're doing.
+
+The up2date utility checks for updates, but there is one very important thing to keep in mind: 6 of the updates are marked as ignored (they update very low-level software such as the kernel). The first time I attempt to do these updates, there was a problem and the system was rendered unusable and I had to use Dell's system restore which consequently lost all of the data on the computer.
+
+DO NOT UPGRADE IGNORED PACKAGES OR THE KERNEL WHEN DOING UPDATES.
+
+For information on running Windows in VMware on this machine, see \ref windows_vmware.
+
+Other problems include the following:
+- I was unable to get dual-monitor suport to work.
+- Sometimes when the computer is left idle and it goes into power-saving mode, it doesn't appear possible to wake the system up.
+- Adding extra software from the CDs that came with the system does not appear to work.
+  - The only thing that has worked for me is to use RPMs downloaded from the Internet or install software from source code.
+
+On the whole I would say that in the future it would make more sense to purchase Windows machines and then run Linux inside VMware (on Windows) instead of this setup. Windows seems to support the hardware better, Red Hat Linux is disappointing, and it's easy to run Linux in VMware since Linux distributions are free anyway.
+*/
+
+/**
+\page sunos COMPASS on Solaris
+The gandhi server runs SunOS (which I believe is a late enough version to be called Solaris) and so COMPASS needs to be used on Solaris very frequently.
+
+It's possible to compile and test the GUI on gandhi if necessary by using Makefile.solaris to compile "compass" and then running "vncserver" to start a VNC server and using a VNC client on Windows (or Applications -> Internet -> Remote Desktop Connection on Red Hat Linux) to then run "compass" in an X session. The VNC server can be closed with "vncserver -kill :1" (or whatever the number of the display is).
+
+For compiling information, see \ref build_unix.
+*/
+

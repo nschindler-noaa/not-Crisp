@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Yearly Input Data File: base.dat</title>
+</head>
+<body>
+<h2>Yearly Input Data File: <code>base.dat</code></h2>
+<p>
+The <strong>Yearly Input Data File</strong> (<code>base.dat</code>) contains all model parameter data for a single year run. If no other yearly input data file is specified when COMPASS is started, the model will initially read the file <code>base.dat</code>. The <a href="345.html">COMPASS Graphical User Interface</a> menus are used to create and modify the parameter data for a run or for storage in data files. The data can be saved as either a single file or as a group of parameter data files corresponding to predefined data groupings. These files can be read into the model individually or in a group prior to a run. See the <a href="325.html">Reading Data into COMPASS</a> section for further details. A file containing all model parameter data is designated <code>.dat</code> and is referred to as a yearly input data file.
+</p><p>
+Parameter Data File Name Extensions
+</p><ul>
+<li><code>dat</code>: all model parameter data
+
+<li><code>beh</code>: parameters related to fish travel time and mortality
+
+<li><code>res</code>: predator density in reservoirs
+
+<li><code>spill</code>: spill schedules at all dams
+
+<li><code>flow</code>: headwater flows, losses, elevations, storage reservoirs
+
+<li><code>dam</code>: all parameters related to dam operation
+
+<li><code>rls</code>: all parameters describing fish releases
+
+<li><code>river</code>: headwater temperature and river parameters
+
+<li><code>cnf</code>: runtime settings and output settings
+</ul>
+<p>
+The <a href="321.html">Model Parameter Data Files</a> section discusses the data and file name extensions in further detail. A yearly input data file containing all the data used in COMPASS may be over 1M in size, depending on the number of releases and tributaries defined in the river. Typical data files are about 200K in size. See Technical Details section on the <a href="396.html">Yearly Input Data File Structure</a> for details on file structure, rules of construction, and parameter definitions. The <a href="4.html">Parameter Glossary</a> contains definitions of the parameters and tokens found in this file.
+</p>
+
+</body>
+</html>

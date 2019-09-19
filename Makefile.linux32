@@ -1,0 +1,7 @@
+EXTRA_CFLAGS = -m32
+EXTRA_CXXFLAGS = -m32
+EXTRA_LDFLAGS = -m32
+QTDIR=/usr/lib/qt-3.3
+
+include Makefile.common
+

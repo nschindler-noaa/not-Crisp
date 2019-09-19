@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Monte Data Report: Monte Report Tool</title>
+</head>
+<body>
+<h3>Monte Data Report: Monte Report Tool</h3>
+<p>
+Selecting <a href="390.html"><strong>Analysis</strong></a><strong><img src="subm.jpg">Monte Data Report</strong> opens the <strong>Monte Report Tool</strong> for generating summary reports from Monte Carlo runs that are tailored to individual needs.
+</p><p>
+<b>Monte Report Tool features</b>
+</p><ul>
+<li><strong>Category</strong>: Unavailable.
+
+<li><strong>Line Length</strong>: Specifies the line length of data written to the <a href="83.html">Output Window</a>.
+
+<li><strong>View</strong>: Opens the Output Window, a text window of the parameters selected in the currently highlighted category.
+
+<li><strong>View All</strong>: Unavailable.
+
+<li><strong>Clear</strong>: Clears highlighted selections in all four columns.
+
+<li><strong>Clear All</strong>: Unavailable.
+
+<li><strong>Done</strong>: Closes <strong>Monte Report Tool.</strong>
+
+<li><strong>Help</strong>: Displays context-sensitive help information.
+
+<li><strong>Altern Years</strong>: Select the alternative years of interest from the list of alternatives available for analysis in the COMPASS home directory.
+
+<li><strong>Releases</strong>: Select the releases of interest from the list of releases that are available for analysis.
+
+<li><strong>Segments</strong>: select the segments of interest from the list of sites that are available for analysis. The list is based on sites where data was stored in the Monte Carlo runs. This column lists ALL sites present in ANY of the alternatives; some alternatives may not have the same sites as others, and the report tool will skip lines or leave output values blank for those cases.
+
+<li><strong>Parameters</strong>: Select the parameters of interest from the list of parameters that are available for analysis. Similar to <strong>Segments</strong>, this list includes all parameters present in any of the alternatives, so some parameters may not be available for some alternatives.
+</ul>
+<p>
+The amount of time required to generate output from this tool depends on the number of alternatives and the number of games in each alternative. COMPASS keeps in memory the selections made in the <strong>Monte Report Tool</strong> for the duration of the session or until selections are cleared by clicking <strong>Clear</strong>. This is to facilitate generating reports of the same parameters for multiple Monte Carlo runs. During a session, COMPASS attempts to preserve sensible selections if new model runs are performed, alternatives are deleted, or the working directory is changed.
+</p><p>
+<img src="montert.jpg"><br>
+Monte Report Tool for generating model output reports
+</p>
+<ul>
+
+<li>mean_passage, passage_std_dev, passage_coeff_variance, passage_skew, passage_kurtosis: Statistics for the survival of the release for the passage point.
+
+<li>mean_travel_time, travel_time_std_dev, travel_time_coeff_variance, travel_time_skew, travel_time_kurt: Statistics for the travel time of the release from the point of release to the passage point.
+
+<li>average_flow: An average water flow at the indicator dam during passage of the various stocks if a <strong>Flow Ind.</strong> dam was selected in <a href="372.html"><strong>Run</strong></a><strong><img src="subm.jpg"><a href="63.html">Output Settings</a></strong>. The average is taken over the period of time in which the fish traveled from release to the passage point. Only one dam can be selected as the flow indicator.
+
+<li>bypass_passage: Percent of the release that survived that passed the dam through the bypass.
+
+<li>turbine_passage: Percent of the release that survived that passed the dam through the turbine.
+
+<li>spill_passage: Percent of the release that survived that passed the dam through the spillway.
+
+<li>transport_passage: Percent of the release that survived transport collection at the dam.
+
+<li>premort_transport_total: Number of fish in the release which were captured for transport.
+
+<li>postmort_transport_total: Number of fish in the release which survived transport to the release point.
+
+<li>fpe: Fish passage efficiency.
+
+<li>bypass_input: Percent of the release that entered the bypass route.
+
+<li>turbine_input: Percent of the release that entered the turbines.
+
+<li>spill_input: Percent of the release that entered the spillway.
+
+<li>project_input: Number of fish entering the dam segment.
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Running in Batch Mode</title>
+</head>
+<body>
+<h2>Running in Batch Mode</h2>
+<p>
+The CRiSP Passage model can be executed in batch mode for either Monte Carlo or Scenario runs. See the <a href="316.html">Starting from the Command Prompt</a> section for command options. The following are special instructions on running in batch mode for both Unix and Windows 95/NT operating systems.
+</p>
+<h4>Unix</h4>
+<p>
+On the Unix system, batch mode runs can be executed from the command prompt using any of the options detailed in the <a href="316.html">Starting from the Command Prompt</a> section. There are a few special considerations for running COMPASS in batch mode on Unix systems. The COMPASS Unix distribution includes the program <code>crisp1bat</code>, which is the simulation engine of COMPASS without the graphical user interface. Using this program, you can run COMPASS in batch mode without having to set the DISPLAY environment variable. This makes it possible to run the COMPASS model in batch mode from a dial-up connection or from a detached process, i.e. left running after logging off the workstation. The <code>crisp1bat</code> program uses the same command prompt arguments as <code>crisp1</code>, except that the <code>-b</code> is assumed.
+</p><p>
+<b>Example commands</b>
+</p><pre>	crisp1bat -o batch.ctrl
+crisp1bat -c batch.dat
+crisp1bat -u
+</pre>
+<h4>Windows 95/NT</h4>
+<p>
+There are a few special considerations for running COMPASS in batch (non-graphics) mode on Windows 95/NT systems. These derive from the architecture of Windows 95 and Windows NT, which make sharp distinctions between MS-DOS-based programs and Windows-based programs.
+</p><p>
+If you are running COMPASS from the MS-DOS prompt, you have two choices: 1) redirect the program's standard and error output streams to text files or 2) have standard and error output streams write to the MS-DOS shell.
+</p><p>
+<b>Example command to redirect the output streams to text files</b>
+</p><pre>	crisp1 -bs -f base.dat &gt;output.txt 2&gt;error.txt</pre>
+<p>
+<b>Example command to redirect both of the output streams to the same file</b>
+</p><pre>	crisp1 -bs -f base.dat 1&gt;output.txt 2&gt;&amp;1</pre>
+<p>
+To let the batch mode program's output streams write to the MS-DOS shell, you must use a second program called <code>crisp1b</code> that runs <code>crisp1</code> in batch mode and is equivalent to <code>crisp1 -b</code>.
+</p><pre>	crisp1b -s -f base.dat</pre>
+<p>
+For this to work properly, the files <code>crisp1.exe</code> and <code>crisp1b.exe</code> must reside in the same directory.
+</p>
+<blockquote><strong>Warning.</strong> It would be a mistake to run the <code>crisp1b</code> program and then redirect its standard output streams.</blockquote>
+
+
+</body>
+</html>

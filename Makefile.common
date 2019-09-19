@@ -1,0 +1,388 @@
+# The name of the application
+PROGRAM = compass
+
+# Output executables
+OUTPUT = $(PROGRAM)
+OUTPUT_BATCH = $(PROGRAM)b
+
+# Compilers
+CC = gcc
+CXX = g++
+
+# Performance optimizations and debugging
+ifdef DEBUG
+PFLAGS = -O0 -g
+else
+PFLAGS = -O2
+endif
+
+# Compiler flags
+DEFS = -DNOVAR -DROUTE_TRACKING -DREALTIME -DDOWNSTREAM -DNOMINMAX
+CFLAGS = $(PFLAGS) $(EXTRA_CFLAGS) $(DEFS)
+CXXFLAGS = $(PFLAGS) $(EXTRA_CXXFLAGS) -I$(QTDIR)/include $(DEFS) -DQT_THREAD_SUPPORT
+
+# Linker flags for the batch version
+BATCH_LDFLAGS = -lm $(EXTRA_LDFLAGS)
+BATCH_LIBS = 
+BATCH_EXTRA_OBJS = extra_batch.o compassb.o
+
+# Linker flags for the GUI version
+GUI_LDFLAGS = -L$(QTDIR)/lib $(EXTRA_LDFLAGS)
+GUI_LIBS = -lqt-mt
+GUI_EXTRA_OBJS =
+
+# Help files
+HELP_FILES := $(wildcard help/*.html help/*.jpg help/*.toc)
+HELPC := $(patsubst help/%,help/output/help_%_data.c,$(HELP_FILES))
+HELPOBJS := $(patsubst %.c,%.o,$(HELPC))
+
+# object names for the c object files
+COBJS =  altern_list.o \
+include.o \
+report_init.o \
+args.o \
+init.o \
+report_out.o \
+at_frame.o \
+init_river.o \
+report_setup.o \
+at_hist.o \
+report_tool.o \
+base_gas_mort.o \
+list.o \
+river.o \
+basin.o \
+delayed_mort.o \
+return.o \
+log.o \
+ks.o \
+rz_model.o \
+batch.o main.o \
+sample.o \
+var.o \
+scenario_tracking.o \
+command.o migration.o  \
+spec_ext.o  \
+compute_gas_mort.o  \
+species.o \
+crisp.o \
+moment.o \
+spill.o \
+monte.o \
+crisppp.o \
+monte_frame.o \
+stock.o\
+dam_model.o \
+monte_index.o  \
+supersat.o\
+strtools.o  \
+dataio.o   \
+monte_output.o   \
+summary.o \
+daylight.o   \
+monte_spill.o   \
+delay.o    \
+multi_frame.o \
+table.o \
+dir.o \
+nrutil_short.o \
+time.o \
+dump.o \
+parse.o \
+token.o \
+eqns_dflt.o \
+parse_alt.o \
+tokens_alt.o \
+eqns_util.o \
+parse_archive.o \
+tokens_archive.o  \
+exp_table.o  parse_at.o   \
+tokens_at.o \
+parse_monte_index.o   \
+tokens_mindex.o  \
+fge.o \
+parseutil.o \
+transport.o \
+file.o \
+passage.o \
+pbn.o \
+transport_mort.o \
+flow.o \
+period.o \
+transport_util.o \
+phouse.o \
+travel_table.o \
+fpe.o \
+pred.o \
+custom_survival.o \
+rsw.o \
+tree.o \
+gas_mort.o \
+release_util.o \
+gas_mort_eqn.o  \
+reach_model.o  \
+vectable.o \
+gc_dist.o \
+realtime.o \
+water_travel.o \
+growth.o \
+release.o  \
+writeutil.o  \
+headw.o  \
+report_altern.o \
+high_gas_mort.o \
+report_frame.o
+
+CXXOBJS = $(UIOBJS) \
+QCStatusBar.o \
+QPointTransform.o \
+Qcrisp.o \
+QlogWindow.o \
+QmapController.o  \
+QmapObject.o  \
+implicit_base.o \
+qCheckBoxDialogBase.o \
+qCheckBoxDialogMedBase.o \
+qCheckBoxGroup.o \
+qDamOutputCBDMedBase.o \
+qDamReachGDT.o \
+qDatContainer.o \
+qDataReportTool.o \
+qDialogBase.o \
+qDialogMedBase.o \
+qDialogMedEquationBase.o \
+qDialogMedTimeBase.o \
+qEditGraphDataToken.o \
+qEditGraphGDT.o \
+qEditGraphMediator.o \
+qEditSliderBase.o \
+qEditSliderDouble.o \
+qEditSliderLong.o \
+qEquationBase.o \
+qEquationDialogBase.o \
+qEquationFactory.o \
+qFileManager.o \
+qGlobalEvents.o \
+qGraphDataToken.o \
+qGraphDataTokenBuilder.o \
+qGraphDialog.o \
+qGraphMedDrawAxisXI.o \
+qGraphMedDrawAxisYD.o \
+qGraphMedDrawData.o \
+qGraphMedDrawLines.o \
+qGraphMedDrawText.o \
+qGraphMedPosition.o \
+qGraphMedZoom.o \
+qGraphMediator.o \
+qGraphPane.o \
+qGraphSpeciesMediator.o \
+qGraphUpdateMed.o \
+qHeadwOutputCBDMedBase.o \
+qHelpManager.o \
+qHelpWindow.o \
+qIdcData.o \
+qIdcDamDelayEquation.o \
+qIdcEditGraph.o \
+qIdcEditGraphBase.o \
+qIdcEquationBase.o \
+qIdcFDensEquation.o \
+qIdcFGEEquation.o \
+qIdcGasDistEquation.o \
+qIdcGasMortEquation.o \
+qIdcList.o \
+qIdcListBase.o \
+qIdcMigrationEquation.o \
+qIdcNSatEquation.o \
+qIdcPredTempEquation.o \
+qIdcPredatorProbability.o \
+qIdcSchedule.o \
+qIdcScheduleBase.o \
+qIdcSelect.o \
+qIdcSelectBase.o \
+qIdcSpillEquation.o \
+qIdcTimeBase.o \
+qIdcTransMortEquation.o \
+qImConScroller.o \
+qImpTabCtrl.o \
+qInputReportTool.o \
+qInterfaceDataControl.o \
+qTableItem.o \
+qIOCell.o \
+qIOHistGDT.o \
+qHistogramGDT.o \
+qIOSheet.o \
+qIOPostBonnevilleSheet.o \
+qIOSIMPASSheet.o \
+qIONotes.o \
+qIOTool.o \
+qListDialogBase.o \
+qListDialogMedBase.o \
+Qmain.o \
+qMapMedCrisp1.o \
+qMapMedDialogBuilder.o \
+qMapMedGeography.o \
+qMapMedGridLines.o \
+qMapMedIcons.o \
+qMapMedSelector.o \
+qMapMedStatusBarUpdator.o \
+qMapMedUnZoom.o \
+qMapMedZoom.o \
+qMapMediator.o \
+qMapPane.o \
+qMediatorBuilder.o \
+qMercatorTransform.o \
+qMonteAltCmpDlg.o \
+qMonteAnalDlg.o \
+qMonteCarloTool.o \
+qMonteCarloManager.o \
+qMonteReportTool.o \
+qMouseTool.o \
+qPassHistGDT.o \
+qPromptForString.o \
+qReachClassCBDMed.o \
+qReachClassEquationMed.o \
+qReachClassSDMed.o \
+qReachClassTool.o \
+qReachOutputCBDMedBase.o \
+qReleaseEGDT.o \
+qReleaseEGM.o \
+qReleaseMedDrawData.o \
+qReleaseTool.o \
+qRowColumnBox.o \
+qRunSettings.o \
+qScenarioManager.o \
+qScheduleDialogBase.o \
+qScheduleDialogMed.o \
+qScheduleDialogMedBase.o \
+qScheduleTool.o \
+qSelectDialogBase.o \
+qSelectDialogMedBase.o \
+qTextOutDialog.o \
+qTransportTool.o \
+qUtils.o \
+qZabelSlider.o \
+$(MOCOBJS)
+
+
+default: $(OUTPUT) $(OUTPUT_BATCH)
+
+# Help file compiler
+bin2c: bin2c_src/bin2c.o
+	$(CC) $(CFLAGS) -o $@ $<
+.PHONY help: bin2c
+	bash help_index.sh
+
+# Qt UI files
+UI := AlternComparisonBase.ui \
+	InputReportToolBase.ui \
+	IOToolBase.ui \
+	MonteAnalToolBase.ui \
+	MonteCarloBase.ui \
+	MouseToolBase.ui \
+	ReachClassNameBase.ui \
+	ReleaseToolBase.ui \
+	ScheduleBase.ui \
+	ScheduleToolBase.ui \
+	TransportBase.ui
+UIH := $(patsubst %.ui,%.h,$(UI))
+UICXX := $(patsubst %.ui,%.cpp,$(UI))
+UIOBJS := $(patsubst %.cpp,%.o,$(UICXX))
+$(UIH): %.h : %.ui
+	$(QTDIR)/bin/uic $< > $@
+$(UICXX): %.cpp : %.ui %.h
+	$(QTDIR)/bin/uic -impl $*.h $< > $@
+
+# Qt MOC files
+MOCH = QCStatusBar.h \
+QLogWindow.h \
+Qcrisp.h \
+qCheckBoxDialogBase.h \
+qCheckBoxDialogMedBase.h \
+qCheckBoxGroup.h \
+qDamReachGDT.h \
+qDataReportTool.h \
+qDialogBase.h \
+qDialogMedBase.h \
+qEditGraphDataToken.h \
+qEditGraphMediator.h \
+qEditSliderDouble.h \
+qEditSliderLong.h \
+qFileManager.h \
+qFocusEventFilter.h \
+qGlobalEvents.h \
+qGraphDataToken.h \
+qGraphDialog.h \
+qGraphMedDrawData.h \
+qGraphMedPosition.h \
+qGraphMedZoom.h \
+qGraphMediator.h \
+qGraphPane.h \
+qGraphSpeciesMediator.h \
+qGraphSubMediator.h \
+qGraphUpdateMed.h \
+qHelpManager.h \
+qHelpWindow.h \
+qIdcData.h \
+qIdcDamDelayEquation.h \
+qIdcFGEEquation.h \
+qImConScroller.h \
+qImpTabCtrl.h \
+qInterfaceDataControl.h \
+qIOCell.h \
+qIOSheet.h \
+qIOPostBonnevilleSheet.h \
+qIOSIMPASSheet.h \
+qIONotes.h \
+qIOTool.h \
+qListDialogBase.h \
+qListDialogMedBase.h \
+Qmain.h  \
+qMapMedDialogBuilder.h \
+qMapMedSelector.h \
+qMapMedStatusBarUpdator.h \
+qMapMedUnZoom.h \
+qMapMedZoom.h \
+qMapMediator.h \
+qMapPane.h \
+qMapSubMediator.h \
+qMonteAltCmpDlg.h \
+qMonteAnalDlg.h \
+qMonteCarloTool.h \
+qMonteCarloManager.h \
+qMouseTool.h \
+qReachClassCBDMed.h \
+qReachClassEquationMed.h \
+qReachClassTool.h \
+qReleaseEGM.h \
+qReleaseMedDrawData.h \
+qReleaseTool.h \
+qRunSettings.h \
+qScenarioManager.h \
+qScheduleDialogBase.h \
+qScheduleDialogMedBase.h \
+qScheduleTool.h \
+qSelectDialogBase.h \
+qSelectDialogMedBase.h \
+qTextOutDialog.h \
+qTransportTool.h \
+qZabelSlider.h \
+$(UIH)
+
+MOCCXX := $(patsubst %.h,moc_%.cpp,$(MOCH))
+MOCOBJS := $(patsubst %.cpp,%.o,$(MOCCXX))
+$(MOCCXX): moc_%.cpp : %.h
+	$(QTDIR)/bin/moc $< > $@
+
+LDOBJS = $(HELPOBJS) $(CXXOBJS) $(COBJS)
+$(OUTPUT) : help $(LDOBJS) $(GUI_EXTRA_OBJS)
+	$(CXX) -o $(OUTPUT) $(GUI_LDFLAGS) $(GUI_LIBS) $(LDOBJS) $(GUI_EXTRA_OBJS)
+
+
+$(OUTPUT_BATCH): $(COBJS) $(BATCH_EXTRA_OBJS)
+	$(CC) -o $(OUTPUT_BATCH) $(BATCH_LDFLAGS) $(BATCH_LIBS) $(COBJS) $(BATCH_EXTRA_OBJS)
+
+clean :
+	rm -f *.o bin2c bin2c_src/bin2c.o $(UIH) $(UICXX) $(MOCCXX) $(OUTPUT) $(OUTPUT_BATCH) $(BATCH_EXTRA_OBJS) $(GUI_EXTRA_OBJS)
+	rm -rf help/output
+
+

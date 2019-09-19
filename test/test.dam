@@ -1,0 +1,183 @@
+version 9
+
+	dam Lower_Monumental_Dam
+		planned_spill_day 0:365 =  0.25
+		planned_spill_night 0:365 =  0.25
+		input_temp On  [*] 10.00
+	end dam (Lower_Monumental_Dam)
+
+	reach Lower_Monumental_Pool
+		reach_class Class_0
+		output_settings 1
+		loss_max 231.00
+		loss_min -231.00
+		loss [*] 0.00 
+		elevation_change [*] 0.00
+	end reach (Lower_Monumental_Pool)
+
+	dam Little_Goose_Dam
+		planned_spill_day 0:365 =  0.75
+		planned_spill_night 0:365 =  0.75
+		input_temp On  [*] 20.00
+	end dam (Little_Goose_Dam)
+
+	reach Little_Goose_Pool
+		reach_class Class_0
+		output_settings 1
+		loss_max 231.00
+		loss_min -231.00
+		loss [*] 0.00 
+		elevation_change [*] 0.00
+	end reach (Little_Goose_Pool)
+
+	dam Lower_Granite_Dam
+		planned_spill_day 0:365 =  0.00
+		planned_spill_night 0:365 =  0.00
+		input_temp On  [*] 10.0
+	end dam (Lower_Granite_Dam)
+
+	reach Lower_Granite_Pool
+		reach_class Class_0
+		output_settings 1
+		loss_max 100.00
+		loss_min -100.00
+		loss [*] 0.00
+		elevation_change [*] 0.00
+	end reach (Lower_Granite_Pool)
+
+	reach Snake_above_Clearwater
+		reach_class Class_0
+		output_settings 0
+		loss_max 160.00
+		loss_min -160.00
+		loss [*] 0.00
+		elevation_change [*] 0.00
+	end reach (Snake_above_Clearwater)
+
+	reach Snake_above_Grand_Ronde
+		reach_class Class_0
+		output_settings 0
+		loss_max 160.00
+		loss_min -160.00
+		loss [*] 0.00
+		elevation_change [*] 0.00
+	end reach (Snake_above_Grand_Ronde)
+
+	reach Snake_above_Salmon
+		reach_class Class_0
+		output_settings 0
+		loss_max 100.00
+		loss_min -100.00
+		loss [*] 0.00
+		elevation_change [*] 0.00
+	end reach (Snake_above_Salmon)
+
+	reach Snake_above_Imnaha
+		reach_class Class_0
+		output_settings 0
+		loss_max 100.00
+		loss_min -100.00
+		loss [*] 0.00
+		elevation_change [*] 0.00
+	end reach (Snake_above_Imnaha)
+
+	headwater Snake_Headwater
+		output_settings 0
+		flow_max 100.00
+		flow [*] 20.0 
+		water_temp [*] 10.0 
+	end headwater (Snake_Headwater)
+
+	reach Clearwater_River
+		reach_class Class_0
+		output_settings 0
+		loss_max 71.00
+		loss_min -71.00
+		loss [*] 0.00 
+		elevation_change [*] 0.00 
+	end reach (Clearwater_River)
+
+	reach Clearwater_above_North_Fork
+		reach_class Class_0
+		output_settings 0
+		loss_max 45.00
+		loss_min -45.00
+		loss [*] 0.00
+		elevation_change [*] 0.00
+	end reach (Clearwater_above_North_Fork)
+
+	reach South_Fork_Clearwater
+		reach_class Class_0
+		output_settings 0
+		loss_max 25.00
+		loss_min -25.00
+		loss [*] 0.00
+		elevation_change [*] 0.00
+	end reach (South_Fork_Clearwater)
+
+	headwater Clearwater_Headwater
+		output_settings 0
+		flow_max 25.00
+		flow [*] 20.0 
+		water_temp [*] 10.0 
+	end headwater (Clearwater_Headwater)
+
+	reach N_F_Clearwater
+		reach_class Class_0
+		output_settings 0
+		loss_max 26.00
+		loss_min -26.00
+		loss [*] 0.00
+		elevation_change [*] 0.00
+	end reach (N_F_Clearwater)
+
+	dam Dworshak_Dam
+		output_settings 0
+		tailrace_length 1000.00
+		spill_cap 1000.00
+		planned_spill_day 0:365 = 0.0
+		planned_spill_night 0:365 = 0.0
+		input_temp On [*] 10.0
+		storage_volume [*] 2015.80
+	end dam (Dworshak_Dam)
+
+	headwater North_Fork_Clearwater_Headwater
+		output_settings 0
+		flow_max 26.00
+		flow [*] 20.0 
+		water_temp [*] 10.0 
+	end headwater (North_Fork_Clearwater_Headwater)
+
+	reach Middle_Fork_Clearwater
+		reach_class Class_0
+		output_settings 0
+		loss_max 20.00
+		loss_min -20.00
+		loss [*] 0.00
+		elevation_change [*] 0.00
+	end reach (Middle_Fork_Clearwater)
+
+	headwater Middle_Fork_Clearwater_Headwater
+		output_settings 0
+		flow_max 20.00
+		flow [*] 20.0 
+		water_temp [*] 10.0 
+	end headwater (Middle_Fork_Clearwater_Headwater)
+
+	reach Salmon_River
+		reach_class Class_0
+		output_settings 0
+		loss_max 60.00
+		loss_min -60.00
+		loss [*] 0.00
+		elevation_change [*] 0.00
+	end reach (Salmon_River)
+
+	headwater Salmon_Headwater
+		output_settings 0
+		flow_max 60.00
+		flow [*] 20.0 
+		water_temp [*] 10.0 
+	end headwater (Salmon_Headwater)
+
+

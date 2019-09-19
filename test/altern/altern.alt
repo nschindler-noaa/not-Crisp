@@ -1,0 +1,10 @@
+version 9
+alternative "io-altern"
+	use_flow_from archive
+	flow_archive_name "flow-archive-input-test.archive"
+	use_spill_from archive
+	multi_data 1 1		1
+	input_files 1
+		"input.scn"
+end alternative (io-altern)
+

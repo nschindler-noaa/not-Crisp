@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>FGE Equation: Time Varying FGE</title>
+</head>
+<body>
+<h3>FGE Equation: Time Varying FGE</h3>
+<p>
+Selecting <a href="366.html"><strong>Dam</strong></a><strong><img src="subm.jpg">FGE Equation</strong> opens a window for setting parameters for time varying fge which differs from constant fge set in the <a href="71.html">FGE</a> window. In order to execute a model run using the time varying fge condition, you must turn on <a href="388.html"><strong>age dependent fge</strong></a> (<strong>Run<img src="subm.jpg">Runtime Settings</strong>). When the model is run under this condition, day and night fge change randomly for each dam time interval (6 hours) according to probability distributions that change with fish age and reservoir elevation. Variations in fge from the initial condition depends on Julian day, the day since the onset of smoltification, set in the <a href="72.html">Release Tool</a> window, and reservoir elevation for each day, set in the <a href="32.html">Elevation</a> window. The <strong>FGE Equation</strong> window displays the values for night fge only; however, both day and night values are calculated using the parameters set in this equation window as well as the mean, low and high fge values set in the <strong>FGE</strong> window. The difference between day and night fge is determined by the sliders describing the probability distribution in the <strong>FGE</strong> window. Changes applied to the probability distribution will automatically update the display in the <strong>FGE Equation</strong> window. In the <strong>FGE Equation</strong> window, mean fge is depicted as a red line and the blues lines designate the low and high values. Fge is plotted against fish age relative to the onset of smoltification. To coordinate effects of age dependent behavioral factors in fge and the seasonal dependent reservoir level factor, you must select the Julian day of the onset of smoltification. The fge submodel parameters are as follows:
+</p><ul>
+<li><strong>z0</strong>: Fish forebay depth at age (t0) where fish passage behavior starts changing.
+
+<li><strong>z1</strong>: Fish forebay depth at age (t0 + dt) where fish passage behavior stops changing.
+
+<li><strong>t0</strong>: Fish age since the onset of smoltification at which fish passage behavior starts changing.
+
+<li><strong>dt</strong>: Time interval over which fge changes due to fish behavior.
+
+<li><strong>Smolt date</strong> (display only): Julian day for onset of smoltification. Smoltification onset day is set with the <strong>Release Tool</strong>.
+</ul>
+<p>
+This is an <a href="343.html">Equation Input</a> window.
+</p>
+<ul>
+<li><a href="344.html">Equation Input Features</a>
+
+<li><a href="332.html">Edit Single Slider Value</a>
+</ul>
+<p>
+<img src="fgeeq.jpg"><br>
+Night Fge Equation window.
+</p>
+
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+version 9
+
+num_reach_classes 3
+	reach_class_name 0 Class_0
+	reach_class_name 1 Col_Riv
+	reach_class_name 2 LGR_Pool
+
+stock Snake_River_Steelhead
+
+	migration_eqn LGR_Pool 52
+		parameter 0 100.0 
+		parameter 1 0.000000 
+		parameter 2 0.000000 
+		parameter 3 0.000000 
+		parameter 4 0.000000 
+		parameter 5 5.00000 
+		parameter 6 0.000000 
+	end migration_eqn()
+	v_var LGR_Pool 0.0
+
+	migration_eqn Class_0  52
+		parameter 0 -0.334923 
+		parameter 1 0.000000 
+		parameter 2 0.000000 
+		parameter 3 1.400444 
+		parameter 4 0.000000 
+		parameter 5 0.287699 
+		parameter 6 0.002247 
+         end migration_eqn ( )
+	v_var Class_0 102.235878
+	
+	migration_eqn Col_Riv 52
+		parameter 0 -2.309401 
+		parameter 1 0.000000 
+		parameter 2 0.000000 
+		parameter 3 0.000000 
+		parameter 4 0.000000 
+		parameter 5 0.930086 
+		parameter 6 0.000000 
+	end migration_eqn()
+	v_var Col_Riv 246.517044
+		
+	custom_survival_eqn LGR_Pool 57
+		parameter 0 0.00
+		parameter 1 0.00
+		parameter 2 0.00
+		parameter 3 0.00
+		parameter 4 0.00
+		parameter 5 0.00
+		parameter 6 0.00
+		parameter 7 0.00
+		parameter 8 0.00
+		parameter 9 0.00
+		parameter 10 0.00
+		parameter 11 0.00
+		parameter 12 0.00
+		parameter 13 0.00
+		parameter 14 0.00
+        end custom_survival_eqn ( )
+
+
+	custom_survival_eqn Class_0 57
+		parameter 0 0.004199818829
+		parameter 1 0.000000000000
+		parameter 2 0.000000000000
+		parameter 3 0.000000000000
+		parameter 4 0.000000000000
+		parameter 5 0.000000000000
+		parameter 6 0.000000000000
+		parameter 7 0.228844998210
+		parameter 8 -0.000907891678
+		parameter 9 0.000000000000
+		parameter 10 -0.042372061181
+		parameter 11 0.002404204000
+		parameter 12 0.000000000000
+		parameter 13 0.000000000000
+		parameter 14 0.000000000000
+        end custom_survival_eqn ( )
+
+
+	custom_survival_eqn Col_Riv 57
+		parameter 0 0.000000000000
+		parameter 1 0.000000000000
+		parameter 2 0.000000000000
+		parameter 3 0.000000000000
+		parameter 4 0.000000000000
+		parameter 5 0.000000000000
+		parameter 6 0.000000000000
+		parameter 7 0.053989382732
+		parameter 8 -0.000439917026
+		parameter 9 0.000000000000
+		parameter 10 0.009767195134
+		parameter 11 0.000000000000
+		parameter 12 0.000000000000
+		parameter 13 0.000000000000
+		parameter 14 0.000000000000
+        end custom_survival_eqn ( )
+	
+end stock (Snake_River_Steelhead)
+
+reach Bonneville_Tailrace
+	reach_class LGR_Pool
+	output_settings 1
+end reach (Bonneville_Tailrace)
+
+dam Bonneville_Dam
+	output_settings 7
+end dam (Bonneville_Dam)
+
+reach Bonneville_Pool
+	reach_class Col_Riv
+	output_settings 1 
+end reach (Bonneville_Pool)
+
+dam The_Dalles_Dam
+	output_settings 7
+end dam (The_Dalles_Dam)
+
+reach The_Dalles_Pool
+	reach_class Col_Riv
+	output_settings 1 	
+end reach (The_Dalles_Pool)
+
+reach Deschutes_Confluence
+	reach_class Col_Riv
+	output_settings 1 
+end reach (Deschutes_Confluence)
+
+dam John_Day_Dam
+	output_settings 7
+end dam (John_Day_Dam)
+
+reach John_Day_Pool
+	reach_class Col_Riv
+	output_settings 1
+end reach (John_Day_Pool)
+
+dam McNary_Dam
+	output_settings 7
+end dam (McNary_Dam)
+
+reach McNary_Pool
+	reach_class Col_Riv
+	output_settings 1
+end reach (McNary_Pool)
+
+dam Ice_Harbor_Dam
+	output_settings 7
+end dam (Ice_Harbor_Dam)
+
+reach Ice_Harbor_Pool
+	reach_class Class_0
+	output_settings 1
+end reach (Ice_Harbor_Pool)
+
+dam Lower_Monumental_Dam
+	output_settings 7
+end dam (Lower_Monumental_Dam)
+
+reach Lower_Monumental_Pool
+	reach_class Class_0
+	output_settings 1
+end reach (Lower_Monumental_Pool)
+
+dam Little_Goose_Dam
+	output_settings 7
+end dam (Little_Goose_Dam)
+
+reach Little_Goose_Pool
+	reach_class Class_0
+	output_settings 1
+end reach (Little_Goose_Pool)
+
+dam Lower_Granite_Dam
+	output_settings 7
+end dam (Lower_Granite_Dam)
+
+reach Lower_Granite_Pool
+	reach_class LGR_Pool
+	output_settings 1
+end reach (Lower_Granite_Pool)
+
+
+
+	release Steelhead Lower_Granite_Forebay 85
+		stock Snake_River_Steelhead
+		smolt_onset 40
+		smolt_finish 40
+		initial_spill_experience 0.90
+		add_setting 1
+		length 100.00
+		number 35 363 1522 4464 
+			5156 5761 5681 8128 
+			6415 8397 7368 6231 
+			9668 11949 26803 16327 
+			23270 16446 17625 28417 
+			83553 58295 173438 235193 
+			67015 108485 128723 138987 
+			343909 106268 119481 234693 
+			335784 143797 216137 239009 
+			246939 403550 290215 266975 
+			397222 203233 226988 151142 
+			152863 137408 108756 107329 
+			108916 116877 138012 151768 
+			330830 251064 306189 231095 
+			142629 80405 37838 30145 
+			29320 17382 27460 21518 
+			16703 24010 15853 15254 
+			9425 12427 13253 7333 
+			10023 11436 9859 5621 
+			6199 5103 1218 1829 
+			1395 3821 1463 4025 
+			1636 1432 783 620 
+			312 256 153 800 
+			286 629 577 343 
+			57 114 114 57 
+			57 171 229 57 
+			86 114 [106:108] 23 
+			11 11 6 
+			[112:365] 0 
+	end release (Steelhead)
+
+
+runtime_settings 1
+mortality_class custom

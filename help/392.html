@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>River Description File Structure</title>
+</head>
+<body>
+<h2>River Description File Structure</h2>
+<p>
+The <strong>River Description File</strong> (<code>columbia.desc</code>) contains all the information necessary to define the physical river system from the ocean to the various headwaters. This includes latitudes and longitudes of release sites, dams, and river segments, and many of the physical attributes of these features. Sample reach and dam designations follow as well as parameter definitions.
+</p>
+<h3>Rules for construction</h3>
+<p>
+The <strong>River Description File</strong> contains information specifying the physical characteristics of the river. The file must follow rules for construction of a river map. Rules on ordering of tokens (or keywords) include:
+</p><ul>
+<li>Species tokens must appear first, before river description tokens. Species tokens are followed by stock tokens if there are any specific stocks to be identified.
+<pre>	species Chinook 0
+</pre>
+<li>Release sites typically appear next, although they may appear anywhere in the file except within a river stem description (bounded by the tokens "river" and "end").
+<pre>	release_site McNary Face
+latlon 45 56 23 N 119 15 11 W
+end (release)
+</pre>
+<li>The first river specified is the main stem, and the first river segment specified is the river mouth. Remaining segments must appear in order (moving upstream) toward the headwater. The first latitude and longitude coordinate (latlon) point of each successive segment must match the last latlon of the preceding segment. Latlons within a segment should appear in order.
+<pre>	river Columbia
+flow_max 280.00
+flow_min 4
+
+reach Estuary
+width 5930.23
+depth 60
+lower_elev -60
+latlon 46 14 8 N 123 52 19 W
+latlon 46 15 3 N 123 48 44 W
+[cut]
+latlon 46 8 55 N 123 19 2 W
+latlon 46 9 0 N 123 15 46 W
+end (Estuary)
+</pre>
+<li>Other complete river branch descriptions may appear in any order, and each will be attached to the appropriate existing river branch by comparing latlon points.
+
+<li>The first segment specified in any river branch is taken to be the confluence point. This segment must be a reach. The first latlon in this segment must match the last latlon of some existing reach segment on another branch.
+<pre>	reach The Dalles Pool
+[cut]
+latlon 45 38 55 N 120 54 21 W
+end (The Dalles)
+
+reach Deschutes Confluence 
+[cut]
+latlon 45 38 55 N 120 54 21 W
+[cut]
+end (Deschutes) 
+</pre>
+<li>Dam segments must have exactly one latlon point, matching the last latlon of the previous segment. No two dams may be adjacent.
+
+<li>If a dam is identified as a "storage basin" then it must be the last (furthest upstream) segment on that river branch.
+<pre>	dam Chief Joseph Dam
+powerhouse_capacity 219
+floor_elevation 	743.0
+forebay_elevation	956.0
+tailrace_elevation	786.0
+spillway_width 		 1320
+spill_side		right
+pergate                   2.0
+ngates                    19
+gate_width               40.0
+basin_length 		  180
+sgr 			  1.0
+abbrev CHJ 
+storage_basin		0.0 5185.5
+latlon 47 59 48 N 119 37 56 W
+end (Chief Joseph)
+end (Columbia)
+
+</pre>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Headwater Tokens and Parameters</title>
+</head>
+<body>
+<h3>Headwater Tokens and Parameters</h3>
+<p>
+The following is an example of a headwater specification from a Yearly Input Data file (<code>.dat</code>).
+</p><pre>	headwater Columbia_Headwater
+output_settings 0
+mod_ou_r 0.93
+mod_hi_sigma 0.08
+mod_lo_sigma 0.06
+mod_start_hi_sigma 96
+mod_end_hi_sigma 196
+mod_coeffs_a 1.00 -0.24 0.20 0.00 -0.04 
+mod_coeffs_b 0.00 0.13 -0.10 0.10 -0.02 
+flow_mean 110.00
+flow_max 280.00
+flow 4.00 104.17 100.62 122.10 
+output_gas Off
+water_temp [0:49] 5.08 5.21 
+end headwater (Columbia_Headwater)
+</pre><h4>
+Keywords and descriptions for headwater tokens and parameters
+</h4><ul>
+<li><strong>headwater</strong>: Names the headwater. This name must be present in the <code>columbia.desc</code> file, and must have a paired "end" statement. e.g. headwater Columbia_Headwater, and end headwater (Columbia_Headwater).
+
+<li><strong>output_settings</strong>: Specifies what detailed information is output for a given reach, dam, or headwater during both Scenario and Monte Carlo runs. The single value is a combination of up to 10 flags, each of which is a single binary digit, arithmetically added together. Thus a value of "24" would indicate that flags "8" and "16" were set, requesting output of flow, and water temperature. Flags which are declared for the wrong type of river feature (e.g. spill at a reach) are silently ignored. The following is a list of flags that can be designated for a headwater:
+<br> - 8 = flow (d, r, h)
+<br> - 16 = water temperature (d, r, h).
+
+<li><strong>mod_*</strong>: Parameters for modulation of flows.
+
+<li><strong>mod_ou_r</strong>: Autocorrelation parameter for flow.
+
+<li><strong>mod_hi_sigma</strong>: Standard deviation for modulation; used for the part of the year when flow variance is high.
+
+<li><strong>mod_lo_sigma</strong>: Standard deviation for modulation; used for the part of the year when flow variance is low.
+
+<li><strong>mod_start_hi_sigma</strong>: Day of year to start using high variance.
+
+<li><strong>mod_end_hi_sigma</strong>: Day of year to return to low variance.
+
+<li><strong>mod_coeffs_*</strong>: Coefficients for a nine-term Fourier series that describes the average annual shape of river flow.
+
+<li><strong>mod_coeffs_a</strong>: Cosine coefficients. The first element, a_0, is always 1.
+
+<li><strong>mod_coeffs_b</strong>: Sine coefficients. The first element, b_0, is always 0.
+
+<li><strong>flow_mean</strong>: Mean flow for the year at the headwater. This is used as a scale factor for headwater modulation.
+
+<li><strong>flow_max</strong>: 50-year maximum flow in the headwater; this is used to distribute flows at confluences during upstream propagation.
+
+<li><strong>flow</strong>: An array of daily flows, in kcfs.
+
+<li><strong>output_gas</strong>: The default setting is off. If output_gas is turned on, it replaces the dissolved gas data at the output of the feature (dam, reach, or headwater). One set of numbers are given, for each dam time slice in the season (366*4, currently). The numbers are applied to both sides of the feature. There is no GUI for this parameter.
+
+<li><strong>water_temp</strong>: An array of water temperatures, in degrees Celsius. Temperatures are determined below confluences by averaging input temperatures weighted by flow volume.
+</ul>
+
+
+</body>
+</html>

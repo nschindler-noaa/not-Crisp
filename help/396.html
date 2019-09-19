@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Yearly Input Data File Structure</title>
+</head>
+<body>
+<h2>Yearly Input Data File Structure</h2>
+<p>
+The <strong>Yearly Input Data File</strong> (<code>base.dat</code>) contains the information specific to the model run you wish to perform, such as releases, dam mortality rates, fge, and so forth. Parameters are described for each species, each dam, each reach, each headwater, and each release.
+</p><p>
+During a COMPASS run, information is stored according to tokens corresponding to model variables and parameters. Token structure is illustrated below where tokens are <strong>species</strong> or <strong>gas_mort_eqn</strong>. A complete list of tokens can be found in the <a href="4.html">Parameter Glossary</a>. For parameters that change in time, the token is followed by a time series of values. The model contains two time steps: reservoir time steps (one day) and dam time steps (6 hours). Parameters at dams, therefore, are specified for 4 periods per day, while parameters in reaches (flow, loss, elevation, temperature) are specified with one value per day. (See the <a href="404.html">Time in COMPASS</a> section for further information.)
+</p>
+<h3>Mean, High and Low</h3>
+<p>
+For many parameters there will be a token that possesses one of three suffixes: mean, low, and high (e.g. <strong>day_fge_mean</strong> or <strong>day_fge_high</strong>). These describe the mean value and the two endpoints of the broken-stick distribution used to draw stochastic variables. For the sake of brevity, only one description for each collection of three such tokens is provided.
+</p>
+<h3>Equations</h3>
+<p>
+Equations have tokens ending in eqn or equation, e.g. <strong>gas_mort_eqn</strong> or <strong>fge_equation</strong>. Following each such equation will be a list of parameters. In the case of the fge equation, there are four parameters. For each parameter there are three values specified. The first represents the value used in the model, and the second two represent the minimum and maximum values allowed for parameter in COMPASS You can adjust the allowed range for the parameter by editing these values. Editing these values will alter the bounds for the corresponding slider in the equation window. In the sections that follow, we only list the equation token itself, not the parameters that accompany it. The number following the token dictates the form of the equation used.
+</p><pre>	fge_equation Chinook_1  22
+parameter 0 0.500000 0.000000 2.000000 
+parameter 1 10.000000 0.000000 100.000000 
+parameter 2 30.000000 0.000000 100.000000 
+parameter 3 30.000000 0.000000 100.000000 
+end fge_equation (Chinook_1)
+</pre>
+
+
+</body>
+</html>

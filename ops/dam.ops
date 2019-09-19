@@ -1,0 +1,995 @@
+#============================================================================#
+# COMPASS Operations File                            COMPASS v1.7 (WIN32)
+#
+#Written on Mon May 15 15:32:18 2006
+#============================================================================#
+version 9
+	dam Bonneville_Dam
+		spill_cap 1000.00
+	end dam (Bonneville_Dam)
+
+	dam The_Dalles_Dam
+		spill_cap 1000.00
+	end dam (The_Dalles_Dam)
+
+	dam John_Day_Dam
+		spill_cap 1000.00
+	end dam (John_Day_Dam)
+
+	dam McNary_Dam
+		spill_cap 1000.00
+	end dam (McNary_Dam)
+
+	dam Priest_Rapids_Dam
+		spill_cap 1000.00
+	end dam (Priest_Rapids_Dam)
+
+	dam Wanapum_Dam
+		spill_cap 1000.00
+	end dam (Wanapum_Dam)
+
+	dam Rock_Island_Dam
+		spill_cap 1000.00
+	end dam (Rock_Island_Dam)
+
+	dam Rocky_Reach_Dam
+		spill_cap 1000.00
+	end dam (Rocky_Reach_Dam)
+
+	dam Wells_Dam
+		spill_cap 1000.00
+	end dam (Wells_Dam)
+
+	dam Chief_Joseph_Dam
+		spill_cap 1000.00
+	end dam (Chief_Joseph_Dam)
+
+	dam Ice_Harbor_Dam
+		spill_cap 1000.00
+	end dam (Ice_Harbor_Dam)
+
+	dam Lower_Monumental_Dam
+		spill_cap 1000.00
+	end dam (Lower_Monumental_Dam)
+
+	dam Little_Goose_Dam
+		spill_cap 1000.00
+	end dam (Little_Goose_Dam)
+
+	dam Lower_Granite_Dam
+		spill_cap 1000.00
+	end dam (Lower_Granite_Dam)
+
+	dam Hells_Canyon_Dam
+		spill_cap 1000.00
+	end dam (Hells_Canyon_Dam)
+
+	dam Dworshak_Dam
+		spill_cap 1000.00
+	end dam (Dworshak_Dam)
+
+	dam Bonneville_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.380000
+		night_fge Chinook_1 0.380000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 1741.260010
+		pred_density_tailrace Chinook_1 13248.700195
+		separation_prob Chinook_1 0.800000
+		spill_equation	Chinook_1	1
+		end spill_equation (Chinook_1)
+
+		trans_mort_equation	Chinook_1	28
+		end trans_mort_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.410000
+		night_fge Steelhead 0.410000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 1741.260010
+		pred_density_tailrace Steelhead 13248.700195
+		separation_prob Steelhead 0.200000
+		spill_equation	Steelhead	1
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+		powerhouse_priority 0
+		powerhouse_threshold 0.00
+		additional_powerhouse Bonneville_Dam_2
+			powerhouse_priority 1
+			powerhouse_threshold 75000.00
+			powerhouse_schedule 0:365 (0:24)
+			sluiceway_prop Chinook_1 0.000000
+			sluiceway_mort Chinook_1 0.000000
+			bypass_mort Chinook_1 0.020000
+			turbine_mort Chinook_1 0.070000
+			day_fge Chinook_1 0.440000
+			night_fge Chinook_1 0.440000
+			sluiceway_prop Steelhead 0.000000
+			sluiceway_mort Steelhead 0.000000
+			bypass_mort Steelhead 0.020000
+			turbine_mort Steelhead 0.070000
+			day_fge Steelhead 0.480000
+			night_fge Steelhead 0.480000
+		end additional_powerhouse (Bonneville_Dam_2)
+
+	end dam (Bonneville_Dam)
+
+	dam The_Dalles_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.460000
+		night_fge Chinook_1 0.460000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 1741.260010
+		pred_density_tailrace Chinook_1 13248.700195
+		separation_prob Chinook_1 0.800000
+		spill_equation	Chinook_1	44
+			parameter 1 2.000000
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.400000
+		night_fge Steelhead 0.400000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 1741.260010
+		pred_density_tailrace Steelhead 13248.700195
+		separation_prob Steelhead 0.200000
+		spill_equation	Steelhead	1
+			parameter 1 2.000000
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (The_Dalles_Dam)
+
+	dam John_Day_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.640000
+		night_fge Chinook_1 0.640000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 1741.260010
+		pred_density_tailrace Chinook_1 13248.700195
+		separation_prob Chinook_1 0.800000
+		spill_equation	Chinook_1	1
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.850000
+		night_fge Steelhead 0.850000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 1741.260010
+		pred_density_tailrace Steelhead 13248.700195
+		separation_prob Steelhead 0.200000
+		spill_equation	Steelhead	1
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (John_Day_Dam)
+
+	dam McNary_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.950000
+		night_fge Chinook_1 0.950000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 1741.260010
+		pred_density_tailrace Chinook_1 13248.700195
+		separation_prob Chinook_1 0.980000
+		spill_equation	Chinook_1	1
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.890000
+		night_fge Steelhead 0.890000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 1741.260010
+		pred_density_tailrace Steelhead 13248.700195
+		separation_prob Steelhead 0.970000
+		spill_equation	Steelhead	1
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (McNary_Dam)
+
+	dam Priest_Rapids_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.840000
+		night_fge Chinook_1 0.840000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 3053.800049
+		pred_density_tailrace Chinook_1 7633.000000
+		separation_prob Chinook_1 0.800000
+		spill_equation	Chinook_1	8
+			parameter 0 0.819000
+			parameter 1 1.000000
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.830000
+		night_fge Steelhead 0.830000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 3053.800049
+		pred_density_tailrace Steelhead 7633.000000
+		separation_prob Steelhead 0.200000
+		spill_equation	Steelhead	8
+			parameter 0 0.819000
+			parameter 1 1.000000
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (Priest_Rapids_Dam)
+
+	dam Wanapum_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.750000
+		night_fge Chinook_1 0.750000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 3053.800049
+		pred_density_tailrace Chinook_1 7633.000000
+		separation_prob Chinook_1 0.800000
+		spill_equation	Chinook_1	16
+			parameter 1 15.420000
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.000000
+		night_fge Steelhead 0.000000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 3053.800049
+		pred_density_tailrace Steelhead 7633.000000
+		separation_prob Steelhead 0.200000
+		spill_equation	Steelhead	16
+			parameter 1 15.420000
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (Wanapum_Dam)
+
+	dam Rock_Island_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.857000
+		night_fge Chinook_1 0.857000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 3053.800049
+		pred_density_tailrace Chinook_1 7633.000000
+		separation_prob Chinook_1 0.800000
+		spill_equation	Chinook_1	1
+			parameter 0 11.300000
+			parameter 1 0.940000
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.609000
+		night_fge Steelhead 0.609000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 3053.800049
+		pred_density_tailrace Steelhead 7633.000000
+		separation_prob Steelhead 0.200000
+		spill_equation	Steelhead	1
+			parameter 0 11.300000
+			parameter 1 0.940000
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+		powerhouse_priority 1
+		powerhouse_threshold 0.00
+		additional_powerhouse Rock_Island_Dam_2
+			powerhouse_priority 0
+			powerhouse_threshold 0.00
+			powerhouse_schedule 0:365 (0:24)
+			sluiceway_prop Chinook_1 0.000000
+			sluiceway_mort Chinook_1 0.000000
+			bypass_mort Chinook_1 0.000000
+			turbine_mort Chinook_1 0.070000
+			day_fge Chinook_1 0.000000
+			night_fge Chinook_1 0.000000
+			sluiceway_prop Steelhead 0.000000
+			sluiceway_mort Steelhead 0.000000
+			bypass_mort Steelhead 0.000000
+			turbine_mort Steelhead 0.070000
+			day_fge Steelhead 0.000000
+			night_fge Steelhead 0.000000
+		end additional_powerhouse (Rock_Island_Dam_2)
+
+	end dam (Rock_Island_Dam)
+
+	dam Rocky_Reach_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.308000
+		night_fge Chinook_1 0.308000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 3053.800049
+		pred_density_tailrace Chinook_1 7633.000000
+		separation_prob Chinook_1 0.800000
+		spill_equation	Chinook_1	1
+			parameter 1 0.650000
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.402000
+		night_fge Steelhead 0.402000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 3053.800049
+		pred_density_tailrace Steelhead 7633.000000
+		separation_prob Steelhead 0.200000
+		spill_equation	Steelhead	1
+			parameter 1 0.650000
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (Rocky_Reach_Dam)
+
+	dam Wells_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.890000
+		night_fge Chinook_1 0.890000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 3053.800049
+		pred_density_tailrace Chinook_1 7633.000000
+		separation_prob Chinook_1 0.800000
+		spill_equation	Chinook_1	1
+			parameter 1 0.000000
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.960000
+		night_fge Steelhead 0.960000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 3053.800049
+		pred_density_tailrace Steelhead 7633.000000
+		separation_prob Steelhead 0.200000
+		spill_equation	Steelhead	1
+			parameter 1 0.000000
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (Wells_Dam)
+
+	dam Chief_Joseph_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.000000
+		night_fge Chinook_1 0.000000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 411.559998
+		pred_density_tailrace Chinook_1 7633.000000
+		separation_prob Chinook_1 0.800000
+		spill_equation	Chinook_1	1
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.000000
+		night_fge Steelhead 0.000000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 411.559998
+		pred_density_tailrace Steelhead 7633.000000
+		separation_prob Steelhead 0.200000
+		spill_equation	Steelhead	1
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (Chief_Joseph_Dam)
+
+	dam Ice_Harbor_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.710000
+		night_fge Chinook_1 0.710000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 547.299988
+		pred_density_tailrace Chinook_1 14093.750000
+		separation_prob Chinook_1 0.800000
+		spill_equation	Chinook_1	1
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.930000
+		night_fge Steelhead 0.930000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 547.299988
+		pred_density_tailrace Steelhead 14093.750000
+		separation_prob Steelhead 0.200000
+		spill_equation	Steelhead	1
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (Ice_Harbor_Dam)
+
+	dam Lower_Monumental_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 547.299988
+		pred_density_tailrace Chinook_1 14093.750000
+		separation_prob Chinook_1 0.960000
+		spill_equation	Chinook_1	1
+			parameter 1 1.200000
+		end spill_equation (Chinook_1)
+		fge_equation	Chinook_1	22
+			parameter 0 1.854172
+			parameter 3 -0.139142
+		end fge_equation (Chinook_1)
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 547.299988
+		pred_density_tailrace Steelhead 14093.750000
+		separation_prob Steelhead 1.000000
+		spill_equation	Steelhead	1
+			parameter 1 1.200000
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (Lower_Monumental_Dam)
+
+	dam Little_Goose_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.820000
+		night_fge Chinook_1 0.820000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 547.299988
+		pred_density_tailrace Chinook_1 14093.750000
+		separation_prob Chinook_1 0.000000
+		spill_equation	Chinook_1	1
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.810000
+		night_fge Steelhead 0.810000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 547.299988
+		pred_density_tailrace Steelhead 14093.750000
+		separation_prob Steelhead 0.000000
+		spill_equation	Steelhead	1
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (Little_Goose_Dam)
+
+	dam Lower_Granite_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.780000
+		night_fge Chinook_1 0.780000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 547.299988
+		pred_density_tailrace Chinook_1 14093.750000
+		separation_prob Chinook_1 0.050000
+		spill_equation	Chinook_1	1
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.810000
+		night_fge Steelhead 0.810000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 547.299988
+		pred_density_tailrace Steelhead 14093.750000
+		separation_prob Steelhead 0.040000
+		spill_equation	Steelhead	1
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (Lower_Granite_Dam)
+
+	dam Hells_Canyon_Dam
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.020000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.020000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.000000
+		night_fge Chinook_1 0.000000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 394.049988
+		pred_density_tailrace Chinook_1 1000.000000
+		separation_prob Chinook_1 0.800000
+		spill_equation	Chinook_1	1
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.000000
+		night_fge Steelhead 0.000000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 394.049988
+		pred_density_tailrace Steelhead 1000.000000
+		separation_prob Steelhead 0.200000
+		spill_equation	Steelhead	1
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (Hells_Canyon_Dam)
+
+	dam Dworshak_Dam
+		gas_theta 10.000000
+		rsw_mort Chinook_1 0.000000
+		spill_mort Chinook_1 0.000000
+		sluiceway_prop Chinook_1 0.000000
+		sluiceway_mort Chinook_1 0.000000
+		bypass_mort Chinook_1 0.000000
+		turbine_mort Chinook_1 0.070000
+		day_fge Chinook_1 0.000000
+		night_fge Chinook_1 0.000000
+		transport_mort Chinook_1 0.020000
+		pred_density_forebay Chinook_1 376.529999
+		pred_density_tailrace Chinook_1 1000.000000
+		separation_prob Chinook_1 0.800000
+		spill_equation	Chinook_1	1
+		end spill_equation (Chinook_1)
+
+		delay_equation	Chinook_1	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Chinook_1)
+
+		rsw_equation	Chinook_1	55
+		end rsw_equation (Chinook_1)
+
+		rsw_mort Steelhead 0.000000
+		spill_mort Steelhead 0.020000
+		sluiceway_prop Steelhead 0.000000
+		sluiceway_mort Steelhead 0.000000
+		bypass_mort Steelhead 0.020000
+		turbine_mort Steelhead 0.070000
+		day_fge Steelhead 0.000000
+		night_fge Steelhead 0.000000
+		transport_mort Steelhead 0.020000
+		pred_density_forebay Steelhead 376.529999
+		pred_density_tailrace Steelhead 1000.000000
+		separation_prob Steelhead 0.200000
+		spill_equation	Steelhead	1
+		end spill_equation (Steelhead)
+
+		delay_equation	Steelhead	46
+			parameter 0 5.500000
+			parameter 1 5.500000
+			parameter 2 0.000000
+			parameter 3 0.000000
+		end delay_equation (Steelhead)
+
+		rsw_equation	Steelhead	55
+		end rsw_equation (Steelhead)
+
+		powerhouse_schedule 0:365 (0:24)
+	end dam (Dworshak_Dam)
+

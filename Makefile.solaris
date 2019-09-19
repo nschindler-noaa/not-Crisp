@@ -1,0 +1,5 @@
+EXTRA_CFLAGS = -DSOLARIS2
+EXTRA_CXXFLAGS = -DSOLARIS2
+
+include Makefile.common
+

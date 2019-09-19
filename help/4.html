@@ -1,0 +1,278 @@
+<html>
+<head>
+<title>Parameter Glossary</title>
+</head>
+<body>
+
+<h1>Parameter Glossary</h1>
+<p>
+The <strong>Parameter Glossary</strong> includes terms that occur in the COMPASS input files: <code>columbia.desc</code> and <code>base.dat</code>. (See the <a href="392.html">River Description File Structure</a> and <a href="396.html">Yearly Input Data File Structure</a> sections, respectively, for further details.) Category indicates whether the Keyword or Token is part of the Dam, Reach, Headwater, Species or Global specifications in the River Description file or the Yearly Input Data file. Terms that are not in bold designate parameters not recommended for use in model operations or parameters not currently in use.
+</p><p>
+<strong>Keyword / Token</strong> [Category]: Description
+</p><ul>
+<li><strong>abbrev</strong> [Dam]: Abbreviation by which this dam will be referred to in flow archives, e.g. BON for Bonneville.
+
+<li><strong>additional_powerhouse</strong> [Dam]: Names a second powerhouse if one exists at the project. This powerhouse has separate specifications for capacity, priority, schedule, threshold, passage mortalities, and fge. It must have a closing end statement.
+
+<li><strong>basin_length</strong> [Dam]: Length, in feet, of the stilling basin.
+
+<li><strong>bypass_elevation</strong> [Dam]: The elevation, in feet, of the bypass orifice of a bypass system. When surface is below this level fish bypass is zero. When term is missing the bypass_elevation defaults to the floor_elevation.
+
+<li><strong>bypass_mort_*</strong> (Species) [Dam]: Species-specific value for mortality suffered in the bypass system. This is a stochastic parameter.
+
+<li><strong>dam</strong> [Dam]: 1) Marks the beginning of a dam specification and the name of the dam in the <code>columbia.desc</code> file, e.g. dam Bonneville Dam. 2) [Dam] Names the dam and marks the beginning of parameter data for the dam. The dam name must be present in the <code>columbia.desc</code> file, and must be paired with an end statement.
+
+<li><strong>day_fge_*</strong> (Species) [Dam]: Species-specific parameter describing fge during daylight hours. This is a stochastic parameter.
+
+<li><strong>delay_equation</strong> (Species) [Dam]: Defines the delay of fish at a dam depending on the species, time of day, season, and flow relative to hydraulic capacity. The delay is expressed in terms of a passage probability, not in terms of observed passage. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>delta_water_temp</strong> [Reach]: Array of values (can be positive or negative) in degrees Celsius to be applied to the water temperature that comes from upstream. For example, if this is set to 1 then the water temperature in the reach will be adjusted to be 1 degree Celsius warmer than the value that COMPASS calculates for the reach. There is no GUI for this parameter.
+
+<li>depth [Reach]: Not recommended. Average depth in the reach, in feet. When possible, use the preferred parameters upper_depth and lower_depth.
+
+<li><strong>elevation_change</strong> [Reach]: Deviation in elevation from full pool, on a daily basis. The value for elevation_change is zero or less, pools may be drawn down but not over-filled.
+
+<li><strong>end</strong>: This token is needed to mark the end of a dam specification, a particular reach, a species or stock specification, and equations.
+
+<li><strong>fge_equation</strong> (Species) [Dam]: Equation defining time varying fge which differs from constant fge. Used when <a href="388.html">age dependent fge</a> is turned on. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>fish_depth_eqn</strong> [Species]: Defines the depth profile for each stock modeled. Used together with gas mortality to define the mortality of fish due to gas relationship. The average gas mortality for a reach is calculated by averaging over all gas levels in a reach and also using a fish depth distribution. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>fish_spill</strong> [Dam]: Days and hours of the day during which planned spill is allocated. These periods indicate the actual hours and days that spill will occur. See <a href="371.html">Planned Spill</a> section for more information on how fish_spill and planned_spill work together to determine spill operations.
+
+<li><strong>floor_elevation</strong> [Dam]: Elevation in feet above sea level of the floor of the forebay above the dam as well as the tailrace downstream from the dam.
+
+<li><strong>flow</strong> [Headwater]: An array of daily flow values, in kcfs.
+
+<li><strong>flow_coef</strong> (calculated): The flow coefficient is a value between 0 and 1, showing how much of the flow is apportioned to each headwater. When reading from a flow archive file, flows are propagated upstream from dams. If a dam has no other dams upstream of it, then its flow will be apportioned amongst all unregulated headwaters above it (after allowing for any contributions of regulated headwaters above it or losses in intervening reaches). The flow to be apportioned amongst unregulated headwaters is divided up according to their flow_max values.
+
+<li><strong>flow_max</strong>: 1) This defines a value for the maximum flow measured in a river over the last century. COMPASS uses this value to calculate how to divide up flows that are propagated upstream. This should follow the river designation. Token used in <code>columbia.desc</code> file. 2) [Headwater] 50-year maximum flow in the headwater; this is used to distribute flows at confluences during upstream propagation.
+
+<li><strong>flow_mean</strong> [Headwater]: Mean flow for the year at the headwater. This is used as a scale factor for headwater modulation.
+
+<li><strong>flow_min</strong>: 1) This defines the lowest flow allowed in a river. This should follow the river designation. Token used in <code>columbia.desc</code> file. 2) [Dam]: Minimum flow allowed at a dam, in kcfs.
+
+<li><strong>flush_trans_equation</strong> [Species]: This equation is used to calculate the FLUSH Transport Figure of Merit. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>forebay_elevation</strong> [Dam]: Elevation of forebay, in feet above sea level, at full pool.
+
+<li><strong>forebay_pred_coef_*</strong> [Species]: The dam forebay predation coefficient which effects the rate of predation activity by northern pikeminnows on smolt for a given predator density. The coefficients are species specific and are defined separately for reaches, dam forebays and dam tailraces. Used as part of the <a href="389.html">Gas and Predation Mortality Model</a>. This is a stochastic parameter.
+
+<li><strong>fork_threshold</strong> [Global]: Defines how big a river fork must be before elevation changes propagate up it. See <a href="46.html">River Parameters</a> for further details on how this is used in COMPASS operations.
+
+<li><strong>gas_dissp_exp</strong> [Global]: An exponent controlling degassing of total dissolved gas from the water (*10^-4cm^2/sec). This depends on river velocity and depth.
+
+<li><strong>gas_mort_eqn</strong> [Species]: Defines the average mortality due to gas for each species in a reach. Used together with <a href="27.html">Population Density vs. Depth</a> (fish_depth_eqn) to define the mortality of fish due to gas relationship. The average gas mortality for a reach is calculated by averaging over all gas levels in a reach and also using a fish depth distribution. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>gas_theta</strong> [Dam]: Gas theta determines the level of mixing between the left-bank and right-bank flows in the tailrace of the dam and the resulting gas levels in each flow upon exiting the dam. This essentially determines the amount of mixing between the spill flow and the powerhouse flow in the tailrace. See the <a href="15.html">TDG Saturation &gt; 100%</a>: Dam section to determine whether the spill side is left or right, facing downstream, at a specific dam.
+
+<li><strong>gas_theta</strong> [Reach]: Gas theta determines the rate of mixing between the gas levels in the left-bank and right-bank flows of the river (facing downstream). These flows often have different levels of gas upon exiting a dam and become more mixed as the river flows downstream. The mixing rate is with respect to time and is set by default to be 0.075 (mile)^-1, which leads to roughly 95% mixing after 40 miles.
+
+<li><strong>gate_width</strong> [Dam]: Width, in feet, of each spill gate at the dam.
+
+<li><strong>headwater</strong> [Headwater]: Names the headwater. This name must be present in the <code>columbia.desc</code> file, and must have a paired "end" statement. e.g. headwater Columbia_Headwater, and end headwater (Columbia_Headwater).
+
+<li><strong>hw_flow_prop</strong> [Global]: Specifies overall water availability in the system relative to an average water year for <a href="373.html">Scenario Mode</a> runs. This is a portion of mean flow as the fraction of an average water year. Set in the <a href="47.html">Headwater Modulation</a> window.
+
+<li><strong>k_entrain</strong> [Dam]: Determines how much gas is added to the powerhouse flow because of amount of spill going over the spillway into the tailrace of the dam. The higher the spill the more gas that is added to the powerhouse flow, with the level of total dissolved gas (tdg) in the powerhouse flow ranging from the forebay tdg level to the tdg level in the spill flow.
+
+<li><strong>latlon</strong>: 1) [Dam] Location of the dam in latitude and longitude in the <code>columbia.desc</code> file. 2) [Reach] Provides latitude and longitude for points in the course of the reach in the <code>columbia.desc</code> file, e.g. latlon 46 09 00 N 123 16 00 W marks 46 degrees 9 minutes north latitude, 123 degrees 16 minutes west longitude.
+
+<li><strong>length</strong> [Release]: Specifies the average length (in mm) of the fish at the time of the release.
+
+<li><strong>loss</strong> [Reach]: Daily loss records, in kcfs, for the reach. This is often 0.
+
+<li><strong>loss_max</strong> [Reach]: The maximum amount of flow allowed to be removed from the reach during model operations.
+
+<li><strong>loss_min</strong> [Reach]: The maximum amount of flow allowed to be added to the reach during model operations.
+
+<li><strong>lower_depth</strong> [Reach]: Depth in feet of the downstream end of the reach.
+
+<li><strong>lower_elev</strong> [Reach]: Elevation above sea level of the river bottom at the lower end of each reach.
+
+<li><strong>mean_forebay_transit_time</strong> (Species) [Dam]: Species-specific average time (in hours) that it takes the fish to travel from the entry point of the dam segment to the dam face where it will enter the bypass, spillway or turbine passage route. The default for each species at each dam is 2 hours. This measure is used in calculating passage mortality and is part of the dam delay model. There is no GUI for this parameter.
+
+<li><strong>migr_var_coef_*</strong> [Species]: Defines the relative variability in fish migration velocity. This is a stochastic parameter.
+
+<li><strong>migration_eqn</strong> [Species]: Defines the velocity of fish as a function of flow, age and time of release. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>mod_*</strong> [Dam/Headwater]: Parameters used in modulation of flows.
+
+<li><strong>mod_coeffs_*</strong> [Headwater]: Coefficients for a nine-term Fourier series that describes the average annual shape of river flow.
+
+<li><strong>mod_coeffs_a</strong> [Headwater]: Cosine coefficients. The first element, a_0, is always 1.
+
+<li><strong>mod_coeffs_b</strong> [Headwater]: Sine coefficients. The first element, b_0, is always 0.
+
+<li><strong>mod_end_hi_sigma</strong> [Headwater]: Day of year to return to low variance.
+
+<li><strong>mod_hi_sigma</strong> [Headwater]: Standard deviation for modulation; used for the part of the year when flow variance is high.
+
+<li><strong>mod_lo_sigma</strong> [Headwater]: Standard deviation for modulation; used for the part of the year when flow variance is low.
+
+<li><strong>mod_norm_sigma</strong> [Dam]: Standard deviation to use when modulating flows at downstream dams.
+
+<li><strong>mod_ou_r</strong> [Dam]: Specifies correlation of flow from one day to the next.
+
+<li><strong>mod_ou_r</strong> [Headwater]: Autocorrelation parameter for flow.
+
+<li><strong>mod_ou_sigma</strong> [Dam]: Standard deviation to use when modulating flows at farthest upstream dams.
+
+<li><strong>mod_start_hi_sigma</strong> [Headwater]: Day of year to start using high variance.
+
+<li><strong>mod_weekly_amp</strong> [Dam]: Amplitude of weekly variation imposed on modulation.
+
+<li><strong>mortality_class</strong> [Global]: Indicates which <a href="389.html">Mortality Model</a> is being used during Scenario and Monte Carlo runs: Gas &amp; Pred Mortality (gas_pred) or Simple Mortality (simple). The currently calibrated Mortality Model is Gas &amp; Pred Mortality.
+
+<li><strong>ngates</strong> [Dam]: Number of spill gates at the dam.
+
+<li><strong>night_fge_*</strong> (Species) [Dam]: Species-specific parameter describing fge during nighttime hours. This is a stochastic parameter.
+
+<li><strong>nsat_backup_equation</strong> [Dam]: Defines the production of total dissolved gas supersaturation due to spilling at dams when the spill value falls out of a reasonable range for the equations provided for Day and Night characteristics. This is one of three equations which defines gas production at a dam. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>nsat_day_equation</strong> [Dam]: Defines the production of total dissolved gas supersaturation due to spilling at dams during day hours (6-18). This is one of three equations which defines gas production at a dam. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>nsat_night_equation</strong> [Dam]: Defines the production of total dissolved gas supersaturation due to spilling at dams during night hours (0-6 and 18-24). This is one of three equations which defines gas production at a dam. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>number</strong> [Release]: An array of numbers of fish released for a period of days which may be a single day or many days. The Release Start day determines on which Julian days the releases occur. This array represents the range of the release and the number of fish released per day.
+
+<li><strong>output_gas</strong> [Reach/Dam/Headwater]: The default setting is off. If output_gas is turned on, it replaces the dissolved gas data at the output of the feature (dam, reach, or headwater). One set of numbers are given, for each dam time slice in the season (366*4, currently). The numbers are applied to both sides of the feature. There is no GUI for this parameter.
+
+<li><strong>output_settings</strong> [Reach/Dam/Headwater]: Specifies what detailed information is output for a given reach, dam, or headwater during both Scenario and Monte Carlo runs. The single value is a combination of up to 10 flags, each of which is a single binary digit, arithmetically added together. Thus a value of "41" would indicate that flags "1", "8", and "32" were set, requesting output of passage, flow, and TDG saturation. Flags which are declared for the wrong type of river feature (e.g. spill at a reach) are silently ignored. The following is a list of flags and where they are allowed (Dam, Reach, and/or Headwater):
+<br> - 1 = passage (d, r)
+<br> - 2 = transport passage (d)
+<br> - 4 = routing (d)
+<br> - 8 = flow (d, r, h)
+<br> - 16 = water temperature (d, r, h)
+<br> - 32 = TDG saturation (d, r)
+<br> - 64 = velocity (r)
+<br> - 128 = loss (r)
+<br> - 256 = spill (d)
+<br> - 512 = elevation (r)
+
+<li><strong>pergate</strong> [Dam]: Amount of flow passed through each spill gate, in kcfs.
+
+<li><strong>planned_spill</strong> [Dam]: Periods of days when spill fractions are planned as part of the water budget and spill allocation agreements and an associated fraction of river flow spilled on an instantaneous basis. Different fractions can be set for different blocks of days. See <a href="371.html">Planned Spill</a> section for more information on how fish_spill and planned_spill work together to determine spill operations.
+
+<li><strong>powerhouse_capacity</strong> [Dam]: Total hydraulic capacity, in kcfs. Same for the second powerhouse (powerhouse_2_capacity).
+
+<li><strong>powerhouse_capacity</strong> [Dam]: Total hydraulic capacity, in kcfs.
+
+<li><strong>powerhouse_priority</strong> [Dam]: Dictates whether the powerhouse is the primary or secondary powerhouse.
+
+<li><strong>powerhouse_schedule</strong> [Dam]: Array of hours during which a powerhouse may operate. This generally defaults to 24 hours year round.
+
+<li><strong>powerhouse_threshold</strong> [Dam]: Amount of spill allowed over primary powerhouse capacity before secondary powerhouse is turned on.
+
+<li><strong>pred_density_forebay</strong> (Species) [Dam]: Species-specific parameter describing the density of predators in the forebay.
+
+<li><strong>pred_density_tailrace</strong> (Species) [Dam]: Species-specific parameter describing the total predator population in the tailrace.
+
+<li><strong>pred_dist</strong> [Reach]: The Predator Distribution Coefficient of the <a href="387.html">predator density / volume interaction</a> for each river segment. The main purpose of the predator density/volume interaction is to properly scale the effect of initial predator densities on predation rate during reservoir drawdown. Used when predator density/volume interaction is turned on.
+
+<li><strong>pred_mean</strong> (Species) [Reach]: Species-specific parameter describing the predator density in each river segment. Densities are given as the number of northern pikeminnows per square kilometer of reservoir. This measure, based on full pool dimensions, is effectively a measure of the total number of predators in a river segment. Used as part of the <a href="389.html">Gas and Predation Mortality Model</a>.
+
+<li><strong>pred_temp_response_eqn</strong> [Species]: Defines the temperature response component of predator activity as a function of consumption rate and temperature. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>predation_prob</strong> (Species) [Dam]: Species-specific array of values describing the relative success of predators during each 6-hour segment of the day; generally this is 1 for all periods.
+
+<li><strong>reach</strong>: 1) [Reach] Designates the beginning of a reach and its name. 2) [Reach] Defines a reach name, e.g. reach Estuary which matches a name defined in the <code>columbia.desc</code> file, and is paired with an "end" statement, e.g. end reach (Estuary).
+
+<li><strong>reach_pred_coef_*</strong> [Species]: The reach predation coefficient which effects the rate of predation activity by northern pikeminnows on smolt for a given predator density. The coefficients are species specific and are defined separately for reaches, dam forebays and dam tailraces. Used as part of the <a href="389.html">Gas and Predation Mortality Model</a>. This is a stochastic parameter.
+
+<li><strong>release</strong> [Release]: Names release and species released, e.g. release Steelhead Lower_Granite_Hatchery 141 where species is steelhead, release site is Lower Granite Hatchery - which is defined in the <code>columbia.desc</code> file - and 141 is the Julian date of the first day of fish release. This token must be paired with an end statement.
+
+<li><strong>release_site</strong>: This defines the name of a release site in the system. A release site must have a location associated with it in the latitude/longitude format; it must also coincide with a point also defined in a reach, i.e. release sites must lie exactly on a river point. Token used in <code>columbia.desc</code> file.
+
+<li><strong>river</strong>: This defines a collection of reaches and assumes that some headwater exists for the river. A river may consist of a number of reaches (e.g. Columbia or Snake) or a single reach (e.g. Imnaha or Grande Ronde). Token used in <code>columbia.desc</code> file.
+
+<li><strong>runtime_settings</strong> [Global]: Specifies what functional relationships to consider during both Scenario and Monte Carlo runs. The single value is a combination of up to 3 flags, each of which is a single binary digit, arithmetically added together.
+<br> - 1 = <a href="386.html">variance suppression</a> turned on
+<br> - 2 = <a href="387.html">predator density / volume interaction</a> turned on
+<br> - 4 = <a href="388.html">age dependent fge</a> turned on
+
+<li><strong>separation_prob</strong> (Species) [Dam]: Species-specific parameter for ability to separate individuals of that species during bypass, in percentage. This is used in transport operations.
+
+<li><strong>sgr</strong> [Dam]: Specific gravity of the roller; this can vary from 0 to 1.
+
+<li><strong>simple_mort_equation</strong> [Species]: This is the mortality equation for reaches when Simple Mortality has been selected as the <a href="389.html">Mortality Model</a>. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>slope</strong> [Reach]: The inward slope of the sides of the reach, in degrees.
+
+<li><strong>smolt_finish</strong> [Release]: The Julian date for the finish of smoltification.
+
+<li><strong>smolt_onset</strong> [Release]: The Julian date for the onset of smoltification. Fish released prior to this date do not actively migrate.
+
+<li><strong>species</strong>: 1) Species tokens must appear first in the <code>columbia.desc</code> file. Any species to be used in the model must be identified by the species token, e.g. species Steelhead. There is no fixed limit on the number of species that can be specified. 2) [Species]: This identifies the species in question, e.g. species Chinook_0. Following the remaining parameter specifications there must be a paired end token, e.g. end species (Chinook_0). The species must be identified in the <code>columbia.desc</code> file.
+
+<li><strong>spill_cap</strong> [Dam]: Maximum allowable flow that is allowed to pass through spill.
+
+<li><strong>spill_equation</strong> (Species) [Dam]: Equation describing the spill efficiency at the dam. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>spill_mort_*</strong> (Species) [Dam]: species-specific value for mortality suffered as fish pass through the spillway. This is a stochastic parameter.
+
+<li><strong>spill_side </strong>[Dam]: Indicates which side looking downstream from a dam is the spill side. For dams, total dissolved gas saturation in percent above 100 is recorded for both the left-bank flow and right-bank flow levels. These flows often have different levels of gas upon exiting a dam because of the gas production from spill. At each dam the two flows are marked as either the powerhouse flow or the spill flow (spill_side). Consult the table in the <a href="15.html">TDG Saturation &gt; 100%: Dam</a> section to determine whether the <em>spill_side </em>is left or right at a specific dam, looking downstream.
+
+<li><strong>spillway_width</strong> [Dam]: Total width, in feet, of the spillway.
+
+<li><strong>stock</strong>: 1) Stock tokens appear after the species tokens in the <code>columbia.desc</code> file. Any specific stock to be used in the model must be identified by the stock token, e.g. stock Catherine Creek Ch1. There is no fixed limit on the number of stocks that can be specified. 2) [Release]: Identifies the stock of release. This can be set to "Generic" or a specific stock can be selected, e.g. Catherine Creek Ch1. The stock must be identified in the <code>columbia.desc</code> file.
+
+<li><strong>storage_basin</strong> [Dam]: Defines storage behind headwater dams. Takes two parameters: the minimum and maximum storage capacity, in thousand acre feet, e.g. <code>storage_basin 0.0 5185.5</code>.
+
+<li><strong>storage_volume</strong> [Dam]: Water volume in the reservoir, in kiloacre-feet (kaf), specified by period (single day or range of days). This token only occurs in specifications for dams that are storage reservoirs as defined in the <code>columbia.desc</code> file, i.e. Hells Canyon, Dworshak, and Chief Joseph.
+
+<li><strong>tailrace_elevation</strong> [Dam]: Elevation of tailrace, in feet above sea level, at full pool.
+
+<li>tailrace_length [Dam]: Not in use. Length of the tailrace in feet. COMPASS previously determined the residence time of fish in the tailrace in terms of the flow, the width of the dam, and a tailrace length. This time was used in calculating predation in the tailrace. The time was set by adjusting the tailrace length. Tailrace length was set to conform to the region of high flows immediately below the dam. This region also contains elevated predator densities.
+
+<li><strong>tailrace_pred_coef_*</strong> [Species]: The dam tailrace predation coefficient which effects the rate of predation activity by northern pikeminnows on smolt for a given predator density. The coefficients are species specific and are defined separately for reaches, dam forebays and dam tailraces. Used as part of the <a href="389.html">Gas and Predation Mortality Model</a>. This is a stochastic parameter.
+
+<li><strong>trans_mort_equation</strong> (Species) [Dam]: Defines the relationship between water particle travel time (WPTT) and transport survival based on the assumption that changes in flow affect how well fish survive transportation. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>transport</strong> [Dam]: Defines transport operations.
+<br> - <strong>start_by_date</strong>: 0 = start transportation if daily counts exceed a specified number (start_count) in a day; 1 = start transportation on a specified day (start_date).
+<br> - <strong>start_date</strong>: Specific Julian day to start transportation.
+<br> - <strong>start_count</strong>: Start transportation when this number of fish pass the dam in a day.
+<br> - <strong>max_restarts</strong>: 0 = transportation cannot be restarted; 1 = transportation can be restarted exactly once; -1 = transport can be restarted as often as the conditions are met.
+<br> - <strong>restart_by_date</strong>: 0 = restart transportation if daily count exceeds a specified number (restart_count); 1 = restart transportation on a specified day (restart_date).
+<br> - <strong>restart_date</strong>: Specific Julian day to restart transportation.
+<br> - <strong>restart_count</strong>: Restart transportation when this number of fish pass the dam in a day.
+<br> - <strong>end_date</strong>: Specific Julian day to stop transportation.
+<br> - <strong>end_count</strong>: Stop transportation if the daily fish count drops below this number for a given number of sequential days (num_low_days).
+<br> - <strong>num_low_days</strong>: Stop transportation if the daily fish count drops below a given number for this number of sequential days.
+<br> - <strong>hfl_passed_perc</strong>: Identifies what percent of the indicator species (high_flow_species) must pass to terminate separation. Separators in bypass systems of dams will separate and return smaller fish to the tailrace when flow is above a specified level. The separation is terminated and all fish are collected when passage of a specified stock exceeds a specified percentage.
+<br> - <strong>high_flow</strong>: Identifies flows above which separation starts. Separators in bypass systems of dams will separate and return smaller fish to the tailrace when flow is above a specified level. The separation is terminated and all fish are collected when passage of a specified stock exceeds a specified percentage.
+<br> - <strong>high_flow_species</strong> (Species): Identifies indicator species (Chinook 0, Chinook 1, Steelhead) for which its passage will terminate separation. Separators in bypass systems of dams will separate and return smaller fish to the tailrace when flow is above a specified level. The separation is terminated and all fish are collected when passage of a specified stock exceeds a specified percentage.
+<br> - <strong>transport_rate</strong>: Barge or truck transportation speed in miles per day from collection site to release site.
+<br> - <strong>release_point</strong>: River reach into which fish are released.
+
+<li><strong>transport_mort_*</strong> (Species) [Dam]: Species-specific value for mortality suffered during the entire transport process. This is a stochastic parameter.
+
+<li><strong>turbine_mort_*</strong> (Species) [Dam]: Species-specific value for mortality suffered during turbine passage. This is a stochastic parameter.
+
+<li><strong>ufree</strong> [Global]: River velocity in free flowing portions of river (in kfs*10^-1).
+
+<li><strong>upper_depth</strong> [Reach]: Depth in feet of the upstream end of the reach.
+
+<li><strong>v_var</strong> [Species]: Variance in velocity; this contributes to "spread" of fish.
+
+<li>vitality [Release]: Not implemented, yet. A measure of the health of the fish in the release.
+
+<li>vitality_change [Release]: Not implemented, yet. Incremental change in vitality for the release.
+
+<li><strong>water_temp</strong> [Headwater]: An array of water temperatures, in degrees Celsius. Temperatures are determined below confluences by averaging input temperatures weighted by flow volume.
+
+<li><strong>water_travel_upper_segment</strong> [Global]: Used in transport mortality calculations. Set by COMPASS to be Little Goose Pool. There is no GUI to set this parameter.
+
+<li><strong>water_travel_lower_segment</strong> [Global]: Used in transport mortality calculations. Set by COMPASS to be Estuary. There is no GUI to set this parameter.
+
+<li><strong>water_travel_first_day</strong> [Global]: Used in transport mortality calculations. Set by COMPASS to be 1. There is no GUI to set this parameter.
+
+<li><strong>water_travel_last_day</strong> [Global]: Used in transport mortality calculations. Set by COMPASS to be 365. There is no GUI to set this parameter.
+
+<li><strong>width</strong> [Reach]: Width of the reach in feet.
+</ul>
+
+
+</body>
+</html>

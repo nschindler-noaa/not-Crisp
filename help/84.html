@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Message Log</title>
+</head>
+<body>
+<h3>Message Log</h3>
+<p>
+Selecting <a href="347.html"><strong>File</strong></a><strong><img src="subm.jpg">Message Log</strong> opens or restores the Log window. The Log window provides a number of messages from model runs. COMPASS will alert you in the Log window if model operations encounter unexpected or incorrect model parameters. Error messages that warn of data problems that will cause COMPASS to stop are always displayed in the Log window. You can choose which other types of messages will be displayed by choosing one or more of the options from the <strong>Logging</strong> menu in the Log window. 
+</p><p>
+Please send email to "crisp-passage@cbr.washington.edu" if you have questions about any of the messages you get when running the model.
+</p><p>
+<b>Log window features</b>
+</p><ul>
+<li><strong>File</strong>
+<br> - <strong>New</strong>: Clears Log window of all messages.
+<br> - <strong>Save As</strong>: Saves all text in the Log window to a file.
+<br> - <strong>Print</strong>: Opens print dialog to print contents of Log window.
+<br> - <strong>Close</strong>: Discards all messages and closes Log window.
+
+<li><strong>Edit</strong>
+<br> - <strong>Copy</strong>: Copies selected text to the system clipboard.
+<br> - <strong>Select All</strong>: Selects the whole contents of the Log window.
+
+<li><strong>Logging</strong>
+<br> - <strong>Warning</strong>: Reports non-lethal error information including extra and missing keywords in data files. By default, this option is turned on.
+<br> - <strong>Message</strong>: Reports two types of information: 1) summary of survival and travel time for all releases (this information is also saved in <code>summary.dat</code>) and 2) any data requested by making selections in the <a href="63.html">Output Settings</a> windows before run execution.
+<br> - <strong>Raw</strong>: Reports the same data as in <strong>Message</strong> but with greater detail. For example, if TDG Saturation is selected in Output Settings for some reach, the <strong>Message</strong> option will give averaged levels for each day, whereas the <strong>Raw</strong> setting will give TDG levels for each dam time slice (four per day) in the entire year.
+<br> - <strong>Debug</strong>: Reports information on river velocity and other parameters at Julian Day 0 in each river segment. This information is used to debug a <code>columbia.desc</code> file by checking if flows and cross-sectional area of segments are reasonable.
+
+<li><strong>Help</strong>: Opens context-sensitive help information.
+</ul><p>
+<b>Sample output showing the beginning of a <a href="373.html">Scenario Mode</a> run summary</b>
+</p><pre>transportation started at Lower Granite Dam, day 92
+transportation stopped at Lower Granite Dam, day 300
+transportation started at Little Goose Dam, day 92
+transportation stopped at Little Goose Dam, day 300
+transportation started at Lower Monumental Dam, day 94
+transportation stopped at Lower Monumental Dam, day 300
+transportation started at McNary Dam, day 160
+transportation stopped at McNary Dam, day 300
+
+CRiSP1 Summary Output File
+Mon Jun 21 10:51:58 1999
+
+Scenario Mode
+No average flows were calculated for this simulation.
+
+Statistics fields: first day, last day, total passage, mean day
+median day, mode day, std.dev day, avg.flow
+bypass out, spillway out, turbine out, transport out
+total in, bypass in, spillway in, turbine in, transport in
+
+The preceding line was repeated 2 times.
+Release:  Dworshak      Species:  Steelhead     Stock:  Generic Start date:  
+119        Released:  1192503
+
+Survival Below Lower Granite Pool
+Passed:         1078314
+Survival:       90.4%
+stats: 120   165        1078314.38      127.03          126.33          
+125.00          3.45    0.00    0.00    0.00    0.00    0.00    1179277.88      
+0.00    0.00    0.00    0.00  
+</pre>
+
+
+</body>
+</html>

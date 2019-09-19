@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>Species and Stock Tokens and Parameters</title>
+</head>
+<body>
+<h3>Species and Stock Tokens and Parameters</h3>
+<p>
+The following is an example of a species specification from a Yearly Input Data file (<code>.dat</code>).
+</p><pre>	species Chinook_1
+reach_pred_coef_mean 12.700000
+reach_pred_coef_low 0.000000
+reach_pred_coef_high 0.000000
+forebay_pred_coef_mean 18.000000
+forebay_pred_coef_low 0.000000
+forebay_pred_coef_high 0.000000
+tailrace_pred_coef_mean 0.000021
+tailrace_pred_coef_low 0.000000
+tailrace_pred_coef_high 0.000000
+v_var 57.45
+migr_var_coef_mean 1.00
+migr_var_coef_low 0.70
+migr_var_coef_high 1.30
+gas_mort_eqn  34
+parameter 0 0.000021 0.000000 0.010000 
+parameter 1 0.005980 0.000000 0.010000 
+parameter 2 10.900000 5.000000 15.000000 
+end gas_mort_eqn ( )
+
+fish_depth_eqn  27
+parameter 0 12.000000 0.010000 100.000000 
+parameter 1 36.000000 0.010000 100.000000 
+end fish_depth_eqn ( )
+
+simple_mort_equation  44
+parameter 0 14.070000 10.000000 18.000000 
+parameter 1 0.182000 0.000000 0.300000 
+parameter 2 0.000000 0.000000 1.000000 
+end simple_mort_equation ( )
+
+flush_trans_equation  45
+parameter 0 5.825900 5.000000 6.000000 
+parameter 1 5.353300 5.000000 6.000000 
+parameter 2 0.980000 0.000000 1.000000 
+end flush_trans_equation ( )
+
+migration_eqn  24
+parameter 0 0.643000 -10.000000 20.000000 
+parameter 1 9.810600 0.000000 100.000000 
+parameter 2 0.579100 0.000000 2.000000 
+parameter 3 0.122600 0.000000 2.000000 
+parameter 4 90.004997 50.000000 250.000000 
+parameter 5 0.150000 0.000000 1.000000 
+end migration_eqn ( )
+
+pred_temp_response_eqn  38
+parameter 0 22.265030 0.000000 100.000000 
+parameter 1 0.572960 0.000000 2.000000 
+parameter 2 9.861010 0.000000 30.000000 
+end pred_temp_response_eqn ( )
+
+end species (Chinook_1)
+</pre>
+<p>
+The following is an example of a stock specification.
+</p><pre>	stock Catherine_Creek_Ch1
+v_var 41.37
+migr_var_coef_mean 1.00
+migr_var_coef_low 0.10
+migr_var_coef_high 0.10
+migration_eqn  24
+parameter 0 -5.975300 -10.000000 20.000000 
+parameter 1 4.910700 0.000000 100.000000 
+parameter 2 2.046700 0.000000 3.000000 
+parameter 3 0.000000 0.000000 2.000000 
+parameter 4 100.000000 50.000000 250.000000 
+parameter 5 0.154200 0.000000 1.000000 
+end migration_eqn ( )
+
+pred_temp_response_eqn  38
+parameter 0 22.265030 0.000000 100.000000 
+parameter 1 0.572960 0.000000 2.000000 
+parameter 2 9.861010 0.000000 30.000000 
+end pred_temp_response_eqn ( )
+
+end stock (Catherine_Creek_Ch1)
+</pre>
+
+<h4>Keywords and descriptions for species and stock tokens and parameters</h4>
+<ul>
+<li><strong>species</strong>: This identifies the species in question, e.g. species Chinook_0. Following the remaining parameter specifications there must be a paired end token, e.g. end species (Chinook_0). The species must be identified in the <code>columbia.desc</code> file.
+
+<li><strong>reach_pred_coef_*</strong>: The reach predation coefficient which effects the rate of predation activity by northern pikeminnows on smolt for a given predator density. The coefficients are species specific and are defined separately for reaches, dam forebays and dam tailraces. Used as part of the <a href="389.html">Gas and Predation Mortality Model</a>. This is a stochastic parameter.
+
+<li><strong>forebay_pred_coef_*</strong>: The dam forebay predation coefficient which effects the rate of predation activity by northern pikeminnows on smolt for a given predator density. The coefficients are species specific and are defined separately for reaches, dam forebays and dam tailraces. Used as part of the <a href="389.html">Gas and Predation Mortality Model</a>. This is a stochastic parameter.
+
+<li><strong>tailrace_pred_coef_*</strong>: The dam tailrace predation coefficient which effects the rate of predation activity by northern pikeminnows on smolt for a given predator density. The coefficients are species specific and are defined separately for reaches, dam forebays and dam tailraces. Used as part of the <a href="389.html">Gas and Predation Mortality Model</a>. This is a stochastic parameter.
+
+<li><strong>v_var</strong>: Variance in velocity; this contributes to "spread" of fish.
+
+<li><strong>migr_var_coef_*</strong>: Defines the relative variability in fish migration velocity. This is a stochastic parameter.
+
+<li><strong>gas_mort_eqn</strong>: Defines the average mortality due to gas for each species in a reach. Used together with <a href="27.html">Population Density vs. Depth</a> (fish_depth_eqn) to define the mortality of fish due to gas relationship. The average gas mortality for a reach is calculated by averaging over all gas levels in a reach and also using a fish depth distribution. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>fish_depth_eqn</strong>: Defines the depth profile for each stock modeled. Used together with <a href="26.html">Gas Mortality Equation</a> to define the mortality of fish due to gas relationship. The average gas mortality for a reach is calculated by averaging over all gas levels in a reach and also using a fish depth distribution. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>simple_mort_equation</strong>: This is the mortality equation for reaches when Simple Mortality has been selected as the <a href="389.html">Mortality Model</a>. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>flush_trans_equation</strong>: This equation is used to calculate the FLUSH Transport Figure of Merit. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>migration_eqn</strong>: Defines the velocity of fish as a function of flow, age and time of release. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+
+<li><strong>pred_temp_response_eqn</strong>: Defines the temperature response component of predator activity as a function of consumption rate and temperature. The number following the token dictates the form of the equation used. This must be paired with an end statement.
+</ul>
+
+
+</body>
+</html>

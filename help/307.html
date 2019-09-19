@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>COMPASS Submodels</title>
+</head>
+<body>
+
+
+<h1>COMPASS Submodels</h1>
+<p>
+COMPASS integrates a number of submodels that describe interactions of isolated components. Together they represent the complete model. These elements include submodels for: fish travel time, reservoir mortality, dam passage, total dissolved gas supersaturation, and flow/velocity relationship. The structure of COMPASS allows you to select different formulations of these submodels at run time. In this sense, COMPASS can be configured for simple interactions or it can be set up to consider many ecological interactions. COMPASS, as it is presently calibrated, has an intermediate level of complexity: age dependent travel time is implemented, but other age dependent factors are switched off. A brief description of submodels follows.
+</p><p>
+<em>Travel Time</em>
+</p><p>
+The smolt migration submodel, which moves and spreads releases of fish down river, incorporates flow, river geometry, fish age and date of release. The arrival of fish at a given point in the river is expressed through a probability distribution. All travel time factors can be applied or they can be switched off individually, resulting in a simplified migration model. 
+</p><p>
+The underlying fish migration theory was developed from ecological principles. Each fish stock travels at a particular velocity relative to the water velocity. The relative velocity can be set to vary with fish age. In addition, within a single release, fish spread as they move down the river.
+</p><p>
+<em>Predation Rate</em>
+</p><p>
+The predation rate submodel distinguishes mortality in the reservoir, and the forebay and tailrace of dams. The rate of predation can depend on temperature, diel distribution of light, smolt age, predator density, and reservoir elevation.
+</p><p>
+<em>Gas Bubble Disease</em>
+</p><p>
+COMPASS incorporates a separate component of mortality due to gas bubble disease which is produced by total dissolved gas supersaturation. The mortality rate is species specific and is adjusted to reflect the effect of fish length and population depth distribution.
+</p><p>
+<em>Dam Passage</em>
+</p><p>
+Timing of fish passage at dams is developed in terms of a species dependent distribution factor and the distribution of fish in the forebay, which can change with daily and seasonal light levels. Fish guidance efficiency can be held constant over a season or it can vary with fish age and reservoir level.
+</p><p>
+<em>Transportation Passage</em>
+</p><p>
+Transportation of fish at collection dams is in accordance with the methods implemented by the U.S. Army Corps of Engineers. The start and termination of transportation and separation of fish according to species can be determined for any dam under the same rules used to manage the transportation program. Time in transportation and transportation mortality can also be set.
+</p><p>
+<em>Total Dissolved Gas Supersaturation</em>
+</p><p>
+Total dissolved gas supersaturation, resulting from spill at dams, can be described with gas production equations which are an empirical fit of spill data and monitoring data collected by the U.S. Army Corps of Engineers. Alternatively, supersaturation can be described by other empirical models (not calibrated) or by a mechanistic submodel that includes information on the geometry of the spill bay and physics of gas entrainment.
+</p><p>
+<em>Flow</em>
+</p><p>
+Flow is modeled in two ways: it can be specified at dams using results of system hydroregulation models or it can be described in terms of daily flows at system headwaters. When flow is described in headwater streams, the flow submodel generates a random set of seasonal flows that have statistical properties in accordance with the available water over a year. In this fashion, the model statistically reproduces flow for wet, average and dry years. The user controls the mainstem river flows by adjusting the outflow of the storage reservoirs within their volume constraints.
+</p><p>
+<em>Water Velocity</em>
+</p><p>
+Water velocity is used in COMPASS as one of the elements defining fish migration. Velocity is determined from flow, reservoir geometry and reservoir elevation.
+</p><p>
+<em>Reservoir Drawdown</em>
+</p><p>
+Reservoir elevation is set on a daily basis from elevation information in the system hydroregulation models or from user specified files. As water levels drop, part of the reservoir may become a free-flowing stream.
+</p><p>
+<em>Stochastic Processes</em>
+</p><p>
+COMPASS can be run in a Monte Carlo Mode in which flows and model parameters vary within prescribed limits. In this mode, survival to any point in the river can be determined as a probability distribution.
+</p><p>
+<em>Geographical Extent</em>
+</p><p>
+COMPASS can describe a river to any desired level of detail by changing a single file containing the latitude and longitude of river segments, dams and release sites. In its present configuration, three river description files are available. One file contains an abbreviated river map with the major tributaries and about thirty representative release sites, although more can be added easily. The two other river description files contain drawdown alternatives. See the <a href="319.html">River Description File</a> section for more information.
+</p>
+
+</body>
+</html>

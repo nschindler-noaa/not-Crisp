@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Reading Data into COMPASS</title>
+</head>
+<body>
+<h2>Reading Data into COMPASS</h2>
+<p>
+By default, data stored in COMPASS is replaced by data read from a file, if and only if, that data item appears in the file. For each appearing data item, this is referred to as a "replace" operation. For example, this allows you to read in new flow information from a <code>.flow</code> file without affecting the rest of the data currently stored in COMPASS.
+</p><p>
+There are three types of data that are exceptions to this rule: spill schedules, transport records, and releases. For these three types of data, a decision is made as to whether to delete existing data prior to reading the file. In all cases and all modes, once data reading has begun, multiple specifications of transport, spill, or release data are merged with each other.
+</p><p>
+In interactive (GUI) mode, COMPASS performs Replace or Merge operations according to file extension and user response.
+</p><ul>
+<li><strong>Replace</strong>: The default behavior is to delete all existing data records of type spill schedule, release, and transport before a data file is read. If subsequent data of the same type appears in the file, it is then effectively a replacement.
+
+<li><strong>Merge</strong>: Under certain circumstances (see following list), existing data for spill schedule, release, and transport is retained, and subsequently read data is merged with the pre-existing data.
+</ul>
+<p>
+Depending on the file name extension, Replace or Merge operations are as follows:
+</p>
+<ul>
+<li><code>.dat</code>, <code>.ctrl</code>, or unknown
+<br> - Delete spill, transport, and releases prior to reading file, and
+<br> - replace all data appearing in file.
+
+<li><code>.spill</code>, <code>.spi</code>
+<br> - Prompt user whether to "Reset all spill?" and <strong>Replace</strong> or <strong>Merge</strong> new spill depending on user response,
+<br> - merge any transport or release data, and
+<br> - replace all other data appearing in file.
+
+<li><code>.dam</code>
+<br> - Prompt user whether to "Reset all dams?" and <strong>Replace</strong> or <strong>Merge</strong> new transports depending on user response,
+<br> - merge any spill or release data, and
+<br> - replace all other data appearing in file.
+
+<li><code>.rls</code>
+<br> - Prompt user whether to "Reset all releases?" and <strong>Replace</strong> or <strong>Merge</strong> new releases depending on user response,
+<br> - merge any transport or spill data, and
+<br> - replace all other data appearing in file.
+
+<li><code>.beh</code>, <code>.res</code>, <code>.flo</code>, <code>.flow</code>, <code>.riv</code>, <code>.river</code>, <code>.cnf</code>
+<br> - Merge any transport, spill, or release data, and
+<br> - replace all other data appearing in file.
+</ul>
+<p>
+Files which are "included" from other files are not subject to the above determinations (see the <a href="405.html">COMPASS Parser</a> section for information on file includes). Only the top-level file to be read (not included) will have its extension examined. The above list then holds for all data read from that file or from any file subsequently "included."
+</p><p>
+In batch mode runs, a replace operation is always performed. All spill, transport, and release data are first deleted, and then replaced with data appearing in the file. All other data appearing in the file is replaced as per the standard default. Note that in batch mode, since the pre-existing data consists of hard-coded defaults which may be questionable, it is advisable to make sure that files used in batch mode runs provide full coverage for all parameters.
+</p>
+
+</body>
+</html>

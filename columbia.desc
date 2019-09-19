@@ -1,0 +1,3876 @@
+# August 15 2006.  JF added McNary Pool as release site
+# April 4 2006. WNB changed this header to remove legacy header info.
+# and updated the release sites and stock names.
+# This is a simpler version of earlier columbia.desc files
+
+species Chinook 1
+species Steelhead
+                 
+stock Snake River Steelhead
+stock Snaketrap Ch1
+
+release_site McNary Pool
+latlon 46 11 30 N 119 1 50 W
+end  (release)
+
+release_site McNary Tailrace
+latlon 45 55 56 N 119 19 32 W
+end  (release)
+
+release_site Lower Granite Tailrace
+latlon 46 41 9 N 117 27 6 W
+end  (release)
+
+release_site Lower Granite Forebay
+latlon 46 39 52 N 117 26 2 W
+end  (release)
+
+release_site Snake River Trap
+latlon 46 25 32 N 117 2 16 W
+end  (release)            
+
+river Columbia                    
+flow_max 280.00
+flow_min 4                  
+                    
+reach Estuary                    
+width 5930.23                    
+lower_depth 60
+upper_depth 50
+lower_elev -60
+latlon 46 14 8 N 123 52 19 W
+latlon 46 15 3 N 123 48 44 W
+latlon 46 15 17 N 123 46 23 W
+latlon 46 16 9 N 123 44 20 W
+latlon 46 15 19 N 123 39 21 W
+latlon 46 15 25 N 123 35 56 W
+latlon 46 15 36 N 123 32 4 W
+latlon 46 16 14 N 123 29 38 W
+latlon 46 15 56 N 123 28 27 W
+latlon 46 14 27 N 123 26 8 W
+latlon 46 12 17 N 123 24 37 W
+latlon 46 8 55 N 123 19 2 W
+latlon 46 9 0 N 123 15 46 W
+end (Estuary)                    
+                    
+reach Jones Beach                    
+width 2503.64                    
+lower_depth 50
+upper_depth 45
+lower_elev -50     
+latlon 46 9 0 N 123 15 46 W
+latlon 46 10 29 N 123 12 12 W
+latlon 46 11 11 N 123 10 0 W
+latlon 46 11 1 N 123 6 50 W
+latlon 46 9 0 N 123 2 24 W
+latlon 46 7 54 N 123 0 0 W
+latlon 46 6 29 N 122 57 57 W
+latlon 46 5 52 N 122 56 24 W
+latlon 46 5 1 N 122 54 8 W
+latlon 46 3 20 N 122 53 0 W
+latlon 46 1 43 N 122 52 21 W
+latlon 46 0 26 N 122 51 0 W
+latlon 45 58 45 N 122 50 7 W
+latlon 45 57 23 N 122 48 39 W
+latlon 45 55 21 N 122 48 27 W
+latlon 45 53 10 N 122 48 1 W
+latlon 45 51 53 N 122 47 2 W
+latlon 45 50 15 N 122 46 58 W
+latlon 45 47 30 N 122 46 30 W
+latlon 45 45 48 N 122 45 58 W
+latlon 45 43 36 N 122 45 45 W
+latlon 45 42 2 N 122 46 16 W
+latlon 45 40 44 N 122 46 13 W
+latlon 45 39 12 N 122 45 34 W
+end (Jones Beach)                    
+                    
+reach Columbia Gorge                    
+width 5280                    
+lower_depth 45
+upper_depth 30
+lower_elev -45
+latlon 45 39 12 N 122 45 34 W
+latlon 45 38 22 N 122 42 52 W
+latlon 45 37 20 N 122 40 58 W
+latlon 45 36 29 N 122 38 37 W
+latlon 45 36 36 N 122 36 53 W
+latlon 45 36 6 N 122 33 30 W
+latlon 45 35 14 N 122 31 15 W
+latlon 45 34 29 N 122 27 38 W
+latlon 45 34 17 N 122 24 58 W
+latlon 45 34 39 N 122 23 0 W
+latlon 45 34 26 N 122 21 15 W
+latlon 45 33 10 N 122 19 14 W
+latlon 45 33 4 N 122 15 25 W
+latlon 45 33 31 N 122 12 31 W
+latlon 45 34 39 N 122 10 21 W
+latlon 45 35 11 N 122 7 21 W
+latlon 45 36 3 N 122 3 40 W
+latlon 45 36 42 N 122 1 51 W
+latlon 45 37 0 N 122 1 0 W
+latlon 45 37 14 N 122 0 20 W
+latlon 45 38 41 N 121 56 30 W
+end (Columbia Gorge)
+
+reach Bonneville Tailrace
+width 5280.0
+lower_depth  30
+upper_depth 16 
+lower_elev -30
+latlon 45 38 41 N 121 56 23 W
+latlon 45 38 41 N 121 56 21 W
+end (Bonneville Tailrace)               
+                    
+dam Bonneville Dam                    
+powerhouse_capacity 136
+powerhouse_2_capacity 152
+floor_elevation 	 -16.0
+forebay_elevation	  77.0
+tailrace_elevation	 0 
+bypass_elevation          65.5
+spillway_width 		1080.0
+spill_side            right
+pergate                    2.9
+ngates                    18
+gate_width                60.0
+basin_length 		 144.5
+sgr 			   1.0
+abbrev BON                    
+latlon 45 38 41 N 121 56 21 W
+end (Bonneville)                      
+
+reach Bonneville Pool                   
+width 3642.9
+upper_depth	22.0
+lower_depth	93.0
+slope           88
+lower_elev -16
+latlon 45 38 41 N 121 56 21 W
+latlon 45 38 40 N 121 55 56 W
+latlon 45 39 8 N 121 54 50 W
+latlon 45 39 17 N 121 54 19 W
+latlon 45 39 42 N 121 53 58 W
+latlon 45 40 17 N 121 54 1 W
+latlon 45 41 16 N 121 52 28 W
+latlon 45 41 42 N 121 51 35 W
+latlon 45 42 19 N 121 49 6 W
+latlon 45 42 23 N 121 48 24 W
+latlon 45 41 41 N 121 44 6 W
+latlon 45 41 41 N 121 42 9 W
+latlon 45 42 17 N 121 40 1 W
+latlon 45 42 19 N 121 37 34 W
+latlon 45 43 1 N 121 34 25 W
+latlon 45 43 31 N 121 31 43 W
+latlon 45 43 14 N 121 29 45 W
+latlon 45 42 28 N 121 28 8 W
+latlon 45 42 5 N 121 27 29 W
+latlon 45 41 46 N 121 25 33 W
+latlon 45 41 40 N 121 23 53 W
+latlon 45 42 9 N 121 22 10 W
+latlon 45 42 17 N 121 20 51 W
+latlon 45 42 12 N 121 19 22 W
+latlon 45 41 32 N 121 17 43 W
+latlon 45 41 4 N 121 16 36 W
+latlon 45 40 26 N 121 13 50 W
+latlon 45 40 12 N 121 12 48 W
+latlon 45 39 21 N 121 12 13 W
+latlon 45 38 28 N 121 11 43 W
+latlon 45 37 40 N 121 11 35 W
+latlon 45 36 58 N 121 11 42 W
+latlon 45 36 33 N 121 11 18 W
+latlon 45 36 19 N 121 10 44 W
+latlon 45 36 21 N 121 9 19 W
+latlon 45 36 34 N 121 8 20 W
+latlon 45 36 50 N 121 7 57 W
+end (Bonneville)
+                    
+dam The Dalles Dam                     
+powerhouse_capacity 375
+floor_elevation            55.0
+bypass_elevation          149.0
+forebay_elevation         160.0                   
+tailrace_elevation       80.0
+spillway_width		 1380.0
+spill_side            right
+pergate                     3.0
+ngates                     23
+gate_width                 60.0
+basin_length 		  170.0
+sgr 			    0.5
+abbrev TDA                     
+latlon 45  36  50  N  121  07  57  W     
+end (The Dalles)                    
+                    
+reach The Dalles Pool                   
+width 3624.5
+upper_depth	 60.0
+lower_depth	105.0
+slope		87
+lower_elev 55
+latlon 45 36 50 N 121 7 57 W
+latlon 45 37 38 N 121 6 48 W
+latlon 45 38 25 N 121 5 37 W
+latlon 45 38 58 N 121 4 46 W
+latlon 45 39 12 N 121 3 14 W
+latlon 45 39 8 N 121 1 22 W
+latlon 45 39 11 N 121 0 9 W
+latlon 45 38 57 N 120 58 52 W
+latlon 45 39 24 N 120 57 8 W
+latlon 45 39 18 N 120 56 18 W
+latlon 45 38 58 N 120 55 24 W
+latlon 45 38 55 N 120 54 21 W
+end (The Dalles)                    
+                    
+reach Deschutes Confluence                   
+width 3624.5
+upper_depth	 40.0
+lower_depth	 60.0
+slope		87
+lower_elev 100
+latlon 45 38 55 N 120 54 21 W
+latlon 45 39 2 N 120 53 32 W
+latlon 45 39 29 N 120 52 50 W
+latlon 45 40 19 N 120 51 13 W
+latlon 45 40 45 N 120 49 17 W
+latlon 45 41 13 N 120 47 12 W
+latlon 45 42 34 N 120 42 39 W
+latlon 45 42 59 N 120 41 33 W
+end (Deschutes)                    
+                    
+dam John Day Dam                    
+powerhouse_capacity 322
+floor_elevation 	114.0
+forebay_elevation	269.0
+tailrace_elevation	163.0	
+bypass_elevation        250.5 
+spillway_width		 1240
+spill_side            right
+pergate                   4.0
+ngates                    20
+gate_width               62.0
+basin_length 		  185
+sgr 			  1.0
+abbrev JDA                    
+latlon 45 42 59 N 120 41 33 W
+end (John Day)                    
+                    
+reach John Day Pool                    
+width 5399.2
+upper_depth	 34.0
+lower_depth	149.0 
+slope		86.9
+lower_elev 120
+latlon 45 42 59 N 120 41 33 W
+latlon 45 43 28 N 120 40 30 W
+latlon 45 44 13 N 120 39 9 W
+latlon 45 44 43 N 120 37 52 W
+latlon 45 44 44 N 120 36 26 W
+latlon 45 44 47 N 120 35 13 W
+latlon 45 44 12 N 120 33 21 W
+latlon 45 42 34 N 120 31 0 W
+latlon 45 42 1 N 120 29 58 W
+latlon 45 41 44 N 120 28 47 W
+latlon 45 41 48 N 120 27 41 W
+latlon 45 42 2 N 120 23 29 W
+latlon 45 42 36 N 120 20 19 W
+latlon 45 43 20 N 120 16 49 W
+latlon 45 43 32 N 120 14 22 W
+latlon 45 43 40 N 120 12 34 W
+latlon 45 45 46 N 120 9 57 W
+latlon 45 46 25 N 120 8 17 W
+latlon 45 47 14 N 120 4 6 W
+latlon 45 49 23 N 119 58 8 W
+latlon 45 49 38 N 119 55 39 W
+latlon 45 50 10 N 119 52 6 W
+latlon 45 50 56 N 119 48 2 W
+latlon 45 51 8 N 119 44 41 W
+latlon 45 51 54 N 119 41 33 W
+latlon 45 53 37 N 119 38 59 W
+latlon 45 55 18 N 119 35 52 W
+latlon 45 55 29 N 119 34 6 W
+latlon 45 54 35 N 119 31 53 W
+latlon 45 54 23 N 119 28 54 W
+latlon 45 54 58 N 119 26 36 W
+latlon 45 55 23 N 119 22 20 W
+latlon 45 55 56 N 119 19 32 W
+latlon 45 56 3 N 119 19 0 W
+latlon 45 56 10 N 119 17 45 W
+end (John Day)                   
+                    
+                                    
+dam McNary Dam                    
+powerhouse_capacity 232
+floor_elevation 	228.0
+forebay_elevation       340.5
+tailrace_elevation      269.0
+bypass_elevation        330.0
+spillway_width		 1320
+spill_side            right
+pergate                   4.8
+ngates                   22
+gate_width               60.0
+basin_length 		  270
+sgr 			  1.0
+abbrev MCN                 
+latlon 45 56 10 N 119 17 45 W
+end (McNary)                    
+                    
+                    
+reach McNary Pool                   
+width 5152.9
+upper_depth	40 
+lower_depth	105.0
+slope      	88
+lower_elev 235
+latlon 45 56 10 N 119 17 45 W
+latlon 45 56 23 N 119 15 11 W
+latlon 45 55 46 N 119 11 53 W
+latlon 45 55 43 N 119 9 43 W
+latlon 45 56 7 N 119 7 0 W
+latlon 45 56 38 N 119 5 38 W
+latlon 45 57 42 N 119 3 15 W
+latlon 45 58 21 N 119 1 10 W
+latlon 45 59 51 N 118 59 20 W
+latlon 46 0 42 N 118 58 18 W
+latlon 46 1 37 N 118 56 53 W
+latlon 46 2 58 N 118 56 39 W
+latlon 46 4 14 N 118 55 51 W
+latlon 46 5 33 N 118 55 58 W
+latlon 46 6 49 N 118 56 58 W
+latlon 46 7 41 N 118 57 51 W
+latlon 46 9 43 N 118 59 23 W
+latlon 46 11 30 N 119 1 50 W
+latlon 46 11 40 N 119 2 2 W
+end (McNary)                    
+                    
+reach Columbia above Snake Confluence        
+width 5152.9
+lower_depth     40 	
+upper_depth     28 
+slope 	        88.5
+lower_elev  300
+latlon 46 11 40 N 119 2 2 W
+latlon 46 11 52 N 119 2 45 W
+latlon 46 12 27 N 119 4 14 W
+latlon 46 12 49 N 119 5 6 W
+latlon 46 13 6 N 119 6 13 W
+latlon 46 13 16 N 119 7 3 W
+latlon 46 13 35 N 119 8 30 W
+latlon 46 13 47 N 119 10 0 W
+latlon 46 14 4 N 119 11 17 W
+latlon 46 14 21 N 119 12 25 W
+latlon 46 14 42 N 119 13 26 W
+latlon 46 14 58 N 119 13 47 W
+latlon 46 15 40 N 119 14 6 W
+latlon 46 15 55 N 119 14 31 W
+latlon 46 16 7 N 119 15 13 W
+latlon 46 16 16 N 119 15 42 W
+latlon 46 16 38 N 119 15 57 W
+latlon 46 18 6 N 119 15 24 W
+latlon 46 19 1 N 119 15 13 W
+latlon 46 20 6 N 119 15 24 W
+latlon 46 21 23 N 119 15 39 W
+latlon 46 22 28 N 119 16 2 W
+latlon 46 22 56 N 119 16 8 W
+latlon 46 24 1 N 119 15 52 W
+latlon 46 25 33 N 119 15 39 W
+latlon 46 26 35 N 119 15 42 W
+latlon 46 27 17 N 119 15 45 W
+latlon 46 27 47 N 119 15 34 W
+latlon 46 28 45 N 119 15 29 W
+latlon 46 29 3 N 119 15 39 W
+latlon 46 30 28 N 119 15 52 W
+end (Columbia above Snake Confluence)    
+                    
+reach Hanford Reach                    
+width 3213.52                    
+lower_depth    29 
+upper_depth		29
+lower_elev 330
+latlon 46 30 28 N 119 15 52 W
+latlon 46 31 18 N 119 16 11 W
+latlon 46 31 46 N 119 16 51 W
+latlon 46 32 24 N 119 18 14 W
+latlon 46 33 17 N 119 19 4 W
+latlon 46 33 50 N 119 19 39 W
+latlon 46 34 27 N 119 21 2 W
+latlon 46 35 7 N 119 22 13 W
+latlon 46 35 32 N 119 22 31 W
+latlon 46 36 48 N 119 24 5 W
+latlon 46 37 36 N 119 24 29 W
+latlon 46 38 22 N 119 24 36 W
+latlon 46 39 4 N 119 24 43 W
+latlon 46 39 26 N 119 25 10 W
+latlon 46 39 37 N 119 25 59 W
+latlon 46 40 2 N 119 27 1 W
+latlon 46 40 20 N 119 27 23 W
+latlon 46 40 50 N 119 27 6 W
+latlon 46 41 18 N 119 26 52 W
+latlon 46 41 50 N 119 27 27 W
+latlon 46 42 35 N 119 28 25 W
+latlon 46 43 3 N 119 29 11 W
+latlon 46 43 28 N 119 30 51 W
+latlon 46 43 16 N 119 31 34 W
+latlon 46 42 32 N 119 32 1 W
+latlon 46 42 0 N 119 32 36 W
+latlon 46 41 13 N 119 33 48 W
+latlon 46 40 2 N 119 35 11 W
+latlon 46 39 18 N 119 36 11 W
+latlon 46 38 50 N 119 37 16 W
+latlon 46 38 27 N 119 38 45 W
+latlon 46 38 26 N 119 39 55 W
+latlon 46 38 49 N 119 40 52 W
+latlon 46 38 59 N 119 41 54 W
+latlon 46 38 54 N 119 42 49 W
+latlon 46 38 35 N 119 43 54 W
+latlon 46 38 11 N 119 44 43 W
+latlon 46 38 6 N 119 46 2 W
+latlon 46 38 0 N 119 46 49 W
+latlon 46 37 51 N 119 47 52 W
+latlon 46 37 35 N 119 49 6 W
+latlon 46 37 31 N 119 50 17 W
+latlon 46 37 36 N 119 51 39 W
+latlon 46 37 44 N 119 52 22 W
+latlon 46 37 51 N 119 52 57 W
+latlon 46 37 58 N 119 53 54 W
+latlon 46 38 38 N 119 54 33 W
+end (Hanford Reach)                    
+                    
+dam Priest Rapids Dam                    
+powerhouse_capacity 187
+floor_elevation 	387.0
+forebay_elevation	488
+tailrace_elevation	416.0
+spillway_width		  880
+spill_side            right
+pergate                   2.2
+ngates                   22
+gate_width               40.0
+basin_length		 75.3
+sgr			  1.0
+abbrev PRD                    
+latlon 46 38 38 N 119 54 33 W
+end (Priest Rapids Dam)                    
+                    
+reach Priest Rapids Pool                    
+width 3208.3
+upper_depth	 32
+lower_depth  101	
+slope           87
+lower_elev 387
+latlon 46 38 38 N 119 54 33 W
+latlon 46 39 10 N 119 54 50 W
+latlon 46 40 22 N 119 56 10 W
+latlon 46 42 6 N 119 57 25 W
+latlon 46 42 45 N 119 57 52 W
+latlon 46 43 21 N 119 58 17 W
+latlon 46 44 19 N 119 58 15 W
+latlon 46 45 19 N 119 58 4 W
+latlon 46 46 6 N 119 57 1 W
+latlon 46 47 2 N 119 56 1 W
+latlon 46 47 50 N 119 55 35 W
+latlon 46 48 50 N 119 55 31 W
+latlon 46 49 47 N 119 56 21 W
+latlon 46 50 49 N 119 57 18 W
+latlon 46 51 27 N 119 57 49 W
+latlon 46 52 23 N 119 58 14 W
+end (Priest Rapids Pool)                    
+                    
+dam Wanapum Dam                    
+powerhouse_capacity 178
+floor_elevation 	456.0
+forebay_elevation	572.5
+tailrace_elevation	497.0
+spillway_width		  600
+spill_side            right
+pergate                   2.0
+ngates                    12
+gate_width                50.0
+basin_length		  100
+sgr			  1.0
+abbrev WAN                    
+latlon 46 52 23 N 119 58 14 W
+end (Wanapum)                    
+                    
+reach Wanapum Pool                    
+width 2996.1
+upper_depth	 42.0
+lower_depth	116.0
+slope     	86.97
+lower_elev 456
+latlon 46 52 23 N 119 58 14 W
+latlon 46 52 40 N 119 58 31 W
+latlon 46 54 51 N 119 58 5 W
+latlon 46 56 31 N 119 58 4 W
+latlon 46 57 7 N 119 58 29 W
+latlon 46 58 9 N 119 58 56 W
+latlon 47 0 9 N 119 59 50 W
+latlon 47 2 4 N 120 0 36 W
+latlon 47 3 13 N 120 1 21 W
+latlon 47 3 41 N 120 2 2 W
+latlon 47 4 31 N 120 2 20 W
+latlon 47 5 9 N 120 2 9 W
+latlon 47 6 16 N 120 1 4 W
+latlon 47 7 13 N 120 0 23 W
+latlon 47 8 6 N 120 0 1 W
+latlon 47 8 56 N 120 0 5 W
+latlon 47 9 15 N 120 0 12 W
+latlon 47 9 46 N 120 0 36 W
+latlon 47 10 51 N 120 0 20 W
+latlon 47 11 32 N 120 0 9 W
+latlon 47 12 28 N 120 0 5 W
+latlon 47 13 0 N 120 0 4 W
+latlon 47 13 22 N 120 0 32 W
+latlon 47 13 34 N 120 1 19 W
+latlon 47 13 33 N 120 2 15 W
+latlon 47 13 26 N 120 3 0 W
+latlon 47 13 23 N 120 4 0 W
+latlon 47 13 36 N 120 4 33 W
+latlon 47 14 11 N 120 5 11 W
+latlon 47 14 59 N 120 5 38 W
+latlon 47 15 27 N 120 5 36 W
+latlon 47 16 30 N 120 5 22 W
+latlon 47 17 33 N 120 5 17 W
+latlon 47 18 42 N 120 5 13 W
+latlon 47 19 41 N 120 4 58 W
+latlon 47 20 14 N 120 5 4 W
+latlon 47 20 33 N 120 5 32 W
+end (Wanapum Pool)                    
+                    
+dam Rock Island Dam                    
+powerhouse_capacity 72
+powerhouse_2_capacity 148
+floor_elevation 	530.0
+forebay_elevation	614.0
+tailrace_elevation	578.0
+spillway_width		 1110
+spill_side            right
+pergate                   2.0
+ngates                    37
+gate_width                30.0
+basin_length 		100.0
+sgr 			  0.1
+abbrev RIS                    
+latlon 47 20 33 N 120 5 32 W
+end (Rock Island)                    
+                    
+reach Rock Island Pool                   
+width 			 982.1
+upper_depth	    44
+lower_depth     84	
+slope     	64.35	
+lower_elev 530
+latlon 47 20 33 N 120 5 32 W
+latlon 47 20 48 N 120 6 5 W
+latlon 47 21 11 N 120 6 33 W
+latlon 47 21 36 N 120 7 1 W
+latlon 47 21 54 N 120 7 38 W
+latlon 47 22 2 N 120 8 30 W
+latlon 47 22 1 N 120 8 56 W
+latlon 47 22 4 N 120 9 53 W
+latlon 47 22 15 N 120 10 17 W
+latlon 47 22 18 N 120 10 47 W
+latlon 47 22 31 N 120 11 38 W
+latlon 47 22 37 N 120 12 14 W
+latlon 47 22 38 N 120 12 56 W
+latlon 47 22 45 N 120 13 31 W
+latlon 47 22 44 N 120 14 9 W
+latlon 47 22 53 N 120 14 59 W
+latlon 47 23 35 N 120 17 12 W
+latlon 47 24 2 N 120 17 33 W
+latlon 47 24 33 N 120 17 43 W
+latlon 47 25 2 N 120 17 55 W
+latlon 47 25 37 N 120 18 7 W
+latlon 47 26 5 N 120 18 30 W
+latlon 47 27 17 N 120 18 46 W
+end (Rock Island)                    
+                    
+reach Wenatchee Columbia               
+width 982.1
+upper_depth      15.0
+lower_depth      44
+slope		 64.35 
+lower_elev 570
+latlon 47 27 17 N 120 18 46 W
+latlon 47 27 52 N 120 18 56 W
+latlon 47 28 45 N 120 18 44 W
+latlon 47 29 54 N 120 18 24 W
+latlon 47 30 41 N 120 18 10 W
+latlon 47 31 26 N 120 17 59 W
+latlon 47 31 59 N 120 17 34 W
+end (Wenatchee Columbia)                    
+                    
+dam Rocky Reach Dam                    
+powerhouse_capacity 220
+floor_elevation 	599.0
+forebay_elevation	707.4
+tailrace_elevation	614.0
+spillway_width 		  600
+spill_side            left
+pergate                   2.0
+ngates                     12
+gate_width               50.0
+basin_length 		  150
+sgr 			  1.0
+abbrev RRH                    
+latlon 47 31 59 N 120 17 34 W
+end (Rocky Reach)                    
+                    
+reach Rocky Reach Pool                   
+width       1815.8
+upper_depth	37.4
+lower_depth	108.4
+slope      	84.5
+lower_elev  599
+latlon 47 31 58 N 120 17 33 W
+latlon 47 32 34 N 120 17 14 W
+latlon 47 33 13 N 120 16 15 W
+latlon 47 33 35 N 120 15 23 W
+latlon 47 34 23 N 120 15 8 W
+latlon 47 34 42 N 120 14 42 W
+latlon 47 35 5 N 120 14 12 W
+latlon 47 35 56 N 120 13 54 W
+latlon 47 36 39 N 120 14 5 W
+latlon 47 37 20 N 120 14 2 W
+latlon 47 37 33 N 120 14 15 W
+latlon 47 38 53 N 120 13 29 W
+latlon 47 39 2 N 120 13 14 W
+latlon 47 39 44 N 120 13 0 W
+latlon 47 40 20 N 120 12 8 W
+latlon 47 40 58 N 120 11 50 W
+latlon 47 42 1 N 120 12 8 W
+latlon 47 42 39 N 120 12 51 W
+latlon 47 43 16 N 120 13 16 W
+latlon 47 43 56 N 120 13 10 W
+latlon 47 44 38 N 120 12 44 W
+latlon 47 45 18 N 120 11 55 W
+latlon 47 45 49 N 120 10 42 W
+latlon 47 46 21 N 120 8 50 W
+latlon 47 46 36 N 120 7 40 W
+latlon 47 46 26 N 120 6 47 W
+latlon 47 45 53 N 120 5 40 W
+latlon 47 45 49 N 120 5 7 W
+latlon 47 45 59 N 120 4 2 W
+latlon 47 46 21 N 120 2 43 W
+latlon 47 46 36 N 120 1 48 W
+latlon 47 46 44 N 120 1 9 W
+latlon 47 46 47 N 120 0 32 W
+latlon 47 46 54 N 119 59 37 W
+latlon 47 47 12 N 119 59 20 W
+latlon 47 47 32 N 119 59 9 W
+latlon 47 48 12 N 119 58 44 W
+latlon 47 48 41 N 119 58 25 W
+latlon 47 49 29 N 119 57 52 W
+latlon 47 49 56 N 119 57 43 W
+latlon 47 50 46 N 119 57 30 W
+latlon 47 51 17 N 119 55 46 W
+latlon 47 51 46 N 119 55 3 W
+latlon 47 52 50 N 119 54 26 W
+latlon 47 53 15 N 119 54 33 W
+latlon 47 53 51 N 119 54 55 W
+latlon 47 54 27 N 119 54 29 W
+latlon 47 54 58 N 119 53 26 W
+latlon 47 55 25 N 119 52 44 W
+latlon 47 56 20 N 119 51 37 W
+latlon 47 56 49 N 119 51 51 W
+end (Rocky Reach)
+ 
+dam Wells Dam                    
+powerhouse_capacity 220
+floor_elevation 	670.0
+forebay_elevation	781.0
+tailrace_elevation	707.4
+bypass_elevation        716.0
+spillway_width 		  504
+spill_side            left
+pergate                   2.0
+ngates                    11
+gate_width                46.0
+basin_length 		   30
+sgr 			  1.0
+abbrev WEL                    
+latlon 47 56 49 N 119 51 51 W
+end (Wells)                    
+                    
+reach Wells Pool                    
+width 3023.1
+upper_depth	91.0
+lower_depth	111.0
+slope      	86
+lower_elev 670
+latlon 47 56 49 N 119 51 51 W
+latlon 47 57 35 N 119 52 6 W
+latlon 47 58 12 N 119 52 43 W
+latlon 47 59 5 N 119 52 45 W
+latlon 47 59 39 N 119 52 12 W
+latlon 48 0 0 N 119 52 7 W
+latlon 48 0 27 N 119 52 1 W
+latlon 48 1 21 N 119 52 23 W
+latlon 48 1 59 N 119 52 59 W
+latlon 48 2 42 N 119 53 28 W
+latlon 48 3 1 N 119 53 44 W
+end (Wells)                    
+                    
+reach Methow Confluence                    
+width 3023.1
+upper_depth  51	
+lower_depth	 91.0
+slope     	 87 
+lower_elev   690
+latlon 48 3 1 N 119 53 44 W
+latlon 48 3 30 N 119 53 6 W
+latlon 48 3 50 N 119 52 1 W
+latlon 48 4 10 N 119 51 19 W
+latlon 48 4 34 N 119 50 34 W
+latlon 48 4 45 N 119 49 31 W
+latlon 48 5 11 N 119 48 33 W
+latlon 48 5 10 N 119 47 10 W
+latlon 48 5 15 N 119 46 38 W
+latlon 48 5 36 N 119 46 26 W
+latlon 48 6 8 N 119 46 35 W
+latlon 48 6 21 N 119 46 15 W
+latlon 48 6 13 N 119 45 7 W
+latlon 48 5 58 N 119 44 4 W
+latlon 48 5 48 N 119 43 32 W
+end  (Methow)
+
+reach Okanogan Confluence                    
+width             3023 
+upper_depth	      43
+lower_depth       51	
+slope             00
+lower_elev 			730
+latlon 48 5 48 N 119 43 32 W
+latlon 48 5 4 N 119 42 33 W
+latlon 48 5 7 N 119 41 52 W
+latlon 48 5 17 N 119 41 26 W
+latlon 48 5 13 N 119 40 34 W
+latlon 48 4 18 N 119 40 6 W
+latlon 48 3 26 N 119 40 31 W
+latlon 48 2 29 N 119 41 6 W
+latlon 48 1 58 N 119 41 31 W
+latlon 48 1 46 N 119 41 33 W
+latlon 48 1 17 N 119 41 14 W
+latlon 48 0 50 N 119 40 22 W
+latlon 48 0 25 N 119 39 44 W
+latlon 48 0 5 N 119 39 20 W
+latlon 47 59 50 N 119 38 18 W
+latlon 47 59 48 N 119 37 56 W
+end (Okanogan)                    
+        
+dam Chief Joseph Dam                    
+powerhouse_capacity 219
+floor_elevation 	743.0
+forebay_elevation	956.0
+tailrace_elevation	781.0
+spillway_width 		 1320
+spill_side            right
+pergate                   2.0
+ngates                    19
+gate_width               40.0
+basin_length 		  180
+sgr 			  1.0
+abbrev CHJ                    
+storage_basin		0.0 5185.5
+latlon 47 59 48 N 119 37 56 W
+end (Chief Joseph)                    
+end (Columbia)                    
+             
+ 
+river Deschutes                    
+flow_max 75.5
+flow_min 2
+reach Deschutes River                 
+width 430                    
+depth 4.4         
+lower_elev 100
+latlon 45 38 55 N 120 54 21 W
+latlon 45 38 6 N 120 54 17 W
+latlon 45 37 41 N 120 54 22 W
+latlon 45 37 27 N 120 54 19 W
+latlon 45 37 6 N 120 54 8 W
+latlon 45 36 36 N 120 54 2 W
+latlon 45 36 20 N 120 54 8 W
+latlon 45 35 58 N 120 54 12 W
+latlon 45 35 48 N 120 54 4 W
+latlon 45 35 39 N 120 53 52 W
+latlon 45 35 21 N 120 53 41 W
+latlon 45 35 1 N 120 53 33 W
+latlon 45 34 40 N 120 53 34 W
+latlon 45 34 18 N 120 53 47 W
+latlon 45 33 57 N 120 53 55 W
+latlon 45 33 35 N 120 53 54 W
+latlon 45 32 49 N 120 53 51 W
+latlon 45 32 30 N 120 53 38 W
+latlon 45 32 23 N 120 53 29 W
+latlon 45 32 17 N 120 53 14 W
+latlon 45 32 11 N 120 53 2 W
+latlon 45 31 53 N 120 52 47 W
+latlon 45 31 32 N 120 52 29 W
+latlon 45 31 23 N 120 52 12 W
+latlon 45 31 24 N 120 51 56 W
+latlon 45 31 28 N 120 51 21 W
+latlon 45 31 23 N 120 51 0 W
+latlon 45 31 9 N 120 50 43 W
+latlon 45 30 58 N 120 50 30 W
+latlon 45 30 58 N 120 50 14 W
+latlon 45 30 46 N 120 49 54 W
+latlon 45 30 35 N 120 49 37 W
+latlon 45 30 22 N 120 49 30 W
+latlon 45 30 14 N 120 49 27 W
+latlon 45 30 7 N 120 49 40 W
+latlon 45 30 8 N 120 49 50 W
+latlon 45 29 55 N 120 50 3 W
+latlon 45 29 43 N 120 50 5 W
+latlon 45 29 27 N 120 50 4 W
+latlon 45 29 2 N 120 50 7 W
+latlon 45 28 35 N 120 50 8 W
+latlon 45 28 12 N 120 50 9 W
+latlon 45 27 54 N 120 50 15 W
+latlon 45 27 35 N 120 50 30 W
+latlon 45 27 20 N 120 50 46 W
+latlon 45 27 5 N 120 51 1 W
+latlon 45 26 45 N 120 51 0 W
+latlon 45 26 24 N 120 51 1 W
+latlon 45 25 30 N 120 50 53 W
+latlon 45 25 13 N 120 50 53 W
+latlon 45 25 5 N 120 51 1 W
+latlon 45 24 51 N 120 51 17 W
+latlon 45 24 34 N 120 51 25 W
+latlon 45 24 15 N 120 51 22 W
+latlon 45 23 52 N 120 51 18 W
+latlon 45 23 25 N 120 51 17 W
+latlon 45 23 17 N 120 51 21 W
+latlon 45 23 3 N 120 51 39 W
+latlon 45 23 0 N 120 51 57 W
+latlon 45 22 52 N 120 52 37 W
+latlon 45 22 46 N 120 52 55 W
+latlon 45 22 41 N 120 53 13 W
+latlon 45 22 32 N 120 53 29 W
+latlon 45 22 10 N 120 53 49 W
+latlon 45 21 52 N 120 54 4 W
+latlon 45 21 28 N 120 54 22 W
+latlon 45 21 23 N 120 54 45 W
+latlon 45 21 7 N 120 55 2 W
+latlon 45 20 47 N 120 55 22 W
+latlon 45 20 37 N 120 55 38 W
+latlon 45 20 33 N 120 55 47 W
+latlon 45 20 13 N 120 55 46 W
+latlon 45 19 48 N 120 56 1 W
+latlon 45 19 50 N 120 56 10 W
+latlon 45 19 50 N 120 56 38 W
+latlon 45 19 55 N 120 56 43 W
+latlon 45 19 48 N 120 56 50 W
+latlon 45 19 42 N 120 56 43 W
+latlon 45 19 31 N 120 56 26 W
+latlon 45 19 11 N 120 56 20 W
+latlon 45 19 0 N 120 56 24 W
+latlon 45 18 43 N 120 56 51 W
+latlon 45 18 23 N 120 56 57 W
+latlon 45 18 10 N 120 57 17 W
+latlon 45 18 8 N 120 57 45 W
+latlon 45 18 16 N 120 57 59 W
+latlon 45 18 23 N 120 58 18 W
+latlon 45 18 30 N 120 58 30 W
+latlon 45 18 42 N 120 58 47 W
+latlon 45 18 39 N 120 59 4 W
+latlon 45 18 27 N 120 59 19 W
+latlon 45 18 14 N 120 59 46 W
+latlon 45 18 14 N 121 0 5 W
+latlon 45 18 13 N 121 0 24 W
+latlon 45 18 13 N 121 0 45 W
+latlon 45 18 1 N 121 0 51 W
+latlon 45 17 49 N 121 0 57 W
+latlon 45 17 33 N 121 1 3 W
+latlon 45 17 26 N 121 1 10 W
+latlon 45 17 22 N 121 1 28 W
+latlon 45 17 20 N 121 1 49 W
+latlon 45 17 13 N 121 1 58 W
+latlon 45 17 3 N 121 2 5 W
+latlon 45 16 53 N 121 1 55 W
+latlon 45 16 50 N 121 1 36 W
+latlon 45 16 54 N 121 1 17 W
+latlon 45 16 56 N 121 1 1 W
+latlon 45 16 39 N 121 0 46 W
+latlon 45 16 21 N 121 0 47 W
+latlon 45 15 59 N 121 0 55 W
+latlon 45 15 47 N 121 1 6 W
+latlon 45 15 37 N 121 1 20 W
+latlon 45 15 25 N 121 1 42 W
+latlon 45 15 21 N 121 1 56 W
+latlon 45 15 12 N 121 2 10 W
+latlon 45 14 59 N 121 2 25 W
+latlon 45 14 42 N 121 2 33 W
+latlon 45 14 17 N 121 2 41 W
+latlon 45 13 59 N 121 2 52 W
+latlon 45 13 50 N 121 3 10 W
+latlon 45 13 44 N 121 3 33 W
+latlon 45 13 44 N 121 3 54 W
+latlon 45 13 41 N 121 4 19 W
+latlon 45 13 39 N 121 4 31 W
+latlon 45 13 21 N 121 4 39 W
+latlon 45 13 9 N 121 4 41 W
+latlon 45 12 54 N 121 4 38 W
+latlon 45 12 35 N 121 4 22 W
+latlon 45 12 12 N 121 4 23 W
+latlon 45 11 49 N 121 4 24 W
+latlon 45 11 29 N 121 4 35 W
+latlon 45 11 15 N 121 4 46 W
+latlon 45 11 7 N 121 4 47 W
+latlon 45 10 53 N 121 4 39 W
+latlon 45 10 17 N 121 4 19 W
+latlon 45 10 13 N 121 4 30 W
+latlon 45 10 10 N 121 4 42 W
+latlon 45 9 58 N 121 5 4 W
+latlon 45 9 50 N 121 5 27 W
+latlon 45 9 37 N 121 5 47 W
+latlon 45 9 29 N 121 6 5 W
+latlon 45 9 11 N 121 6 18 W
+latlon 45 8 56 N 121 6 36 W
+latlon 45 8 41 N 121 6 37 W
+latlon 45 8 21 N 121 6 38 W
+latlon 45 8 3 N 121 6 37 W
+latlon 45 7 46 N 121 6 41 W
+latlon 45 7 40 N 121 6 43 W
+latlon 45 7 36 N 121 6 50 W
+latlon 45 7 26 N 121 7 1 W
+latlon 45 7 22 N 121 7 7 W
+latlon 45 7 6 N 121 7 23 W
+latlon 45 6 49 N 121 7 36 W
+latlon 45 6 32 N 121 7 46 W
+latlon 45 6 14 N 121 7 50 W
+latlon 45 5 59 N 121 7 47 W
+latlon 45 5 46 N 121 7 41 W
+latlon 45 5 33 N 121 7 31 W
+latlon 45 5 17 N 121 7 16 W
+latlon 45 4 58 N 121 6 47 W
+latlon 45 4 21 N 121 6 12 W
+latlon 45 4 10 N 121 5 57 W
+latlon 45 4 1 N 121 5 57 W
+latlon 45 3 56 N 121 5 59 W
+latlon 45 3 54 N 121 6 6 W
+latlon 45 3 48 N 121 6 22 W
+latlon 45 3 40 N 121 6 30 W
+latlon 45 3 17 N 121 6 29 W
+latlon 45 2 59 N 121 6 16 W
+latlon 45 2 43 N 121 6 1 W
+latlon 45 2 32 N 121 5 47 W
+latlon 45 2 12 N 121 5 50 W
+latlon 45 1 58 N 121 5 40 W
+latlon 45 1 55 N 121 5 26 W
+latlon 45 1 58 N 121 5 17 W
+latlon 45 1 59 N 121 5 8 W
+latlon 45 1 54 N 121 4 53 W
+latlon 45 1 45 N 121 4 39 W
+latlon 45 1 40 N 121 4 25 W
+latlon 45 1 42 N 121 4 8 W
+latlon 45 1 43 N 121 3 52 W
+latlon 45 1 45 N 121 3 36 W
+latlon 45 1 29 N 121 3 19 W
+latlon 45 1 11 N 121 3 11 W
+latlon 45 0 45 N 121 3 5 W
+latlon 45 0 17 N 121 3 7 W
+latlon 44 59 47 N 121 3 15 W
+latlon 44 59 19 N 121 3 30 W
+latlon 44 58 56 N 121 3 33 W
+latlon 44 58 44 N 121 3 34 W
+latlon 44 58 38 N 121 3 34 W
+latlon 44 58 37 N 121 3 46 W
+latlon 44 58 35 N 121 3 57 W
+latlon 44 58 31 N 121 4 15 W
+latlon 44 58 29 N 121 4 32 W
+latlon 44 58 27 N 121 4 41 W
+latlon 44 58 24 N 121 4 54 W
+latlon 44 58 12 N 121 5 8 W
+latlon 44 58 3 N 121 5 12 W
+latlon 44 57 50 N 121 5 11 W
+latlon 44 57 37 N 121 5 6 W
+latlon 44 57 21 N 121 4 58 W
+latlon 44 56 50 N 121 4 49 W
+latlon 44 56 14 N 121 4 49 W
+latlon 44 55 54 N 121 4 52 W
+latlon 44 55 42 N 121 5 1 W
+latlon 44 55 16 N 121 5 6 W
+latlon 44 55 4 N 121 5 17 W
+latlon 44 54 44 N 121 5 21 W
+latlon 44 54 34 N 121 5 13 W
+latlon 44 54 30 N 121 4 59 W
+latlon 44 54 17 N 121 4 42 W
+latlon 44 53 58 N 121 4 29 W
+latlon 44 53 38 N 121 4 19 W
+latlon 44 53 23 N 121 3 50 W
+latlon 44 53 0 N 121 3 32 W
+latlon 44 52 37 N 121 3 8 W
+latlon 44 52 27 N 121 3 5 W
+latlon 44 52 22 N 121 3 4 W
+latlon 44 52 17 N 121 3 4 W
+latlon 44 52 13 N 121 3 9 W
+latlon 44 52 3 N 121 3 15 W
+latlon 44 51 58 N 121 3 24 W
+latlon 44 51 53 N 121 3 33 W
+latlon 44 51 40 N 121 3 39 W
+end  (Deschutes)
+                  
+reach Deschutes above Warm Springs
+width 225                
+depth 4.4
+lower_elev 1230
+latlon 44 51 40 N 121 3 39 W
+latlon 44 51 26 N 121 3 54 W
+latlon 44 51 19 N 121 4 10 W
+latlon 44 51 10 N 121 4 19 W
+latlon 44 51 4 N 121 4 28 W
+latlon 44 50 55 N 121 4 39 W
+latlon 44 50 33 N 121 4 47 W
+latlon 44 50 10 N 121 4 52 W
+latlon 44 49 45 N 121 4 58 W
+latlon 44 49 30 N 121 5 18 W
+latlon 44 49 22 N 121 5 22 W
+latlon 44 49 7 N 121 5 16 W
+latlon 44 48 56 N 121 5 16 W
+latlon 44 48 49 N 121 5 29 W
+latlon 44 48 43 N 121 5 43 W
+latlon 44 48 30 N 121 5 56 W
+latlon 44 48 14 N 121 6 9 W
+latlon 44 48 19 N 121 6 25 W
+latlon 44 48 23 N 121 6 49 W
+latlon 44 48 8 N 121 6 57 W
+latlon 44 47 46 N 121 7 19 W
+latlon 44 47 38 N 121 7 53 W
+latlon 44 47 34 N 121 8 28 W
+latlon 44 47 35 N 121 9 0 W
+latlon 44 47 30 N 121 9 39 W
+latlon 44 47 26 N 121 10 16 W
+latlon 44 47 19 N 121 10 32 W
+latlon 44 47 0 N 121 10 56 W
+latlon 44 46 43 N 121 11 53 W
+latlon 44 46 36 N 121 12 11 W
+latlon 44 46 33 N 121 12 18 W
+latlon 44 46 24 N 121 12 22 W
+latlon 44 46 6 N 121 12 21 W
+latlon 44 45 53 N 121 12 25 W
+latlon 44 45 44 N 121 12 40 W
+latlon 44 45 44 N 121 12 54 W
+latlon 44 45 41 N 121 13 20 W
+latlon 44 45 43 N 121 13 34 W
+latlon 44 45 27 N 121 13 42 W
+latlon 44 45 16 N 121 13 41 W
+latlon 44 45 4 N 121 13 41 W
+latlon 44 44 40 N 121 13 46 W
+latlon 44 44 21 N 121 14 6 W
+latlon 44 44 1 N 121 14 18 W
+latlon 44 43 51 N 121 14 20 W
+latlon 44 43 38 N 121 14 21 W
+latlon 44 43 18 N 121 14 13 W
+latlon 44 43 0 N 121 14 3 W
+latlon 44 42 46 N 121 13 50 W
+latlon 44 42 26 N 121 14 3 W
+latlon 44 42 19 N 121 14 3 W
+latlon 44 42 11 N 121 14 0 W
+latlon 44 42 0 N 121 13 50 W
+latlon 44 41 56 N 121 13 48 W
+latlon 44 41 54 N 121 13 47 W
+latlon 44 41 49 N 121 13 44 W
+latlon 44 41 39 N 121 13 51 W
+latlon 44 41 35 N 121 14 0 W
+end (Deschutes above Warm Springs)                    
+end (Deschutes)                 
+                
+                    
+river Snake                   
+flow_max 100.00
+flow_min 2               
+               
+reach Lower Snake River                    
+width   			 1096
+upper_depth     10	
+lower_depth     40	
+slope	 			 00	
+lower_elev 		 300
+latlon 46 11 40 N 119 2 2 W
+latlon 46 11 59 N 119 1 50 W
+latlon 46 12 35 N 119 1 35 W
+latlon 46 13 2 N 119 1 9 W
+latlon 46 13 29 N 119 0 17 W
+latlon 46 13 52 N 118 59 27 W
+latlon 46 14 16 N 118 58 28 W
+latlon 46 14 21 N 118 57 25 W
+latlon 46 14 25 N 118 56 21 W
+latlon 46 14 41 N 118 54 25 W
+latlon 46 14 57 N 118 53 12 W
+latlon 46 14 55 N 118 52 49 W
+latlon 46 14 55 N 118 52 43 W
+end  (Lower Snake)                   
+                
+dam Ice Harbor Dam                  
+powerhouse_capacity 106      
+floor_elevation 	330
+forebay_elevation	440.5
+tailrace_elevation	343.0
+bypass_elevation      431.5
+spillway_width 		  600 
+spill_side            right
+pergate                   2.4
+ngates                   10
+gate_width               60.0
+basin_length 		  178
+sgr 			  1.0
+abbrev IHR               
+latlon 46 14 55 N 118 52 43 W
+end  (Ice Harbor)                   
+                 
+reach Ice Harbor Pool                
+width         2154.3
+upper_depth	  18 
+lower_depth	  110
+slope	        83.33	
+lower_elev    330
+latlon 46 14 55 N 118 52 43 W
+latlon 46 15 1 N 118 51 54 W
+latlon 46 15 22 N 118 51 11 W
+latlon 46 15 36 N 118 50 57 W
+latlon 46 16 10 N 118 50 35 W
+latlon 46 16 27 N 118 49 54 W
+latlon 46 16 54 N 118 49 35 W
+latlon 46 17 19 N 118 48 52 W
+latlon 46 17 29 N 118 47 48 W
+latlon 46 17 24 N 118 46 44 W
+latlon 46 17 45 N 118 46 2 W
+latlon 46 18 10 N 118 45 55 W
+latlon 46 18 32 N 118 46 5 W
+latlon 46 18 46 N 118 46 23 W
+latlon 46 19 13 N 118 46 16 W
+latlon 46 19 40 N 118 45 41 W
+latlon 46 19 57 N 118 45 31 W
+latlon 46 20 18 N 118 45 26 W
+latlon 46 20 41 N 118 45 19 W
+latlon 46 21 19 N 118 44 48 W
+latlon 46 21 37 N 118 44 30 W
+latlon 46 21 42 N 118 43 12 W
+latlon 46 21 42 N 118 42 15 W
+latlon 46 21 51 N 118 41 45 W
+latlon 46 22 23 N 118 41 37 W
+latlon 46 22 56 N 118 41 18 W
+latlon 46 23 8 N 118 40 30 W
+latlon 46 23 26 N 118 40 0 W
+latlon 46 24 21 N 118 38 58 W
+latlon 46 25 0 N 118 37 58 W
+latlon 46 25 24 N 118 37 54 W
+latlon 46 25 57 N 118 38 12 W
+latlon 46 26 24 N 118 38 15 W
+latlon 46 27 6 N 118 37 48 W
+latlon 46 27 49 N 118 37 13 W
+latlon 46 28 34 N 118 37 8 W
+latlon 46 29 35 N 118 37 10 W
+latlon 46 30 2 N 118 36 58 W
+latlon 46 31 14 N 118 35 43 W
+latlon 46 31 35 N 118 35 22 W
+latlon 46 31 51 N 118 34 59 W
+latlon 46 32 10 N 118 33 38 W
+latlon 46 32 51 N 118 33 9 W
+latlon 46 33 26 N 118 32 43 W
+latlon 46 33 45 N 118 32 10 W
+end  (Ice Harbor)                   
+             
+dam Lower Monumental Dam                   
+powerhouse_capacity 130
+floor_elevation 	422.0
+forebay_elevation	540.5
+tailrace_elevation	440.0
+bypass_elevation        531.5
+spillway_width 		  512 
+spill_side            left
+pergate                   2.9
+ngates                    8
+gate_width                64.0
+basin_length 		218.7
+sgr 			  1.0
+abbrev LMN           
+latlon 46 33 45 N 118 32 10 W
+end (Lower Monumental)
+                  
+reach Lower Monumental Pool                    
+width            1937.5
+upper_depth      42	
+lower_depth	     118.0
+slope	           81.27	
+lower_elev       422
+latlon 46 33 45 N 118 32 10 W
+latlon 46 34 3 N 118 31 35 W
+latlon 46 34 20 N 118 30 51 W
+latlon 46 34 43 N 118 29 38 W
+latlon 46 35 4 N 118 28 56 W
+latlon 46 35 42 N 118 28 29 W
+latlon 46 35 56 N 118 27 50 W
+latlon 46 35 49 N 118 26 59 W
+latlon 46 35 27 N 118 26 19 W
+latlon 46 34 59 N 118 25 6 W
+latlon 46 34 52 N 118 23 55 W
+latlon 46 34 53 N 118 23 7 W
+latlon 46 35 13 N 118 22 33 W
+latlon 46 35 44 N 118 21 54 W
+latlon 46 36 0 N 118 20 49 W
+latlon 46 36 12 N 118 20 14 W
+latlon 46 36 24 N 118 19 17 W
+latlon 46 36 22 N 118 18 26 W
+latlon 46 35 59 N 118 17 43 W
+latlon 46 35 38 N 118 16 57 W
+latlon 46 35 36 N 118 16 22 W
+latlon 46 35 55 N 118 15 29 W
+latlon 46 36 4 N 118 14 50 W
+latlon 46 35 50 N 118 14 4 W
+latlon 46 35 29 N 118 13 16 W
+latlon 46 35 27 N 118 12 51 W
+latlon 46 35 10 N 118 12 23 W
+latlon 46 34 21 N 118 11 24 W
+latlon 46 34 5 N 118 11 0 W
+latlon 46 33 33 N 118 10 26 W
+latlon 46 33 21 N 118 9 54 W
+latlon 46 33 23 N 118 9 16 W
+latlon 46 33 30 N 118 8 32 W
+latlon 46 33 28 N 118 7 28 W
+latlon 46 33 30 N 118 6 36 W
+latlon 46 33 50 N 118 6 11 W
+latlon 46 34 18 N 118 5 57 W
+latlon 46 34 29 N 118 5 38 W
+latlon 46 34 34 N 118 5 7 W
+latlon 46 34 31 N 118 4 17 W
+latlon 46 34 38 N 118 3 17 W
+latlon 46 35 1 N 118 2 18 W
+latlon 46 35 6 N 118 1 59 W
+latlon 46 35 14 N 118 1 29 W
+end  (Lower Monumental)                                                     
+                    
+dam Little Goose Dam                    
+powerhouse_capacity  130
+floor_elevation 	   498
+forebay_elevation	   638.5
+tailrace_elevation	540.0	
+bypass_elevation     628.9
+spillway_width  	   512
+spill_side            right
+pergate                   2.9
+ngates                    8
+gate_width               64.0 
+basin_length 		 78.6
+sgr 			  1.0
+abbrev LGS                    
+latlon 46 35 14 N 118 1 29 W
+end  (Little Goose Dam )                  
+                    
+reach Little Goose Pool                   
+width           2200.0
+upper_depth	    40 
+lower_depth     140
+slope	          78.22	
+lower_elev      498
+latlon 46 35 14 N 118 1 29 W
+latlon 46 35 21 N 118 0 46 W
+latlon 46 35 21 N 117 59 35 W
+latlon 46 35 19 N 117 59 6 W
+latlon 46 35 26 N 117 57 51 W
+latlon 46 35 37 N 117 56 43 W
+latlon 46 35 19 N 117 54 53 W
+latlon 46 35 16 N 117 53 41 W
+latlon 46 35 23 N 117 53 14 W
+latlon 46 35 44 N 117 52 53 W
+latlon 46 36 25 N 117 52 45 W
+latlon 46 36 54 N 117 52 31 W
+latlon 46 37 5 N 117 52 17 W
+latlon 46 37 28 N 117 51 32 W
+latlon 46 37 32 N 117 50 49 W
+latlon 46 37 21 N 117 49 24 W
+latlon 46 37 28 N 117 48 3 W
+latlon 46 38 0 N 117 47 0 W
+latlon 46 38 31 N 117 46 24 W
+latlon 46 39 12 N 117 45 57 W
+latlon 46 39 54 N 117 45 41 W
+latlon 46 40 36 N 117 45 28 W
+latlon 46 41 5 N 117 45 6 W
+latlon 46 41 37 N 117 44 14 W
+latlon 46 41 49 N 117 43 28 W
+latlon 46 42 0 N 117 42 9 W
+latlon 46 42 8 N 117 40 51 W
+latlon 46 42 12 N 117 40 10 W
+latlon 46 41 58 N 117 38 54 W
+latlon 46 41 28 N 117 38 8 W
+latlon 46 40 57 N 117 37 40 W
+latlon 46 40 32 N 117 37 4 W
+latlon 46 40 22 N 117 36 12 W
+latlon 46 40 23 N 117 35 43 W
+latlon 46 40 35 N 117 34 5 W
+latlon 46 40 44 N 117 33 27 W
+latlon 46 40 46 N 117 32 39 W
+latlon 46 40 40 N 117 31 31 W
+latlon 46 40 45 N 117 30 48 W
+latlon 46 41 7 N 117 29 59 W
+latlon 46 41 41 N 117 29 22 W
+latlon 46 42 0 N 117 28 34 W
+latlon 46 41 58 N 117 28 5 W
+latlon 46 41 40 N 117 27 23 W
+latlon 46 41 9 N 117 27 6 W
+latlon 46 40 23 N 117 26 45 W
+latlon 46 39 57 N 117 26 25 W
+latlon 46 39 54 N 117 26 7 W
+end  (Little Goose)               
+                    
+dam Lower Granite Dam                   
+powerhouse_capacity 130
+floor_elevation 	598.0
+forebay_elevation	738.0
+tailrace_elevation	638.0
+bypass_elevation        729.0
+spillway_width 		  512 
+spill_side            right
+pergate                   2.9
+ngates                    8
+gate_width                60.0
+basin_length 		  188
+sgr 			  1.0
+abbrev LWG                    
+latlon 46 39 54 N 117 26 7 W
+end  (Lower Granite)                  
+                    
+reach Lower Granite Pool                    
+width 2000.0 
+upper_depth 48 
+lower_depth 140.0 
+slope 80.72
+lower_elev 598
+latlon 46 39 54 N 117 26 7 W
+latlon 46 39 54 N 117 26 6 W
+latlon 46 39 52 N 117 26 2 W
+latlon 46 39 33 N 117 25 19 W
+latlon 46 39 15 N 117 24 27 W
+latlon 46 39 8 N 117 23 36 W
+latlon 46 38 46 N 117 23 2 W
+latlon 46 38 4 N 117 22 59 W
+latlon 46 37 38 N 117 23 8 W
+latlon 46 37 2 N 117 23 0 W
+latlon 46 36 34 N 117 22 22 W
+latlon 46 36 6 N 117 21 27 W
+latlon 46 35 29 N 117 20 56 W
+latlon 46 34 59 N 117 20 23 W
+latlon 46 34 46 N 117 19 37 W
+latlon 46 34 48 N 117 18 41 W
+latlon 46 34 36 N 117 17 55 W
+latlon 46 34 20 N 117 17 28 W
+latlon 46 33 36 N 117 16 42 W
+latlon 46 33 6 N 117 15 50 W
+latlon 46 32 35 N 117 15 7 W
+latlon 46 31 55 N 117 14 46 W
+latlon 46 31 23 N 117 14 35 W
+latlon 46 30 34 N 117 14 6 W
+latlon 46 30 5 N 117 13 52 W
+latlon 46 29 41 N 117 13 56 W
+latlon 46 28 57 N 117 14 14 W
+latlon 46 28 35 N 117 14 16 W
+latlon 46 28 3 N 117 14 9 W
+latlon 46 27 46 N 117 13 45 W
+latlon 46 27 28 N 117 13 7 W
+latlon 46 27 10 N 117 12 43 W
+latlon 46 26 50 N 117 12 20 W
+latlon 46 26 23 N 117 12 32 W
+latlon 46 26 1 N 117 12 47 W
+latlon 46 25 44 N 117 12 48 W
+latlon 46 25 28 N 117 12 35 W
+latlon 46 25 12 N 117 11 51 W
+latlon 46 25 15 N 117 11 5 W
+latlon 46 25 27 N 117 10 18 W
+latlon 46 25 43 N 117 9 35 W
+latlon 46 25 49 N 117 8 55 W
+latlon 46 25 43 N 117 8 12 W
+latlon 46 25 30 N 117 7 34 W
+latlon 46 25 16 N 117 6 54 W
+latlon 46 25 10 N 117 6 18 W
+latlon 46 25 7 N 117 5 23 W
+latlon 46 25 16 N 117 4 53 W
+latlon 46 25 33 N 117 4 7 W
+latlon 46 25 47 N 117 3 27 W
+latlon 46 25 46 N 117 3 0 W
+latlon 46 25 32 N 117 2 16 W
+end (Lower Granite)                    
+                    
+reach Snake above Clearwater                    
+width 240.77                    
+lower_depth 48    
+upper_depth 24.4    
+lower_elev 690
+abbrev ANA
+latlon 46 25 32 N 117 2 16 W
+latlon 46 25 3 N 117 2 3 W
+latlon 46 24 33 N 117 2 9 W
+latlon 46 24 17 N 117 2 16 W
+latlon 46 23 57 N 117 2 21 W
+latlon 46 23 39 N 117 2 28 W
+latlon 46 23 8 N 117 2 38 W
+latlon 46 22 48 N 117 2 46 W
+latlon 46 22 33 N 117 3 1 W
+latlon 46 22 21 N 117 3 19 W
+latlon 46 22 1 N 117 3 40 W
+latlon 46 21 35 N 117 3 45 W
+latlon 46 21 6 N 117 3 44 W
+latlon 46 20 47 N 117 3 30 W
+latlon 46 20 39 N 117 3 11 W
+latlon 46 20 31 N 117 2 48 W
+latlon 46 20 28 N 117 2 12 W
+latlon 46 20 22 N 117 1 45 W
+latlon 46 20 5 N 117 1 23 W
+latlon 46 19 45 N 117 1 22 W
+latlon 46 19 18 N 117 1 24 W
+latlon 46 18 57 N 117 1 14 W
+latlon 46 18 37 N 117 0 52 W
+latlon 46 18 22 N 117 0 32 W
+latlon 46 18 13 N 117 0 15 W
+latlon 46 18 10 N 116 59 50 W
+latlon 46 17 55 N 116 59 20 W
+latlon 46 17 36 N 116 59 3 W
+latlon 46 17 16 N 116 59 6 W
+latlon 46 16 52 N 116 59 27 W
+latlon 46 16 32 N 116 59 25 W
+latlon 46 16 8 N 116 58 50 W
+latlon 46 15 41 N 116 58 10 W
+latlon 46 15 29 N 116 58 0 W
+latlon 46 14 44 N 116 57 37 W
+latlon 46 14 23 N 116 57 28 W
+latlon 46 13 59 N 116 57 26 W
+latlon 46 13 42 N 116 57 17 W
+latlon 46 12 56 N 116 57 41 W
+latlon 46 12 32 N 116 57 58 W
+latlon 46 12 4 N 116 57 51 W
+latlon 46 11 39 N 116 57 15 W
+latlon 46 11 26 N 116 56 53 W
+latlon 46 10 59 N 116 56 31 W
+latlon 46 10 37 N 116 56 12 W
+latlon 46 10 26 N 116 56 2 W
+latlon 46 10 22 N 116 55 36 W
+latlon 46 10 11 N 116 55 20 W
+latlon 46 9 54 N 116 55 14 W
+latlon 46 9 36 N 116 55 18 W
+latlon 46 9 29 N 116 55 40 W
+latlon 46 9 18 N 116 55 55 W
+latlon 46 8 38 N 116 56 7 W
+latlon 46 8 16 N 116 56 2 W
+latlon 46 7 56 N 116 56 24 W
+latlon 46 7 44 N 116 56 36 W
+latlon 46 7 33 N 116 56 53 W
+latlon 46 7 16 N 116 56 56 W
+latlon 46 6 41 N 116 57 2 W
+latlon 46 6 10 N 116 57 17 W
+latlon 46 5 58 N 116 57 29 W
+latlon 46 5 55 N 116 58 4 W
+latlon 46 5 51 N 116 58 30 W
+latlon 46 5 41 N 116 58 45 W
+latlon 46 5 28 N 116 58 55 W
+latlon 46 5 13 N 116 58 55 W
+latlon 46 5 0 N 116 58 49 W
+latlon 46 4 48 N 116 58 43 W
+end (Snake above Clearwater)                    
+         
+                   
+reach Snake above Grand Ronde                    
+width 240.8                 
+lower_depth 24.4  
+upper_depth 18.7  
+lower_elev 805
+latlon 46 4 48 N 116 58 43 W
+latlon 46 4 36 N 116 58 14 W
+latlon 46 4 31 N 116 57 58 W
+latlon 46 4 32 N 116 57 29 W
+latlon 46 4 23 N 116 57 18 W
+latlon 46 3 51 N 116 56 41 W
+latlon 46 3 38 N 116 56 30 W
+latlon 46 3 6 N 116 56 32 W
+latlon 46 2 43 N 116 56 20 W
+latlon 46 2 32 N 116 56 1 W
+latlon 46 2 20 N 116 55 49 W
+latlon 46 2 4 N 116 55 46 W
+latlon 46 1 41 N 116 55 48 W
+latlon 46 1 19 N 116 55 43 W
+latlon 46 1 6 N 116 55 23 W
+latlon 46 0 53 N 116 55 13 W
+latlon 46 0 26 N 116 55 11 W
+latlon 46 0 6 N 116 55 6 W
+latlon 45 59 34 N 116 54 43 W
+latlon 45 59 7 N 116 54 5 W
+latlon 45 58 46 N 116 53 40 W
+latlon 45 57 55 N 116 53 29 W
+latlon 45 57 28 N 116 53 19 W
+latlon 45 56 40 N 116 52 25 W
+latlon 45 54 51 N 116 51 38 W
+latlon 45 54 28 N 116 51 30 W
+latlon 45 53 8 N 116 50 36 W
+latlon 45 52 57 N 116 50 19 W
+latlon 45 52 50 N 116 49 51 W
+latlon 45 52 35 N 116 49 12 W
+latlon 45 52 11 N 116 48 38 W
+latlon 45 51 37 N 116 48 8 W
+latlon 45 50 48 N 116 47 21 W
+end  (Snake above Grand Ronde)                  
+                    
+reach Snake above Salmon                    
+width 300.0                    
+depth 18.17      
+lower_elev 947
+latlon 45 50 48 N 116 47 21 W
+latlon 45 50 30 N 116 47 18 W
+latlon 45 50 20 N 116 47 13 W
+latlon 45 50 7 N 116 47 6 W
+latlon 45 49 46 N 116 46 54 W
+latlon 45 49 29 N 116 46 42 W
+latlon 45 49 14 N 116 46 28 W
+latlon 45 49 4 N 116 46 0 W
+end  (Snake above Salmon)  
+
+ 
+reach Snake above Imnaha                    
+width 300.0                    
+depth 18.17  
+lower_elev 964
+latlon 45 49 4 N 116 46 0 W
+latlon 45 49 0 N 116 45 41 W
+latlon 45 48 59 N 116 45 11 W
+latlon 45 49 1 N 116 44 54 W
+latlon 45 49 8 N 116 44 14 W
+latlon 45 49 12 N 116 43 27 W
+latlon 45 49 9 N 116 42 43 W
+latlon 45 49 2 N 116 42 12 W
+latlon 45 48 49 N 116 41 51 W
+latlon 45 48 34 N 116 41 30 W
+latlon 45 48 13 N 116 40 55 W
+latlon 45 47 33 N 116 40 22 W
+latlon 45 46 54 N 116 39 42 W
+latlon 45 46 30 N 116 39 10 W
+latlon 45 46 14 N 116 38 37 W
+latlon 45 46 1 N 116 37 59 W
+latlon 45 45 46 N 116 37 3 W
+latlon 45 45 9 N 116 34 14 W
+latlon 45 44 57 N 116 33 51 W
+latlon 45 44 37 N 116 33 34 W
+latlon 45 44 29 N 116 33 23 W
+latlon 45 44 3 N 116 32 59 W
+latlon 45 43 31 N 116 32 31 W
+latlon 45 43 5 N 116 32 8 W
+latlon 45 42 24 N 116 31 38 W
+latlon 45 41 49 N 116 31 19 W
+latlon 45 41 6 N 116 31 1 W
+latlon 45 40 23 N 116 30 47 W
+latlon 45 39 45 N 116 30 36 W
+latlon 45 39 8 N 116 30 20 W
+latlon 45 38 36 N 116 29 59 W
+latlon 45 38 13 N 116 29 33 W
+latlon 45 37 57 N 116 29 10 W
+latlon 45 37 40 N 116 28 46 W
+latlon 45 37 0 N 116 28 26 W
+latlon 45 36 34 N 116 28 14 W
+latlon 45 36 9 N 116 28 7 W
+latlon 45 35 40 N 116 28 0 W
+latlon 45 35 7 N 116 28 1 W
+latlon 45 34 35 N 116 28 13 W
+latlon 45 34 6 N 116 28 32 W
+latlon 45 33 33 N 116 28 58 W
+latlon 45 33 2 N 116 29 21 W
+latlon 45 32 29 N 116 29 57 W
+latlon 45 32 1 N 116 30 25 W
+latlon 45 31 35 N 116 30 56 W
+latlon 45 31 1 N 116 31 40 W
+latlon 45 30 20 N 116 32 34 W
+latlon 45 29 45 N 116 33 10 W
+latlon 45 29 14 N 116 33 29 W
+latlon 45 28 40 N 116 33 36 W
+latlon 45 28 8 N 116 33 46 W
+latlon 45 27 40 N 116 34 2 W
+latlon 45 27 6 N 116 34 23 W
+latlon 45 26 30 N 116 35 15 W
+latlon 45 26 7 N 116 35 39 W
+latlon 45 25 51 N 116 35 53 W
+latlon 45 25 21 N 116 36 2 W
+latlon 45 24 46 N 116 36 14 W
+latlon 45 24 19 N 116 36 42 W
+latlon 45 23 42 N 116 37 22 W
+latlon 45 23 10 N 116 37 48 W
+latlon 45 22 43 N 116 38 9 W
+latlon 45 22 14 N 116 38 28 W
+latlon 45 21 28 N 116 39 10 W
+latlon 45 20 53 N 116 39 39 W
+latlon 45 20 34 N 116 40 0 W
+latlon 45 20 6 N 116 40 16 W
+latlon 45 19 30 N 116 40 35 W
+latlon 45 18 53 N 116 40 49 W
+latlon 45 18 26 N 116 40 52 W
+latlon 45 17 46 N 116 40 49 W
+latlon 45 16 16 N 116 41 4 W
+latlon 45 15 44 N 116 41 9 W
+latlon 45 15 16 N 116 41 30 W
+latlon 45 14 58 N 116 41 46 W
+latlon 45 14 27 N 116 42 3 W
+latlon 45 13 54 N 116 42 19 W
+latlon 45 13 18 N 116 42 43 W
+latlon 45 12 52 N 116 42 52 W
+latlon 45 12 21 N 116 42 50 W
+latlon 45 11 45 N 116 42 55 W
+latlon 45 11 2 N 116 43 2 W
+latlon 45 10 21 N 116 43 18 W
+latlon 45 8 39 N 116 43 47 W
+latlon 45 8 6 N 116 44 1 W
+latlon 45 7 45 N 116 44 29 W
+latlon 45 7 23 N 116 44 59 W
+latlon 45 6 59 N 116 45 18 W
+latlon 45 6 32 N 116 45 29 W
+latlon 45 6 11 N 116 45 41 W
+latlon 45 5 53 N 116 46 0 W
+latlon 45 5 30 N 116 46 35 W
+latlon 45 5 19 N 116 46 56 W
+latlon 45 5 7 N 116 47 5 W
+latlon 45 4 49 N 116 47 1 W
+latlon 45 4 23 N 116 47 1 W
+latlon 45 3 55 N 116 47 12 W
+latlon 45 3 37 N 116 47 43 W
+latlon 45 3 17 N 116 48 18 W
+latlon 45 2 31 N 116 49 16 W
+latlon 45 2 7 N 116 49 48 W
+latlon 45 1 49 N 116 50 19 W
+latlon 45 1 29 N 116 50 54 W
+latlon 45 1 6 N 116 50 58 W
+latlon 45 0 46 N 116 50 54 W
+latlon 45 0 18 N 116 50 42 W
+latlon 44 59 50 N 116 50 42 W
+latlon 44 59 11 N 116 50 56 W
+latlon 44 58 46 N 116 51 6 W
+latlon 44 58 23 N 116 51 19 W
+end  (Snake above Imnaha)                   
+                    
+dam Hells Canyon Dam                    
+powerhouse_capacity 30
+floor_elevation 	1480.0
+forebay_elevation	1688.0
+tailrace_elevation	1530.0	
+spillway_width  	    50
+spill_side            right
+basin_length  		    80
+sgr 			   1.0
+abbrev HCD                    
+storage_basin		   0.0  1200.0
+latlon 44 58 23 N 116 51 19 W
+end  (Hells Canyon)                    
+end  (Snake)                   
+                 
+        
+river Clearwater                    
+flow_max 25.00
+flow_min 0.5                 
+                    
+reach Clearwater River                   
+width      491.47                    
+depth 	  48	
+lower_elev 690
+abbrev PEK
+latlon 46 25 32 N 117 2 16 W
+latlon 46 25 39 N 117 1 44 W
+latlon 46 25 51 N 117 1 30 W
+latlon 46 25 52 N 117 1 13 W
+latlon 46 25 42 N 117 0 33 W
+latlon 46 25 34 N 117 0 11 W
+latlon 46 25 29 N 117 0 2 W
+latlon 46 25 21 N 116 59 50 W
+latlon 46 25 16 N 116 59 38 W
+latlon 46 25 21 N 116 59 14 W
+latlon 46 25 34 N 116 58 48 W
+latlon 46 25 47 N 116 58 15 W
+latlon 46 25 52 N 116 57 35 W
+latlon 46 25 52 N 116 56 57 W
+latlon 46 25 55 N 116 56 7 W
+latlon 46 25 52 N 116 55 29 W
+latlon 46 25 52 N 116 55 15 W
+latlon 46 25 49 N 116 54 37 W
+latlon 46 25 52 N 116 54 15 W
+latlon 46 26 0 N 116 53 52 W
+latlon 46 26 10 N 116 53 26 W
+latlon 46 26 20 N 116 53 14 W
+latlon 46 26 28 N 116 53 2 W
+latlon 46 26 35 N 116 52 48 W
+latlon 46 26 40 N 116 52 21 W
+latlon 46 26 40 N 116 51 48 W
+latlon 46 26 45 N 116 51 15 W
+latlon 46 26 51 N 116 50 32 W
+latlon 46 26 51 N 116 49 57 W
+latlon 46 26 51 N 116 49 26 W
+latlon 46 26 50 N 116 49 2 W
+latlon 46 26 51 N 116 48 38 W
+latlon 46 26 49 N 116 48 29 W
+latlon 46 26 56 N 116 47 58 W
+latlon 46 27 1 N 116 47 39 W
+latlon 46 27 9 N 116 47 18 W
+latlon 46 27 19 N 116 46 49 W
+latlon 46 27 24 N 116 46 35 W
+latlon 46 27 32 N 116 46 21 W
+latlon 46 27 39 N 116 45 59 W
+latlon 46 27 54 N 116 45 38 W
+latlon 46 28 5 N 116 45 23 W
+latlon 46 28 17 N 116 45 9 W
+latlon 46 28 38 N 116 44 48 W
+latlon 46 28 53 N 116 44 31 W
+latlon 46 29 9 N 116 44 14 W
+latlon 46 29 18 N 116 43 58 W
+latlon 46 29 29 N 116 43 41 W
+latlon 46 29 37 N 116 43 20 W
+latlon 46 29 47 N 116 42 46 W
+latlon 46 29 52 N 116 42 30 W
+latlon 46 30 0 N 116 42 6 W
+latlon 46 30 10 N 116 41 52 W
+latlon 46 30 22 N 116 41 35 W
+latlon 46 30 33 N 116 41 9 W
+latlon 46 30 43 N 116 40 40 W
+latlon 46 30 49 N 116 40 26 W
+latlon 46 30 59 N 116 40 2 W
+latlon 46 31 4 N 116 39 41 W
+latlon 46 31 6 N 116 39 12 W
+latlon 46 31 4 N 116 38 48 W
+latlon 46 31 1 N 116 38 34 W
+latlon 46 31 1 N 116 38 27 W
+latlon 46 31 11 N 116 38 3 W
+latlon 46 31 14 N 116 37 51 W
+latlon 46 31 15 N 116 37 35 W
+latlon 46 31 17 N 116 36 54 W
+latlon 46 31 15 N 116 36 23 W
+latlon 46 31 10 N 116 35 53 W
+latlon 46 31 8 N 116 35 26 W
+latlon 46 31 3 N 116 35 0 W
+latlon 46 31 0 N 116 34 48 W
+latlon 46 30 52 N 116 34 29 W
+latlon 46 30 45 N 116 34 18 W
+latlon 46 30 42 N 116 34 8 W
+latlon 46 30 42 N 116 33 47 W
+latlon 46 30 43 N 116 33 23 W
+latlon 46 30 42 N 116 33 2 W
+latlon 46 30 38 N 116 32 38 W
+latlon 46 30 33 N 116 32 31 W
+latlon 46 30 25 N 116 32 12 W
+latlon 46 30 28 N 116 31 53 W
+latlon 46 30 31 N 116 31 29 W
+latlon 46 30 28 N 116 31 1 W
+latlon 46 30 26 N 116 30 34 W
+latlon 46 30 20 N 116 30 11 W
+latlon 46 30 18 N 116 29 56 W
+latlon 46 30 16 N 116 29 42 W
+latlon 46 30 14 N 116 29 30 W
+latlon 46 30 6 N 116 29 0 W
+latlon 46 30 1 N 116 28 48 W
+latlon 46 29 58 N 116 28 38 W
+latlon 46 29 54 N 116 28 31 W
+latlon 46 29 49 N 116 28 24 W
+latlon 46 29 46 N 116 28 15 W
+latlon 46 29 48 N 116 28 5 W
+latlon 46 29 46 N 116 27 51 W
+latlon 46 29 44 N 116 27 32 W
+latlon 46 29 44 N 116 27 8 W
+latlon 46 29 47 N 116 26 47 W
+latlon 46 29 47 N 116 26 32 W
+latlon 46 29 47 N 116 26 16 W
+latlon 46 29 47 N 116 25 52 W
+latlon 46 29 45 N 116 25 38 W
+latlon 46 29 45 N 116 25 14 W
+latlon 46 29 47 N 116 24 55 W
+latlon 46 29 49 N 116 24 38 W
+latlon 46 29 52 N 116 24 22 W
+latlon 46 29 55 N 116 23 53 W
+latlon 46 29 53 N 116 23 22 W
+latlon 46 29 53 N 116 22 47 W
+latlon 46 29 54 N 116 22 13 W
+latlon 46 29 58 N 116 21 45 W
+latlon 46 30 4 N 116 21 16 W
+latlon 46 30 7 N 116 20 53 W
+latlon 46 30 7 N 116 20 15 W
+latlon 46 30 8 N 116 19 50 W
+latlon 46 30 9 N 116 19 41 W
+end (Clearwater)
+
+
+reach Clearwater above North Fork
+width		400	#est
+depth   	 10     #est
+lower_elev 945
+latlon 46 30 9 N 116 19 41 W
+latlon 46 30 8 N 116 19 15 W
+latlon 46 30 2 N 116 18 49 W
+latlon 46 29 55 N 116 18 23 W
+latlon 46 29 47 N 116 17 59 W
+latlon 46 29 38 N 116 17 26 W
+latlon 46 29 32 N 116 17 10 W
+latlon 46 29 28 N 116 16 39 W
+latlon 46 29 23 N 116 16 18 W
+latlon 46 29 18 N 116 15 54 W
+latlon 46 29 8 N 116 15 25 W
+latlon 46 28 53 N 116 15 4 W
+latlon 46 28 38 N 116 14 34 W
+latlon 46 28 23 N 116 14 24 W
+latlon 46 28 8 N 116 14 17 W
+latlon 46 27 58 N 116 14 8 W
+latlon 46 27 43 N 116 13 54 W
+latlon 46 27 30 N 116 13 37 W
+latlon 46 27 23 N 116 13 23 W
+latlon 46 27 13 N 116 13 11 W
+latlon 46 27 2 N 116 12 57 W
+latlon 46 26 47 N 116 12 48 W
+latlon 46 26 40 N 116 12 39 W
+latlon 46 26 37 N 116 12 32 W
+latlon 46 26 28 N 116 12 27 W
+latlon 46 26 22 N 116 12 29 W
+latlon 46 26 7 N 116 12 25 W
+latlon 46 26 2 N 116 12 25 W
+latlon 46 25 54 N 116 12 23 W
+latlon 46 25 46 N 116 12 20 W
+latlon 46 25 36 N 116 12 13 W
+latlon 46 25 32 N 116 12 1 W
+latlon 46 25 21 N 116 11 47 W
+latlon 46 25 11 N 116 11 40 W
+latlon 46 25 2 N 116 11 31 W
+latlon 46 24 52 N 116 11 29 W
+latlon 46 24 43 N 116 11 26 W
+latlon 46 24 29 N 116 11 20 W
+latlon 46 24 18 N 116 11 15 W
+latlon 46 24 0 N 116 11 6 W
+latlon 46 23 40 N 116 10 49 W
+latlon 46 23 15 N 116 10 33 W
+latlon 46 22 47 N 116 10 19 W
+latlon 46 22 25 N 116 10 10 W
+latlon 46 22 14 N 116 10 8 W
+latlon 46 21 54 N 116 10 6 W
+latlon 46 21 42 N 116 10 6 W
+latlon 46 21 32 N 116 10 1 W
+latlon 46 21 24 N 116 9 49 W
+latlon 46 21 9 N 116 9 40 W
+latlon 46 20 53 N 116 9 31 W
+latlon 46 20 36 N 116 9 19 W
+latlon 46 20 21 N 116 9 10 W
+latlon 46 20 9 N 116 8 58 W
+latlon 46 20 1 N 116 8 46 W
+latlon 46 19 48 N 116 8 30 W
+latlon 46 19 28 N 116 8 18 W
+latlon 46 19 8 N 116 8 4 W
+latlon 46 18 52 N 116 7 48 W
+latlon 46 18 27 N 116 7 29 W
+latlon 46 18 2 N 116 7 11 W
+latlon 46 17 40 N 116 6 59 W
+latlon 46 17 12 N 116 6 36 W
+latlon 46 16 51 N 116 6 27 W
+latlon 46 16 31 N 116 6 8 W
+latlon 46 16 9 N 116 5 38 W
+latlon 46 15 57 N 116 5 19 W
+latlon 46 15 42 N 116 4 53 W
+latlon 46 15 32 N 116 4 37 W
+latlon 46 15 27 N 116 4 25 W
+latlon 46 14 50 N 116 2 25 W
+latlon 46 14 40 N 116 2 13 W
+latlon 46 14 34 N 116 2 11 W
+latlon 46 14 20 N 116 1 59 W
+latlon 46 14 9 N 116 1 43 W
+latlon 46 13 57 N 116 1 19 W
+latlon 46 13 40 N 116 0 37 W
+latlon 46 13 30 N 116 0 21 W
+latlon 46 13 24 N 116 0 4 W
+latlon 46 13 17 N 115 59 52 W
+latlon 46 13 10 N 115 59 50 W
+latlon 46 13 5 N 115 59 50 W
+latlon 46 13 0 N 115 59 50 W
+latlon 46 12 52 N 115 59 55 W
+latlon 46 12 46 N 115 59 58 W
+latlon 46 12 37 N 116 0 0 W
+latlon 46 12 29 N 116 0 3 W
+latlon 46 12 16 N 116 0 7 W
+latlon 46 11 53 N 116 0 13 W
+latlon 46 11 33 N 116 0 13 W
+latlon 46 11 22 N 116 0 8 W
+latlon 46 11 13 N 116 0 6 W
+latlon 46 11 0 N 115 59 47 W
+latlon 46 10 45 N 115 59 29 W
+latlon 46 10 37 N 115 59 19 W
+latlon 46 10 25 N 115 59 15 W
+latlon 46 10 9 N 115 59 15 W
+latlon 46 9 55 N 115 59 15 W
+latlon 46 9 41 N 115 59 8 W
+latlon 46 9 24 N 115 58 59 W
+latlon 46 9 14 N 115 58 50 W
+latlon 46 9 7 N 115 58 36 W
+latlon 46 8 57 N 115 58 26 W
+latlon 46 8 46 N 115 58 17 W
+latlon 46 8 32 N 115 58 10 W
+latlon 46 8 23 N 115 58 8 W
+latlon 46 8 8 N 115 58 1 W
+end (Clearwater above North Fork)                    
+                    
+reach South Fork Clearwater                    
+width 110.0                    
+depth 2.75   
+lower_elev 1195
+latlon 46 8 8 N 115 58 1 W
+latlon 46 7 59 N 115 58 4 W
+latlon 46 7 53 N 115 58 6 W
+latlon 46 7 43 N 115 58 16 W
+latlon 46 7 32 N 115 58 25 W
+latlon 46 7 13 N 115 58 26 W
+latlon 46 6 55 N 115 58 21 W
+latlon 46 6 34 N 115 58 19 W
+latlon 46 6 16 N 115 58 17 W
+latlon 46 6 1 N 115 58 17 W
+latlon 46 5 43 N 115 58 22 W
+latlon 46 5 33 N 115 58 27 W
+latlon 46 5 18 N 115 58 32 W
+latlon 46 5 8 N 115 58 30 W
+latlon 46 4 58 N 115 58 28 W
+latlon 46 4 47 N 115 58 26 W
+latlon 46 4 24 N 115 58 19 W
+latlon 46 4 9 N 115 58 14 W
+latlon 46 3 37 N 115 58 3 W
+latlon 46 3 18 N 115 57 59 W
+latlon 46 3 8 N 115 58 4 W
+latlon 46 2 50 N 115 58 11 W
+latlon 46 2 15 N 115 58 19 W
+latlon 46 2 7 N 115 58 19 W
+latlon 46 1 57 N 115 58 19 W
+latlon 46 1 49 N 115 58 17 W
+latlon 46 1 39 N 115 58 14 W
+latlon 46 1 31 N 115 58 10 W
+latlon 46 1 21 N 115 57 53 W
+latlon 46 1 14 N 115 57 46 W
+latlon 46 1 7 N 115 57 35 W
+latlon 46 0 57 N 115 57 23 W
+latlon 46 0 46 N 115 57 16 W
+latlon 46 0 32 N 115 57 16 W
+latlon 46 0 18 N 115 57 17 W
+latlon 46 0 11 N 115 57 19 W
+latlon 46 0 5 N 115 57 22 W
+latlon 45 59 58 N 115 57 31 W
+latlon 45 59 48 N 115 57 43 W
+latlon 45 59 37 N 115 57 55 W
+latlon 45 59 17 N 115 58 7 W
+latlon 45 58 54 N 115 58 12 W
+latlon 45 58 34 N 115 58 13 W
+latlon 45 58 14 N 115 58 8 W
+latlon 45 58 5 N 115 58 6 W
+latlon 45 57 55 N 115 57 59 W
+latlon 45 57 48 N 115 57 52 W
+latlon 45 57 38 N 115 57 40 W
+latlon 45 57 28 N 115 57 29 W
+latlon 45 57 20 N 115 57 17 W
+latlon 45 57 11 N 115 57 10 W
+latlon 45 57 3 N 115 57 8 W
+latlon 45 56 53 N 115 57 8 W
+latlon 45 56 48 N 115 57 11 W
+latlon 45 56 45 N 115 57 15 W
+latlon 45 56 40 N 115 57 20 W
+latlon 45 56 34 N 115 57 34 W
+latlon 45 56 27 N 115 57 44 W
+latlon 45 56 21 N 115 58 5 W
+latlon 45 56 14 N 115 58 26 W
+latlon 45 56 6 N 115 58 48 W
+latlon 45 56 1 N 115 59 2 W
+latlon 45 55 57 N 115 59 21 W
+latlon 45 55 47 N 115 59 33 W
+latlon 45 55 37 N 115 59 31 W
+latlon 45 55 29 N 115 59 24 W
+latlon 45 55 22 N 115 59 17 W
+latlon 45 55 10 N 115 59 19 W
+latlon 45 55 1 N 115 59 22 W
+latlon 45 54 52 N 115 59 31 W
+latlon 45 54 49 N 115 59 41 W
+latlon 45 54 43 N 115 59 50 W
+latlon 45 54 38 N 116 0 4 W
+latlon 45 54 31 N 116 0 26 W
+latlon 45 54 18 N 116 0 52 W
+latlon 45 54 7 N 116 1 20 W
+latlon 45 53 56 N 116 1 44 W
+latlon 45 53 48 N 116 1 51 W
+latlon 45 53 33 N 116 1 51 W
+latlon 45 53 21 N 116 1 54 W
+latlon 45 53 11 N 116 1 49 W
+latlon 45 53 3 N 116 1 42 W
+latlon 45 52 58 N 116 1 33 W
+latlon 45 52 56 N 116 1 24 W
+latlon 45 52 46 N 116 1 10 W
+latlon 45 52 38 N 116 1 0 W
+latlon 45 52 26 N 116 0 58 W
+latlon 45 52 12 N 116 0 51 W
+latlon 45 52 0 N 116 0 54 W
+latlon 45 51 45 N 116 0 56 W
+latlon 45 51 30 N 116 0 54 W
+latlon 45 51 14 N 116 0 52 W
+latlon 45 50 59 N 116 0 45 W
+latlon 45 50 42 N 116 0 24 W
+latlon 45 50 27 N 116 0 6 W
+latlon 45 50 16 N 115 59 45 W
+latlon 45 50 1 N 115 59 17 W
+latlon 45 49 51 N 115 59 3 W
+latlon 45 49 42 N 115 58 54 W
+latlon 45 49 34 N 115 58 37 W
+latlon 45 49 24 N 115 58 12 W
+latlon 45 49 19 N 115 57 46 W
+latlon 45 49 14 N 115 57 15 W
+latlon 45 49 12 N 115 56 52 W
+latlon 45 49 13 N 115 56 35 W
+latlon 45 49 15 N 115 56 5 W
+latlon 45 49 13 N 115 55 44 W
+latlon 45 49 11 N 115 55 25 W
+latlon 45 49 11 N 115 55 15 W
+latlon 45 49 3 N 115 54 59 W
+latlon 45 48 53 N 115 54 36 W
+latlon 45 48 54 N 115 54 10 W
+latlon 45 48 54 N 115 53 21 W
+latlon 45 48 54 N 115 52 50 W
+latlon 45 48 55 N 115 52 31 W
+latlon 45 48 58 N 115 51 44 W
+latlon 45 48 56 N 115 51 25 W
+latlon 45 48 56 N 115 51 14 W
+latlon 45 48 49 N 115 50 55 W
+latlon 45 48 42 N 115 50 31 W
+latlon 45 48 42 N 115 50 15 W
+latlon 45 48 42 N 115 50 3 W
+latlon 45 48 42 N 115 49 47 W
+latlon 45 48 44 N 115 49 30 W
+latlon 45 48 40 N 115 49 19 W
+latlon 45 48 37 N 115 49 2 W
+latlon 45 48 30 N 115 48 34 W
+latlon 45 48 22 N 115 48 15 W
+latlon 45 48 10 N 115 47 57 W
+latlon 45 47 56 N 115 47 31 W
+latlon 45 47 43 N 115 47 3 W
+latlon 45 47 30 N 115 46 35 W
+latlon 45 47 24 N 115 46 17 W
+latlon 45 47 21 N 115 46 0 W
+latlon 45 47 19 N 115 45 37 W
+latlon 45 47 22 N 115 45 16 W
+latlon 45 47 17 N 115 44 59 W
+latlon 45 47 15 N 115 44 31 W
+latlon 45 47 13 N 115 44 5 W
+latlon 45 47 15 N 115 43 44 W
+latlon 45 47 16 N 115 43 28 W
+latlon 45 47 19 N 115 43 2 W
+latlon 45 47 22 N 115 42 33 W
+latlon 45 47 29 N 115 42 7 W
+latlon 45 47 35 N 115 41 39 W
+latlon 45 47 40 N 115 41 13 W
+latlon 45 47 44 N 115 40 52 W
+latlon 45 47 51 N 115 40 26 W
+latlon 45 47 54 N 115 40 12 W
+latlon 45 47 55 N 115 39 53 W
+latlon 45 47 58 N 115 39 29 W
+latlon 45 48 0 N 115 39 13 W
+latlon 45 48 3 N 115 38 42 W
+latlon 45 48 3 N 115 38 28 W
+latlon 45 48 4 N 115 38 5 W
+latlon 45 48 4 N 115 37 53 W
+latlon 45 48 9 N 115 37 48 W
+latlon 45 48 17 N 115 37 48 W
+latlon 45 48 29 N 115 37 41 W
+latlon 45 48 39 N 115 37 36 W
+latlon 45 48 50 N 115 37 24 W
+latlon 45 48 58 N 115 37 19 W
+latlon 45 49 3 N 115 37 19 W
+latlon 45 49 10 N 115 37 14 W
+latlon 45 49 13 N 115 37 4 W
+latlon 45 49 16 N 115 36 48 W
+latlon 45 49 14 N 115 36 34 W
+latlon 45 49 16 N 115 36 22 W
+latlon 45 49 15 N 115 36 6 W
+latlon 45 49 10 N 115 35 49 W
+latlon 45 49 9 N 115 35 38 W
+latlon 45 49 4 N 115 35 24 W
+latlon 45 49 0 N 115 35 2 W
+latlon 45 49 3 N 115 34 51 W
+latlon 45 49 5 N 115 34 44 W
+latlon 45 49 6 N 115 34 29 W
+latlon 45 49 8 N 115 34 15 W
+latlon 45 49 6 N 115 34 8 W
+latlon 45 48 58 N 115 33 54 W
+latlon 45 48 58 N 115 33 47 W
+latlon 45 49 2 N 115 33 42 W
+latlon 45 49 7 N 115 33 38 W
+latlon 45 49 11 N 115 33 31 W
+latlon 45 49 10 N 115 33 7 W
+latlon 45 49 10 N 115 32 55 W
+latlon 45 49 10 N 115 32 41 W
+latlon 45 49 13 N 115 32 34 W
+latlon 45 49 15 N 115 32 20 W
+latlon 45 49 13 N 115 32 3 W
+latlon 45 49 10 N 115 31 52 W
+latlon 45 49 4 N 115 31 43 W
+latlon 45 49 9 N 115 31 33 W
+latlon 45 49 6 N 115 31 26 W
+latlon 45 49 7 N 115 31 5 W
+latlon 45 49 10 N 115 30 32 W
+latlon 45 49 5 N 115 30 4 W
+latlon 45 48 55 N 115 29 40 W
+latlon 45 48 48 N 115 29 36 W
+latlon 45 48 42 N 115 29 27 W
+latlon 45 48 16 N 115 28 54 W
+latlon 45 47 50 N 115 28 3 W
+latlon 45 47 18 N 115 27 26 W
+latlon 45 47 13 N 115 27 17 W
+latlon 45 47 9 N 115 27 5 W
+latlon 45 47 6 N 115 26 54 W
+latlon 45 47 11 N 115 26 39 W
+latlon 45 47 14 N 115 26 35 W
+latlon 45 47 19 N 115 26 28 W
+latlon 45 47 25 N 115 26 20 W
+latlon 45 47 27 N 115 25 54 W
+latlon 45 47 23 N 115 25 40 W
+latlon 45 47 18 N 115 25 31 W
+latlon 45 47 23 N 115 25 17 W
+latlon 45 47 28 N 115 25 7 W
+latlon 45 47 33 N 115 25 0 W
+latlon 45 47 34 N 115 24 30 W
+latlon 45 47 31 N 115 24 23 W
+latlon 45 47 25 N 115 24 9 W
+latlon 45 47 22 N 115 24 4 W
+latlon 45 47 15 N 115 23 57 W
+latlon 45 47 7 N 115 23 53 W
+latlon 45 46 57 N 115 23 46 W
+latlon 45 46 46 N 115 23 34 W
+latlon 45 46 19 N 115 23 26 W
+latlon 45 46 4 N 115 23 19 W
+latlon 45 45 49 N 115 23 19 W
+latlon 45 45 26 N 115 23 25 W
+latlon 45 44 9 N 115 23 29 W
+latlon 45 43 48 N 115 23 29 W
+latlon 45 43 44 N 115 23 22 W
+latlon 45 43 31 N 115 23 9 W
+latlon 45 43 21 N 115 22 57 W
+latlon 45 43 6 N 115 22 32 W
+latlon 45 42 22 N 115 21 29 W
+latlon 45 42 14 N 115 21 15 W
+latlon 45 42 12 N 115 20 57 W
+latlon 45 42 12 N 115 20 43 W
+latlon 45 42 13 N 115 20 31 W
+latlon 45 42 15 N 115 20 19 W
+latlon 45 42 20 N 115 20 5 W
+latlon 45 42 23 N 115 19 48 W
+latlon 45 42 27 N 115 19 34 W
+latlon 45 42 35 N 115 19 18 W
+latlon 45 42 45 N 115 19 3 W
+latlon 45 43 5 N 115 18 49 W
+latlon 45 43 36 N 115 18 20 W
+latlon 45 44 10 N 115 17 44 W
+latlon 45 44 21 N 115 17 34 W
+latlon 45 44 28 N 115 17 22 W
+latlon 45 44 29 N 115 17 10 W
+latlon 45 44 29 N 115 16 58 W
+latlon 45 44 27 N 115 16 49 W
+latlon 45 44 24 N 115 16 30 W
+latlon 45 44 22 N 115 16 0 W
+latlon 45 44 26 N 115 15 50 W
+latlon 45 44 31 N 115 15 41 W
+latlon 45 44 38 N 115 15 36 W
+latlon 45 44 49 N 115 15 29 W
+latlon 45 44 54 N 115 15 3 W
+latlon 45 44 58 N 115 14 27 W
+latlon 45 45 4 N 115 13 57 W
+latlon 45 45 7 N 115 13 35 W
+latlon 45 45 14 N 115 13 31 W
+latlon 45 45 29 N 115 13 21 W
+latlon 45 45 50 N 115 13 16 W
+latlon 45 46 10 N 115 12 56 W
+end (South Fork Clearwater)                    
+end (South Fork Clearwater) 
+                    
+river North Fork Clearwater
+flow_max 26.00
+flow_min 0.445
+
+reach N F Clearwater
+width		400	#est
+depth   	 20     #est
+lower_elev 945
+latlon 46 30 9 N 116 19 41 W
+latlon  46 30 10  N  116 19 21  W
+latlon  46 30 12  N  116 19 12  W
+latlon  46 30 19  N  116 18 52  W
+latlon  46 30 25  N  116 18 44  W
+latlon  46 30 26  N  116 18 40  W
+latlon  46 30 26  N  116 18 34  W
+latlon  46 30 30  N  116 18 26  W
+latlon  46 30 33  N  116 18 17  W
+latlon  46 30 36  N  116 18 10  W
+latlon  46 30 43  N  116 17 55  W
+latlon  46 30 44  N  116 17 54  W
+latlon  46 30 45  N  116 17 52  W
+latlon  46 30 46  N  116 17 51  W
+latlon  46 30 46  N  116 17 50  W
+latlon  46 30 51  N  116 17 40  W
+end (NF Clearwater)
+
+
+dam Dworshak Dam
+abbrev DWR
+powerhouse_capacity	10.5
+storage_basin		0.0 2015.8
+floor_elevation 	954.0
+forebay_elevation	1605.0
+tailrace_elevation	980.0
+spillway_width 		60.0
+spill_side            left
+pergate                 2.5
+ngates                  2
+gate_width              30.0
+basin_length 		40.0
+sgr 			1.0
+latlon  46 30 51  N  116 17 40  W
+end (Dworshak)
+end (North Fork Clearwater)
+                    
+river Middle Fork Clearwater                    
+flow_max 20.00
+flow_min .2                   
+reach Middle Fork Clearwater                    
+width 110.0                    
+depth 10.0                    
+lower_elev 1195
+latlon 46 8 8 N 115 58 1 W
+latlon 46 8 6 N 115 57 45 W
+latlon 46 7 59 N 115 57 14 W
+latlon 46 7 52 N 115 57 0 W
+latlon 46 7 46 N 115 56 55 W
+latlon 46 7 39 N 115 56 53 W
+latlon 46 7 34 N 115 56 49 W
+latlon 46 7 32 N 115 56 30 W
+latlon 46 7 34 N 115 56 15 W
+latlon 46 7 37 N 115 55 59 W
+latlon 46 7 40 N 115 55 42 W
+latlon 46 7 48 N 115 55 33 W
+latlon 46 7 58 N 115 55 28 W
+latlon 46 8 8 N 115 55 25 W
+latlon 46 8 15 N 115 55 23 W
+latlon 46 8 21 N 115 55 18 W
+latlon 46 8 25 N 115 55 11 W
+latlon 46 8 29 N 115 55 4 W
+latlon 46 8 36 N 115 54 49 W
+latlon 46 8 37 N 115 54 38 W
+latlon 46 8 37 N 115 54 21 W
+latlon 46 8 34 N 115 53 55 W
+latlon 46 8 27 N 115 53 32 W
+latlon 46 8 20 N 115 53 15 W
+latlon 46 8 14 N 115 53 6 W
+latlon 46 8 10 N 115 52 56 W
+latlon 46 8 10 N 115 52 42 W
+latlon 46 8 13 N 115 52 21 W
+latlon 46 8 15 N 115 52 2 W
+latlon 46 8 11 N 115 51 38 W
+latlon 46 8 9 N 115 51 24 W
+latlon 46 8 9 N 115 51 13 W
+latlon 46 8 6 N 115 51 1 W
+latlon 46 8 8 N 115 50 49 W
+latlon 46 8 12 N 115 50 42 W
+latlon 46 8 16 N 115 50 32 W
+latlon 46 8 22 N 115 50 16 W
+latlon 46 8 25 N 115 50 4 W
+latlon 46 8 28 N 115 49 54 W
+latlon 46 8 32 N 115 49 40 W
+latlon 46 8 32 N 115 49 26 W
+latlon 46 8 26 N 115 48 58 W
+latlon 46 8 21 N 115 48 36 W
+latlon 46 8 11 N 115 48 18 W
+latlon 46 7 58 N 115 47 59 W
+latlon 46 7 43 N 115 47 40 W
+latlon 46 7 36 N 115 47 33 W
+latlon 46 7 33 N 115 47 17 W
+latlon 46 7 24 N 115 47 12 W
+latlon 46 7 19 N 115 46 54 W
+latlon 46 7 14 N 115 46 44 W
+latlon 46 7 11 N 115 46 28 W
+latlon 46 7 7 N 115 46 16 W
+latlon 46 7 9 N 115 45 59 W
+latlon 46 7 14 N 115 45 45 W
+latlon 46 7 23 N 115 45 17 W
+latlon 46 7 54 N 115 44 26 W
+latlon 46 7 57 N 115 44 15 W
+latlon 46 8 4 N 115 44 7 W
+latlon 46 8 9 N 115 43 55 W
+latlon 46 8 12 N 115 43 51 W
+latlon 46 8 17 N 115 43 46 W
+latlon 46 8 23 N 115 43 32 W
+latlon 46 8 25 N 115 43 22 W
+latlon 46 8 27 N 115 43 15 W
+latlon 46 8 26 N 115 42 56 W
+latlon 46 8 24 N 115 42 28 W
+latlon 46 8 18 N 115 41 52 W
+latlon 46 8 14 N 115 41 34 W
+latlon 46 8 6 N 115 41 3 W
+latlon 46 8 2 N 115 40 14 W
+latlon 46 7 55 N 115 39 19 W
+latlon 46 7 52 N 115 38 27 W
+latlon 46 7 55 N 115 37 45 W
+latlon 46 7 58 N 115 37 24 W
+latlon 46 7 56 N 115 36 32 W
+latlon 46 7 58 N 115 36 8 W
+latlon 46 8 7 N 115 35 28 W
+end (Middle Fork Clearwater)                    
+end (Middle Fork Clearwater)                    
+                    
+river Salmon                     
+flow_max 60.00
+flow_min 1                     
+reach Salmon River                   
+width 240.77                    
+depth 10        
+lower_elev 947 
+latlon 45 50 48 N 116 47 21 W
+latlon 45 50 55 N 116 46 56 W
+latlon 45 51 3 N 116 46 40 W
+latlon 45 51 11 N 116 46 21 W
+latlon 45 51 20 N 116 46 2 W
+latlon 45 51 31 N 116 45 36 W
+latlon 45 51 41 N 116 45 17 W
+latlon 45 51 47 N 116 45 3 W
+latlon 45 52 2 N 116 44 47 W
+latlon 45 52 5 N 116 44 42 W
+latlon 45 52 12 N 116 44 37 W
+latlon 45 52 17 N 116 44 35 W
+latlon 45 52 22 N 116 44 32 W
+latlon 45 52 27 N 116 44 30 W
+latlon 45 52 37 N 116 44 25 W
+latlon 45 52 52 N 116 44 16 W
+latlon 45 53 5 N 116 44 11 W
+latlon 45 53 15 N 116 44 9 W
+latlon 45 53 26 N 116 44 2 W
+latlon 45 53 36 N 116 43 57 W
+latlon 45 53 46 N 116 43 54 W
+latlon 45 53 52 N 116 43 52 W
+latlon 45 54 2 N 116 43 52 W
+latlon 45 54 12 N 116 43 52 W
+latlon 45 54 22 N 116 43 54 W
+latlon 45 54 37 N 116 44 1 W
+latlon 45 55 20 N 116 44 18 W
+latlon 45 55 38 N 116 44 22 W
+latlon 45 55 58 N 116 44 27 W
+latlon 45 56 18 N 116 44 32 W
+latlon 45 56 29 N 116 44 36 W
+latlon 45 56 47 N 116 44 31 W
+latlon 45 56 59 N 116 44 29 W
+latlon 45 57 7 N 116 44 27 W
+latlon 45 57 17 N 116 44 17 W
+latlon 45 57 27 N 116 44 10 W
+latlon 45 57 37 N 116 43 58 W
+latlon 45 57 50 N 116 43 49 W
+latlon 45 57 56 N 116 43 35 W
+latlon 45 58 9 N 116 43 20 W
+latlon 45 58 16 N 116 43 9 W
+latlon 45 58 24 N 116 42 59 W
+latlon 45 58 34 N 116 42 52 W
+latlon 45 58 42 N 116 42 50 W
+latlon 45 58 54 N 116 42 43 W
+latlon 45 59 4 N 116 42 33 W
+latlon 45 59 10 N 116 42 24 W
+latlon 45 59 15 N 116 42 12 W
+latlon 45 59 20 N 116 42 0 W
+latlon 45 59 28 N 116 41 41 W
+latlon 45 59 32 N 116 41 25 W
+latlon 45 59 35 N 116 41 3 W
+latlon 45 59 38 N 116 40 44 W
+latlon 45 59 40 N 116 40 23 W
+latlon 45 59 45 N 116 40 4 W
+latlon 45 59 44 N 116 39 45 W
+latlon 45 59 44 N 116 39 29 W
+latlon 45 59 41 N 116 39 15 W
+latlon 45 59 39 N 116 38 58 W
+latlon 45 59 39 N 116 38 47 W
+latlon 45 59 38 N 116 38 37 W
+latlon 45 59 39 N 116 38 28 W
+latlon 45 59 46 N 116 38 21 W
+latlon 45 59 49 N 116 38 16 W
+latlon 45 59 56 N 116 38 11 W
+latlon 46 0 1 N 116 38 11 W
+latlon 46 0 11 N 116 38 9 W
+latlon 46 0 19 N 116 38 11 W
+latlon 46 0 29 N 116 38 9 W
+latlon 46 0 37 N 116 38 11 W
+latlon 46 0 47 N 116 38 13 W
+latlon 46 1 0 N 116 38 13 W
+latlon 46 1 17 N 116 38 13 W
+latlon 46 1 26 N 116 38 11 W
+latlon 46 1 36 N 116 38 8 W
+latlon 46 1 43 N 116 38 1 W
+latlon 46 1 48 N 116 37 54 W
+latlon 46 1 51 N 116 37 45 W
+latlon 46 1 54 N 116 37 35 W
+latlon 46 1 56 N 116 37 23 W
+latlon 46 1 56 N 116 37 12 W
+latlon 46 1 58 N 116 37 2 W
+latlon 46 1 56 N 116 36 53 W
+latlon 46 1 51 N 116 36 41 W
+latlon 46 1 43 N 116 36 32 W
+latlon 46 1 34 N 116 36 29 W
+latlon 46 1 28 N 116 36 25 W
+latlon 46 0 55 N 116 36 20 W
+latlon 46 0 45 N 116 36 22 W
+latlon 46 0 33 N 116 36 27 W
+latlon 46 0 25 N 116 36 32 W
+latlon 46 0 17 N 116 36 25 W
+latlon 46 0 15 N 116 36 13 W
+latlon 46 0 14 N 116 35 59 W
+latlon 46 0 12 N 116 35 43 W
+latlon 46 0 10 N 116 35 19 W
+latlon 46 0 2 N 116 34 58 W
+latlon 45 59 57 N 116 34 37 W
+latlon 45 59 48 N 116 34 13 W
+latlon 45 59 40 N 116 33 57 W
+latlon 45 59 30 N 116 33 45 W
+latlon 45 59 19 N 116 33 33 W
+latlon 45 58 37 N 116 32 56 W
+latlon 45 58 26 N 116 32 46 W
+latlon 45 58 19 N 116 32 32 W
+latlon 45 58 17 N 116 32 25 W
+latlon 45 58 14 N 116 32 18 W
+latlon 45 58 13 N 116 32 9 W
+latlon 45 58 11 N 116 32 2 W
+latlon 45 58 12 N 116 31 50 W
+latlon 45 58 14 N 116 31 43 W
+latlon 45 58 16 N 116 31 31 W
+latlon 45 58 19 N 116 31 17 W
+latlon 45 58 22 N 116 30 56 W
+latlon 45 58 30 N 116 30 30 W
+latlon 45 58 32 N 116 30 13 W
+latlon 45 58 37 N 116 29 45 W
+latlon 45 58 38 N 116 29 19 W
+latlon 45 58 37 N 116 28 51 W
+latlon 45 58 33 N 116 28 20 W
+latlon 45 58 25 N 116 27 57 W
+latlon 45 58 16 N 116 27 33 W
+latlon 45 58 8 N 116 27 12 W
+latlon 45 58 0 N 116 26 56 W
+latlon 45 57 48 N 116 26 41 W
+latlon 45 57 38 N 116 26 32 W
+latlon 45 57 22 N 116 26 18 W
+latlon 45 56 57 N 116 26 7 W
+latlon 45 55 44 N 116 25 32 W
+latlon 45 55 28 N 116 25 23 W
+latlon 45 55 16 N 116 25 20 W
+latlon 45 55 3 N 116 25 11 W
+latlon 45 54 55 N 116 25 4 W
+latlon 45 54 50 N 116 24 59 W
+latlon 45 54 45 N 116 24 50 W
+latlon 45 54 43 N 116 24 41 W
+latlon 45 54 45 N 116 24 34 W
+latlon 45 54 41 N 116 24 26 W
+latlon 45 54 35 N 116 24 27 W
+latlon 45 54 28 N 116 24 27 W
+latlon 45 54 18 N 116 24 24 W
+latlon 45 54 12 N 116 24 17 W
+latlon 45 54 3 N 116 23 59 W
+latlon 45 54 0 N 116 23 49 W
+latlon 45 54 0 N 116 23 33 W
+latlon 45 54 5 N 116 23 26 W
+latlon 45 54 10 N 116 23 23 W
+latlon 45 54 12 N 116 23 16 W
+latlon 45 54 10 N 116 23 7 W
+latlon 45 54 11 N 116 22 57 W
+latlon 45 54 10 N 116 22 48 W
+latlon 45 53 55 N 116 21 40 W
+latlon 45 53 45 N 116 21 14 W
+latlon 45 53 35 N 116 20 46 W
+latlon 45 53 23 N 116 20 27 W
+latlon 45 53 13 N 116 20 6 W
+latlon 45 53 5 N 116 19 28 W
+latlon 45 52 56 N 116 19 12 W
+latlon 45 52 48 N 116 18 53 W
+latlon 45 52 38 N 116 18 46 W
+latlon 45 52 25 N 116 18 32 W
+latlon 45 52 13 N 116 18 28 W
+latlon 45 51 58 N 116 18 19 W
+latlon 45 51 47 N 116 18 12 W
+latlon 45 51 37 N 116 18 5 W
+latlon 45 51 27 N 116 17 58 W
+latlon 45 51 12 N 116 17 44 W
+latlon 45 51 5 N 116 17 37 W
+latlon 45 50 51 N 116 17 35 W
+latlon 45 50 36 N 116 17 32 W
+latlon 45 50 16 N 116 17 33 W
+latlon 45 49 51 N 116 17 42 W
+latlon 45 49 30 N 116 17 47 W
+latlon 45 49 10 N 116 17 59 W
+latlon 45 48 55 N 116 18 6 W
+latlon 45 48 18 N 116 18 26 W
+latlon 45 47 58 N 116 18 33 W
+latlon 45 47 38 N 116 18 33 W
+latlon 45 47 20 N 116 18 40 W
+latlon 45 47 4 N 116 18 40 W
+latlon 45 46 41 N 116 18 52 W
+latlon 45 46 29 N 116 19 0 W
+latlon 45 46 14 N 116 19 4 W
+latlon 45 45 40 N 116 19 12 W
+latlon 45 45 4 N 116 19 17 W
+latlon 45 44 42 N 116 19 12 W
+latlon 45 44 26 N 116 19 8 W
+latlon 45 44 12 N 116 18 56 W
+latlon 45 43 58 N 116 18 42 W
+latlon 45 43 46 N 116 18 35 W
+latlon 45 43 36 N 116 18 33 W
+latlon 45 43 31 N 116 18 33 W
+latlon 45 43 25 N 116 18 36 W
+latlon 45 43 15 N 116 18 38 W
+latlon 45 43 8 N 116 18 43 W
+latlon 45 42 55 N 116 18 48 W
+latlon 45 42 35 N 116 18 53 W
+latlon 45 42 20 N 116 18 53 W
+latlon 45 42 7 N 116 18 43 W
+latlon 45 41 5 N 116 18 23 W
+latlon 45 40 50 N 116 18 18 W
+latlon 45 40 40 N 116 18 23 W
+latlon 45 40 32 N 116 18 30 W
+latlon 45 40 20 N 116 18 40 W
+latlon 45 40 5 N 116 18 52 W
+latlon 45 39 59 N 116 18 54 W
+latlon 45 39 52 N 116 18 45 W
+latlon 45 39 49 N 116 18 31 W
+latlon 45 39 44 N 116 18 19 W
+latlon 45 39 41 N 116 17 58 W
+latlon 45 39 37 N 116 17 35 W
+latlon 45 39 35 N 116 17 11 W
+latlon 45 39 27 N 116 17 4 W
+latlon 45 39 20 N 116 17 0 W
+latlon 45 39 14 N 116 17 0 W
+latlon 45 39 9 N 116 17 2 W
+latlon 45 39 4 N 116 17 5 W
+latlon 45 38 57 N 116 17 7 W
+latlon 45 38 51 N 116 17 12 W
+latlon 45 38 44 N 116 17 16 W
+latlon 45 38 34 N 116 17 19 W
+latlon 45 38 28 N 116 17 17 W
+latlon 45 38 20 N 116 17 12 W
+latlon 45 38 15 N 116 17 7 W
+latlon 45 38 1 N 116 16 46 W
+latlon 45 38 1 N 116 16 46 W
+latlon 45 37 51 N 116 16 47 W
+latlon 45 37 47 N 116 16 47 W
+latlon 45 37 42 N 116 16 49 W
+latlon 45 37 40 N 116 16 58 W
+latlon 45 37 38 N 116 17 10 W
+latlon 45 37 37 N 116 17 29 W
+latlon 45 37 27 N 116 17 45 W
+latlon 45 37 21 N 116 17 48 W
+latlon 45 37 16 N 116 17 50 W
+latlon 45 37 11 N 116 17 48 W
+latlon 45 37 4 N 116 17 39 W
+latlon 45 36 59 N 116 17 22 W
+latlon 45 36 56 N 116 17 13 W
+latlon 45 36 51 N 116 17 4 W
+latlon 45 36 49 N 116 16 52 W
+latlon 45 36 46 N 116 16 45 W
+latlon 45 36 41 N 116 16 40 W
+latlon 45 36 32 N 116 16 33 W
+latlon 45 36 22 N 116 16 26 W
+latlon 45 36 11 N 116 16 24 W
+latlon 45 35 58 N 116 16 22 W
+latlon 45 35 50 N 116 16 24 W
+latlon 45 35 45 N 116 16 29 W
+latlon 45 35 40 N 116 16 39 W
+latlon 45 35 27 N 116 16 55 W
+latlon 45 35 10 N 116 17 9 W
+latlon 45 34 28 N 116 17 50 W
+latlon 45 34 15 N 116 17 54 W
+latlon 45 33 56 N 116 18 2 W
+latlon 45 33 47 N 116 17 57 W
+latlon 45 33 38 N 116 17 55 W
+latlon 45 33 32 N 116 17 55 W
+latlon 45 33 25 N 116 17 53 W
+latlon 45 33 17 N 116 17 53 W
+latlon 45 33 9 N 116 17 50 W
+latlon 45 32 56 N 116 17 53 W
+latlon 45 32 42 N 116 17 55 W
+latlon 45 32 37 N 116 18 0 W
+latlon 45 32 26 N 116 18 10 W
+latlon 45 32 10 N 116 18 19 W
+latlon 45 31 52 N 116 18 22 W
+latlon 45 31 47 N 116 18 24 W
+latlon 45 31 37 N 116 18 22 W
+latlon 45 31 32 N 116 18 20 W
+latlon 45 31 19 N 116 18 8 W
+latlon 45 31 9 N 116 18 3 W
+latlon 45 30 36 N 116 17 50 W
+latlon 45 30 22 N 116 17 50 W
+latlon 45 30 11 N 116 17 50 W
+latlon 45 30 6 N 116 17 52 W
+latlon 45 30 0 N 116 17 57 W
+latlon 45 29 51 N 116 18 4 W
+latlon 45 29 45 N 116 18 14 W
+latlon 45 29 40 N 116 18 23 W
+latlon 45 29 33 N 116 18 35 W
+latlon 45 29 27 N 116 18 44 W
+latlon 45 29 19 N 116 18 49 W
+latlon 45 29 12 N 116 18 49 W
+latlon 45 29 5 N 116 18 49 W
+latlon 45 29 1 N 116 18 45 W
+latlon 45 28 49 N 116 18 47 W
+latlon 45 28 33 N 116 18 38 W
+latlon 45 28 3 N 116 18 33 W
+latlon 45 27 33 N 116 18 31 W
+latlon 45 27 20 N 116 18 34 W
+latlon 45 27 5 N 116 18 41 W
+latlon 45 26 49 N 116 18 53 W
+latlon 45 26 32 N 116 18 58 W
+latlon 45 26 28 N 116 18 55 W
+latlon 45 26 23 N 116 18 51 W
+latlon 45 26 18 N 116 18 42 W
+latlon 45 26 3 N 116 18 28 W
+latlon 45 25 43 N 116 18 14 W
+latlon 45 25 22 N 116 18 9 W
+latlon 45 24 58 N 116 18 12 W
+latlon 45 24 44 N 116 18 24 W
+latlon 45 24 45 N 116 18 12 W
+latlon 45 24 43 N 116 17 37 W
+latlon 45 24 43 N 116 17 16 W
+latlon 45 24 43 N 116 16 55 W
+latlon 45 24 41 N 116 16 29 W
+latlon 45 24 38 N 116 15 57 W
+latlon 45 24 40 N 116 15 40 W
+latlon 45 24 33 N 116 15 15 W
+latlon 45 24 24 N 116 14 49 W
+latlon 45 24 15 N 116 14 30 W
+latlon 45 24 1 N 116 14 10 W
+latlon 45 23 50 N 116 13 49 W
+latlon 45 23 41 N 116 13 30 W
+latlon 45 23 34 N 116 12 57 W
+latlon 45 23 33 N 116 12 34 W
+latlon 45 23 33 N 116 12 18 W
+latlon 45 23 36 N 116 11 57 W
+latlon 45 23 41 N 116 11 36 W
+latlon 45 23 49 N 116 11 26 W
+latlon 45 23 52 N 116 11 19 W
+latlon 45 24 0 N 116 11 7 W
+latlon 45 24 8 N 116 10 56 W
+latlon 45 24 17 N 116 10 48 W
+latlon 45 24 23 N 116 10 41 W
+latlon 45 24 30 N 116 10 34 W
+latlon 45 24 34 N 116 10 23 W
+latlon 45 24 38 N 116 10 13 W
+latlon 45 24 41 N 116 9 59 W
+latlon 45 24 41 N 116 9 45 W
+latlon 45 24 51 N 116 9 24 W
+latlon 45 24 55 N 116 9 8 W
+latlon 45 25 0 N 116 8 42 W
+latlon 45 25 3 N 116 8 25 W
+latlon 45 25 3 N 116 8 9 W
+latlon 45 24 58 N 116 7 53 W
+latlon 45 24 53 N 116 7 43 W
+latlon 45 24 47 N 116 7 34 W
+latlon 45 24 35 N 116 7 30 W
+latlon 45 24 25 N 116 7 25 W
+latlon 45 24 15 N 116 7 28 W
+latlon 45 24 9 N 116 7 25 W
+latlon 45 23 57 N 116 7 2 W
+latlon 45 23 52 N 116 6 46 W
+latlon 45 23 48 N 116 6 15 W
+latlon 45 23 52 N 116 6 1 W
+latlon 45 23 57 N 116 5 52 W
+latlon 45 24 5 N 116 5 38 W
+latlon 45 24 9 N 116 5 21 W
+latlon 45 24 11 N 116 5 5 W
+latlon 45 24 19 N 116 4 46 W
+latlon 45 24 29 N 116 4 20 W
+latlon 45 24 43 N 116 3 48 W
+latlon 45 24 55 N 116 3 15 W
+latlon 45 25 1 N 116 2 54 W
+latlon 45 25 1 N 116 2 28 W
+latlon 45 25 2 N 116 1 57 W
+latlon 45 25 2 N 116 1 41 W
+latlon 45 25 9 N 116 1 18 W
+latlon 45 25 9 N 116 1 8 W
+latlon 45 25 12 N 116 0 40 W
+latlon 45 25 18 N 115 59 49 W
+latlon 45 25 34 N 115 59 4 W
+latlon 45 25 40 N 115 58 43 W
+latlon 45 25 47 N 115 58 26 W
+latlon 45 26 0 N 115 58 8 W
+latlon 45 26 13 N 115 57 53 W
+latlon 45 26 24 N 115 57 39 W
+latlon 45 26 39 N 115 57 8 W
+latlon 45 26 49 N 115 56 47 W
+latlon 45 26 57 N 115 56 21 W
+latlon 45 27 1 N 115 56 0 W
+latlon 45 27 5 N 115 55 37 W
+latlon 45 27 8 N 115 55 16 W
+latlon 45 27 7 N 115 54 57 W
+latlon 45 27 4 N 115 54 34 W
+latlon 45 27 2 N 115 54 6 W
+latlon 45 27 0 N 115 53 35 W
+latlon 45 26 58 N 115 53 17 W
+latlon 45 26 57 N 115 52 49 W
+latlon 45 26 58 N 115 52 4 W
+latlon 45 27 2 N 115 51 24 W
+latlon 45 27 5 N 115 50 42 W
+latlon 45 27 13 N 115 50 19 W
+latlon 45 27 18 N 115 50 2 W
+latlon 45 27 28 N 115 49 36 W
+latlon 45 27 32 N 115 48 50 W
+latlon 45 27 37 N 115 48 21 W
+latlon 45 27 38 N 115 47 49 W
+latlon 45 27 37 N 115 47 30 W
+latlon 45 27 36 N 115 47 14 W
+latlon 45 27 33 N 115 47 7 W
+latlon 45 27 30 N 115 47 0 W
+latlon 45 27 25 N 115 46 46 W
+latlon 45 27 16 N 115 46 29 W
+latlon 45 26 41 N 115 45 22 W
+latlon 45 26 34 N 115 45 6 W
+latlon 45 26 23 N 115 44 50 W
+latlon 45 26 21 N 115 44 38 W
+latlon 45 26 22 N 115 44 15 W
+latlon 45 26 22 N 115 43 59 W
+latlon 45 26 22 N 115 43 35 W
+latlon 45 26 18 N 115 42 51 W
+latlon 45 26 15 N 115 42 25 W
+latlon 45 26 13 N 115 41 43 W
+latlon 45 26 13 N 115 41 20 W
+latlon 45 26 11 N 115 40 54 W
+latlon 45 26 9 N 115 40 40 W
+latlon 45 26 2 N 115 40 24 W
+latlon 45 25 57 N 115 40 10 W
+latlon 45 25 47 N 115 39 54 W
+latlon 45 25 39 N 115 39 47 W
+latlon 45 25 37 N 115 39 40 W
+latlon 45 25 27 N 115 39 24 W
+latlon 45 25 19 N 115 39 12 W
+latlon 45 25 10 N 115 38 58 W
+latlon 45 25 2 N 115 38 42 W
+latlon 45 24 57 N 115 38 26 W
+latlon 45 24 52 N 115 38 10 W
+latlon 45 24 45 N 115 37 58 W
+latlon 45 24 37 N 115 37 44 W
+latlon 45 24 30 N 115 37 35 W
+latlon 45 24 17 N 115 37 21 W
+latlon 45 24 7 N 115 37 15 W
+latlon 45 23 48 N 115 37 3 W
+latlon 45 23 37 N 115 36 45 W
+latlon 45 23 32 N 115 36 22 W
+latlon 45 23 30 N 115 36 1 W
+latlon 45 23 28 N 115 35 42 W
+latlon 45 23 33 N 115 35 23 W
+latlon 45 23 26 N 115 35 14 W
+latlon 45 23 21 N 115 35 2 W
+latlon 45 23 19 N 115 34 55 W
+latlon 45 23 16 N 115 34 41 W
+latlon 45 23 14 N 115 34 20 W
+latlon 45 23 5 N 115 34 0 W
+latlon 45 23 2 N 115 33 36 W
+latlon 45 23 5 N 115 33 8 W
+latlon 45 23 6 N 115 32 45 W
+latlon 45 23 8 N 115 32 31 W
+latlon 45 23 8 N 115 32 21 W
+latlon 45 23 4 N 115 32 12 W
+latlon 45 22 58 N 115 32 5 W
+latlon 45 22 51 N 115 31 28 W
+latlon 45 22 47 N 115 31 14 W
+latlon 45 22 34 N 115 30 42 W
+latlon 45 22 24 N 115 30 19 W
+latlon 45 22 13 N 115 29 58 W
+latlon 45 22 12 N 115 29 51 W
+latlon 45 22 20 N 115 29 48 W
+latlon 45 22 31 N 115 29 46 W
+latlon 45 22 45 N 115 29 41 W
+latlon 45 22 54 N 115 29 33 W
+latlon 45 23 2 N 115 29 22 W
+latlon 45 23 10 N 115 29 3 W
+latlon 45 23 22 N 115 28 48 W
+latlon 45 23 30 N 115 28 41 W
+latlon 45 23 40 N 115 28 39 W
+latlon 45 23 50 N 115 28 39 W
+latlon 45 24 1 N 115 28 31 W
+latlon 45 24 7 N 115 28 17 W
+latlon 45 24 16 N 115 28 1 W
+latlon 45 24 27 N 115 27 42 W
+latlon 45 24 45 N 115 27 32 W
+latlon 45 24 58 N 115 27 24 W
+latlon 45 25 14 N 115 27 24 W
+latlon 45 25 26 N 115 27 26 W
+latlon 45 25 44 N 115 27 9 W
+latlon 45 25 53 N 115 26 55 W
+latlon 45 26 6 N 115 26 41 W
+latlon 45 26 24 N 115 26 12 W
+latlon 45 27 0 N 115 25 22 W
+latlon 45 27 35 N 115 24 23 W
+latlon 45 27 43 N 115 24 9 W
+latlon 45 27 50 N 115 23 50 W
+latlon 45 27 56 N 115 23 19 W
+latlon 45 28 2 N 115 23 1 W
+latlon 45 28 7 N 115 22 53 W
+latlon 45 28 14 N 115 22 44 W
+latlon 45 28 14 N 115 22 32 W
+latlon 45 28 12 N 115 22 23 W
+latlon 45 28 10 N 115 22 11 W
+latlon 45 28 5 N 115 22 0 W
+latlon 45 28 6 N 115 21 46 W
+latlon 45 28 11 N 115 21 27 W
+latlon 45 28 17 N 115 21 6 W
+latlon 45 28 20 N 115 20 47 W
+latlon 45 28 24 N 115 20 33 W
+latlon 45 28 38 N 115 20 23 W
+latlon 45 28 45 N 115 20 13 W
+latlon 45 28 46 N 115 20 2 W
+latlon 45 28 56 N 115 19 45 W
+latlon 45 29 1 N 115 19 45 W
+latlon 45 29 11 N 115 19 45 W
+latlon 45 29 22 N 115 19 40 W
+latlon 45 29 30 N 115 19 30 W
+latlon 45 29 38 N 115 19 18 W
+latlon 45 29 51 N 115 19 4 W
+latlon 45 30 8 N 115 18 54 W
+latlon 45 30 18 N 115 18 47 W
+latlon 45 30 31 N 115 18 47 W
+latlon 45 30 44 N 115 18 42 W
+latlon 45 30 52 N 115 18 37 W
+latlon 45 31 5 N 115 18 22 W
+latlon 45 31 18 N 115 18 6 W
+latlon 45 31 29 N 115 17 44 W
+latlon 45 31 39 N 115 17 25 W
+latlon 45 31 45 N 115 16 59 W
+latlon 45 31 45 N 115 16 36 W
+latlon 45 31 46 N 115 16 15 W
+latlon 45 31 52 N 115 15 56 W
+latlon 45 31 57 N 115 15 44 W
+latlon 45 32 7 N 115 15 30 W
+latlon 45 32 17 N 115 15 18 W
+latlon 45 32 23 N 115 14 59 W
+latlon 45 32 28 N 115 14 38 W
+latlon 45 32 31 N 115 14 21 W
+latlon 45 32 37 N 115 14 19 W
+latlon 45 32 47 N 115 14 21 W
+latlon 45 32 59 N 115 14 16 W
+latlon 45 33 7 N 115 14 6 W
+latlon 45 33 15 N 115 13 43 W
+latlon 45 33 21 N 115 13 28 W
+latlon 45 33 27 N 115 13 17 W
+latlon 45 33 37 N 115 13 5 W
+latlon 45 33 47 N 115 12 43 W
+latlon 45 33 48 N 115 12 17 W
+latlon 45 33 48 N 115 11 54 W
+latlon 45 33 46 N 115 11 12 W
+latlon 45 33 45 N 115 10 41 W
+latlon 45 33 43 N 115 10 25 W
+latlon 45 33 41 N 115 10 11 W
+latlon 45 33 38 N 115 10 7 W
+latlon 45 33 33 N 115 10 2 W
+latlon 45 33 26 N 115 9 53 W
+latlon 45 33 21 N 115 9 48 W
+latlon 45 33 13 N 115 9 44 W
+latlon 45 33 6 N 115 9 35 W
+latlon 45 33 0 N 115 9 30 W
+latlon 45 32 55 N 115 9 23 W
+latlon 45 32 45 N 115 9 14 W
+latlon 45 32 29 N 115 8 42 W
+latlon 45 32 14 N 115 8 19 W
+latlon 45 31 51 N 115 7 30 W
+latlon 45 31 39 N 115 7 3 W
+latlon 45 31 30 N 115 6 32 W
+latlon 45 31 23 N 115 6 7 W
+latlon 45 31 18 N 115 5 44 W
+latlon 45 31 14 N 115 5 20 W
+latlon 45 31 7 N 115 4 48 W
+latlon 45 31 2 N 115 4 20 W
+latlon 45 30 58 N 115 4 3 W
+latlon 45 30 48 N 115 3 45 W
+latlon 45 30 40 N 115 3 29 W
+latlon 45 30 30 N 115 3 15 W
+latlon 45 30 25 N 115 3 8 W
+latlon 45 30 23 N 115 2 47 W
+latlon 45 30 23 N 115 2 38 W
+latlon 45 30 24 N 115 2 26 W
+latlon 45 30 26 N 115 2 17 W
+latlon 45 30 29 N 115 2 3 W
+latlon 45 30 30 N 115 1 48 W
+latlon 45 30 30 N 115 1 32 W
+latlon 45 30 26 N 115 1 20 W
+latlon 45 30 20 N 115 1 4 W
+latlon 45 30 14 N 115 0 41 W
+latlon 45 30 14 N 115 0 29 W
+latlon 45 30 7 N 115 0 6 W
+latlon 45 29 57 N 114 59 52 W
+latlon 45 29 42 N 114 59 37 W
+latlon 45 29 34 N 114 59 20 W
+latlon 45 29 30 N 114 58 59 W
+latlon 45 29 26 N 114 58 45 W
+latlon 45 29 20 N 114 58 36 W
+latlon 45 29 0 N 114 58 21 W
+latlon 45 28 45 N 114 58 7 W
+latlon 45 28 30 N 114 57 53 W
+latlon 45 28 6 N 114 57 31 W
+latlon 45 27 49 N 114 57 1 W
+latlon 45 27 36 N 114 56 31 W
+latlon 45 27 22 N 114 56 6 W
+latlon 45 27 2 N 114 55 38 W
+latlon 45 26 52 N 114 55 27 W
+latlon 45 26 48 N 114 55 6 W
+latlon 45 26 45 N 114 54 40 W
+latlon 45 26 41 N 114 54 24 W
+latlon 45 26 35 N 114 54 17 W
+latlon 45 26 26 N 114 54 10 W
+latlon 45 26 13 N 114 53 59 W
+latlon 45 26 0 N 114 53 48 W
+latlon 45 25 46 N 114 53 30 W
+latlon 45 25 41 N 114 53 4 W
+latlon 45 25 35 N 114 52 41 W
+latlon 45 25 27 N 114 52 20 W
+latlon 45 25 22 N 114 52 15 W
+latlon 45 25 15 N 114 52 13 W
+latlon 45 25 4 N 114 52 2 W
+latlon 45 24 50 N 114 51 58 W
+latlon 45 24 50 N 114 51 46 W
+latlon 45 24 42 N 114 51 35 W
+latlon 45 24 38 N 114 51 18 W
+latlon 45 24 31 N 114 50 46 W
+latlon 45 24 27 N 114 50 27 W
+latlon 45 24 17 N 114 50 7 W
+latlon 45 24 2 N 114 49 53 W
+latlon 45 23 43 N 114 49 12 W
+latlon 45 23 28 N 114 48 49 W
+latlon 45 23 14 N 114 48 0 W
+latlon 45 23 7 N 114 47 35 W
+latlon 45 23 5 N 114 47 18 W
+latlon 45 23 10 N 114 46 36 W
+latlon 45 23 16 N 114 46 8 W
+latlon 45 23 28 N 114 45 2 W
+latlon 45 23 36 N 114 44 39 W
+latlon 45 23 45 N 114 44 17 W
+latlon 45 23 43 N 114 43 52 W
+latlon 45 23 36 N 114 43 17 W
+latlon 45 23 31 N 114 43 1 W
+latlon 45 23 25 N 114 42 40 W
+latlon 45 23 20 N 114 42 26 W
+latlon 45 23 5 N 114 42 8 W
+latlon 45 22 54 N 114 41 59 W
+latlon 45 22 38 N 114 41 43 W
+latlon 45 22 13 N 114 41 25 W
+latlon 45 21 48 N 114 40 44 W
+latlon 45 21 31 N 114 40 28 W
+latlon 45 21 18 N 114 40 19 W
+latlon 45 20 37 N 114 40 11 W
+latlon 45 20 17 N 114 39 49 W
+latlon 45 19 58 N 114 39 19 W
+latlon 45 19 43 N 114 38 42 W
+latlon 45 19 23 N 114 38 34 W
+latlon 45 19 9 N 114 38 25 W
+latlon 45 18 56 N 114 38 4 W
+latlon 45 18 40 N 114 37 34 W
+latlon 45 18 25 N 114 37 21 W
+latlon 45 18 9 N 114 37 3 W
+latlon 45 17 55 N 114 36 54 W
+latlon 45 17 45 N 114 36 40 W
+latlon 45 17 38 N 114 36 17 W
+latlon 45 17 28 N 114 35 47 W
+latlon 45 17 24 N 114 35 36 W
+latlon 45 17 24 N 114 35 24 W
+latlon 45 17 27 N 114 35 3 W
+latlon 45 17 33 N 114 34 44 W
+latlon 45 17 36 N 114 34 37 W
+latlon 45 17 40 N 114 34 25 W
+latlon 45 17 41 N 114 34 9 W
+latlon 45 17 44 N 114 33 55 W
+latlon 45 17 44 N 114 33 41 W
+latlon 45 17 45 N 114 33 31 W
+latlon 45 17 42 N 114 33 17 W
+latlon 45 17 36 N 114 32 52 W
+latlon 45 17 36 N 114 32 43 W
+latlon 45 17 36 N 114 32 33 W
+latlon 45 17 37 N 114 32 24 W
+latlon 45 17 39 N 114 32 15 W
+latlon 45 17 39 N 114 31 58 W
+latlon 45 17 37 N 114 31 40 W
+latlon 45 17 34 N 114 31 12 W
+latlon 45 17 36 N 114 30 55 W
+latlon 45 17 39 N 114 30 46 W
+latlon 45 17 42 N 114 30 41 W
+latlon 45 17 47 N 114 30 22 W
+latlon 45 17 50 N 114 30 10 W
+latlon 45 17 51 N 114 29 59 W
+latlon 45 17 51 N 114 29 33 W
+latlon 45 17 53 N 114 29 10 W
+latlon 45 17 58 N 114 28 34 W
+latlon 45 18 1 N 114 28 25 W
+latlon 45 18 4 N 114 28 20 W
+latlon 45 18 11 N 114 28 13 W
+latlon 45 18 14 N 114 28 8 W
+latlon 45 18 18 N 114 27 59 W
+latlon 45 18 23 N 114 27 54 W
+latlon 45 18 28 N 114 27 42 W
+latlon 45 18 31 N 114 27 28 W
+latlon 45 18 31 N 114 27 19 W
+latlon 45 18 31 N 114 27 7 W
+latlon 45 18 32 N 114 26 46 W
+latlon 45 18 40 N 114 26 25 W
+latlon 45 18 44 N 114 26 6 W
+latlon 45 18 51 N 114 25 51 W
+latlon 45 18 55 N 114 25 33 W
+latlon 45 19 3 N 114 25 2 W
+latlon 45 19 4 N 114 24 41 W
+latlon 45 18 59 N 114 24 22 W
+latlon 45 18 55 N 114 24 11 W
+latlon 45 18 48 N 114 23 57 W
+latlon 45 18 43 N 114 23 46 W
+latlon 45 18 43 N 114 23 46 W
+latlon 45 18 50 N 114 23 31 W
+latlon 45 18 56 N 114 23 17 W
+latlon 45 19 4 N 114 22 47 W
+latlon 45 19 8 N 114 22 21 W
+latlon 45 19 13 N 114 22 11 W
+latlon 45 19 18 N 114 22 6 W
+latlon 45 19 29 N 114 21 47 W
+latlon 45 19 32 N 114 21 31 W
+latlon 45 19 38 N 114 21 2 W
+latlon 45 19 47 N 114 20 18 W
+latlon 45 19 53 N 114 19 47 W
+latlon 45 20 4 N 114 19 30 W
+latlon 45 20 30 N 114 19 4 W
+latlon 45 20 52 N 114 18 39 W
+latlon 45 21 8 N 114 18 13 W
+latlon 45 21 25 N 114 17 33 W
+latlon 45 21 48 N 114 16 54 W
+latlon 45 22 2 N 114 16 23 W
+latlon 45 22 18 N 114 16 2 W
+latlon 45 22 29 N 114 15 47 W
+latlon 45 22 40 N 114 15 33 W
+latlon 45 22 50 N 114 15 11 W
+latlon 45 22 59 N 114 14 52 W
+latlon 45 23 7 N 114 14 40 W
+latlon 45 23 23 N 114 14 19 W
+latlon 45 23 31 N 114 14 0 W
+latlon 45 23 32 N 114 13 31 W
+latlon 45 23 28 N 114 13 13 W
+latlon 45 23 32 N 114 13 3 W
+latlon 45 23 41 N 114 12 49 W
+latlon 45 23 44 N 114 12 28 W
+latlon 45 23 41 N 114 12 19 W
+latlon 45 23 34 N 114 12 5 W
+latlon 45 23 28 N 114 11 51 W
+latlon 45 23 28 N 114 11 37 W
+latlon 45 23 29 N 114 11 18 W
+latlon 45 23 26 N 114 11 9 W
+latlon 45 23 21 N 114 10 48 W
+latlon 45 23 20 N 114 10 16 W
+latlon 45 23 28 N 114 9 54 W
+latlon 45 23 34 N 114 9 40 W
+latlon 45 23 32 N 114 9 21 W
+latlon 45 23 22 N 114 9 1 W
+latlon 45 23 14 N 114 8 35 W
+latlon 45 23 12 N 114 8 19 W
+latlon 45 23 10 N 114 7 58 W
+latlon 45 23 3 N 114 7 35 W
+latlon 45 23 0 N 114 7 14 W
+latlon 45 22 56 N 114 6 51 W
+latlon 45 22 52 N 114 6 26 W
+latlon 45 22 43 N 114 6 7 W
+latlon 45 22 31 N 114 5 37 W
+latlon 45 22 22 N 114 5 10 W
+latlon 45 22 20 N 114 4 42 W
+latlon 45 22 24 N 114 3 57 W
+latlon 45 22 31 N 114 3 10 W
+latlon 45 22 41 N 114 2 44 W
+latlon 45 22 52 N 114 2 23 W
+latlon 45 23 12 N 114 1 56 W
+latlon 45 23 30 N 114 1 39 W
+latlon 45 23 54 N 114 1 17 W
+latlon 45 24 4 N 114 1 9 W
+latlon 45 24 7 N 114 0 57 W
+latlon 45 24 5 N 114 0 48 W
+latlon 45 24 3 N 114 0 34 W
+latlon 45 23 58 N 114 0 11 W
+latlon 45 23 46 N 113 59 44 W
+latlon 45 23 39 N 113 59 37 W
+latlon 45 23 34 N 113 59 32 W
+latlon 45 23 27 N 113 59 26 W
+latlon 45 23 21 N 113 59 21 W
+latlon 45 23 10 N 113 59 10 W
+latlon 45 22 57 N 113 58 57 W
+latlon 45 22 47 N 113 58 34 W
+latlon 45 22 38 N 113 58 13 W
+latlon 45 22 18 N 113 57 58 W
+latlon 45 22 11 N 113 57 49 W
+latlon 45 22 3 N 113 57 44 W
+latlon 45 21 51 N 113 57 40 W
+latlon 45 21 40 N 113 57 43 W
+latlon 45 21 28 N 113 57 41 W
+latlon 45 21 16 N 113 57 37 W
+latlon 45 21 8 N 113 57 28 W
+latlon 45 21 6 N 113 57 14 W
+latlon 45 21 7 N 113 57 5 W
+latlon 45 21 7 N 113 56 48 W
+latlon 45 21 2 N 113 56 39 W
+latlon 45 20 58 N 113 56 32 W
+latlon 45 20 54 N 113 56 33 W
+latlon 45 20 44 N 113 56 31 W
+latlon 45 20 37 N 113 56 33 W
+latlon 45 20 24 N 113 56 20 W
+latlon 45 20 22 N 113 56 6 W
+latlon 45 20 21 N 113 55 45 W
+latlon 45 20 21 N 113 55 17 W
+latlon 45 20 19 N 113 55 8 W
+latlon 45 20 14 N 113 55 6 W
+latlon 45 20 9 N 113 55 8 W
+latlon 45 20 2 N 113 55 11 W
+latlon 45 19 49 N 113 55 23 W
+latlon 45 19 38 N 113 55 33 W
+latlon 45 19 32 N 113 55 33 W
+latlon 45 19 16 N 113 55 20 W
+latlon 45 19 10 N 113 55 9 W
+latlon 45 19 3 N 113 54 57 W
+latlon 45 18 56 N 113 54 44 W
+latlon 45 18 52 N 113 54 32 W
+latlon 45 18 44 N 113 54 23 W
+latlon 45 18 32 N 113 54 24 W
+latlon 45 18 18 N 113 54 29 W
+latlon 45 18 8 N 113 54 25 W
+latlon 45 17 58 N 113 54 18 W
+latlon 45 17 44 N 113 54 7 W
+latlon 45 17 6 N 113 53 48 W
+latlon 45 16 56 N 113 53 44 W
+latlon 45 16 43 N 113 53 42 W
+latlon 45 16 35 N 113 53 43 W
+latlon 45 16 23 N 113 53 45 W
+latlon 45 16 8 N 113 53 51 W
+latlon 45 15 54 N 113 53 56 W
+latlon 45 15 36 N 113 54 6 W
+latlon 45 15 15 N 113 54 12 W
+latlon 45 14 53 N 113 54 13 W
+latlon 45 14 40 N 113 54 11 W
+latlon 45 14 25 N 113 54 5 W
+latlon 45 14 15 N 113 53 58 W
+latlon 45 14 5 N 113 53 47 W
+latlon 45 13 53 N 113 53 41 W
+latlon 45 13 47 N 113 53 34 W
+latlon 45 13 35 N 113 53 16 W
+latlon 45 13 29 N 113 52 53 W
+latlon 45 13 24 N 113 52 41 W
+latlon 45 13 14 N 113 52 35 W
+latlon 45 13 1 N 113 52 26 W
+latlon 45 12 47 N 113 52 27 W
+latlon 45 12 31 N 113 52 30 W
+latlon 45 12 21 N 113 52 33 W
+latlon 45 12 0 N 113 52 41 W
+latlon 45 11 36 N 113 52 51 W
+latlon 45 11 8 N 113 53 11 W
+latlon 45 10 42 N 113 53 36 W
+latlon 45 10 21 N 113 53 57 W
+latlon 45 10 8 N 113 54 5 W
+latlon 45 9 52 N 113 54 20 W
+latlon 45 9 30 N 113 54 30 W
+latlon 45 9 13 N 113 54 33 W
+latlon 45 8 48 N 113 54 25 W
+latlon 45 8 35 N 113 54 19 W
+latlon 45 8 14 N 113 54 17 W
+latlon 45 7 52 N 113 54 23 W
+latlon 45 7 16 N 113 54 25 W
+latlon 45 6 45 N 113 54 19 W
+latlon 45 6 30 N 113 54 4 W
+latlon 45 6 16 N 113 53 50 W
+latlon 45 6 1 N 113 53 46 W
+latlon 45 5 43 N 113 53 54 W
+latlon 45 5 22 N 113 54 2 W
+latlon 45 5 1 N 113 54 10 W
+latlon 45 4 40 N 113 54 25 W
+latlon 45 4 11 N 113 54 47 W
+latlon 45 3 55 N 113 55 0 W
+latlon 45 3 44 N 113 55 21 W
+latlon 45 3 31 N 113 55 22 W
+latlon 45 3 9 N 113 55 20 W
+latlon 45 2 39 N 113 55 15 W
+latlon 45 2 10 N 113 55 9 W
+latlon 45 1 43 N 113 55 13 W
+latlon 45 1 26 N 113 55 23 W
+latlon 45 1 9 N 113 55 37 W
+latlon 45 0 55 N 113 55 52 W
+latlon 45 0 36 N 113 56 2 W
+latlon 45 0 6 N 113 56 24 W
+latlon 44 59 47 N 113 56 30 W
+latlon 44 59 29 N 113 56 38 W
+latlon 44 59 8 N 113 56 50 W
+latlon 44 58 27 N 113 57 4 W
+latlon 44 58 12 N 113 57 11 W
+latlon 44 57 56 N 113 57 5 W
+latlon 44 57 38 N 113 57 8 W
+latlon 44 57 31 N 113 57 18 W
+latlon 44 57 17 N 113 57 19 W
+latlon 44 56 47 N 113 57 8 W
+latlon 44 56 41 N 113 57 20 W
+latlon 44 56 29 N 113 57 39 W
+latlon 44 56 12 N 113 57 47 W
+latlon 44 55 42 N 113 57 55 W
+latlon 44 55 23 N 113 58 3 W
+latlon 44 54 0 N 113 57 51 W
+latlon 44 53 49 N 113 57 46 W
+latlon 44 53 37 N 113 57 49 W
+latlon 44 53 31 N 113 58 6 W
+latlon 44 53 16 N 113 58 9 W
+latlon 44 53 0 N 113 58 5 W
+latlon 44 52 27 N 113 58 6 W
+latlon 44 52 12 N 113 58 28 W
+latlon 44 51 48 N 113 58 41 W
+latlon 44 51 28 N 113 58 39 W
+latlon 44 51 12 N 113 58 31 W
+latlon 44 50 52 N 113 58 38 W
+latlon 44 50 36 N 113 58 44 W
+latlon 44 50 18 N 113 58 49 W
+latlon 44 49 53 N 113 58 48 W
+latlon 44 49 22 N 113 58 54 W
+latlon 44 49 11 N 113 59 15 W
+latlon 44 48 55 N 113 59 39 W
+latlon 44 48 44 N 113 59 49 W
+latlon 44 48 21 N 114 0 6 W
+latlon 44 48 15 N 114 0 25 W
+latlon 44 47 52 N 114 0 35 W
+latlon 44 47 42 N 114 0 34 W
+latlon 44 47 26 N 114 0 25 W
+latlon 44 47 7 N 114 0 10 W
+latlon 44 46 47 N 113 59 52 W
+latlon 44 46 31 N 113 59 43 W
+latlon 44 46 14 N 113 59 37 W
+latlon 44 45 48 N 113 59 31 W
+latlon 44 45 23 N 113 59 33 W
+latlon 44 44 55 N 113 59 22 W
+latlon 44 44 32 N 113 59 30 W
+latlon 44 44 18 N 113 59 52 W
+latlon 44 43 52 N 114 0 11 W
+latlon 44 43 27 N 114 0 12 W
+latlon 44 42 58 N 114 0 14 W
+latlon 44 42 48 N 114 0 23 W
+latlon 44 42 37 N 114 0 45 W
+latlon 44 42 24 N 114 1 13 W
+latlon 44 42 15 N 114 1 37 W
+latlon 44 42 3 N 114 2 0 W
+latlon 44 41 48 N 114 2 22 W
+latlon 44 41 32 N 114 2 34 W
+latlon 44 41 24 N 114 2 41 W
+latlon 44 41 8 N 114 3 5 W
+latlon 44 41 7 N 114 3 12 W
+latlon 44 40 52 N 114 3 38 W
+latlon 44 40 30 N 114 4 2 W
+latlon 44 39 51 N 114 4 18 W
+latlon 44 39 15 N 114 4 24 W
+latlon 44 38 52 N 114 4 46 W
+latlon 44 38 40 N 114 5 14 W
+latlon 44 38 31 N 114 5 47 W
+latlon 44 38 22 N 114 6 33 W
+latlon 44 38 14 N 114 7 11 W
+latlon 44 38 5 N 114 7 41 W
+latlon 44 37 53 N 114 8 7 W
+latlon 44 37 30 N 114 8 31 W
+latlon 44 37 7 N 114 8 44 W
+latlon 44 36 30 N 114 8 59 W
+latlon 44 35 59 N 114 9 10 W
+latlon 44 35 48 N 114 9 33 W
+latlon 44 35 39 N 114 10 15 W
+latlon 44 35 11 N 114 10 35 W
+latlon 44 34 34 N 114 10 30 W
+latlon 44 34 16 N 114 10 35 W
+latlon 44 33 45 N 114 10 43 W
+latlon 44 33 28 N 114 10 44 W
+latlon 44 33 13 N 114 10 40 W
+latlon 44 32 44 N 114 10 30 W
+latlon 44 32 7 N 114 10 29 W
+latlon 44 31 31 N 114 10 37 W
+latlon 44 30 47 N 114 10 37 W
+latlon 44 30 1 N 114 10 25 W
+latlon 44 29 33 N 114 10 28 W
+latlon 44 29 19 N 114 10 50 W
+latlon 44 29 1 N 114 11 11 W
+latlon 44 28 37 N 114 11 24 W
+latlon 44 28 9 N 114 11 32 W
+latlon 44 27 51 N 114 11 55 W
+latlon 44 27 44 N 114 12 23 W
+latlon 44 27 3 N 114 12 34 W
+latlon 44 26 44 N 114 13 0 W
+latlon 44 26 21 N 114 12 55 W
+latlon 44 25 53 N 114 12 56 W
+latlon 44 25 35 N 114 13 8 W
+latlon 44 25 25 N 114 13 18 W
+latlon 44 24 51 N 114 13 37 W
+latlon 44 24 34 N 114 13 57 W
+latlon 44 24 14 N 114 14 18 W
+latlon 44 23 52 N 114 15 7 W
+latlon 44 23 41 N 114 15 31 W
+latlon 44 23 18 N 114 15 32 W
+latlon 44 22 55 N 114 15 19 W
+latlon 44 22 14 N 114 15 14 W
+latlon 44 22 0 N 114 15 35 W
+latlon 44 21 25 N 114 15 32 W
+latlon 44 21 1 N 114 15 46 W
+latlon 44 20 37 N 114 16 24 W
+latlon 44 19 58 N 114 16 58 W
+latlon 44 19 19 N 114 17 2 W
+latlon 44 18 33 N 114 17 11 W
+latlon 44 17 57 N 114 17 28 W
+latlon 44 17 13 N 114 17 51 W
+latlon 44 16 48 N 114 18 17 W
+latlon 44 16 20 N 114 18 41 W
+latlon 44 16 9 N 114 18 55 W
+latlon 44 16 8 N 114 19 4 W
+latlon 44 16 1 N 114 19 14 W
+latlon 44 15 47 N 114 19 21 W
+latlon 44 15 32 N 114 19 20 W
+latlon 44 15 19 N 114 19 27 W
+latlon 44 15 8 N 114 19 50 W
+latlon 44 15 3 N 114 20 9 W
+latlon 44 15 1 N 114 20 37 W
+latlon 44 15 1 N 114 21 4 W
+latlon 44 15 6 N 114 21 29 W
+latlon 44 15 12 N 114 22 1 W
+latlon 44 15 17 N 114 22 26 W
+latlon 44 15 23 N 114 23 5 W
+latlon 44 15 24 N 114 23 42 W
+latlon 44 15 22 N 114 24 28 W
+latlon 44 15 20 N 114 25 0 W
+latlon 44 15 26 N 114 25 34 W
+latlon 44 15 32 N 114 26 9 W
+latlon 44 15 29 N 114 26 27 W
+latlon 44 15 22 N 114 26 39 W
+latlon 44 15 16 N 114 26 51 W
+latlon 44 15 13 N 114 27 14 W
+latlon 44 15 23 N 114 27 29 W
+latlon 44 15 30 N 114 27 34 W
+latlon 44 15 34 N 114 28 3 W
+latlon 44 15 34 N 114 28 33 W
+latlon 44 15 28 N 114 28 54 W
+latlon 44 15 19 N 114 29 6 W
+latlon 44 15 12 N 114 29 25 W
+latlon 44 15 3 N 114 29 46 W
+latlon 44 14 58 N 114 30 9 W
+latlon 44 15 7 N 114 30 29 W
+latlon 44 15 11 N 114 31 6 W
+latlon 44 15 18 N 114 31 47 W
+latlon 44 15 27 N 114 32 14 W
+latlon 44 15 27 N 114 32 28 W
+latlon 44 15 11 N 114 32 54 W
+latlon 44 15 4 N 114 33 15 W
+latlon 44 14 52 N 114 33 31 W
+latlon 44 14 44 N 114 33 48 W
+latlon 44 14 48 N 114 34 6 W
+latlon 44 14 57 N 114 34 24 W
+latlon 44 15 4 N 114 34 49 W
+latlon 44 15 3 N 114 35 17 W
+latlon 44 15 1 N 114 35 42 W
+latlon 44 14 57 N 114 36 26 W
+latlon 44 14 58 N 114 37 12 W
+latlon 44 15 0 N 114 37 28 W
+latlon 44 14 59 N 114 37 51 W
+latlon 44 14 56 N 114 38 16 W
+latlon 44 14 50 N 114 38 39 W
+latlon 44 14 44 N 114 39 7 W
+latlon 44 14 39 N 114 39 28 W
+latlon 44 14 38 N 114 39 46 W
+latlon 44 14 38 N 114 40 9 W
+latlon 44 14 40 N 114 40 18 W
+latlon 44 14 45 N 114 40 37 W
+latlon 44 14 50 N 114 40 48 W
+latlon 44 14 59 N 114 40 57 W
+latlon 44 15 10 N 114 41 3 W
+latlon 44 15 19 N 114 41 14 W
+latlon 44 15 24 N 114 41 23 W
+latlon 44 15 31 N 114 41 39 W
+latlon 44 15 36 N 114 41 48 W
+latlon 44 15 41 N 114 42 7 W
+latlon 44 15 46 N 114 42 18 W
+latlon 44 15 51 N 114 42 38 W
+latlon 44 15 54 N 114 43 13 W
+latlon 44 15 49 N 114 43 29 W
+latlon 44 15 49 N 114 43 47 W
+latlon 44 15 51 N 114 43 59 W
+latlon 44 15 51 N 114 44 19 W
+latlon 44 15 49 N 114 44 40 W
+latlon 44 15 41 N 114 45 4 W
+latlon 44 15 33 N 114 45 24 W
+latlon 44 15 30 N 114 46 4 W
+latlon 44 15 31 N 114 46 27 W
+latlon 44 15 33 N 114 47 19 W
+latlon 44 15 26 N 114 48 8 W
+latlon 44 15 20 N 114 48 42 W
+latlon 44 15 12 N 114 49 19 W
+latlon 44 15 21 N 114 49 51 W
+latlon 44 15 28 N 114 50 19 W
+latlon 44 15 18 N 114 50 37 W
+latlon 44 15 0 N 114 50 45 W
+latlon 44 14 48 N 114 51 8 W
+latlon 44 14 40 N 114 51 38 W
+latlon 44 14 24 N 114 52 20 W
+latlon 44 14 5 N 114 52 55 W
+latlon 44 13 48 N 114 53 33 W
+latlon 44 13 23 N 114 54 5 W
+latlon 44 13 8 N 114 54 33 W
+latlon 44 13 0 N 114 55 8 W
+latlon 44 12 58 N 114 55 17 W
+latlon 44 12 49 N 114 55 18 W
+latlon 44 12 40 N 114 55 18 W
+latlon 44 12 30 N 114 55 4 W
+latlon 44 12 12 N 114 54 54 W
+latlon 44 11 51 N 114 54 56 W
+latlon 44 11 10 N 114 54 49 W
+latlon 44 10 48 N 114 54 33 W
+latlon 44 10 34 N 114 53 55 W
+latlon 44 10 22 N 114 53 25 W
+latlon 44 10 9 N 114 53 7 W
+latlon 44 9 57 N 114 52 35 W
+latlon 44 9 45 N 114 52 24 W
+latlon 44 9 27 N 114 52 27 W
+latlon 44 9 19 N 114 52 30 W
+latlon 44 9 1 N 114 52 37 W
+latlon 44 8 46 N 114 52 42 W
+latlon 44 8 28 N 114 52 38 W
+latlon 44 8 13 N 114 52 25 W
+latlon 44 7 43 N 114 52 1 W
+latlon 44 7 25 N 114 51 45 W
+latlon 44 6 49 N 114 51 26 W
+latlon 44 6 31 N 114 51 24 W
+latlon 44 5 58 N 114 51 18 W
+latlon 44 5 23 N 114 51 15 W
+latlon 44 3 56 N 114 51 10 W
+latlon 44 3 46 N 114 51 8 W
+latlon 44 3 40 N 114 50 57 W
+latlon 44 3 35 N 114 50 46 W
+latlon 44 3 28 N 114 50 26 W
+latlon 44 3 14 N 114 50 5 W
+latlon 44 3 1 N 114 49 59 W
+latlon 44 2 29 N 114 49 35 W
+latlon 44 2 15 N 114 49 31 W
+latlon 44 1 53 N 114 49 34 W
+latlon 44 1 44 N 114 49 41 W
+latlon 44 1 27 N 114 49 48 W
+latlon 44 1 8 N 114 49 56 W
+latlon 44 0 43 N 114 50 3 W
+latlon 44 0 22 N 114 49 53 W
+latlon 44 0 15 N 114 49 39 W
+latlon 44 0 5 N 114 49 35 W
+latlon 43 59 50 N 114 49 44 W
+latlon 43 59 47 N 114 49 54 W
+latlon 43 59 36 N 114 50 5 W
+latlon 43 59 28 N 114 50 10 W
+latlon 43 59 7 N 114 50 11 W
+latlon 43 58 48 N 114 50 7 W
+latlon 43 58 22 N 114 50 1 W
+latlon 43 57 56 N 114 50 6 W
+latlon 43 57 38 N 114 50 9 W
+latlon 43 57 28 N 114 49 58 W
+latlon 43 57 13 N 114 49 36 W
+latlon 43 57 1 N 114 49 20 W
+latlon 43 56 56 N 114 49 20 W
+latlon 43 56 45 N 114 49 30 W
+latlon 43 56 27 N 114 49 35 W
+latlon 43 56 10 N 114 49 29 W
+latlon 43 55 52 N 114 49 34 W
+latlon 43 55 38 N 114 49 43 W
+latlon 43 55 22 N 114 49 58 W
+latlon 43 55 17 N 114 50 14 W
+latlon 43 55 9 N 114 50 18 W
+latlon 43 54 59 N 114 50 19 W
+latlon 43 54 53 N 114 50 26 W
+latlon 43 54 40 N 114 50 31 W
+latlon 43 54 28 N 114 50 40 W
+latlon 43 54 17 N 114 51 4 W
+latlon 43 54 6 N 114 51 34 W
+latlon 43 53 55 N 114 51 57 W
+latlon 43 53 52 N 114 52 8 W
+latlon 43 53 47 N 114 52 15 W
+latlon 43 53 39 N 114 52 32 W
+latlon 43 53 28 N 114 52 55 W
+latlon 43 53 20 N 114 53 9 W
+latlon 43 53 7 N 114 53 32 W
+latlon 43 52 56 N 114 54 4 W
+latlon 43 52 50 N 114 54 27 W
+latlon 43 52 44 N 114 55 2 W
+latlon 43 52 35 N 114 55 23 W
+latlon 43 52 22 N 114 55 46 W
+latlon 43 52 11 N 114 56 5 W
+latlon 43 52 3 N 114 56 18 W
+latlon 43 51 52 N 114 56 37 W
+end  (Salmon)                 
+end  (Salmon)                  
+                    
+                       
+river Wenatchee                    
+flow_max 40.00
+flow_min 0.5
+reach Wenatchee River                   
+width 225.0                    
+depth 2.5            
+lower_elev 580
+latlon 47 27 17 N 120 18 46 W
+latlon 47 27 15 N 120 18 57 W
+latlon 47 27 19 N 120 19 23 W
+latlon 47 27 27 N 120 19 53 W
+latlon 47 27 33 N 120 20 10 W
+latlon 47 27 41 N 120 20 30 W
+latlon 47 27 50 N 120 20 52 W
+latlon 47 27 54 N 120 21 31 W
+latlon 47 27 58 N 120 22 7 W
+latlon 47 28 10 N 120 22 46 W
+latlon 47 28 26 N 120 23 14 W
+latlon 47 28 42 N 120 23 46 W
+latlon 47 28 50 N 120 24 18 W
+latlon 47 29 0 N 120 24 47 W
+latlon 47 29 10 N 120 25 4 W
+latlon 47 29 13 N 120 25 0 W
+latlon 47 29 22 N 120 25 5 W
+latlon 47 29 31 N 120 25 15 W
+latlon 47 29 41 N 120 25 42 W
+latlon 47 29 45 N 120 26 16 W
+latlon 47 29 51 N 120 26 38 W
+latlon 47 29 55 N 120 26 53 W
+latlon 47 30 3 N 120 27 3 W
+latlon 47 30 26 N 120 27 21 W
+latlon 47 30 49 N 120 27 30 W
+latlon 47 31 5 N 120 27 52 W
+latlon 47 31 24 N 120 28 25 W
+latlon 47 31 35 N 120 28 54 W
+latlon 47 31 46 N 120 29 26 W
+latlon 47 31 55 N 120 30 0 W
+latlon 47 32 2 N 120 30 32 W
+latlon 47 32 5 N 120 30 59 W
+latlon 47 32 3 N 120 31 30 W
+latlon 47 31 55 N 120 31 47 W
+latlon 47 31 52 N 120 31 59 W
+latlon 47 31 46 N 120 32 20 W
+latlon 47 31 44 N 120 32 51 W
+latlon 47 31 54 N 120 33 4 W
+latlon 47 32 9 N 120 33 31 W
+latlon 47 32 22 N 120 33 49 W
+latlon 47 32 35 N 120 34 21 W
+latlon 47 32 49 N 120 34 39 W
+latlon 47 32 55 N 120 34 46 W
+latlon 47 33 4 N 120 34 44 W
+latlon 47 33 13 N 120 35 2 W
+latlon 47 33 28 N 120 35 7 W
+latlon 47 33 41 N 120 35 18 W
+latlon 47 33 54 N 120 35 35 W
+latlon 47 34 3 N 120 36 10 W
+latlon 47 34 12 N 120 36 32 W
+latlon 47 34 25 N 120 36 45 W
+latlon 47 34 46 N 120 37 17 W
+latlon 47 35 5 N 120 37 43 W
+latlon 47 35 24 N 120 38 13 W
+latlon 47 35 35 N 120 38 33 W
+latlon 47 35 40 N 120 38 47 W
+latlon 47 35 41 N 120 39 4 W
+latlon 47 35 35 N 120 39 28 W
+latlon 47 35 22 N 120 39 49 W
+latlon 47 35 8 N 120 40 5 W
+latlon 47 34 54 N 120 40 21 W
+latlon 47 34 43 N 120 40 23 W
+latlon 47 34 31 N 120 40 23 W
+latlon 47 34 24 N 120 40 22 W
+latlon 47 34 18 N 120 40 18 W
+latlon 47 34 11 N 120 40 21 W
+latlon 47 34 11 N 120 40 33 W
+latlon 47 34 17 N 120 40 44 W
+latlon 47 34 26 N 120 40 44 W
+latlon 47 34 34 N 120 40 47 W
+latlon 47 34 38 N 120 41 2 W
+latlon 47 34 41 N 120 41 31 W
+latlon 47 34 42 N 120 42 5 W
+latlon 47 34 46 N 120 42 39 W
+latlon 47 34 52 N 120 42 54 W
+latlon 47 35 9 N 120 43 19 W
+latlon 47 35 24 N 120 43 22 W
+latlon 47 35 42 N 120 43 23 W
+latlon 47 36 2 N 120 43 19 W
+latlon 47 36 27 N 120 43 35 W
+latlon 47 36 53 N 120 43 51 W
+latlon 47 37 18 N 120 44 0 W
+latlon 47 37 41 N 120 43 56 W
+latlon 47 38 2 N 120 43 58 W
+latlon 47 38 14 N 120 43 56 W
+latlon 47 38 34 N 120 43 57 W
+latlon 47 38 44 N 120 44 0 W
+latlon 47 39 2 N 120 44 13 W
+latlon 47 39 21 N 120 44 22 W
+latlon 47 39 41 N 120 44 27 W
+latlon 47 39 54 N 120 44 26 W
+latlon 47 40 11 N 120 44 17 W
+latlon 47 40 23 N 120 44 8 W
+latlon 47 40 45 N 120 43 57 W
+latlon 47 40 50 N 120 43 48 W
+latlon 47 40 54 N 120 43 34 W
+latlon 47 40 56 N 120 43 14 W
+latlon 47 40 58 N 120 42 55 W
+latlon 47 41 5 N 120 42 41 W
+latlon 47 41 21 N 120 42 23 W
+latlon 47 41 31 N 120 42 9 W
+latlon 47 41 38 N 120 42 2 W
+latlon 47 41 50 N 120 41 43 W
+latlon 47 41 59 N 120 41 19 W
+latlon 47 42 4 N 120 41 0 W
+latlon 47 42 15 N 120 40 27 W
+latlon 47 42 24 N 120 40 6 W
+latlon 47 42 34 N 120 39 49 W
+latlon 47 42 57 N 120 39 19 W
+latlon 47 43 22 N 120 39 16 W
+latlon 47 43 35 N 120 39 19 W
+latlon 47 43 39 N 120 39 34 W
+latlon 47 43 47 N 120 39 56 W
+latlon 47 43 55 N 120 40 6 W
+latlon 47 44 8 N 120 40 4 W
+latlon 47 44 25 N 120 39 51 W
+latlon 47 44 52 N 120 39 55 W
+latlon 47 45 21 N 120 39 59 W
+latlon 47 45 32 N 120 39 54 W
+latlon 47 45 53 N 120 39 44 W
+latlon 47 46 5 N 120 39 44 W
+latlon 47 46 25 N 120 39 50 W
+latlon 47 46 54 N 120 39 57 W
+latlon 47 47 4 N 120 39 52 W
+latlon 47 47 15 N 120 39 46 W
+latlon 47 47 30 N 120 39 42 W
+latlon 47 47 39 N 120 39 45 W
+latlon 47 47 43 N 120 39 40 W
+latlon 47 47 51 N 120 39 53 W
+latlon 47 48 2 N 120 40 17 W
+latlon 47 48 19 N 120 40 43 W
+latlon 47 48 34 N 120 40 58 W
+latlon 47 48 48 N 120 41 18 W
+latlon 47 48 53 N 120 41 36 W
+latlon 47 48 49 N 120 42 0 W
+latlon 47 48 35 N 120 42 21 W
+latlon 47 48 28 N 120 42 32 W
+latlon 47 48 23 N 120 42 42 W
+latlon 47 48 18 N 120 42 56 W
+end  (Wenatchee)              
+end  (Wenatchee)
+                            
+river Methow                     
+flow_max 40.00
+flow_min 0.25                     
+                     
+reach Methow River                     
+width 150                    
+depth 3.7                 
+lower_elev 680
+latlon 48 3 1 N 119 53 44 W
+latlon 48 3 0 N 119 54 13 W
+latlon 48 2 50 N 119 54 28 W
+latlon 48 2 54 N 119 54 58 W
+latlon 48 3 10 N 119 55 28 W
+latlon 48 3 28 N 119 55 51 W
+latlon 48 3 27 N 119 56 5 W
+latlon 48 3 20 N 119 56 28 W
+latlon 48 3 27 N 119 56 34 W
+latlon 48 3 35 N 119 56 27 W
+latlon 48 3 44 N 119 56 30 W
+latlon 48 3 57 N 119 56 46 W
+latlon 48 3 58 N 119 57 2 W
+latlon 48 4 2 N 119 57 4 W
+latlon 48 4 15 N 119 56 54 W
+latlon 48 4 28 N 119 56 54 W
+latlon 48 4 35 N 119 57 3 W
+latlon 48 4 22 N 119 57 35 W
+latlon 48 4 27 N 119 57 54 W
+latlon 48 4 40 N 119 58 11 W
+latlon 48 4 40 N 119 58 22 W
+latlon 48 4 28 N 119 58 36 W
+latlon 48 4 38 N 119 58 56 W
+latlon 48 4 43 N 119 59 24 W
+latlon 48 4 41 N 119 59 35 W
+latlon 48 4 26 N 119 59 49 W
+latlon 48 4 25 N 119 59 54 W
+latlon 48 4 29 N 120 0 6 W
+latlon 48 4 45 N 120 0 26 W
+latlon 48 4 46 N 120 0 39 W
+latlon 48 4 57 N 120 0 38 W
+latlon 48 5 12 N 120 0 57 W
+latlon 48 5 38 N 120 1 1 W
+latlon 48 5 45 N 120 1 14 W
+latlon 48 5 55 N 120 1 16 W
+latlon 48 6 1 N 120 1 11 W
+latlon 48 6 0 N 120 0 47 W
+latlon 48 6 3 N 120 0 35 W
+latlon 48 6 15 N 120 0 35 W
+latlon 48 6 30 N 120 0 13 W
+latlon 48 6 36 N 120 0 28 W
+latlon 48 6 48 N 120 0 30 W
+latlon 48 7 13 N 120 0 20 W
+latlon 48 7 26 N 120 0 33 W
+latlon 48 7 33 N 120 0 31 W
+latlon 48 7 38 N 120 0 20 W
+latlon 48 7 32 N 120 0 2 W
+latlon 48 7 35 N 119 59 56 W
+latlon 48 7 39 N 120 0 1 W
+latlon 48 7 52 N 119 59 57 W
+latlon 48 7 57 N 120 0 5 W
+latlon 48 7 58 N 120 0 15 W
+latlon 48 8 5 N 120 0 21 W
+latlon 48 8 13 N 120 0 20 W
+latlon 48 8 20 N 120 0 9 W
+latlon 48 8 23 N 120 0 10 W
+latlon 48 8 25 N 120 0 41 W
+latlon 48 8 16 N 120 0 53 W
+latlon 48 8 12 N 120 1 9 W
+latlon 48 8 14 N 120 1 18 W
+latlon 48 8 13 N 120 1 38 W
+latlon 48 8 18 N 120 1 53 W
+latlon 48 8 30 N 120 1 51 W
+latlon 48 8 25 N 120 2 9 W
+latlon 48 8 27 N 120 2 48 W
+latlon 48 8 32 N 120 2 51 W
+latlon 48 8 55 N 120 2 40 W
+latlon 48 9 6 N 120 3 7 W
+latlon 48 9 3 N 120 3 22 W
+latlon 48 9 13 N 120 3 52 W
+latlon 48 9 21 N 120 3 59 W
+latlon 48 9 26 N 120 4 18 W
+latlon 48 9 54 N 120 4 40 W
+latlon 48 10 15 N 120 4 41 W
+latlon 48 10 17 N 120 5 1 W
+latlon 48 10 27 N 120 5 13 W
+latlon 48 10 58 N 120 5 17 W
+latlon 48 10 59 N 120 5 23 W
+latlon 48 10 54 N 120 5 33 W
+latlon 48 10 58 N 120 5 42 W
+latlon 48 11 19 N 120 5 38 W
+latlon 48 11 29 N 120 5 52 W
+latlon 48 11 46 N 120 5 45 W
+latlon 48 11 50 N 120 5 51 W
+latlon 48 11 50 N 120 6 0 W
+latlon 48 11 33 N 120 6 6 W
+latlon 48 11 34 N 120 6 15 W
+latlon 48 11 48 N 120 6 18 W
+latlon 48 11 59 N 120 6 50 W
+latlon 48 12 18 N 120 6 50 W
+latlon 48 12 24 N 120 6 54 W
+latlon 48 12 27 N 120 7 3 W
+latlon 48 12 26 N 120 7 24 W
+latlon 48 12 29 N 120 7 33 W
+latlon 48 12 35 N 120 7 34 W
+latlon 48 12 43 N 120 7 19 W
+latlon 48 13 9 N 120 7 26 W
+latlon 48 13 21 N 120 7 6 W
+latlon 48 13 33 N 120 6 58 W
+latlon 48 13 47 N 120 6 42 W
+latlon 48 14 0 N 120 6 55 W
+latlon 48 14 12 N 120 6 55 W
+latlon 48 14 15 N 120 6 35 W
+latlon 48 14 24 N 120 6 26 W
+latlon 48 14 27 N 120 6 27 W
+latlon 48 14 36 N 120 6 50 W
+latlon 48 14 47 N 120 7 1 W
+latlon 48 15 7 N 120 6 56 W
+latlon 48 15 15 N 120 6 51 W
+latlon 48 15 15 N 120 6 33 W
+latlon 48 15 22 N 120 6 20 W
+latlon 48 15 52 N 120 6 12 W
+latlon 48 15 56 N 120 5 57 W
+latlon 48 16 4 N 120 5 49 W
+latlon 48 16 6 N 120 5 36 W
+latlon 48 16 0 N 120 5 16 W
+latlon 48 16 10 N 120 5 9 W
+latlon 48 16 23 N 120 5 1 W
+latlon 48 16 41 N 120 4 58 W
+latlon 48 16 51 N 120 4 31 W
+latlon 48 16 59 N 120 4 18 W
+latlon 48 17 10 N 120 4 24 W
+latlon 48 17 16 N 120 4 5 W
+latlon 48 17 34 N 120 3 51 W
+latlon 48 17 52 N 120 3 47 W
+latlon 48 18 33 N 120 3 48 W
+latlon 48 18 38 N 120 3 28 W
+latlon 48 18 41 N 120 3 11 W
+latlon 48 18 54 N 120 3 10 W
+latlon 48 19 8 N 120 3 18 W
+latlon 48 19 21 N 120 3 43 W
+latlon 48 19 36 N 120 3 55 W
+latlon 48 19 44 N 120 4 8 W
+latlon 48 19 46 N 120 4 31 W
+latlon 48 19 55 N 120 4 48 W
+latlon 48 20 36 N 120 4 31 W
+latlon 48 20 47 N 120 4 39 W
+latlon 48 20 38 N 120 5 22 W
+latlon 48 20 51 N 120 6 3 W
+latlon 48 20 53 N 120 6 19 W
+latlon 48 21 4 N 120 6 10 W
+latlon 48 21 25 N 120 6 53 W
+latlon 48 21 42 N 120 6 47 W
+latlon 48 22 5 N 120 7 2 W
+latlon 48 22 20 N 120 7 0 W
+latlon 48 22 27 N 120 7 8 W
+latlon 48 22 39 N 120 7 6 W
+latlon 48 22 51 N 120 7 10 W
+latlon 48 22 52 N 120 7 22 W
+latlon 48 22 48 N 120 7 27 W
+latlon 48 22 51 N 120 7 44 W
+latlon 48 23 23 N 120 7 52 W
+latlon 48 23 38 N 120 8 11 W
+latlon 48 23 48 N 120 8 17 W
+latlon 48 24 10 N 120 8 18 W
+latlon 48 24 16 N 120 7 53 W
+latlon 48 24 22 N 120 7 45 W
+latlon 48 24 38 N 120 7 52 W
+latlon 48 24 42 N 120 7 58 W
+latlon 48 24 42 N 120 8 10 W
+latlon 48 24 49 N 120 8 33 W
+latlon 48 24 57 N 120 8 23 W
+latlon 48 25 3 N 120 8 22 W
+latlon 48 25 25 N 120 8 46 W
+latlon 48 25 28 N 120 9 15 W
+latlon 48 25 35 N 120 9 34 W
+latlon 48 25 43 N 120 9 38 W
+latlon 48 25 51 N 120 9 24 W
+latlon 48 26 17 N 120 9 15 W
+latlon 48 26 40 N 120 9 19 W
+latlon 48 26 51 N 120 9 36 W
+latlon 48 27 5 N 120 9 47 W
+latlon 48 27 20 N 120 9 43 W
+latlon 48 27 31 N 120 10 1 W
+latlon 48 27 53 N 120 10 8 W
+latlon 48 28 11 N 120 10 28 W
+latlon 48 28 24 N 120 10 34 W
+latlon 48 28 31 N 120 10 49 W
+latlon 48 28 32 N 120 11 4 W
+latlon 48 28 31 N 120 11 21 W
+latlon 48 28 29 N 120 11 31 W
+latlon 48 28 29 N 120 11 45 W
+latlon 48 28 34 N 120 11 58 W
+latlon 48 28 37 N 120 12 11 W
+latlon 48 28 40 N 120 12 24 W
+latlon 48 28 42 N 120 12 38 W
+latlon 48 28 45 N 120 12 51 W
+latlon 48 28 50 N 120 13 3 W
+latlon 48 28 57 N 120 13 13 W
+latlon 48 29 4 N 120 13 22 W
+latlon 48 29 12 N 120 13 31 W
+latlon 48 29 19 N 120 13 40 W
+latlon 48 29 25 N 120 13 50 W
+latlon 48 29 32 N 120 14 0 W
+latlon 48 29 38 N 120 14 10 W
+latlon 48 29 44 N 120 14 22 W
+latlon 48 29 49 N 120 14 33 W
+latlon 48 29 55 N 120 14 45 W
+latlon 48 30 0 N 120 14 56 W
+latlon 48 30 3 N 120 15 10 W
+latlon 48 30 3 N 120 15 24 W
+latlon 48 30 4 N 120 15 38 W
+latlon 48 30 7 N 120 15 51 W
+latlon 48 30 11 N 120 16 4 W
+latlon 48 30 18 N 120 16 13 W
+latlon 48 30 24 N 120 16 23 W
+latlon 48 30 21 N 120 16 36 W
+latlon 48 30 28 N 120 16 47 W
+latlon 48 30 37 N 120 16 53 W
+latlon 48 30 46 N 120 16 55 W
+latlon 48 30 52 N 120 17 6 W
+latlon 48 30 52 N 120 17 20 W
+latlon 48 30 57 N 120 17 30 W
+latlon 48 31 6 N 120 17 31 W
+latlon 48 31 10 N 120 17 45 W
+latlon 48 31 12 N 120 17 58 W
+latlon 48 31 16 N 120 18 9 W
+latlon 48 31 25 N 120 18 11 W
+latlon 48 31 31 N 120 18 22 W
+latlon 48 31 38 N 120 18 31 W
+latlon 48 31 38 N 120 18 45 W
+latlon 48 31 37 N 120 18 57 W
+latlon 48 31 44 N 120 19 5 W
+latlon 48 31 53 N 120 19 9 W
+latlon 48 32 1 N 120 19 18 W
+latlon 48 32 9 N 120 19 25 W
+latlon 48 32 18 N 120 19 26 W
+latlon 48 32 27 N 120 19 23 W
+latlon 48 32 37 N 120 19 23 W
+latlon 48 32 46 N 120 19 27 W
+latlon 48 32 53 N 120 19 36 W
+latlon 48 33 0 N 120 19 46 W
+latlon 48 33 5 N 120 19 58 W
+latlon 48 33 10 N 120 20 9 W
+latlon 48 33 17 N 120 20 18 W
+latlon 48 33 31 N 120 20 36 W
+end  (Methow)                  
+end  (Methow)                  

@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Lock Output Settings</title>
+</head>
+<body>
+<h3>Lock Output Settings</h3>
+<p>
+Selecting <a href="372.html"><strong>Run</strong></a><strong><img src="subm.jpg">Lock Output Settings</strong> turns on or off the Lock Output Settings feature. When running in either Scenario or Monte Carlo mode, a number of results are calculated by the model; however, only the output data you have specified will be available following the run.
+</p><p>
+When <strong>Lock Output Settings</strong> is not selected (off), COMPASS will use the output settings specified in a yearly input data file or <code>.cnf</code> file to determine which results will be available to view and analyze after a run. Be sure to specify the desired outputs and save them to the yearly input data files to be used in the Monte Carlo alternatives. For <a href="373.html">Scenario Mode</a> runs, you can view the output either in histograms, e.g. <a href="34.html">Passage Histograms</a>, or in the <a href="84.html">Message Log</a>. For <a href="75.html">Monte Carlo Mode</a> runs, you can view the output with the <a href="77.html">Monte Data Report</a> and <a href="80.html">Monte Analysis</a> under the Analysis Menu.
+</p><p>
+When selected (on), COMPASS will override all output settings specified in any parameter data files read into the model or read during interactive Monte Carlo simulations. Instead, COMPASS will generate output data for the current selections in the <a href="63.html">Output Settings</a> windows for dams, reaches and headwaters. This allows a user, for example, to change the output data produced by a Monte Carlo run without editing all of the yearly data files used by that run.
+</p><p>
+In Monte Carlo Mode, this feature can be used both in batch mode and interactively. In batch mode, the command option <code>-c output_control_file</code> can be used to override any output settings for an individual alternative. In the interactive mode, the locking option can be set using this feature or by selecting the check box <strong>Lock current output settings</strong> in the <strong>Run control</strong> panel of the <a href="75.html">Monte Carlo</a> window. The current output settings specified in the <a href="63.html">Output Settings</a> windows for dams, reaches and headwaters will be used during run execution.
+</p>
+
+
+</body>
+</html>

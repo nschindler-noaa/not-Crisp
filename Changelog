@@ -1,0 +1,2163 @@
+6/7: period.h, pred.h, probability.h, reach_gas_specs.h, realtime_defs.h, realtime.c/h, realtime_types.h, release.h, release_util.c/h, report.h, report_altern.c, report_init.c, report_setup.c, report_out.c, report_tool.c, return.h, river.c/h, rsw.c/h, run_mode.h, run_state.h, sample.c/h, schedule.h, species.c/h, spill.h, stack.c/h, stock.c/h, strtools.c/h, struct_at.h, table.c/h, token.c/h, tokens_alt.c/h, tokens_archive.c/h, tokens_at.h, transport.c/h, travel_table.c/h, tree.c/h, ttextract.c/h, ttopt.h unused.h, var.c/h, vectable.c/h, version.h, writeutil.c/h
+More code documentation
+
+5/31: doc-source.h, Doxyfile, documentation.dox, doc-source.dox, doc-test.dox, doc-build.dox
+Added Doxygen documentation
+No longer generating LaTeX output
+Moved Doxygen documentation files to *.dox files
+No longer excluding [A-Z]* since on Windows that is every file that starts with an English letter
+
+5/29: crisp.h, dataio.c, init.c, crisppp.h, crisp_time.h, custom_survival.h, dataio.h, date.h, daylight.y, defaults.h, delayed_mort.h, dir.c/h, disp_defs.h, eqns.h, exp_table.h, fdens.h, file.c/h, filerext.h, flow.c/h, fpe.h, gas_mort.h, gas_mort_params.h, gc_dist.h, growth.h, gif.h, help.h, init.c/h, init_river.c/h, list.c/h, log.h, main.c/h, qTextOutDialog.cpp, map.h, migration.h, mode.h, monte.c/h, nrutil_short.h, parse_alt.h, parse.c/h, parser_file.h, parseutil.c/h, passage.c/h, pbn.c/h, period.c/h
+Code documentation of main crisp.h header file
+Removed dam species pass_prob, pass_hist fields since they're never used
+More code documentation
+Removed disp_defs.h, gif.h, help.h, main_app_inc.h, map.h, mouse.h files since they're not used
+Wrote section on equations in COMPASS
+
+5/23: documentation.h, doc-test.h, output_flags.h, altern_list.c/h, alt_report.h, report_altern.c, args.c/h, main.c/h, file.c/h, init.c/h, init_river.c/h, basin.c/h, batch.c/h, c1tokens.h, command.c/h, compute_gas_mort.c/h, crisp_calib.h, crisp_defs.h, crisp_extract.c/h
+Testing and debugging documentation
+Machine-specific documentation
+Source documentation of header files
+Code cleanup (namely removed old/incorrect comments)
+Replaced some references to CRiSP with COMPASS
+
+5/22: documentation.h, doc-source.h, doc-build.h, doc-test.h
+Source control documentation updates
+Most of the build process documentation
+Split documentation stuff into a couple of files
+Platform notes documentation
+Added placeholder for testing documentation
+
+5/17: log.c/h, extra_batch.c, crisp1bat.c, Makefile, main.c, monte_frame.c, writeutil.c, gui.h, args.h, test/input.scn, compassb.c, report.h, help_index.sh, Makefile.linux32, Makefile.common, Makefile.solaris, notcrisp.dsp, notcrisp_gui.dsp, bin2c_src/bin2c_src.dsp, compass_cvs.dsw, documentation.h
+Moved crisp1bat into extra_batch, along with the batch AnnounceFatalError
+Added extra_batch.c for batch mode-specific function implementations
+Sections that are only compiled when GUI is defined are now always run (except on Windows)
+Added source documentation for files
+Added test/input.scn to version control since it was accidentally left out
+Added compassb.c for the main batch mode entry point
+Fixed include of crisp.h for report.h
+Help files in the output directory now are simply help_$file_data and don't replace the dots with underscores
+Makefile updated to compile all .html .jpg and .toc files in help/ for the online help system
+Added Makefile for 32-bit Linux (Makefile.linux32)
+Movied common Makefile stuff into Makefile.common
+Added Makefile.solaris for Solaris
+Added stdlib.h include to extra_batch.c
+Fixes for new build process on Windows
+Added bin2c to the main COMPASS project
+Source control documentation
+
+5/15: args.c
+Added -v flag to the --help output
+Removed Makefile.crisp_calib from module
+
+5/10: Doxyfile, documentation.h, qSelectDialogMedBase.h
+Added Doxygen file
+Started writing high level documentation in documentation.h
+Removed Doxygen-like commented out #include from qSelectDialogMedBase.h
+
+5/8: Makefile, Makefile.linux, notcrisp_gui.dsp, qIOSheet.h, qIOTool.cpp, qIOPostBonnevilleSheet.cpp/h, qIOSIMPASSheet.cpp/h, init_river.c/h, token.c, qFileManager.cpp, qIOCell.cpp/h, version.h
+Moved the two I/O sheets into their own files
+Disabled optimizations on Linux build since it is really only for testing anyway
+Also made Linux GUI build default to 32-bit
+Cells are told to calculate at the end of the post-Bonneville hypothesis changed callback
+Fixed init_river.h header file to use modern C style
+Since stdin is not opened in Windows under release mode init_buffers() now checks the result of fileno(stdin) before creating a record for stdin
+File manager now returns 0 when no errors occur
+Global drop down cells now take effect immediately
+Version 0.32
+
+5/3: qIOSheet.cpp, qIOCell.h, stock.h, c1tokens.h, dataio.c, parse.c, init.c, pbn.c/h, eqns_dflts.c, qIOTool.cpp, qIOSheet.cpp/h, qIOCell.cpp/h, qIOTool.cpp/h, version.h
+Fixed typo
+Added system survival cell for the Constant D hypothesis
+Added inriver_latent_mort_eqn to stock structure
+Added stock output to the .pbn file
+Added inriver_latent_mort_eqn tokens
+Added EQ_LATENT_MORT_WTT equation type (default for inriver_latent_mort_eqn)
+Added pbn.h
+Added calculation of latent_inriver_mort for S3 vs. WTT algorithm
+Added isLoading() to I/O tool to prevent modifying the I/O sheet while loading files
+Fixed crash with post-Bonneville hypothesis changes on file loading
+inriver_latent_mort_eqn is now in the species structure since that's where the other stuff is going
+Bumped version to 0.31
+The post-Bonneville callback only runs when the I/O tool is not loading now to prevent crashes
+
+5/1: qIOSheet.cpp/h, qIOTool.cpp/h, qIOCell.cpp, monte_spill.c, version.h, Makefile.batch
+The I/O tool now signals the sheets to apply/reset which then signal their cells to do so
+The post-Bonneville sheet now has a special add function for the hypothesis cell to connect different signals
+The hypothesis cell is applied first and reset last so that only the clearly visible cells are applied/reset as expected
+Transport arrivals cell no longer abuses the I/O sheet interface, but it does do a fair amount of searching that probably shouldn't be necessary
+Transport arrivals cell does what it looks like it was meant to although I have doubts that that is what it SHOULD do
+Transport arrivals cell now calculates the proportion of transported fish that came from each dam
+Merged in post-Bonneville hypothesis branch
+Fixed warnings
+Bumped version to 0.30
+pbn.o added to Makefile.batch
+
+4/26: qIOCell.cpp/h, qIOSheet.cpp/h, c1tokens.h, crisp.h, dataio.c, init.c, rz_model.c, parse.c, qIdcList.cpp/h, resource.h, reach_model.c
+Implemented qIOSARVsDateDifferentialReturnCell and added it to the hypothesis
+Temporarily disabled the transport arrivals from cell since it doesn't appear to work
+Added static versions of calculations to cumulative total survival and overall return rate cells
+Implemented the overall survival cell for SAR vs. Date hypothesis
+Added TODO cells for all post-Bonneville hypotheses
+Renamed latent_inriver_mort to inriver_latent_mort
+Renamed latent_transport_mort to transport_latent_mort
+Added qIOSpeciesParameterInputCellfor non-dam parameter species values
+Implemented inriver and transport latent mortality input cells
+Inriver and transport latent mortalities are saved in the post-Bonneville segment during do_seg_new()
+Implemented the latent mortality post-Bonneville hypothesis
+
+4/24: qIOSheet.cpp/h, qIOCell.h, crisp.h, pbn.c
+Added space for proportion arriving/destined cells to post-Bonneville sheet.
+Reverted back to correct use of the complement for inriver proportion
+Added documentation for the combining algorithms
+Added documentation for new DAM_PASSAGE_REMAINDER_SUM combining algorithm
+Implemented DAM_PASSAGE_REMAINDER_SUM algorithm
+Added names and places for post-Bonneville hypotheses
+Automatic post-Bonneville sheet modification on hypothesis selection
+
+4/24: qIOSheet.cpp
+Export to text now has the horizontal header (dam) columns aligned properly
+
+4/19: dam_model.c, version.h, alt_report.h, release.c, release_util.c, at_frame.c, at_hist.c, qMonteAnalDlg.cpp/h, report_altern.c
+Slightly better comments
+Bumped version to v0.28
+Added sluiceway and RSW routes into alt_report structure
+Added sluiceway/RSW deletion into release deletion/clearing
+Added sluiceway/RSW information to release collapsing for realtime mode
+Added sluiceway/RSW information to at_frame and at_hist
+Updated Monte Carlo analysis stuff slightly
+Moved prototype of calculate_route_avgs() to report.h from report_altern.c (to centralize it)
+Bumped version to v0.29
+
+4/17: passage.c, version.h, dam_model.c
+flow_fraction is now used to partition fish relative to different powerhouses (spill is ignored now, as it should have been)
+Bumped version to v0.27
+Restored new dam delay code since it appears to be working correctly now that the flow_fraction bug in passage.c has been fixed
+
+4/13: summary.c, dam_model.c, version.h
+Fixed output of passage data for reaches (sum instead of average vs. day)
+Passage flag in reaches causes passage histogram
+The new dam delay code has temporarily been commented out and replaced with the old code since it was causing bugs
+Bumped version to v0.26
+
+4/12: main.c, version.h, realtime.c
+Realtime mode handles input files from command line mode differently than the other modes
+Realtime mode doesn't load the -f file twice (this was happening because user_args.initial_data was not NULL)
+Bumped version number
+Project Out in realtime output is now calculated with sluiceway and RSWs in mind
+
+4/5: dataio.c
+v_var is now written out as FLOAT_SCIENTIFIC so it has 6 decimal places
+rt_stock and rt_data_date are now written out if the rt field is not NULL
+
+4/3: qIOSheet.cpp
+Laid out the post-Bonneville sheet more how Rich wanted it
+Added callback for when the hypothesis changes to the post-Bonneville sheet
+
+3/29: test/monte_spill_setup.c, test/monte_spill_setup.c/h, test/test-flow-archive-spill-input.c, test/test-flow-archive-daynight-input.c, monte_spill.c, test/Makefile, version.h, dam/dam.ops
+Fixed bug in not terminating constructed period lists
+Removed test/monte_spill_setup.c/h since it should no longer be necessary in the future
+Updated flow archive test fixtures to no longer construct compatible spill schedules (since this won't be necessary)
+compute_spill_sched() no longer uses execute_on_period_loop() and overgeneration is now ignored
+compute_flow_archive_spill_schedule() is used to construct flow archive spill schedules
+Removed code for execute_on_period_loop() and set_spill()
+Bumped version to v0.24
+Dam operations file in distribution no longer includes incorrect powerhouse_capacity at Ice Harbor (it no longer has any powerhouse_capacity entries)
+
+3/27: monte_spill.c, version.h
+Spill fraction is written into spill schedule as well as the planned_spill[] array (so that it may be written out)
+Bumped version to v0.23
+
+3/21: token.c/h, parse_archive.c, parseutil.c, monte_spill.c, writeutil.c/h, output_flags.h, summary.c, qIdcList.cpp, parse.c, qIOSheet.cpp, qIOCell.cpp/h, qHistogramGDT.cpp, qIOHistGDT.cpp, version.h
+Added at_end_of_line() test to token.c/h for testing the end of an input line
+Day and night spill columns are now optional when parsed in parse_archive.c
+strnicmp() is used under Windows since strncasecmp() doesn't exist
+Removed unused variable in monte_spill.c
+Added OCT_DAM_DAY and OCT_DAM_NIGHT for outputting only day or night values for log_float_array()
+Added day and night spill flags to output_flags.h
+Added summary.dat output for day and night spill
+Added columns for day and night spill to output settings dialog
+DAY_SPILL and NIGHT_SPILL are allowed when parsing dam output settings
+Flow/spill cells in I/O sheet are now labeled with units (as well as on graph titles)
+HistogramGDT now inherits axis labels
+QIOCells can now define the axis labels in case graphs are ever constructed
+qIODamPassageGDT now accepts axis labels
+I/O tool graph windows now have a text drawing mediator (for axis labels)
+qIODamWaterAverageGDT now automatically sets its units to KCFS
+DamWaterAverage cells also have a text drawing mediator now
+Bumped version to v0.22
+
+3/20: parseutil.c, test/test-flow-archive-daynight-input.c, test/test-flow-archive-spill-input.c, test/create-flow-archive-spill.c, test/create-flow-archive-daynight.c, test/flow-archive-input-test.archive, test/flow-archive-daynight-test.archive
+read_float_or_na() now pushes the token back if it isn't an n/a
+Fixed calculation of day in test-flow-archive-daynight-input
+Fixed reading from archive_spill in both flow archive test fixtures
+Updated test flow archives to have more digits of precision
+
+3/16: test/test-flow-archive-spill-input.c, test/monte_spill_setup.c/h, parseutil.c/h, parse_archive.c
+Finally got the flow archive spill input test fixture working
+Put Monte Carlo spill schedule creation for flow archive testing into test/monte_spill_setup.c
+Some cleanup work on the two flow archive test fixtures
+Implemented the rest of the day/night flow archive test fixture
+Added read_float_or_na() for reading in either a float or "n/a" (case insensitive)
+archive_spill structure now has day and night spill values instead of just a single planned value
+Flow archive parser reads in the three spill value tokens and inserts them properly
+Removed sum_flow() since it's not necessary
+Updated the flow archive test fixtures to deal with day and night values
+
+3/15: monte_spill.c, log.c/h
+Renamed sum_spill() to sum_flow() since that is actually what it does
+log.h now exports a new function set_log_file() so that the log may be written to stdout for testing
+
+3/6: test/create-flow-archive-daynight.c/h, test/flow-archive-daynight-test.archive, test/.compass-alts, test/altern2/*, test/test-flow-archive-daynight-input.c, test/test-floating-point.c
+Added code for creating a test flow archive for day/night spill input
+Added the flow archive itself
+Added a new alternative to the test directory for testing the day/night flow archive input
+Added a new test fixture for day/night input
+Fixed floating point assertions and added assertion for inequality
+Even more floating point fixes
+
+3/1: monte.h
+Added get_and_check_archives() to monte.h since it is used in the test fixture
+
+2/26: test/test-flow-archive-spill-input.c, monte.h, test/altern/*, test/.compass-alts
+Tried to get stuff working for testing flow archives
+Made alloc_game_spills() global
+Added stuff to make Monte Carlo in the test directory work
+
+2/22: test/Makefile, test/test-flow-archive-spill-input.c, test/create-flow-archive-spill.c test/flow-archive-input-test.archive
+Added pretty much all of COMPASS to the test object includes since such tests are necessary
+Added a test for testing reading spill values from a flow archive file
+Simple program for creating a flow archive file for testing
+
+2/21: qIOCell.cpp/h, crisp.h, pbn.c, qIdcData.h
+Added qIOGlobalDropDownInputCell and qIOPostBonnevilleHypothesisInputCell
+Made post-Bonneville hypothesis names constant
+Added array for formatted names of post-Bonneville hypotheses
+Implemented the drop-down box for selecting a global integer by a string
+Newlines at the ends of files
+Removed useless accidental class
+
+2/15: qIONotes.h, qIdcData.cpp/h, Makefile, Makefile.linux, notcrisp_gui.dsp, qIOSheet.cpp, qIOCell.h
+Renamed qIDCDataString to qIdcDataString
+Moved qIdcDataString to its own pair of files (qIdcData.cpp/h)
+Added IDC for post-Bonneville hypothesis
+Added qIdcDataInt for storing a single global integer
+Changed post_bonneville_hypothesis from unsigned int to int (this shouldn't matter other than type checking)
+
+2/13: dataio.c/h
+Unified post-Bonneville output so that it is the same for scenario and .pbn
+
+2/12: crisp.h, notcrisp.dsp, notcrisp_gui.dsp, pbn.c, compassb.pro, crisp_calib.pro, Makefile, Makefile.linux, c1tokens.h, parse.c, report_init.c
+Added post_bonneville_hypothesis to run structure
+Added pbn.c file for post-Bonneville calculations
+Added post_bonneville_hypothesis token
+Added parsing for post_bonneville_hypothesis
+
+2/8: version.h
+Bumped version to v0.21
+
+2/6: resource.h, qIdcList.cpp/h, Qcrisp.cpp/h, qIOCell.cpp, Qmain.cpp, spill.c
+Replaced GUI for powerhouse spill threshold with the same but for flow_min
+Updated qIOCell to use set_dam_flow_routing()
+Message log is now created after the main window
+Merged in dam flow routing changes
+Removed unreferenced variables in set_dam_flow_routing()
+
+2/1: period.c/h, phouse.c, monte_output.c, dataio.c
+Removed hours "convenience" macro (more like an accident waiting to happen)
+Switched order of evaluations in compute_stats() loop to prevent out-of-bounds error
+Updated output routines to correctly write out flow_min
+
+1/30: spill.c/h, test/test-flow-partitioning.c, test/test-flow-min.c, test/test-flow-min-ph.c, c1tokens.h, crisp.h, dataio.c, init.c, parse.c, report_init.c
+set_dam_flow_routing() now returns void since we don't actually want to halt the model on errors (just emit warnings)
+test-flow-partitioning now doesn't use set_dam_flow_routing()'s return value (which is now void)
+Removed test-flow-min since it tests a feature that doesn't exist any longer
+test-flow-min-ph no longer checks the boundary conditions for errors since they are not errors any more
+spill_threshold token removed since it's no longer used
+
+1/25: phouse.c/h, spill.c/h, test/test-flow-partitioning.c, flow.c test/test-flow-min.c, test/test-flow-min-ph.c
+Removed set_powerhouse_fractions() since its functionality will be superseded
+Added note for where to find set_dam_flow_routing()
+Removed set_final_spill() per day function since it's been superseded by set_dam_flow_routing()
+Moved flow routing algorithm from test fixture to its more proper place in spill.c
+Updated test fixture to use spill.c
+Updated compute_flow() to use set_dam_flow_routing()
+Updated old flow_min tests so that they now work
+
+1/18: spill.c, version.h, setup.iss, test/test-floating-point.c, test/test-flow-partitioning.c
+Revereted spill scheduling changes since they should have been made on a branch
+Bumped to version 0.20
+Fixed installation of test.pbn file
+Added test/test-floating-point.c for testing new floating point assertions
+Better flow partitioning test fixture
+Fixed flow partitioning (it passes the new fixture now and the graph looks good)
+
+1/16: test/test-flow-partitioning.c
+Added skeleton for new spill (AND FLOW) partitioning tests
+Partial implementation of a new dam flow partitioning algorithm inside the test fixture (temporarily)
+
+1/9: test/test-flow-min-ph.c, spill.c
+Updated flow_min (multiple powerhouses) tests to be more accurate
+test-flow-min now sets num_powerhouses correctly
+Reordered test-flow-min-ph tests to be a little easier to think about
+set_final_spill() now uses a new algorithm that uses the new flow_min concept
+
+1/8: test/test-flow-min.c, test/test-flow-min-ph.c
+Updated flow_min test
+Added flow_min test for multiple powerhouses
+
+1/4: crisp1bat.c, log.c, spill.c/h
+Moved batch implementation of AnnounceFatalError from crisp1bat.c to log.c
+set_final_spill() now returns non-zero on success
+
+12/21: test, test/Makefile
+Imported test v1.1
+Modified test's source directory in its Makefile
+Added some test fixtures for the tree module just to test out the framework
+
+12/20: Qcrisp.cpp/h, qPassHistGDT.cpp
+Added sluiceway and RSW passage histograms to the old GUI... I don't know why this was necessary
+
+12/19: qIOSheet.cpp, crisp.h, qIOCell.h, monte_output.c, reach_model.c, rz_model.c, summary.c, init.c, c1tokens.h, dataio.c, args.c
+Added overall return rate cell to post-Bonneville sheet
+Added overall_return_rate field to rls_stats
+Overall return rate is printed out in the summary like the others
+Moved arrival data to its own row in the post-Bonneville sheet
+Fixed summary output of overall survival
+Added latent_inriver/transport_mort species parameters
+Added parsing for latent mortality parameters
+Added output for post-Bonneville parameters
+post-Bonneville stuff is included with other species parameters in .dat files, otherwise it goes into .pbn for component input files
+Merged in post-Bonneville stuff and fixed small conflicts
+flow_min for dams is always written out since it's important
+The -v flag makes all tokens get written out
+Now version information is obtained with --version
+Also, --help can be used for usage information
+Fixed output_all behavior for equations
+Added a few (hopefully unnecessary) checks to prevent transport output from crashing
+
+12/8: spill.c, crisp_time.h
+Added comments about the length of day/night periods to avoid confusion
+
+12/4: args.c/h, dataio.c, main.c, qFileManager.cpp, qIOTool.cpp/h, pbn/, pbn/test.pbn, setup.iss
+Merged in multiple I/O sheet branch
+Installer now uses files from cvs/crisp instead of workshop/crisp1/routput
+Added command line option for post-Bonneville file type
+Added data I/O skeleton code for post-Bonneville file type
+Added initialization for .pbn
+Support for opening .pbn files
+Added GUI support for .pbn files
+Added blank post-Bonneville test file
+Updated usage message
+Added pbn/ directory for installer
+
+11/30: qIOSheet.cpp, qIOTool.cpp
+Horizontal headers on Post-Bonneville sheet
+Moved cells from SIMPAS sheet to post-Bonneville sheet
+Export to text works well
+Printing now puts each page on a separate printed page
+Notes appear on the last page
+
+11/27: qIOTool.cpp/h, qIOHistGDT.cpp/h, qIOSheet.cpp/h
+The I/O tool now has a list of sheets instead of just one (in preparation for multiple tabs)
+qIOHistGDT, qIODamWaterAverageGDT, and qIOMonteCarloGDT now reference the sheet they're on and not the I/O tool
+I/O sheets are displayed in a tabbed pane in the I/O tool
+The qIOTool now emits zoom in/out signals so that all the sheets can act on them
+I/O sheets now take a name
+Copy and paste now work on the currently visible sheet (which makes sense)
+Added qIOPostBonnevilleSheet
+
+11/20: Makefile.compassb, custom_survival.c, reach_model.c, version.h
+compassb no longer links using the C++ linker
+Changed name of spill parameter in custom_survival from spill to dam_spill since it is really the proportion of fish spilled at the dam
+Fixed negation of last parameter to do_seg_new().... oops
+Bumped version number
+
+11/14: reach_model.c, crisp.h, rz_model.c, c1tokens.h, dataio.c, parse.c, init.c, release.c, version.h
+Dam spill experience is only estimated if immediately downstream from a dam
+Added a parameter to the release structure for initial dam spill experience
+There is a new flag for do_seg_new() for whether or not dam spill input should be used (to handle the one case where it shouldn't be used)
+Added I/O for the new input parameter
+I might have fixed a bug in release.c where default values weren't being copied right
+Bumped to v0.18
+
+11/13: reach_model.c
+When fish are released below a dam, their spill experience is now for either conventional or RSW spill passage
+Spill experience now accepts either normal spill or RSW spill
+
+11/7: monte_output.c/h, crisp.h, release.c, release_util.c, reach_model.c, rz_model.c, tokens_at.h, version.h
+compute_passage_stats() now matches the old calculations and takes the start_date to finish the calculations
+Transported fish are now tracked separately for passage with output_transport
+Bumped to v0.17
+
+10/31: monte_output.c/h, at_frame.c, at_hist.c, dump.c, parse_at.c, qIOCell.h, qIOSheet.cpp, rz_model.c
+Implemented distribution statistics calculating
+Updated code to use new passage_stats structure
+
+10/30: crisp.h
+Moved passage stats into their own structure
+
+10/24: qIOTool.cpp, version.h
+cbOpen() now returns early when the filename is NULL
+Bumped to version 0.16
+
+10/23: passage.c/h, dam_model.c, reach_model.c, qIOTool.cpp/h, qIOCell.cpp
+pass_surv() now takes a parameter that enables or disables old dam delay calculations
+The I/O tool now keeps track of open graph windows and closes them when a new file is being opened to avoid crashes
+
+10/19: reach_model.c, version.h
+dam_spill_in[] (used for the spill term in the migration equation) now estimates survival of the fish if they had passed through the upstream dam
+Bumped version
+
+10/17: passage.c, version.h
+Transported fish are not counted as having survived the bypass (they are instead counted in transport_out)
+Bumepd version
+
+10/16: Makefile.crisp_calib, crisp_calib.c
+Added more appropriate Makefile for crisp_calib
+Hopefully fixed a potential crash in crisp_calib
+crisp_calib now displays a version number
+
+10/12: eqns_dflt.c, migration.c, qFileManager.cpp, version.h
+Added a parameter to EQ_MIGR11
+Added temperature^2 term to EQ_MIGR11
+Extensions are automatically appended when saving files
+Bumped version to v0.13
+
+10/10: qIOTool.cpp/h
+Apply/reset/run scenario buttons grab the focus when clicked so that I/O cells that are being edited will be updated
+Added output_dirty concept to I/O tool for changes that alter the sheet but don't need to be saved
+Changing the Monte Carlo settings sets output_dirty
+
+10/9: Qcrisp.cpp, qIOTool.cpp, eqns.h, eqns_dflt.c, parse.c
+Updated run scenario/cancel names so that the buttons work
+.dat and .ctrl files are now opened like .scn files from the I/O tool
+Added name field to equation structure
+Added names to all the existing equations
+Equations can now be specified by name instead of ID number (the default output is still the id for now, though)
+
+10/5: qScheduleTool.cpp
+Removed copy of parent's icon since parent might be NULL
+
+10/3: passage.c, version.h
+Finished new passage.c implementation and tested it
+Bumped version to v0.12
+
+10/2: passage.c
+Started work on new passage.c implementation
+
+9/28: run_state.h, custom_survival.c, reach_model.c, eqns.h, eqns_dflt.c, migration.c/h, qIdcMigrationEquation.cpp, qIdcMigrationEquation.cpp, rz_model.c, version.h
+Added flag to disable truncation of reservoir survival
+Z15 spill term is now proportion of fish spilled, as opposed to proportion of water spilled
+Added EQ_MIGR9 (49) and EQ_MIGR10 (50) that have water temperature terms in them
+Added some GUI support for these migration equations
+Added EQ_MIGR11 (52) for the brand new migration equation
+Migration equations can now use julian day and dam spill experience
+Implemented EQ_MIGR11
+Version 0.11
+Fixed naming of EQ_MIGR11
+
+9/25: passage.c/h, dam_model.c, dataio.c
+Dam delay may now be specified for powerhouses as well
+Delay parameters for powerhouses are output
+
+9/21: reach_model.c, rz_model.c, dam_model.c, crisp.h, release.c, qGraphDataToken.cpp, crisp_defs.h
+Delayed mortality rate array is now allocated correctly
+Fixed sign of mortality rate
+Renamed delayed_mortality_rate to delayed_survival_rate since that's actually what it is
+Diel passage is now unaffected by extra delay
+Graphs in histogram mode now output histogram data, but other graphs still output indexed by day
+Reduced number of model steps down to just 2
+
+9/20: crisp.h, release.c, reach_model.c, rz_model.c, dam_model.c
+Added delayed_mortality_rate field to rls_seg_data for containing the mortality rate of delayed fish
+Delayed mortality rate is now calculated in segments immediately preceding a dam
+Mortality due to delayed passage is now applied
+
+9/19: Qmain.cpp, qMonteCarloManager.cpp, suppress.txt, crisp.c, init.c, qInterfaceDataControl.cpp
+Fixed stupid unused character pointer on startup
+Fixed memory leak of directory listing in the Monte Carlo manager
+Added Valgrind suppressions file
+Freed command line after it is processed
+default_segment_list defaults to NULL
+init_default_list() can now be called multiple times
+IDCs now free their data obtained during a NewData()
+
+9/15: qIOCell.h, dam_model.c, custom_survival.c, version.h
+Fixed name of Diel passage graphs
+Removed old dam passage code that has been superseded by new dam delay stuff
+Fish length is handled better in dam passage now (they don't grow, but the output numbers should be correct)
+Merged in new dam delay support
+Deterministic survival from the Z15 model is now constrained to be on [0, 1]
+Bumped version number to v0.10
+
+9/14: crisp.h, monte_output.c, crisp_defs.h, qIOCell.h, qIOSheet.cpp, dam_model.c, crisp_time.h, delay.c, dataio.c
+Added night_passage field to stats structure
+The model now uses 4 time steps (same as the number of dam time slices)
+Added diel passage output cell
+Improved new dam delay support
+Added histogram support to the diel passage output
+Added C++ support for crisp_time.h
+Delayed transported fish as though they are bypassed fish
+If no delay equation is specified (for the old dam delay), nothing is done
+Delay equation is now only printed out if it exists
+Added a rough concept of resolution to the diel passage cell
+Fixed bypass read-in bug
+Changed name of day delay parameters to be like spill_day_delay
+
+9/13: crisp.h, c1tokens.h, parse.c, dataio.c, init.c, dam_model.c
+Added parameters for the new dam delay support
+Added parsing of new parameters
+Added output and default values for new parameters
+Initial support for new dam delay model
+
+9/2: rz_model.c, version.h, summary.c
+Return rate was only using offset from the start of the run, not the Julian day
+Bumped version to 0.09
+Return rates are now printed out into the summary.dat file
+
+8/30: rz_model.c, version.h
+The time parameter for custom_survival() is now given in days, not model steps
+Bumped version
+
+8/29: rsw.c, passage.c, crisp.h, c1tokens.h, dataio.c, parse.c, qIdcSelect.cpp, Qcrisp.cpp, qIOCell.h, qIOSheet.cpp, version.h
+Fixed rsw_spill_cap to be in KCFS
+RSW spill proportion is now calculated internally
+RSW efficiency is now the prop. of fish spilled via RSW (given that they are spilled) divided by the RSW fraction of total spill
+Removed old RSW proportion stuff from the interface and a warning is emitted if found in an input file
+Bumped version
+Added edge case for when spill < RSW spill cap
+
+8/25: QlogWindow.cpp, QLogWindow.h, Qmain.cpp, crisp.h, c1tokens.h, parse.c, dataio.c, init.c, rsw.c
+QLogWindow can no longer take a parent since this would almost certainly cause problems on exit (and this was never used anyway)
+The QApplication is created on the stack in the main() function. This appears to be necessary (allocating on the heap causing crashing on exit under Windows release mode)
+Added I/O for rsw_spill_cap to the dam structure (always written out to avoid confusion)
+RSW spill cap is applied before the RSW spill efficiency equation is used
+
+8/24: qIOSheet.cpp/h, qIOTool.cpp, qIOCell.cpp
+Removed I/O sheet's game field since it currently is not possible to implement and is just confusing and misleading
+
+8/23: crisp.h, qIOCell.h, qIOTool.h, crisp.h, main.c
+Updated description of dam_spill in crisp.h
+Population arriving cell now shows a graph of fish entering the dam
+Collection fraction cell now shows graph of transported out
+Population collected cell now shows no graph
+Moved Windows registry key constant from qIOTool.h into crisp.h
+The Windows GUI version now starts in the install directory if it can't find the river description file
+
+8/22: reach_model.c
+Spill experience is now reported in terms of spill fraction, not spill volume
+
+8/21: qEquationFDens.h, qEquationBase.h
+Removed stuff for fish density since it's not used in the model (note that the GUI hasn't been completely removed!)
+
+8/18: eqns.h, eqns_dflt.c, spill.c, version.h, init.c
+Added new equation form for spill efficiency
+Errors are printed out if spill equations that aren't of valid forms are used
+EQ_RSW now has default values of 0.0 and 0.0
+Bumped to version 0.06
+Removed old extern bzero() thing (no need for new version since this doesn't affect the output)
+
+8/17: c1icon.bmp, hydromap.bmp, setup.iss
+Added icons to CVS repository
+
+8/16: qIOCell.cpp/h, qIOSheet.cpp/h, qIOHistGDT.cpp/h, monte_output.c, qIOTool.cpp, qScenarioManager.cpp/h, version.h, clb/tmpcbr.clb, qIdcSchedule.cpp
+Moved water flow/spill displaying stuff into qIODamWaterAverageCell
+Modified qIODamFlowCell to use qIODamWaterAverageCell
+Added qIODamSpillCell
+Added KCFS spill cell to I/O sheet
+Changed name of qIOHistGDT to qIODamPassageGDT
+Added qIOWaterAverageGDT for flow/spill graphs
+Added graphs of flow and spill
+Changed initialization of size games*days to just days for qIODamPassageGDT (I think this was leftover from some uncommitted changes)
+Added graphDestroyed() slot (and connected it) for setting gd = NULL for qIOWaterAverageGDT
+Fixed start_date offset for spill efficiency calculations
+Scenario runs automatically supress variance, Monte Carlo runs automatically enable variance
+Monte Carlo mode is now possible for retrospective files
+Bumped to version 0.05
+Added dummy values for return rate equations (for the one steelhead stock) for TESTING ONLY
+Fixed setting spill by volume
+
+8/15: parse.c, rz_model.c
+Fixed parsing of return rate equations
+Corrected calculation of spill efficiency for now
+
+8/14: c1tokens.h, stock.h, dataio.c, init.c, parse.c, qIOSheet.cpp, crisp.h, monte_output.c, reach_model.c
+Added inriver_return_eqn and transport_return_eqn tokens to stocks
+Output of return rate equation tokens
+Initialization of return rate tokens
+Parsing of return rate tokens
+Added row for return rates
+Swapped order of transported/inriver since I think Inriver then Transported makes the most sense
+Added return rate cells
+Return rate is now calculated in the rls_seg_data structure and then copied to the stats structure
+
+8/11: return.c/h, crisp.h, stock.h, rz_model.c, qIOCell.cpp, monte_output.c, release.c, qScheduleDialogBase.cpp, QlogWindow.cpp
+Changed return_prob() prototype to more accurately reflect that it operates on steps, not days
+Only one of each inriver and transport return rate equations are stored for a stock (since reach classes are irrelevant; they're for the whole stock!)
+Initial implementation of the overall return rate calculations (without equation loading code yet)
+Removed printf statement I accidentally left in
+Made zeroing of rls_stats make more sense
+Fixed zeroing of RSW data (for rsw_in; it wasn't being zeroed)
+Replaced use of highlight() with activate() in schedule dialog (this is how it's done in the select dialog)
+Fixed lack of drop-down menu support in schedule dialog
+Added timestamping to the log window
+
+8/10: qIOCell.cpp, ops/dam.ops, return.c/h, Makefile, Makefile.linux, compassb.pro, crisp_calib.pro, notcrisp_gui.dsp, notcrisp.dsp, eqns.h, eqns_dflt.c, crisp.h
+Fixed diel support in the GUI slightly so that it sets the other parameters to zero
+Added return.c and return.h for return rate calculations
+Implemented return rate equation
+Added inriver_return and transport_return to internal data structures
+
+8/9: notcrisp.dsp, notcrisp_gui.dsp, compassb.pro, crisp_calib.pro, Makefile, Makefile.linux
+Removed crisp_extract.* from the non crisp_calib projects
+Removed unused fdens.c/h, quasi_simp.c, chisq.c, stack.c/h (still in CVS)
+Removed ttextract.c/h from non-crisp_calib projects
+Removed ks.c from non-GUI projects
+
+8/7: Qcrisp.cpp/h, qIOCell.cpp, qIOTool.cpp/h, qScenarioManager.cpp/h, Qmain.cpp
+Corrected spelling of "canceled" (from "cancelled")
+Added log window output of Qt logged messages
+
+8/4: qGraphMedPosition.cpp
+Prevented use of QPainter::fontMetrics() when the painter is inactive since this has undefined behavior (which apparently translates into a crash on Linux)
+
+8/3: at_frame.c, dam_model.c, fge.c, flow.c, monte_output.c, quasi_simp.c, rz_model.c, crisp.h, main.c, release.c, tree.c, monte_frame.c, parse_alt.c, QlogWindow.cpp, dir.c/h, parseutil.c, qIOTool.cpp, qMonteAltCmpDlg.cpp, qMonteAnalDlg.cpp, qMonteCarloManager.cpp, crisp.c, qIOCell.cpp
+Explicitly converting between floats to ints
+Put back in pragmas to disable double-to-float conversion warnings
+Reverted (and cleaned up) that batch mode line I thought was a mistake
+Removed old memory module since it's not really necessary and makes debugging more difficult
+Removed alloc_all_game_ptrs since it used the old memory module and probably had negligible impact
+Fixed integer used as pointer (instead using the correct long)
+Fixes for GCC 3.4.5
+Fixed pointer to integer cast in log window
+Removed io.h from QlogWindow.cpp
+Renamed basename() to base_name() since it conflicts with a library function
+Fixed %s and QString typo
+Fixed more old C-style declarations, some header files
+Standard deviation cells don't show Monte Carlo histograms
+Minimum number of Monte Carlo games is now 2
+
+7/31: qHelpManager.cpp, main.c, qIOTool.h, setup.iss, version.h
+Clicking a help button now informs the user that the documentation has not yet been written
+Fixed accidental assignment instead of equality test
+Removed references to CBR
+Example files are now only placed in the Application Data directory
+Actually, I just reverted the install directory to the one the user selects
+Just tell the users to install somewhere where they have write permission
+Bumped version to 0.04
+
+7/28: crisp.h, release.c, qIOCell.cpp/h, delayed_mort.c/h, rz_model.c, reach_model.c, Qmain.cpp/h, Qcrisp.cpp, qGraphDialog.cpp/h
+Delayed mortality table is now stored in the default_transport_target
+Delayed mortality calculations are now kept for multiple Monte Carlo games
+Moved the dam bypasses cell to be a subclass of qIODamPassage
+Disabled graphs that don't make sense
+Removed old global pointer QApplication *app (since Qt defines qApp which is the same thing)
+Fixed use of QApplication so that it doesn't crash on exit
+Merged in Monte Carlo GUI
+Cleaned up qGraphDialog code a bit
+
+7/27: qIOCell.cpp/h, qIOSheet.cpp, qIOTool.cpp, parse.c
+Standard deviation now overrides normal mean calculation
+Added cumulative total survival standard deviation cell
+Cleaned up placement of cells in qIOSIMPASSheet constructor
+Fixed error on creating Monte Carlo alternative
+Transport flag is now valid when read in for a reach
+Increased maximum number of Monte Carlo runs allowed to 9999
+
+7/26: qHistogramGDT.cpp/h, qGraphDataToken.h, qIOHistGDT.cpp/h, qIOCell.cpp, qGraphMedDrawAxisXI.cpp, qIOTool.cpp
+Added qHistogramGDT which takes in a GDT and makes a histogram of the data (in the form of a GDT)
+Added qGraphDataToken::count() for getting the number of entries
+Renamed qIOMonteCarloHistGDT to qIOMonteCarloGDT
+Monte Carlo graphs in I/O sheet now use qHistogramGDT
+Modified qGraphMedDrawAxisXI behavior for histograms slightly (the histogram mode is hardly used in the old GUI anyway)
+Improved bounds on histograms
+Improved graphing of histograms
+Progress dialog caption
+
+7/25: qIOHistGDT.cpp/h, qIOCell.cpp/h
+Added qIOMonteCarloHistGDT which may be used by any class derived from qIOCell
+Moved qIODamPassageCell::getSheet() to qIOCell, fixed declaration of qIODamPassageCell::value()
+Added qIOCell::getName() for getting the name of a cell
+Updated cells to use new functionality
+Moved qIOCell.cpp RTTIs into an enumeration
+Non-qIODamPassageCells show up better now
+qIODamPassage passage histograms should now work even in Monte Carlo mode (but they shouldn't be used since they only show the last game)
+qIODamPassage cells now show Monte Carlo histograms in Monte Carlo mode
+qIOMonteCarloHistGDT now just puts all the values into an array indexed by game
+
+7/24: qIOSheet.cpp, qIOHistGDT.cpp, qScenarioManager.cpp/h, qIOTool.cpp, qIOCell.cpp
+Number of games is only calculated once a run is complete
+Hist GDT now uses qIOSheet->getGameCount()
+Old data is marked as old when a new run is run
+Fixed enable/disable of docks and buttons
+Added qScenarioManager::getCancelled()
+Output cells are disabled if the run was not completed
+
+7/21: qIOSheet.cpp/h, qIOCell.cpp/h
+Added qIOSheet::getGames() which shoudl return the number of games for Monte Carlo runs
+Monte Carlo stuff is now calculated at the qIOCell level instead of the qIODamPassageCell level (this would allow a sheet for a specific game to be shown)
+qIOSheet's gameCount is now reset on model run and then calculated on demand
+
+7/20: qMonteCarloManager.cpp/h, qIOTool.cpp, main.c, qScenarioManager.cpp, qIOHistGDT.cpp, qIOCell.h, delayed_mort.c, monte_output.c, release.c, setup.iss
+I/O alternative is now deleted before being created
+Monte Carlo canceling works better now
+Progress dialog doesn't get unrelated events
+qIOHistGDT is now a friend of qIODamPassageCell
+Monte Carlo histogram work
+Replaced accidental use of data[0] with data[game] for delayed mortality table calculations
+Delayed mortality stuff deleted in a more appropriate place
+Moved data files into {userappdir}\COMPASS
+Adjusting working directory to {userappdir}\COMPASS so that the user will certainly be able to create Monte Carlo alternatives
+Histogram now shows the percent across the bottom
+Fixed friend declaration
+
+7/19: qIOCell.cpp/h, qIOTool.cpp, qScenarioManager.cpp/h
+Added qIOCell::value(), mean(), stddev() for Monte Carlo calculations
+Added monte_carlo_stat field to qIODamPassageCell
+qIOCumulativeSurvivalCell now can select between mean and standard deviation for Monte Carlo mode
+qIOTool now enables variance for Monte Carlo runs
+Graphs for Monte Carlo mode runs no longer show anything (this prevents crashes, but isn't a final solution)
+Added additional model run status signal runProgressUpdated(percent)
+Added QProgressDialog for Monte Carlo runs from the I/O tool
+
+7/17: qIOTool.cpp, qFileManager.cpp/h, qMonteCarloManager.h, qIOSheet.cpp, crisp.h, monte_output.c
+Switching between Monte Carlo and normal scenario mode for qIOTool
+Added qFileManager::saveFile() for saving a file without prompting the user
+qMonteCarloManager::writeAltsToRun() is now public
+When Monte Carlo mode is selected, the model runs in Monte Carlo mode
+Moved tracking-enabling code into qIOTool
+Added spill_efficiency release statistic
+Spill efficiency cell now just reports the calculated statistic
+getPassage() and getTotal() now take the game as a parameter
+I/O cells are now mostly calculated with multiple games in mind as averages
+
+7/14: qMonteCarloManager.cpp/h, qScenarioManager.cpp/h, qIOTool.cpp, qMonteCarloTool.cpp
+Fixed bug where flags weren't being re-read on a change directory
+Disconnected selectionChanged() signal while updating run list in the GUI
+Better style for qScenarioManager function names
+Added qScenarioManager::runMonteCarlo() and support code
+SetMonteGauges now uses thread safe message passing to send updates to qScenarioManager which in turns emits a normal event
+Implemented qMonteCarloManager::runMonteCarlo()
+Modified qMonteCarloTool::cbRunMonte() and cbCancelMonte() to update the code
+Fixed the style of qScenarioManager problems (Qt's signals/slots mechanism doesn't even notice that names have changed...)
+threadHandle pointer is now just a local variable in qScenarioManager::run()
+
+7/13: qMonteCarloManager.cpp/h, qMonteCarloTool.cpp
+Added qMonteCarloManager::clearRunList() and setRunList()
+Reimplemented run list handling for the Monte Carlo tool
+Uncommented commented out stuff in qMonteCarloTool
+Reimplemented updateDialog() so that it updates rather than rebuilds
+Using highlighted(int) instead of selectionChanged for the run list since selectionChanged() is pretty much useless if it modifies the selection...
+
+7/12: altern_list.c/h, qMonteCarloManager.cpp/h, qMonteCarloTool.cpp, monte_frame.h, dir.h
+Cleaned up definitions of altern_list functions slightly (namely const qualifiers)
+Added interface for qMonteCarloManager
+Implemented qMonteCarloManager::createAlternative()
+Modified qMonteCarloTool's cbCreate() to use the monte carlo manager
+Implemented qMonteCarloManager::deleteAlternative()
+Modified qMonteCarloTool's cbDelete() to use the monte carlo manager
+Added destructor for qMonteCarloManager
+Implemented qMOnteCarloManager::renameAlternative()
+Modified qMonteCarloTool's cbRename to use the monte carlo manager
+Implemented qMonteCarloManager::chdir()
+Added remember_current_directory to dir.h
+qMonteCarloTool::cbGoToDir() modified to use the manager
+
+7/11: qMonteCarloManager.cpp/h
+Added qMonteCarloManager
+Began refactoring monte carlo run management into qMonteCarloManager so that qMonteCarloTool is nothing more than a GUI
+The monte carlo manager can be accessed by qMonteCarloManager::get()
+
+7/10: crisp.h, rz_model.c, crisp.c, tests/stochastic, qIOTool.cpp/h
+Renamed the "compass" model to "xt" since that's really what it is
+Added test to make sure that sigma_d actually affects survival
+Added Monte Carlo toolbar to I/O tool (unimplemented)
+Monte Carlo toolbar is only available in non-retrospective mode
+Monte Carlo spin box only available for Monte Carlo mode
+
+7/7: qIOTool.cpp/h, IOToolBase.ui, Qmain.cpp, qIONotes.cpp, setup.iss
+Added View->Show Message Log
+Message log is raised when the log is selected from a menu (e.g. from the View menu)
+Prevent duplicating a NULL string (apparently this crashes on Solaris)
+The I/O sheet is now constructed after most of the I/O tool is created (except the View menu) since it may reference I/O tool stuff
+Defaulting to Release builds for the installer
+
+7/6: qIdcSelect.cpp, qInputReportTool.cpp, qMapMedGeography.cpp, qMapMedSelector.cpp, qMediatorBuilder.cpp, qMonteCarloTool.cpp, qReachClassTool.cpp, qScheduleDialogMedBase.cpp, qSelectDialogBase.cpp, qTransportTool.cpp, rz_model.c, QlogWindow.cpp
+Set an integer to an integer insted of a float (end_count)
+Changed NULL to 0 when used as integer
+Removed poetry
+Restructured code to prevent using uninitialized variables
+Removed large chunk of old commented-out code from qSelectDialogBase.cpp and qTransportTool.cpp
+Marked vvar as constant in do_seg_new() (this doesn't get rid of the GCC warning, but it should)
+Removed call to QApplication::processEvents() in a separate thread (I have no idea why this was there...)
+
+7/5: compass.pro, monte_frame.c, qItem.h, qCheckBoxGroup.h, qEditSliderBase.cpp, qGraphDataToken.cpp/h, setup.iss, version.h, qIOTool.cpp, qHelpManager.cpp, files/*, qGraphDialog.cpp, qGraphMedDrawData.cpp, qGraphMedPosition.cpp, qGraphMediator.cpp, qIONotes.h, qIOCell.cpp/h, qIdcEditGraph.cpp, qIMConScroller.cpp, mapPoint.h
+Added compass.pro for GUI project
+Unused parameters only in command line mode
+Slightly more logical constructor initialization order for qItem (to prevent compile time warnings)
+Using debug builds for official releases for the time being
+Better version information
+Removed files/* since they're no longer used or have been moved
+Graph scale updates are now aborted if the editors don't exist
+Graph draw mediators now return early and emit an error if graph range is bad
+Switched use of long to int since it was in a printf string of %d
+Fixed scoping of for loop variables in qIOCell.h
+Previous value set on loop entry in qIdcEditGraph
+
+6/30: QLogWindow.h, QlogWindow.cpp, Qmain.cpp
+Replaced addToLogWindow implementation with one that uses message passing (to make it thread safe)
+
+6/28: delayed_mort.c, qIOTool.cpp
+Error-checking on delayed mortality calculations (for if tracking is disabled)
+Default spill averaging period start is now Apr1
+
+6/27: log.c, version.h
+Replaced mktemp with mkstemp under UNIX
+Set version to 0.01
+
+6/26: file.c, flow.c/h, monte.c, gas_mort.h, gas_mort_eqn.c, log.c, monte_frame.c, nrutil_short.c/h, exp_table.c, parse_alt.c, parse_archive.c, realtime.c, river.c, parse.c, parseutil.c, tokens_alt.c, tokens_archive.c, tokens_at.c, tokens_mindex.c, monte_frame.c, parse_alt.c, unused.h, tree.c, Qmain.cpp
+Fixed compiler warnings on GCC 4.0.2
+flow.h now uses prototypes
+Removed unused parameter from compue_gmort2()
+Raw messages should now be written out properly
+Better header files
+Removed unused parameter from free_dvector()
+Error on archive with 0 or fewer years of data
+Fixed compiler errors for parsing
+Added UNUSED() macro and started using it
+Removed locking of Qt mutex for adding a log message since it should obtain the appropriate lock automatically
+
+6/23: at_frame.c, crisp.c, dam_model.c, dataio.c, dir.c, fdens.c, qEquationBase.h, qEquationFDens.h, fge.c, file.c, river.c/h, init.c, init_river.c, main.c, monte.c, monte_frame.c, monte_index.c, monte_output.c, monte_spill.c, multi_frame.c, parse_archive.c, parse_at.c, parseutil.c, period.c, realtime.c, release.c, report_altern.c, report.h, report_frame.c, report_out.c, sample.c, table.c, transport_util.c, tree.c, ttextract.c, log.c, nrutil_short.h, eqns_dflt.c
+Now using summary_struct_free() in at_frame.c
+Removed unused variables
+End transport OK variable in dam_model.c is now initialized to TRUE to prevent compiler warning
+Replaced uses of getwd() with the bounded getcwd()
+compute_fdens_eqn() now doesn't take a void pointer since it doesn't use it
+Replaced inexplicable use of floats for counters with ints in monte_output.c
+Cleaned up user function calls in monte_spill.c
+Removed the macros from nrutil_short.h and added prototypes
+Dam flow is now output at all dams, not just storage dams
+Equation initializers are now properly braced
+
+6/22: qIOSheet.cpp, tests/z15-precision/test2.scn, qIOCell.h, main.c, altern_list.c, at_frame.c, command.c, crisp1bat.c, crisp_extract.c, dataio.c, file.c, include.c, init_river.c, list.c, log.c, memory.c, parse_alt.c, parse_at.c, report_altern.c, report_setup.c, sample.c, token.c, writeutil.c
+Bypasses are now in increasing order in I/O sheet
+Cumulative total survival now only shows the final value
+Fixed the Z15 precision test so that it fails on old code and passes on new code
+Added total and inriver arrival histograms
+Removed the old main() from main.c
+Put parentheses around assignments used as truth values
+Removed unused variables
+Corrected many header includes
+
+6/21: tests/scenario/summary-target.dat, tests/z15-precision/test2.scn, qIOSheet.cpp, qIOCell.cpp, delayed_mort.c
+Scenario test now uses the the result from unoptimized GCC on Gandhi/attu
+Difference in input parameter increased for z15 precision test
+Better handling of no collector dams
+Transport arrival cells are no longer added as input cells
+Transport arrivals graph
+Commented out debugging statements in delayed mortality code
+Only collector dams have the transport arrivals cell now
+Merged in latent mortality (delayed_mort.c/h) code and GUI
+
+6/20: eqns.h, eqns_dflt.c, custom_survival.c, dataio.c, parseutil.c/h, parse.c, writeutil.h, tests
+custom_survival code now uses preprocessor to avoid warnings on differing floating point types
+FLOAT_SCIENTIFIC (6) and FLOAT_PRECISE (12) are now different
+Replaced uses of FLOAT_PRECISE with FLOAT_SCIENTIFIC since this is really what they do
+All equations except for Z15 are now FLOAT_SCIENTIFIC while Z15 is FLOAT_PRECISE
+Added read_double()
+Equation parameters' value/min/max are now stored as doubles
+FLOAT_PRECISE now implies that the value and its default value (if there is one) is a double
+FLOAT_SCIENTIFIC should be used for single-precision floating point numbers
+Added unit tests and current fixtures to CVS
+
+6/19: qIOCell.cpp/h, qIOSheet.cpp
+Added qIODamBypasses for number of bypass cells
+Added some of the initial latent mortality cells to the I/O sheet
+
+6/16: qIOTool.cpp/h, qIOSheet.cpp, crisp.c, qHelpManager.cpp, version.h, args.c
+Added full_scenario boolean for if a loaded scenario contains at least one release
+Notifies the user that no releases are available and directs him/her to the map GUI
+New versioning scheme starting with COMPASS v0.1
+
+6/15: qIOSheet.cpp, qIOCell.cpp/h, notcrisp_gui.dsp
+Changed Total column to Below BON
+Added DAM_PASSAGE_SUM as an option for accumulation
+Removed qIODamCumulativePopulationCollectedCell since it's just a sum of a different type of cell
+Release mode works now and is fast (but it crashes on exit...)
+Fixed DAM_PASSAGE_SUM handling for cases in qIOCell.cpp
+
+6/14: init.c, qIOCell.h, qIOSheet.cpp
+loss_max and loss_min are no longer initialized due to overlap of river description and input files
+qIODamSurvivalCell is now only inriver fish (so transports don't appear as mortalities at the transporting dam)
+Added 4 rows to I/O sheet for new transport estimate rows
+Initial calculations for new transport estimate rows
+
+6/13: init.c
+flow_min and flow_max for headwaters are no longer given default values since they're in the river description file, columbia.desc
+
+6/12: init.c, flow.c
+Set headwater's flow_max default value to 0xffffffff to prevent divides by zero
+Also set reach's loss_max default to 0xffffffff
+Error written out when flow_max is zero
+
+6/8: init.c, gui.h, monte_output.h, crisp.c, rsw.h, monte_index.h, stock.c, dir.c, parse_alt.c, file.c
+headwater_defaults.flow_coefficient now defaults to -1 (it gets set to this elsewhere anyway)
+Cleared tokens after #endifs
+Fixed a bunch of compiler warnings
+
+5/31: crisp.h, monte_output.c, delayed_mort.c, release.c, qIOCell.cpp/h
+Moved delayed_mortality_table into rls_stats since there should only be one per release
+Added qIODamTransportArrivalCell to I/O sheet
+First attempt at transport arrival cell code
+
+5/30: crisp.h, init_river.c, columbia.desc, release.c, monte_output.c, delayed_mort.c/h, rz_model.c
+Added collector flag to dam structure to indicate that a dam is a collector dam (for delayed mortality)
+Delayed mortality table is now stored in the rls_seg_data structure
+Number of collector dams is now stored in the delayed mortality table
+
+5/26: crisp.h, dam_model.c, transport.c, monte_output.c, delayed_mort.c, release.c, release_util.c
+Added transport_arrived array to release segment data structure
+Delayed mortality calculations now use the time of arrival at the destination in order to calculate transport probabilities
+
+5/24: delayed_mort.c/h
+The delayed mortality table now only keeps track of inriver bypass probabilities over the whole season
+
+5/22: delayed_mort.c/h, rz_model.c
+Skip dams that aren't transporting for calculations
+The delayed_mortality_table in rz_model is immediately freed
+Set the transport probability to zero if no fish were passed
+
+5/19: rz_model.c, reach_model.c, delayed_mort.c
+Attempt at integrating delayed mortality code into calculations for COMPASS
+
+5/17: delayed_mort.c/h
+First attempt at implementing delayed mortality calculation code
+
+5/16: columbia.desc, crisp.c/h, init_river.c, qIdcSelect.cpp
+Added token default_transport_target for columbia.desc (currently Bonneville Tailrace)
+Using default_transport_target for I/O sheet transports
+
+5/15: dataio.c, clb/tmpcbr.clb, riv/test.riv, init.c, delayed_mort.c/h, dataio.c, clb/tmpcbr.clb, riv/test.riv, init.c
+Reach temperature and turbidity is now in the river environment file as expected
+Set dam species separation_prob default to 0, set spill_eqn, fge_eqn, delay_eqn, and rsw_eqn defaults to EQ_LIN0
+Set reach default gas_dist_eqn to EQ_LIN0
+Changed stock vvar default to 0
+Added delayed_mort.c/h
+Added data structure to hold the delayed mortality table
+
+5/8: qIOTool.cpp, qFileManager.cpp/h
+Export as text now cancels properly
+Cancel of getUserName() now works in Save As
+qFileManager::fileSaveAs() now returns an error code
+qIOTool::saveAs() code now handles errors from fileSaveAs properly
+
+5/4: init.c, dataio.c
+loss_max and loss_min now default to zero
+output_gas off is no longer written
+fge_eqn defaults to the default FGE equation now
+flow_min_project now defaults to zero
+init_stock_defaults is now called before species are initialized
+Run flags are now written to the calibration file, as expected
+
+5/2: init.c, init_river.c
+Moved calculation/modification of dam bypass_height to init_river.c where it belongs (so it is only done once)
+Conversion of river segment slope to radians in init_river.c so that it is only done once
+Full reloading on opening a new scenario should be working initially
+
+4/26: init.h, parse.c
+Removed old C-style use of extern remove_all_data()
+
+4/25: eqns.h, eqns_dflt.c, init.c, dataio.c, supersat.c
+Removed old EQ_LIN0_DEFAULTS macro since it was unnecessary
+Fixed species default parameter values
+Fixed stock default parameter values
+Fixed reach and reach species defaults
+Fixed dam defaults
+Headwater defaults
+Release defaults
+
+4/24: crisp.c/h, dataio.c, init.c, writeutil.c/h
+Added reach_species_defaults
+Reach parameters are now only output if they differ from the defaults
+Moved output of initial name for OUTPUT_FLOAT_ARRAY into output_float_array()
+Added dam_species_defaults
+Some dam species parameters are initialized and skipped on output correctly
+Added dam_defaults
+
+4/21: dataio.c/h, writeutil.c/h, summary.c
+Moved output_all to writeutil.h
+Modified output_float_array so that it will skip arrays full of the default value
+Added headwater_defaults
+Headwater parameters are now only output if they differ from the defaults
+Added init_releases() to initialize default values of releases
+Release parameters are now only output if they differ from the defaults
+
+4/19: stock.c/h, crisp.c/h, init.c
+Defaults for stocks are now in the STOCK_DEFAULTS macro since they're needed to make the species defaults
+Added species_defaults
+Moved initialization code for species and stock types to init.c where it belongs
+
+4/18: dataio.c/h, stock.c/h, eqns.h, eqns_dflt.c, writeutil.c
+Equation parameter GUI min/max values are not printed
+Equation parameters are only printed if they differ from the defaults
+Added stock_defaults to hold default input values for stocks
+Added EQ_LIN0_DEFAULTS which is an equation constructor that should always output zero
+output_float and output_float_w_extra now take an extra parameter that is the default value
+
+4/17: dataio.c
+Modified output_equation to output the definition and use proper indenting
+Modified reach class version of output_equation to use proper indenting
+Modified invocations of output_equation and the reach class version as necessary
+
+4/14: setup.iss, dataio.c/h, writeutil.h
+Default install directory is Program Files/COMPASS without CBR
+Version numbers are now only output once per file
+Incremented CURRENT_OUTFILE_VERSION
+
+4/12: qIOSheet.cpp
+Split Average/Total column into two columns to clarify their purpose
+
+4/11: qIOCell.h, qIOSheet.cpp, qIOTool.cpp/h
+Using qIOCumulativeSurvivalCell for total cumulative survival
+Uncommented lines that allow the I/O tool to read in new values when a different scenario is selected
+Moved save as code to qIOTool::saveAs() (doesn't do any checking)
+Added qIOTool::promptSaveChanges() and unsaved_changes variable
+The user is now prompted on exit whether or not to save unsaved changes
+Prompt to save changes on loading a different scenario
+
+4/10: help/*.html, help/crisp.toc, columbia.desc, base.dat, clb/tmpcbr.clb, dam/dam.ops, riv/test.riv, qIOCell.h
+Changed some naming in columbia.desc
+Replaced help files with version that now reference COMPASS instead of CRiSP
+Added input files to source control (I don't know why this wasn't done earlier)
+Turned on variance suppression in base.dat
+Fixes to the total cumulative survival calculations
+
+4/7: qIOCell.h
+Yet more fixes to cumulative survival calculations
+
+4/4: qIOSheet.cpp/h
+User can't edit blank cells
+Added cumulative inriver survival cell
+
+4/3: qIOCell.h, qIdcSelect.cpp, crisp.h, dump.c, monte_output.c, qIOSheet.cpp
+Tailraces are contained within dams and are not separate segments, so the calculations have been modified to reflect this
+Fish are by default transported into the Bonneville tailrace, as requested
+Added transport_in_total to stats
+Transport stats are calculated for all reach segments by I/O sheet
+
+3/31: qIOCell.h
+Adjusted survival calculations in accordance with Nick's write-up
+
+3/30: qIOSheet.cpp/h, qIOCell.h
+Fixed inriver survival calculation
+Calculation of total survival is now done to the segment below the last dam
+
+3/28: qIOSheet.cpp, qIOTool.cpp
+I/O sheet now displays all the rows
+Fixed reset of file selection boxes
+
+3/23: qIOSheet.cpp/h, qIOTool.cpp/h, qIOCell.h, qIdcSelect.cpp
+qIOTool now has methods for retrieving the name of the averaging period
+Averaged cells now have the averaging period in their labels
+Inriver calculations exclude transported fish from the total
+river_mouth can now have cells calculated for it
+Transport is now disabled and removed via the I/O tool as expected
+Added qIOCumulativeInriverSurvivalCell, qIOCumulativeSurvivalCell
+
+3/17: qIOTool.cpp/h, qIOCell.cpp/h
+Added GUI for setting spill averaging period
+Spill and flow cells now display averages for only the selected period
+
+3/15: rz_model.c
+Error term for reach survival is now enabled for DO_COMPASS and DO_CUSTOM since CUSTOM is really the new COMPASS model
+
+3/10: Qcrisp.cpp, QlogWindow.cpp, Qmain.cpp, altern_list.c, args.c, args.c, crisp1bat.c, log.c, monte.c/h, qMonteCarloTool.cpp/h, qUtils.cpp/h, supersat.c, qIOCell.cpp/h, qIOSheet.cpp
+Removed references to CRiSP and replaced with COMPASS
+Transport Survival is now a per-dam (not per-powerhouse) cell
+Turbine Survival at Dams is now Turbine Mortality and is calculated correctly
+Spill and flow averages are now only averaged over a period stored in qIOTool
+
+3/8: qIOCell.cpp/h, qIOSheet.cpp, Qcrisp.cpp
+Added qIODamTransportSurvivalInputCell
+Added transport survival to SIMPAS sheet
+Increased precision to 3 decimal digits
+Added qIODamFlowCell
+Added dam flow row to SIMPAS sheet
+Map GUI now named "COMPASS Map"
+Fixed signal handlers for flow average cells
+
+3/3: stock.h, rz_model.c, var.c, qIOCell.cpp/h, qIOSheet.h, qIOTool.cpp
+Error term for stochastic reach survival is drawn for each release/reach pair now
+qIODamPassageCells can now manage their own histograms
+Added zoom in/out for I/O tool
+
+2/27: c1tokens.h, parse.c, dataio.c, stock.h, var.c, rz_model.c
+Added sigma_d reach class-specific parameter to stock structure
+Error terms for reservoir survival are sampled properly
+Added error term to COMPASS calculations of reservoir survival
+
+2/24: qIOCell.cpp/h, spill.c/h, qIOSheet.cpp, qIOTool.cpp/h
+set_dam_planned_spill() is now available globally
+Spill schedule cells now calculate based on data from the IDC and do not need to wait for the model to be re-run
+Daily average spill cell removed
+Fixed crash on changing input files
+Added qIOTool::testExistence() for testing existence of input files and removing them from the menus if necessary
+If a file has the same name it is not added again
+Data files are enumerated every 15 seconds
+Dam+Pool Survival and Pool Survival are now calculated assuming that the pool is all the way up to the next dam
+
+2/22: qIOTool.cpp/h, qFileManager.cpp, crisp_calib.c, qIOCell.cpp, IOToolBase.ui
+.txt is automatically appended to text exports if omitted
+Save As dialog now automatically appends .scn if no extension is given
+User can now select .dat files to open
+crisp_calib now uses the -t flag
+Diel lookup tables now use correct species names (spaces instead of underscores)
+View->Show Map instead of Show CRiSP GUI
+
+2/17: qIOCell.cpp/h
+qIOInputCells may now have different edit types
+Drop-down boxes can no longer be typed into
+qIODamParameterInputCell may now modify a single value and not just in groups of 3 (mean, low, high) for parameters with distributions
+Transport start/stop dates are now modified correctly
+
+2/15: qIOTool.cpp/h, qIOHistGDT.cpp/h, qIOSheet.cpp, notcrisp.dsp, setup.iss
+Added qIOTool::getSheet()
+qIOHistGDT now only references the I/O Tool and not specific cells
+Added qIODamPassageCellRTTI to double-clickable types in qIOSheet.cpp
+Batch version target is now compassb.exe
+Installer now installs the batch version as well as the GUI
+Fixed listing of species in stock selection
+
+2/13: custom_survival.c
+Fixed typo in equation
+
+2/10: qIOSheet.cpp/h, qIOCell.cpp, reach_model.c
+Fixed copy/paste of vacant cells
+Cells spanning multiple columns are now only pasted once for text output
+Average and cumulative cells will now only calculate down-river to their dam
+Added Cumulative Survival cell
+Removed Cumulative column since it has been superceded by the Cumulative Survival row
+Fixed ordering of cases so that in reach_model.c, spill experience values get filled in below dams as expected
+
+2/8: summary.c, parse.c, dam_model.c, reach_model.c
+Spill experience flag is now used properly
+The parsing algorithm "guards against invalid values" for the output settings... fixed for spill experience
+Dam spill experience values are now inserted in reach_model.c instead of dam_model.c
+
+2/6: qIOSheet.cpp/h
+Updated comment for qIOSheet::paste()
+Replaced qIOSheet's use of QStoredDrag for drag and copy with a subclass of QDragObject that can handle text and selection output
+If attempting to paste into mismatched cells, an old-fashioned text-based approach is used instead
+Pasting text now supports multiple columns and rows using separators (newlines and tabs)
+
+2/3: qIOCell.cpp, qIOSheet.cpp
+Fixed an infinite loop in average/cumulative calculation
+Average/cumulative are now based on Dam+Pool survival (the row that they're in)
+
+2/1: Qmain.cpp
+Qt mutex is locked when log messages are added regardless of OS
+-Perhaps this was causing problems since logging messages are called from C or something?
+-Either way this seems to fix crashes on start-up
+
+1/30: ScheduleToolBase.ui, ScheduleTool.ui
+Schedule tools now use Qt layouts so that they may be resized
+
+1/18: dam_model.c, custom_survival.c, output_flags.h, summary.c
+Bug fixes to Z15 implementation of maintaining spill experience data
+Added output flag for reaches to display spill experience data (4096)
+
+1/13: crisp.h, dam_model.c, release.c, release_util.c, reach_model.c, rz_model.c
+Added dam_spill to keep track of the spill experienced by fish
+Spill is filled in at dams
+Spill experienced by fish is calculated for output distributions
+
+1/11: reach_model.c, rz_model.c, custom_survival.c/h, eqns.h, eqns_dflt.c
+If the upstream segment is a dam, its spill in KCFS is passed into the custom survival equation
+Increased number of parameters in equations to 15
+Replaced Z11 model with Z15 model
+
+1/9: rz_model.c, custom_survival.c, qIOCell.h
+Fixed Z11 model implementation
+Histogram for Dam+Pool survival only shows dam data now (not a sum of dam and pool data)
+Censored fish are now calculated correctly for COMPASS and custom survival models
+
+1/6: qIOCell.h
+Fixed display/input for survival input cells
+
+12/30: supersat.c, eqns.h
+Restored mechanistic gas equations since they were apparently used before
+
+12/22: qIOCell.cpp, spill.c
+Fixed spill efficiency calculation
+Fixed applying day/night spill schedules to the spill array when a night schedule does not exist
+
+12/19: qIOTool.cpp, qIOCell.h, qIOHistGDT.cpp/h
+I/O Tool files are only loaded if they're not null
+qIODamPassageCell::getTotal is now public
+Dam passage cells now use input data for histogram data instead of exit data (this is how the cells are calculated)
+Histogram total is now the same total as the I/O cells
+
+12/14: eqns.h, eqns_dflt.c, custom_survival.c, rz_model.c, reach_model.c
+Added Z11 survival equation type
+Implemented Z11 survival equation in custom_survival.c
+Added array to accumulate flow for Z11 survival equation
+flow[] is now passed into do_seg_new() by reach_model()
+Custom survival now has average flow as an input
+
+12/9: qIOTool.cpp, eqns.h, eqns_dflt.c
+Print out scenario as well as stock
+Switched print to portrait by default (this may not be a good idea)
+Increased maximum number of parameters to 11 for the Z11 model
+
+12/8: realtime.c, report_altern.c, tree.h, parseutil.h, monte_index.h, dir.h, stock.c, monte.h, monte_output.h, parse.h, flow.h, main.h
+Using strerror() instead of deprecated sys_errlist[]
+Fixed more poor coding practices for compilation on Windows
+
+12/7: crisp_calib.c, gui.h, crisp1bat.c, log.c, main.c, monte_frame.c, notcrisp.dsp, notcrisp_gui.dsp, qMonteCarloTool.cpp, altern_list.c, at_frame.c, basin.c, batch.c, dir.c, flow.c, monte.c, monte_index.c, monte_spill.c, reach_model.c, realtime.c, release_util.c, report_altern.c, report_frame.c, stock.c, tree.c
+Fixed function prototypes
+Moved C interface to the GUI into gui.h
+Purely GUI-related C interface is only used when GUI is defined
+Fixed poor C coding practices for compilation on Linux
+
+12/6: report_altern.c, crisp_calib.c
+Fixed function prototype for calculate_route_avgs()
+crisp_calib.c is now not commented out
+
+12/1: qIOCell.cpp, qIOSheet.cpp, qIOHistGDT.cpp
+Fixed display of transport start/stop dates
+Stale dots are now not displayed on new graph window pop-ups
+
+11/29: spill.c
+Fixed calculation of day/night spill proportions from legacy input parameters
+
+11/28: Qcrisp.cpp, qTableItem.cpp
+Removed reference to spill.h in GUI
+Fixed namespace of EditType in qTableItem.cpp
+
+11/23: headw.c, Qmain.cpp, crisp.c, dataio.c, file.c, gas_mort.c, memory.c, monte_index.c, report_tool.c, base.dat, qIOCell.cpp/h, Makefile
+Fixed warning in headw.c
+Updated more references to old model name to COMPASS
+Diel cells are now enabled by default
+Diel cells now use valueToText appropriately
+qIOInputCell::valueToText and textToValue are constant functions now
+
+11/22: c1tokens.h, crisp.c/h, qIOTool.h, rz_model.c, setup.iss, stock.h, IOToolBase.ui, qHelpWindow.cpp, qHelpManager.cpp, qGraphDataToken, qIOTool.cpp, qMediatorBuilder.cpp, qReachClassTool.cpp, qRunSettings.cpp, monte_output.c, summary.c, base.dat
+Changed references from NOT CRISP to COMPASS
+Removed old parameters (Simple, FLUSH, modulation) from input files
+
+11/21: crisp.h, dataio.c, headw.c, init.c, c1tokens.h, parse.c, report_init.c
+Removed headwater modulation
+
+11/17: crisp.h, c1tokens.h, parse.c, dataio.c, init.c, report_init.c, flow.c, mod.c
+Removed flow modulator data from dam structure and data file routines
+Removed modulate_dam_flows()
+Removed mod.c
+
+11/14: monte_spill.c
+Fixed error message on not matching spill period
+Period loop now bumps both day and night spill correctly
+
+11/10: monte_spill.c
+Fixed bug in how spill[i] was referenced
+
+11/7: monte_spill.c
+Overgen is now added to spill as a very simple calculation
+
+11/4: qIOSheet.cpp, qIOCell.cpp
+Fixed dirtying of spill schedule cells
+Fixed infinite recursion in promptForUserName() and getUserName()
+
+11/3: qIOSheet.cpp, qIOCell.cpp
+Fixed printing for new format
+Updated text output for new formatting
+Fixed copy/paste of spill schedules between different types
+
+11/2: qTableItem.cpp/h, qIOSheet.cpp
+Spacer cells now have labels
+Removed vertical header and replaced with normal cells since the header is hard to read
+
+11/1: qIOCell.h, qIOSheet.cpp, qTableItem.cpp
+Disabled double clicking to get a histogram for average/cumulative cells
+Moved Dam Survival average/cumulative cells to where they should have been
+Moved valueToText and textToValue to qIODamSpecific
+valueToText now uses IO_CELL_PRECISION for precision of output
+Input cells now have a green tint
+Dirty cells now have a red tint
+Only two decimal places are now shown
+
+10/31: spill.c, init.c, parse.c
+Clear legacy schedules as well as new ones
+Check legacy schedules for errors with new ones
+Initialize spill schedules to NULL
+Fixed some comments in the end of parse.c
+Legacy data is now freed once it has been converted to the new format
+
+10/27: c1tokens.h, crisp.h, parse.c, spill.c/h, passage.c, flow.c, monte.c, main.c, crisp1bat.c, Qcrisp.cpp, init.c, time.c, crisp_time.h
+Added legacy_planned_spill and legacy_fish_spill to crisp data structure
+Added back planned_spill and fish_spill input tokens
+Added parsing for planned_spill and fish_spill
+Added spill.h to replace random "extern spill_something();" in other files
+Moved definition of night_start/end to global crisp_time.h
+Implemented set_legacy_spill() for converting from the legacy data structure to the new one
+Added definition of day/night to spill.c since the old one might be wrong
+
+10/26: monte_spill.c
+Fixed message (fish spill is now night)
+
+10/25: dataio.c/h, qFileManager, qIOTool.cpp, main.c, args.c/h
+Removed old component output functions
+Replaced component output functions with new output file formats
+Updated older file extensions
+Implemented new file extensions
+Moved reach class names and assignments to output_reach_classes which is used in the calibration file output
+Updated usage message
+File creation/modification data is now written into the .ctrl file if one is made
+
+10/24: monte_spill.c
+Removed MONTE_SPILL_NOT_UPDATED since it's not necessary anymore
+
+10/24: IOToolBase.ui, qIOTool.cpp/h, c1tokens.h, parse.c, dataio.c, qIONotes.cpp/h
+Added Edit->Edit User Name
+promptForUserName() now defaults to the current user name (if there is one) otherwise it uses $USER or $USERNAME
+Added modfier/modification date stuff
+Fixed allocation of creation_date and modification_date
+Modification/creation data is reset when file is saved (since saving changes these tokens)
+
+10/21: monte_spill.c
+Removed daily_fraction() since we now use night for spill, which is half of the day
+Removed fish_hour() since we can use is_night() instead
+Using half of the day instead of daily_fraction in sum_fish_spill
+Removed fish_percent from set_spill since fish_percent is now always 1/2
+Using is_night() instead of fish_hour() in set_spill()
+Changed references to "fish" (as in fish spill hours) to "night" (since night is now what we use to determine when to spill)
+Changed references to "plan" to "day"
+execute_on_period_loop() should now run properly
+
+10/21: qIOTool.cpp/h
+Added userName to qIOTool
+Added getUserName() for obtaining the user's name
+Added promptForUserName() for changing/initially setting the user's name
+Attempt to grab the user's name from the Windows registry
+Saving user's name to Windows registry
+
+10/19: c1tokens.h, parse.c, dataio.c, qIONotes.cpp/h, qIOCell.cpp, qPromptForString.cpp/h
+Added file_creation_date token and parsing/output
+Added file creation date section to qIONotes
+Added fileCreationDateIDC
+file_creation_date is filled in if there's no value when output is written
+Fixed potential segfault in getting a dielTable
+File creation date is hidden when there is no file creation date
+Added display/parsing of file creator field in notes section
+Added qPromptForString::getString()
+Prompt user for their name upon saving a file that doesn't have a creator associated with it
+Default to user name for the name
+
+10/18: dataio.c, parse.c, c1tokens.h, qIOSheet.cpp
+Added FULL_BROKEN_STICK_OUTPUT (default: undefined) for outputting the new broken_stick form
+Implemented output of non-new broken stick form output files
+Added _mean, _low, _high for sluiceway_prop and associated parsing code
+Pasting text from a text source into a cell now works
+Checks to see if pasted-in text is a number (otherwise it generates an error)
+
+10/14: args.c/h, main.c
+Added water, ops, cal field to struct crisp_args
+Intialization and such for three new file fields
+Implemented command line loading of three component input files
+
+10/13: qIOSheet.cpp/h, qIOCell.h
+Paste checks to ensure that cells are of like types (so that you can't paste a single value into a spill schedule)
+Paste operations now both start at upper-left corner
+Implemented copy/paste for single text-entry cells
+Implemented copy/paste for spill schedule cells
+
+10/12: qIOCell.cpp/h, qIOSheet.cpp/h, qIOTool.cpp
+Added qIOInputCell::setContent() for setting the cell's contents (this only makes sense for simple cells with a single value)
+Copy and paste from IO tool call copy/paste in I/O sheet
+Copy stores the table selection into a drag object
+
+10/11: qIOCell.cpp/h, supersat.c
+Moved getPassage implementation for spill efficiency cell to qIOCell.cpp
+Spill efficiency calculation has been corrected to be in line with the manual
+Fixed daily average spill calculations
+Fixed bug in dam gas calculations (it was not selecting between day and night properly due to is_night()'s design)
+
+10/10: passage.c, qIOCell.cpp/h, qIOSheet.cpp
+Better error message on negative conventional spill proportion
+Implemented diel passage cell
+Added Diel passage cell to SIMPAS I/O sheet
+Moved spill scheduling to FLOW INPUTS section
+
+10/6: qIdcSchedule.cpp, qIdcSelect.cpp, qSelectDialogBase.cpp, qListDialogBase.cpp, qRunSettings.cpp, qScheduleDialogBase.cpp, qScheduleTool.cpp, qIOCell.cpp/h
+Units on spill volumes is instantaneous spill in KCFS (the same as the flow[] array)
+Default transport target is the Bonneville tailrace
+Fixed possible crash when main window has no icon
+Added qIODamDielPassageInputCell
+Added diel passage parameter values
+Commented out diel passage input cell for the time being
+
+10/5: IOToolBase.ui, qIOTool.cpp/h
+Added Edit menu with Copy and Paste options
+Added callbacks to handle copy/paste actions (they are not implemented yet)
+Copy/Paste are disabled while running the model
+
+10/4: notcrisp_gui.dsp, custom_survival.h, qIdcSelect.cpp, qIOCell.h, qIOSheet.cpp, setup.iss
+Merged in changes that weren't merged for some reason
+Added extern "C" {} to custom_survival header, just in case
+Added some defaults to creating new transport structures
+Now using NULL as the species to select in transport start/stop IDC
+Using enumeration for transport start/stop dates in qIOCell.h
+Transport histogram no longer crashes
+Tracking transports at all dams from I/O sheet
+Shortcuts created by the installer now start in the install directory
+Set more default parameters for creating transports
+
+10/3: Makefile, qIdcSelect.cpp/h, resource.h, qIOSheet.cpp/h, dataio.c
+Removed flush_eqns.o from Makefile
+Added qIdcTransportDates class for start/stop of transport
+Added start/stop date cells to SIMPAS sheet
+qIdcTransportDates uses default values when there is no transport structure
+Spill RSW prop output to dat file regardless
+rsw_eqn is now output in dat files
+
+9/30: qIOCell.cpp, qIdcScheduleBase.h, qIdcSchedule.cpp/h, qScheduleDialogMed.cpp
+Using correct dat container for spill schedule cells
+qIdcScheduleBase's putToList function is now virtual
+Added putToListWithVolume to new class qIdcPlannedSpill
+Added checkbox to spill schedule dialogs
+Added checkbox that is copied to an integer vector in the dat container for qScheduleDialogMed
+Implemented volume input for spill schedule
+Added range checking for flow fraction in spill schedule tool
+Fixed old schedule tool error messages
+
+9/27: c1tokens.h, crisp.h, dataio.c, init.c, monte_spill.c, parse.c, report_init.c, river.c, spill.c, qIdcSchedule.cpp/h, qMediatorBuilder.cpp, qScheduleDialogMed.cpp/h, crisp_time.h, qIOCell.cpp/h, qIOSheet.cpp, qScheduleDialogBase.cpp, qScheduleDialogMedBase.cpp/h
+Removed "fish spill hours" concept (it appeared to be a mask for setting spill)
+Changed planned_spill_days to planned_spill_day
+Added planned_spill_night
+Added inlined version of is_night() to crisp_time.h, although it is not being used yet
+Added qIODamSpillInputCell for spill schedule
+Added day/night version of qIODamSpillInputCell to SIMPAS sheet
+Fixed dangerous dereference in qScheduleDialogBase constructor
+Moved qIODamAverageSpillCell functionality into qIODamSpillInputCell
+
+9/22: at_frame.c, monte_frame.c, parse.c, dir.c, notcrisp_gui.dsp, Makefile, var.h, qTableItem.h, qIOSheet.cpp/h, dataio.h, qGraphMedDrawAxisYD.cpp, qHelpWindow.cpp, qFileManager.h, qScenarioManager.h, qIOTool.cpp, file.c/h, qIOCell.cpp/h, setup.iss
+Removed extraneous _sys_errlist declarations that caused warnings
+Hopefully this doesn't break anything under UNIX, but I don't see how it could...
+Files that are being run through moc unnecessarily have been reverted to normal C++ files
+Put .ui stuff first in Makefile to fix compilation errors
+Added newline to end of var.h (causing compiler warning under UNIX)
+Newline at end of qTableItem.h, qIOSheet.cpp/h, qIONotes.h, qIOCell.h, qIOHistGDT.h, qHelpWindow.cpp, qFileManager.h, qScenarioManager.h
+Added qIONotes.cpp/h to repository (oops, forgot to do this earlier)
+Fixed compilation problem for dataio.h, qGraphMedDrawAxisYD.cpp
+Removed Simple, FLUSH references from Makefile
+Fixed passing QString into as a const char* in a log_msg() for qIOTool.cpp and for int i... scoping
+An error message is logged if the component input files are not found anywhere for the I/O tool
+Added get_image_location() just as a handy way to get the directory that the CRiSP image is in
+qIOTool now checks the directory that the executable is in as well as the other ones when looking for component input files
+Added Qmain.o to Makefile
+Added qIODamPowerhousePriorityInputCell to SIMPAS sheet
+Implemented qIODamPowerhousePriority IDC code
+Cells in HTML output are now right-aligned
+Added sample setup script: setup.iss
+
+9/21: IOToolBase.ui, qIOTool.cpp, qIOCell.h, qTableItem.h, qIOSheet.cpp, qPassHistGDT.cpp, qIOHistGDT.cpp/h, Makefile, notcrisp_gui.dsp, Qmain.cpp
+Removed the toolbar with open and print since it's not very useful
+Added CRiSP logo to Show CRiSP GUI action
+Added cbDoubleClicked() slot to qTableItem (defaults to doing nothing)
+qIOSheet now sends calls cbDoubleClicked() for non-input cells (ones who's RTTI is qTableItem)
+Added qIOSheet::getIOTool()
+Fixed typos in a log message
+Added qIOHistGDT class for creating a qGraphDataToken from the information given by an I/O cell
+Added qIODamSpecific::getReleaseSegments()
+Copied and modified qBasePassHistGDT code to work in qIOHistGDT
+Added qIOCell:getReleases() which is convenient for getting the list of releases
+Added qIOCell::getGame() for convenience
+Added qIODamSpecific::getHistData() for feeding data to a GDT
+Added passage histogram for qIODamSurvivalCell
+Added histograms for passage to Dam and/or Pool survival
+Added histograms to turbine/bypass/sluiceway/spillway/RSW passage
+Notes are now printed along with other HTML (with <, >, & escaped properly)
+Notes dock is disabled during a run since any text the user adds will be promptly overwritten on completion
+Better error on not finding the river description file
+
+9/20: qIOCell.h, qIOSheet.cpp, qIOTool.cpp/h, qFileManager.cpp, Qcrisp.cpp, qHelpManager.cpp/h, Qmain.cpp/h, Makefile, notcrisp_gui.dsp
+Added qIODamSpillEfficiencyCell to SIMPAS sheet
+Added qIODamPoolSurvivalCell to SIMPAS sheet
+Added support for the *.scn extension (basically replacing *.dat)
+Added addDataFilesFromDir() helper function for enumerateDataFiles()
+enumerateDataFiles() now checks the Windows registry to get the install path on Windows
+Fixed several typos in About box and added my name (Jared Krinke) to the list
+Removed old Qt Assistant code from qHelpManager
+ADded qHelpManager::about() (which was moved from QCrisp::helpAbout())
+Update QCrisp to reflect this change
+Implemented qIOTool::cbHelpAbout()
+Registry is closed properly
+Added getQCrisp() and getIOTool() to Qmain.h
+Added qTopLevelManager so that Qmain.cpp may receive necessary destroy signals
+Moved dock windows menu to View->Toolbars
+Added "Show CRiSP GUI" option to View menu for I/O tool, using qIOTool::cbViewShowCRiSPGUI()
+
+9/19: qIOTool.cpp/h, qIOSheet.cpp/h
+Run Scenario now prompts the user to apply input cell changes before executing a model run
+Export as Text now properly checks to see if the file exists and prompts the user
+Added promptForDirty() which makes sure the I/O tool is update before saving/exporting
+Save As..., Export to Text..., and Print... all now use promptForDirty() first
+Export/save now all only work when the I/O tool is not dirty now.
+Added View menu for showing/hiding docks
+qIODamPassageCell::getPassage/Total() now take an rls_seg instead of rls_stats
+Added qIODamPlusPoolSurvivalCell (and added a row to the SIMPAS I/O sheet)
+Added qIODamTurbineSurvivalCell to SIMPAS sheet
+Added qIOTransportOutCell to SIMPAS sheet
+qIOSheet::getReleases now returns a non-constant reference
+Added qIODamCumulativeTransportCell to SIMPAS sheet
+Added qIODamAverageSpillCell
+Added all three average daily spills (day, night, both) to SIMPAS sheet
+Removed debugging output that I accidentally left in
+
+9/16: writeutil.c/h, qIOTool.cpp/h, qIdcList.cpp/h, Makefile, notcrispgui.dsp, qIONotes.cpp/h, token.c/h, parse.c
+Fixed strdup_escape/unescape memory allocation
+Added ModifyCache() string support to qIdcListBase
+Added qIdcNotes as the notes IDC
+Added qIONotes.cpp/h for qIONotes class which is the GUI for the qIdcNotes
+Added qIDCDataString class that does kind of what IDCs except a lot simpler and currently only for a single string
+Added pop_sized_token() for getting big tokens
+Increased maximum notes length
+Notes parser now uses pop_sized_token()
+
+9/15: qIOTool.cpp/h, IOToolBase.ui, crisp.c/h, c1tokens.h, parse.c, writeutil.c/h
+I/O tool is dirtied upon UpdateAllDataTokens
+I/O tool GUI that cannot be created with Qt Designer is created in drawDialog()
+Move Stock and scenario selections into toolbars (created in drawDialog())
+Removed old stock and scenario selection from IOToolBase.ui
+Added notes dock
+Added global input_notes string
+Added parsing for input_notes string
+Added strdup_escape/strdup_unescape for escaping blocks of text for inclusion into input/output files
+
+9/14: IOToolBase.ui, qIOTool.cpp/h, qFileManager.cpp/h, parse.c/h, crisp.h, stock.h, fge.c, migration.c, qIdcSelect.cpp, qIdcList.cpp, var.c, qIOSheet.cpp/h, qIOCell.cpp/h
+Added callbacks for scenario selection area
+Added blank callbacks
+Added maps from file names to full paths
+Added functions to fill scenario selection combo boxes
+All file combo boxes now use the same callback and setup routine
+Added functions to enumerate data files and insert them into maps
+Opening any of the component input files adds them to the list and selects them
+Added emitFileOpening/ed() to allow other code to emit file opening/ed signals from the file manager
+parse_data_file() now takes a const char*
+qFileManager now uses replace as appropriate
+Removed legacy _dist references
+FGE calculations don't directly reference distribution if it doens't exist
+Migration variance doesn't diretcly reference distribution if it doesn't exist
+Removed legacy distribution references from IDCs
+Removed legacy parsing code
+Fixed free_variable_parameters() so that it sets vparams to NULL
+Added File->New to essentially get out of retrospective "mode"
+Scenario box is now enabled/disabled depending on whether a retrospective file has been opened
+Moved qFileManager's real file opening code to openFile(QString)
+Added Run/Cancel run buttons to I/O tool
+Added RunCompleted() signal to qScenarioManager
+Scenario runs/cancels update dirty dots as appropriate
+Removed Apply/Reset (selection) buttons because they won't work as expected
+Fixed small bug in applying only when dirty
+Fixed model run on start by connecting signals before calling functions
+Menu/toolbar options are now enabled/disabled during runs
+
+9/13: IOToolBase.ui, qIOCell.h
+Added Scenario selection area to I/O tool
+Made definition more clear using FALSE instead of 0
+Added CUSTOM mortality class (CUSTOM_CLASS, DO_CUSTOM)
+Added custom_survival_eqn to StockT
+Added parser tokens for custom_survival_eqn
+Added output of custom_survival_eqn
+Added initialization for custom_survival_eqn (to EQ_SURVIVAL_LINEAR)
+Added parsing of custom_survival_eqn
+Added report_init structures for custom_survival_eqn
+Also added pred_capture_dist stuff to species report_init structures
+Added EQ_SURVIVAL_LINEAR equation
+Added custom survival support files: custom_survival.c/h
+Added custom_survival()
+Implemented EQ_SURVIVAL_LINEAR
+Constrained EQ_SURVIVAL_LINEAR to [0, 1]
+Implemented CUSTOM_CLASS in rz_model.c
+Cumulative temperature for CUSTOM_CLASS is now stored in pred[]
+Fixed typo
+
+
+9/12: qIOCell.cpp/h, qIOSheet.cpp/h, qTableItem.cpp/h, IOToolBase.ui, qIOTool.cpp/h, Qcrisp.cpp
+Added parameter to qIODamParameterInputCell for whether the parameter is only dam-specific or dam and species-specific
+Fixed RSW spill proportion cell
+Added getDams() to qIODamSheet
+Added Average dam survival cell
+Added cumulative dam survival cell
+Moved most of qIODamSurvivalCell's old functionality into more general qIODamPassageCell
+UPdated qIODamSurvivalCell to use new qIODamPassageCell base class
+Added qIODamTurbinePassageCell and added it to the SIMPAS I/O sheet
+Added complement flag to qIODamPassageCell
+Added qIODamFPECell to SIMPAS I/O sheet
+Added remaining dam route tracking outputs to SIMPAS I/O sheet
+Added valid flag to qTableItem constructor
+Added darker-celled boundaries to SIMPAS I/O sheet
+Improved boundaries
+Replaced stock combobox with location and species boxes
+Added updateComboBox() utility function for preserving user's selection
+Implemented Location, species-based release selection instead of old stock selection
+Added Export as Text... option to File menu
+Added cbExportAsText() to qIOTool and exportAsText() to qIOSheet
+Implemented initial output to text file functionality
+Added exportAsHTML to qIOSheet which creates a <table/> for the I/O sheet
+Implemented initial printing (via HTML)
+Fixed recalculation after a model run has finished
+Fixed File->Exit
+Implemented more reasonable File->exit on QCrisp and qIOTool
+
+9/9: qIOCell.cpp/h, dataio.c, qFileManager.cpp/h, qIOSheet.cpp/h, qIdcSelect.cpp/h, Qcrisp.cpp/h, qSelectDialogBase.cpp, IOToolBase.ui, qIOTool.cpp/h
+Switched broken stick parameters from I/O sheet to set low = high = 0.0 instead of the value
+spill_rsw_prop is now output if necessary
+Added fileOpening signal to qFileManager so that old references can be removed before they are changed
+Used fileOpening signal in qIOSheet to remove all cells (that reference structures that may disappear while opening a file)
+Added qIdcSluicewayProp and global instance qIdcSluicewayProp_
+Added Sluiceway... to the old GUI's full-GUI menu
+qSelectDialogBase::isBoxChecked() returns 0 if the checkbox doesn't exist now, instead of -1, this doesn't look like it will break anything
+This kind of fixes the sluiceway thing in the old GUI... hopefully it doesn't break anything
+Added qIODamParameterInputCell
+qIODamTurbineMortalityInputCell now uses qIODamParameterInputCell
+qIODamParameterInputCells now ensure the value is within the correct range
+Added Apply/Reset All buttons to I/O Tool
+Moved Apply/Reset to ApplyAll/ResetAll since that's really what they do
+Added cbApply and cbReset callbacks to qIOSheet
+Apply/Reset All implemented correctly, along with Apply/Reset for selected cells
+Added qIODamSurvivalInputCell
+Converted qIODamTurbineMortalityInputCell to qIODamTurbineSurvivalInputCell
+Added FGE day/night cells
+Added sluiceway proportion cell
+Small fixes to display
+Added RSW spill proportion cell (not working yet)
+
+9/8: qIOSheet.cpp/h, qIOCell.cpp/h, qIOTool.cpp/h, qIdcSelect.cpp/h, resource.h, Qcrisp.cpp/h
+Headers are now named in the setDamCol function
+setDamCol now takes a pointer to an integer so that columns for powerhouses may be added
+Powerhouses now each get their own column during resize
+setDamCol now has some extra parameters for when adding powerhouse columns
+qIODamSpecific now has a flag for whether or not the cell is for a power house or just a normal dam cell
+qIODamMortalityInputCell is only for dam cells with no powerhouses or powerhouse cells
+Columns are now sized when the sheet is filled in
+Columns also resize when data has changed
+Dirty dots are not indiscriminately turned off after hitting Apply/Reset
+qIOTool only resets itself on run status changes and changing the stock combobox
+Removed debugging messages (oops)
+Added enumeration of dam mortality offsets
+Added RSW and sluiceway mortality to old GUI
+Added qIdcRSWProp and its global instance, qIdcRSWProp_
+Added ID, ID_RSWPROP for editing RSW proportion
+Added RSW Spill... option to dam menu
+
+9/7: qIOCell.cpp/h, Qmain.cpp, qTableItem.cpp/h, qIOSheet.cpp/h
+Now showing the old GUI along with the new one on start-up
+Implemented qIODamTurbineMortalityInputCell::cbReset and also connected it to the IDC invalidate signal
+Added dirty property to qTableItem and associated red rectangle-drawing
+Added qIOInputCell::cbUpdate() for updating display of data (like when the IDC tells it something changed)
+Renamed cbUpdate() to overriding calculate() since it really is just an extension of the idea of calculating a cell
+Added qIOSheet::isDirty() that checks to see if any cell is dirty
+ONLY qTableItems are used in the code now and QTableItems will break some code!
+qIOTool now has a slot for updating dirty dots status based on the I/O sheet's dirtyness
+qIOSheet::evValueChanged has been removed since it doesn't appear to be necessary
+Implemented qTableItem::rtti() which should have been done a while ago
+I/O Tool now only shows dirty when at least a single cell is dirty
+qIOInputCells now have their current value as the default text when editing
+Input for a broken stick distribution now sets low = high = value because I think that's the right thing to do
+
+9/6: qIOSheet.cpp, IOToolBase.ui, qIOCell.cpp/h, qIOSheet.cpp/h, qIOTool.cpp/h
+SIMPAS sheet now sets output_settings not output_flags to obtain statistics needed for calculations
+Added dirty dots and apply/reset/help buttons to IOToolBase
+Added qIOInputCell and qIODamInputCell classes
+Added qIOTool::showDirty(show)
+Added cbApply() and cbReset() to qIOTool
+qIOSheet now holds a reference to the qIOTool in ioTool
+Added input cell-specific setItem() to qIOSheet
+Added evApply and evReset signals to qIOTool
+qIOInputCells are now connected to qIOTool's apply and reset signals
+qIOSheet now has two versions of setItems (one for input cells to connect signals and the default one)
+Moved dam-specific stuff into qIODamSpecific (which is NOT a QObject) instead of qIODamCell (which has been removed)
+Now using multiple inheritance for dam-specificity
+Added qIODamTurbineMortalityInputCell and put it in the testing SIMPAS I/O sheet
+Placeholder reset/apply for turbine mortality
+Reimplemented createEditor for qIOInputCell so that only floating point numbers can be entered (using a QDoubleValidator)
+
+9/2: Qcrisp.cpp/h, qTableItem.h, qFileManager.cpp/h, Makefile, notcrisp_gui.dsp, IOToolBase.ui, qIOTool.cpp/h, main.c/h, crisp1bat.c, batch.h, Qmain.cpp/h, qHelpManager.h, lots of files, qScenarioManager.cpp/h, qScenarioThread.h
+Removed old (incorrect) header from Qcrisp.cpp and Qcrisp.h
+Added #ifndef to qTableItem.h
+Added qFileManager class
+Defined global fileManager instance of qFileManager
+Moved fileOpen and fileSaveAs slots from Qcrisp to qFileManager
+Added fileOpened signal to qFileManager
+QCrisp handles fileOpened signal from qFileManager
+Removed qIOTool's Save option (only Save As, now)
+qIOTool now uses qFileManager
+Added model_startup and process_command_line to main.h that FINALLY gets all main() code in one place
+crisp1bat.c now uses model_startup and process_command_line
+Removed ModelStartup() from QCrisp (the functionality is going into Qmain, while the implementation is in model_startup)
+Moved ShowStderrMsg() from QCrisp to Qmain
+Copied messageLog() from QCrisp to Qmain (yes, it's copied... I'll try and move it or whatever later)
+Reimplemented Qmain::Qmain to use model_startup and others
+Added batch_init() to batch.h and removed extern batch_init() from QCrisp
+Made global user_args structure
+Removed QCrisp *mainWindow global
+Made global pointer to the help manager, helpManager
+Shifted help management from QCrisp to qHelpManager and its global pointer, helpManager (defined in qHelpManager.h but created in Qmain.cpp)
+CreateReleasesMenu now takes a pointer to a QCrisp
+Commented the GUI start-up routine
+Added qScenarioManager class
+Moved qScenarioThread code into qScenarioManager files
+Removed qScenarioThread.h
+Moved QCrisp's Scenario-running code into qScenarioManager
+qIOTool is the default GUI (there isn't an option to get the old GUI yet)
+qIOTool causes a new scenario to run every time a file is opened
+qIOSIMPASSheet now enables track_routing at the dam segments before a run (almost)
+
+9/1: qIOCell.cpp/h, qIOTool.cpp/h, qIOSheet.cpp/h, IOToolBase.ui, qTableItem.cpp/h, Makefile, notcrisp_gui.dsp
+Fixed qIODamSurvivalCell output
+qIOSheets are now game-specific
+All releases are now added
+clear() and setup() functions added to qIOSheet
+Moved releases to non-abstract class for qIOSheets (i.e. qIOSIMPASSheet) since it wouldn't work the other way around
+setReleases() should now adjust the table as appropriate now
+Added stock combobox to qIOTool
+Added reference to qIOSheet in qIOTool
+Moved qIOSheet::setReleases to public
+Added implementation of stock combobox in qIOTool
+Cells are recalculated when release list changes
+qIOSIMPASSheet no longer needs a release list upon creation
+qIOTool now selects the first release in the list upon creation
+Added signal handler for UpdateAllDataTokens to qIOTool
+qIODamCells now hold a reference to the qIODamSheet instead of the list of release segs for their dam
+Moved handling of run status changes to the top-level class, qIOTool (instead of qIOSheet)
+Changed references of recalculate to calculate for the signal/handlers
+Added recalculate() to qIOSheet to force it to emit a calculate signal
+Added qTableItem which allows additional drawing effects
+qIOCell now extends qTableItem instead of QTableItem
+Added "valid" property to qTableItem so that cells may be marked as invalid
+Removed/commented recalculate() since it probably isn't safe (although it would be more efficient if you can figure out when it is safe)
+
+8/31: qIOSheet.cpp/h, qIOCell.cpp/h
+Implemented better dam-finding algorithm for QIOSIMPASSheet
+Break out of while loop a bit sooner in setDamsList
+Added map from dam river segment to list of rls_segs at that dam
+Added qIODamCell and qIODamSurvivalCell classes and inital implementations
+I/O sheets now enable/disable while the model is being run
+Added IODamSheet base class and made appropriate changes to IOSIMPASSheet
+Removed some annoying code from qIODamCell by using new IODamSheet hierarchy
+Cells recalculate on special "recalculate" signal from the IOSheet now
+
+8/30: qIOTool.cpp/h, IOToolBase.ui, Qcrisp.cpp, Makefile, notcrisp_gui.dsp, qIOSheet.cpp/h, qIOCell.cpp/h, species.c
+Added IOToolBase form
+Added qIOTool skeleton with a bunch of commented-out code from qMonteCarloTool
+Temporarily made Qcrisp create a qIOTool window on start-up for quick testing (this should be un-done)
+Added qIOSheet and qIOCell classes
+Added qIOSIMPASSheet for initial SIMPAS-like I/O sheet for THE PROJECT
+Added qIOStaticCell for non-editable cells (should allow coloring and other effects in the future)
+qIOTool now adds a qIOSIMPASSheet by default (for testing)
+Renamed main frame in qIOTool to sheetFrame
+species structures are zeroed when allocated (so that the _dist pointers are thus NULL)
+Fixed layout of spreadsheet, somewhat
+Cell headers for each dam
+The I/O sheet is now based on releases, not stocks or species (this makes a lot of sense, now that I think about it)
+Only dams that are passed by the release are shown
+
+8/27: dataio.c, qInterfaceDataControl.cpp/h, qIdcList.cpp, qIdcSelect.cpp, var.h, qIdcTransMortEquation.cpp, dataio.c, log.c/h, parse.c
+Merged in GUI restoration
+Merged in GUI restoration
+Fixed bug in log_msg call (no specified debug level)
+Added static FillBrokenStickData and ApplyBrokenStickData utility functions to qInterfaceDataControl
+All qIdcList and qIdcSelect-derived classes that use the old stochastic parameter support have been updated to the new variable_parameter-based one
+Fixed output of generic stocks (in output_spec)
+Merged new stochastic parameter support and GUI changes to head of NOT_CRISP
+log_msg now takes a constant character pointer (it should have been this way to begin with)
+Removed unused local variables from functions
+
+8/26: resrc1.h, icon1.ico, notcrisp_gui.dsp, qEquationFLUSH.h, qEquationFactory.cpp, qIdcSimpleMortEquation.cpp/h, qIdcFLUSHTransEquation.cpp/h, qIdcSelect.cpp
+Added Windows GUI build support files resrc1.h and icon1.ico
+Added GUI project file
+Removed qEquationFLUSH.h
+Removed qIdcSimpleMortEquation.cpp/h and references
+Removed qIdcFLUSHTransEquation.cpp/h and references
+Removed GUI Simple mortality and FLUSH support
+Updated GUI to reflect that time_coef and distance_coef are stock-specific instead of species-specific now
+Added MOC support to project
+Finally fixed crash on stderr problem (needed to link to dyanmic C run-time with /MD not /MT)
+Fixed offsets for dist/time_coeff for GUI
+
+8/25: dataio.c, var.c/h, parse.c
+Added output_variable_parameter
+Added output_float_or_dist
+forebay_pred_coef now uses new output functions
+tailrace_pred_coef now uses new output functions
+Added output_reach_class_float_or_dist
+reach_pred_coef, migr_var_coef now use new output functions
+Added output_indent and output_string to save a bunch of messy code
+Old variable parameters are now output using the new format (removing a lot of code)
+Removed "disabled" flag from variable_parameter structure since it isn't supported
+Fixed end token
+Added transport_mort, night_fge and day_fge parsing since I missed them before
+Cleaned up indentation issues for dam and powerhouse output
+
+8/24: var.c/h, report.h, report_init.c, c1tokens.h, parse.h, dataio.c, sample.c, passage.c, init.c
+Added check_variable_parameters function for checking stochastic parameter distributions
+Global report variable structures are now exported from report.h
+Stochastic parameters are now in report_var arrays just like normal parameters
+Renamed TK_BYPASS_MRT to TK_BY_MRT to keep naming convention, also updated references
+Using strncpy instead of strcpy
+Implemented a nice output routine for detecting errors in stochastic parameters
+param_error now takes floats, not doubles
+Fixed difference between param_error global and sample.c's param_error
+Replaced broken_stick references in passage.c that somehow got overlooked
+Fixed day_fge name
+Fixed dam species error output
+Fixed species error output
+Fixed reach class-specific parameter errors
+Stochastic parameter checking has now been fully replaced by check_variable_parameters in var.c
+Added full commenting
+free_variable_parameters is now called between Monte alternatives
+
+8/23: parse.c, var.c, stock.h, c1tokens.h, dataio.c, parse.c, reach_model.c, migration.c, transport.c, sample.h
+Fixed RC_COPY_DEFAULT_LEGACY for copying default reach class parameters
+Added error message when sampling stochastic parameters fails
+Fixed bugs in remove_variable_parameter and add_variable_parameter
+Converted migration rate variance to new framework
+Added migr_var_coef token
+Transport mortality is now deterministic (although the base mortality may be varied)
+Converted transport mortality to new framework
+Added transport_mort token
+Fixed day FGE output bug
+More small bug fixes
+Removed read_reach_class_float and read_reach_class_float_or_dist since they're unnecessary (due to read_reach_class)
+param_error is now accessible in other files
+All original stochastic parameters are checked in init.c for correct values
+
+8/22: crisp.h, c1tokens.h, dataio.c, init.c, parse.c, report_init.c, reach_model.c
+Converted forebay/tailrace predation coefficients to new variation framework
+Moved broken stick parameter parsing macro to PARSE_BROKEN_STICK_DIST_PARAM(_LEGACY)
+Moved float or dist macro stuff into PARSE_FLOAT_OR_DIST(_LEGACY)
+init_masks() is now reset_masks() and it resets upon each call
+This means that reset_masks() should only be called once per run!
+Added fill_default_reach_class_values() and associated utility functions/macros
+Added READ_REACH_CLASS_FLOAT(_OR_DIST) and legacy macros
+Moved all reach class parameters to using new macros
+Removed file format version 3 predation coefficient multiplier
+
+8/19: c1tokens.h, crisp.h, dataio.c, parse.c, passage.c, fge.c
+Replaced bypass mortality variables with single variable and distribution pointer
+Added new bypass_mort parameter (that may optionally take a distribution)
+Replaced spill mortality variables with single variable and distribution pointer
+Added new spill_mort parameter (fixed a bug)
+Replaced sluiceway_mortality variables with single variable and distribution pointer
+Added new sluiceway_mort parameter (fixed a bug)
+Replaced rsw_mortality variables with single variable and distribution pointer
+Added new rsw_mort parameter (fixed a bug)
+Removed sluiceway_mean/low/high parameters and replaced them with sluiceway_prop (which may take a distribution)
+Converted day/night FGE to new framework
+Added day_fge and night_fge dam, species parameters
+
+8/18: c1tokens.h, parse.c, crisp.h, var.c/h, dataio.c
+Added broken stick distribution tokens
+Added parse_broken_stick for parsing broken stick distributions
+Added parse_double_or_dist for handling generic parameter handling
+Added PARSE_DAM_SPECIES_DOUBLE_OR_DIST
+Fixed end token checking for parsing broken stick distribution
+Variable parameters now use floats instead of doubles since that is what the code usually does
+Added remove_variable_parameter to var.c/h
+Adding a variable parameter will now replace an existing one
+Added support for turbine_mort parameter parsing/output
+
+8/17: release.c, parse_at.c
+Removed support for old Monte Carlo alternative output reading
+Added new dam parameter statistics to alternative output reading
+Fixed initialization to NULL of sluiceway/RSW statistics arrays
+Merged Monte Carlo fixes
+
+8/17: var.c/h, main.c, crisp.h, dataio.c, c1tokens.h, passage.c, report_init.c, parse.c
+Added variable parameter structures/support code
+Variable parameters are sampled before each model run
+Replaced turbine mortality with distribution
+Replaced turbine mortality tokens with single TK_TURB_MRT
+Dam passage is now calculated with single fixed turbine mortality value
+Added READ_DAM_SPECIES_BROKEN_STICK_DIST macro for parse.c (retains old file format)
+Turbine mortality now uses new variable parameter code
+READ_DAM_SPECIES_BROKEN_STICK_DIST now uses a fixed dist and no searching
+Added disabled flag to variable_parameter structure
+
+8/15: supersat.c, pred.c
+Removed mechanistic gas equations
+Removed extraneous sampling from pred_temp_response and pred_capt_dist
+
+8/12: rz_model.c, crisp.h, summary.c, report_init.c, parse.c, c1tokens.c, eqns.h, init.c, dataio.c, flush_eqns.c/h
+Merged all standard model calculations into single loop with if statements inside
+Updated comments
+Merged standard and deterministic model code
+Removed FLUSH support
+
+8/11: crisp.h, stock.h, parse.c, rz_model.c, dataio.c, init.c, report_init.c
+Moved time_coef and distance_coef to stock-specific, instead of species-specific
+Added data I/O for new model parameters and adjusted XT model ones
+Fixed intialization of stock parameters (must also initialize for each species!)
+Fixed do_seg_new referencing of stock parameters
+
+8/10: pred.c, flow.c
+Added EQ_EXP1 function for use in pred_temp_response_eqn and pred_capture_dist_eqn
+Small comment fix for turbidity in flow.c
+
+8/9: c1tokens.h, parse.c, crisp.h, crisp.c, init.c, rz_model.c, pred.c/h, reach_model.c
+Moved XT model tokens to species section where they belong
+Added parsing of new reservoir survival parameters
+Named the mortality classes (e.g. GAS_AND_PREDATION_CLASS instead of the magic number 0)
+Added NOT_CRISP_CLASS (which is the same as Simple Mortality used to be)
+Added DO_NOT_CRISP macro
+Added pred_capture_dist() (unimplemented, though)
+Implemented new NOT CRISP model (except for two undetermined functions)
+
+8/8: parse.c, stock.h
+End tokens now REQUIRE the command that they end to be listed
+e.g. "species ... end species" instead of "species ... end"
+Undefined commands in yearly input file now issue errors, but DO NOT stop execution
+Added new model parameters to StockT
+
+8/5: crisp.h, c1tokens.h, dataio.c, eqns.h, flush_eqns.c/h, init.c, parse.c, report_init.c, resource.h, rz_model.c
+Removed Simple mortality model and associated code
+
+8/4: rz_model.c
+Added a lot of comments to variable declarations
+
+8/3: rz_model.c
+Updated comments a bit
+
+8/1: rsw.c, passage.c, crisp.h, init.c, parse.c
+Updated comments
+Negative conventional spill efficiency is now an error, not a warning
+rsw_equation is now per species per dam
+Merged RSW and sluiceway branches back into NOT_CRISP trunk
+
+7/29: passage.c, eqn_dflt.c, rsw.c/h, spill.c
+Proportion of fish through RSW is now a proportion of total fish entering the dam
+-formerly it was the proportion of spilled fish that pass through RSW
+Added error checking for conventional spill
+RSW efficiency is assumed to be zero if no spill or no RSW spill
+EQ_RSW is now y = exp(a + b ln x) / (1 + exp(a + b ln x)) with new default values
+Spill efficiency calculations can now use the RSW equation form
+Fixed turbine passing probability (for real this time)
+
+7/28: passage.c, sluiceway.c/h, crisp.h, c1tokens.h, parse.c
+Sluiceway/SBC stuff is now a constant instead of an equation
+Added documentation of RSW dam passage modifications
+
+7/27: crisp.h, monte_output.c, parse.c, passage.c
+Added sluiceway statistics to crisp.h (not sure how these disappeared)
+Added sluiceway stats to list printed upon output
+Added all tokens to parser's token array
+Fixed passage calculation (and routing)
+Added RSW in/out to list of statistics fields in output
+
+7/26: crisp.h, sluiceway.c/h, passage.c/h, dam_model.c, Makefile, c1tokens.h, parse.c, dump.c, monte_output.c, init.c
+Added sluiceway equation/mortality data structures
+Sluiceway tracking info and memory allocation
+Sluiceway implementation in dam passage
+Sluiceway I/O, memory deallocation for Monte Carlo mode
+Added default equation loading for rsw_eqn
+Fixed Monte Carlo output
+RSW memory deallocation for Monte Carlo mode
+
+7/25: eqns.h, eqns_dflt.c, rsw.c/h, Makefile, crisp.h, parse.c, c1tokens.h, monte_output.c, dump.c, passage.c/h, dam_model.c
+Added RSW equation structure with form defined in SIMPAS
+Added RSW input/parsing for rsw_equation, spill_rsw_prop, and rsw_mort_mean/low/high
+Added RSW totalling/output
+RSW is now used in dam calculations
+
+7/21: qGlobalEvents.cpp/h
+Moved implementation of qEvents into qGlobalEvents.cpp since static doesn't work otherwise
+
+7/20: help/crisp.toc, qEditGraphGDT.cpp, qGraphDataTokenBuilder.cpp, qDamReachGDT.cpp, help/407, 418, 419, 443, 91, 96, 96.html, qHelpWindow.cpp, help/1.html, qGraphDialog.cpp, qCheckBoxDialogBase.cpp/h
+Changed turbidity pages to 400 + their original page number
+Changed CRiSP 1.6 highlights to 1.7 in table of contents
+Added in placeholder documentation where missing
+Update table of contents and associated HTML page, help/1.html
+Table of contents position in help window is only updated when the page changes
+Graph dialog titles/legends are now emboldened
+qCheckBoxDialogBase now inherits QFrame instead of QDialog and has correct buttons
+
+7/19: qMonteAltCmpDlg.cpp, qMonteAnalDlg.cpp, crisp1bat.c
+Fixed crash-on-creation bugs in Monte analysis tools
+Monte Analysis graph window should now be destroyed properly
+Added crisp1.rc resource file to version control
+Updated documentation in crisp1bat.c
+
+7/18: notcrisp.dsp, writeutil.c
+Removed unused files
+Cleaned up source directory
+Imported source into CVS (with correct line endings)
+Added binary files to version control with binary keyword
+Added notcrisp.dsp for THE PROJECT, using -DGUI for now
+notcrisp now compiles
+Updated notcrisp.dsp
+Modified ifdefs in writeutil.c to not use UNIX calls under Windows OR in GUI mode
+Added header file includes as needed
+Windows console app in notcrisp.dsp now compiles and appears to run correctly
+
+7/15: qHelpWindow.cpp/h
+Documented new help system GUI
+Cleaned up source directory
+The UNIX build process is now the primary one
+UNIX Makefile can regenerate all missing files
+Moved Changelog and TODO to source directory
+Updated README file with more current information
+
+7/14: Makefile, help_index.sh, bin2c.c, qHelpWindow.cpp/h, help/crisp.toc
+Modified Makefile to support embedding of help files under UNIX
+QByteArrays for help contents are now never freed until the program is closed
+Added table of contents for help file (in XML format)
+Added suitable reader for table of contents to qHelpWindow.cpp
+Added table of contents tree view to qHelpWindow
+Fixed sorting of table of contents
+Fixed visibility of current document in qHelpWindow table of contents
+Added simple search function to qHelpWindow using qHelpSearchDialog
+
+7/13: qHelpWindow.cpp
+Removed unzip.c/h, ioapi.c/h, zlib.h, and zconf.h since zip files don't do what we need
+qHelpWindow now reads in the data from bin2c output code (from the help/ subdirectory)
+Created script help/index.sh that uses bin2c to convert help files to C code
+Subclassed QMimeSourceFactory in qHelpWindow so that data is loaded incrementally
+Removed qHelpWindow::loadHelp as it is no longer needed
+
+7/12: qHelpWindow.cpp/h, qHelpManager.cpp/h, Qcrisp.cpp, unzip.c/h, ioapi.c/h, zlib.h, zconf.h, all references of openHelpPage
+Added qHelpWindow to replace use of Qt Assistant
+qHelpManager now manages a qHelpWindow
+Removed excessive features from qHelpManager (e.g. bookmarks and persistent history)
+Added unzip.c/h, ioapi.c/h, zlib.h, and zconf.h (all MIT licensed) for zip file support
+Defined NOUNCRYPT for unzip.h interface
+Removed leading "/help/" from every call of openHelpPage()
+qHelpWindow now loads in documentation from a compressed archive (actually a zip file)
+
+7/11: qReachClassTool.cpp/h, reachclassnamebase.ui, qIdcList.cpp, qCheckBoxDialogMedBase.cpp/h, qDamOutputCBDMedBase.cpp/h, qHeadwOutputCBDMedBase.cpp/h, qReachOutputCBDMedBase.cpp/h, qReachClassCBDMedBase.cpp/h, Qcrisp.cpp, qGraphDataTokenBuilder.cpp, qIdcFGEEquation.h
+Reach class name text boxes now may only contain letters, numbers, and underscores
+Reach class tool now has proper dirty images in corners
+qIdcReachClassSetting resets labels upon every call of Setup()
+doBoxInteractions now returns 1 if the user's choice should be ignored
+-All implementations of doBoxInteractions now return 0 except for qReachClassCBDMed
+Reach class dialog no longer allows rows to have no selection
+-unchecking defaults to first column (the default reach class, reach class zero/Class_0)
+Changed names like "fge" and "Fge" to "FGE" and "Fish Guidance Efficiency"
+
+7/8: help/82.html, qIdcSelect.cpp, qGraphDataTokenBuilder.cpp, qPassHistGDT.cpp, qIdcList.cpp, help/320.html, help/323.html, help/crisp.adp, qEditGraphGDT.cpp, parse.c
+Fixed HTML bug on Mouse Tool help page (82)
+Behavior->Predation Coef->Activity now goes to correct p54 instead of blank p52
+Dam->TDG Equation windows now all go to help p51 instead of p24, p41, p51
+Passage->Dam/Reach now go to p39 instead of p34, p35
+Passage->Bypass/Turbine/Spillway now go to p39 instead of p36, p38, p37
+Output settings windows now all go to p65 instead of p63, p64, p65
+Removed <code> from title on Yearly Input Data file page (320)
+-Same for Flow archive file (323)
+Flow->Reservoir's Basin Volume now goes to p45 instead of p44
+Updated help index to reflect these changes
+All reach class-dependent parameters are marked as overriding the default if necessary
+This essentially prevents the order of parameters within a species or stock are from mattering
+
+7/7: qMonteCarloTool.cpp/h, montecarlobase.ui, MonteCarloBase.cpp/h, crisp.c/h, parse.c, qDataReportTool.cpp, qMonteReportTool.cpp, qMonteAltCmpDlg.cpp, qMonteAnalDlg.cpp, monteanaltoolbase.ui, MonteAnalToolBase.cpp/h
+Added "Disable Variance Suppression" checkbox to Monte Carlo Tool
+Added disable_variance_suppression variable to crisp.h
+Parser turns off variance_supression when disable_variance_suppression is true
+"Disable Variance Suppression" is ONLY for Monte Carlo runs from the GUI now
+Data report tools (e.g. Monte Carlo Report) now destroy on close, so that they reload data
+Set help page for qMonteReportTool to 77
+qMonteAltCmpDialog now initally selects alternatives properly (by calling event handlers)
+qMonteAnalDlg now initially selects stuff in comboboxes properly
+qMonteAnalDlg Survival and Travel Time swapped to how they are in 1.6
+
+7/6: qMonteCarloTool.cpp, QlogWindow.cpp, monteanaltoolbase.ui, MonteAnalDlgBase.cpp/h, qMonteAnalDlg.cpp, Makefile, monte.h
+Fixed tallying of games in MC (alt_data->multi->nruns[] is of size alt_data->multi->ngames)
+-NOT alt_data->ngames
+Added validator to # of files line edit
+Immediate update upon changing # of games when not using flow archive and associated stuff
+Added repeating line stuff to log window
+qMonteAnalDlg no longer is a QDialog, but a QFrame so that "Print" isn't the default option
+Fixed up the Makefile a little, now builds batch by default
+Added additional comments to Monte Carlo header (monte.h)
+
+7/5: summary.c, montecarlobase.ui, MonteCarloBase.cpp/h, qMonteCarloTool.cpp, qCheckBoxDialogBase.cpp
+summarize_histogram now outputs the specified game (NOT just the first game)
+write_summary_output call to summarize_histogram updated
+The Monte Carlo Tool is now based off of QFrame instead of QDialog
+Return presses in the Monte Carlo Tool now do what they're supposed to
+Removed some unused code from qCheckBoxDialogBase::drawStandardLayout
+Fixed check box dialog label oversizing
+Fixed updating of # of games in Monte Carlo Tool
+
+7/1: token.c, qMonteCarloTool.cpp/h, parse_alt.c, monte_frame.c
+Added support for quoting in the tokenizer to allow spaces in names if necessary
+Updated places where I needed filenames that may contain spaces from pop_line back to pop_token
+.crisp1-alts now supports spaces
+Alternatives now may have spaces in their names
+Alternative names can't have quotes in them
+Monte Carlo dialog is now an independent window like many of the others (forgot to do earlier)
+
+6/30: qMonteAltCmpDlg.cpp, qMonteAnalDlg.cpp, qDataReportTool.cpp, qTransportTool.cpp, qEquationDialogBase.cpp/h, qDialogBase.h
+Made most of the large dialogs their own serparate windows so they don't obscure the map
+
+6/30: qMapMedDetector.cpp/h (removed), qMapMedSelector.cpp/h, qMapMedCrisp1.cpp, qPromptForString.cpp/h, qZabelSlider.cpp, Qcrisp.cpp, qMonteCarloTool.cpp, qGraphDataToken.cpp
+Merged qMapMedDetector and qMapMedSelector into qMapMedSelector since they overlapped a lot
+qPromptForString no longer uses QInputDialog and now has the correct button ordering
+Added getDouble() (like QInputDialog) to qPromptForString
+Replaced uses of QInputDialog::getDouble with qPromptForString::getDouble
+Swapped button order for all occurences of QMessageBox::question
+Swapped button order for all occurences of QMessageBox::warning
+
+6/29: qMapMedDetector.cpp/h, qMapMedGeography.cpp/h, qMapMedIcons.cpp
+Cleaned up selection on mouse movement code further
+Selection code is now more similar to v1.6 (except for what I think was an error)
+Reverted selection code since apparently two things are SUPPOSED to be selected at a time
+Moved highlighting code from qMapMedDetector to qMapMedGeography and qMapMedIcons
+qMapMedDetector now relies on updates to highlight icons (this will always work)
+
+6/28: qMonteCarloTool.cpp, parse_alt.c, qReleaseTool.cpp, qMonteAnalDlg.cpp, qMapMedDetector.cpp
+qMonteCarloTool::cbGoToDir() now remembers the text that was entered before
+-It will not cause updates and reset unless the text has actually changed
+-This is necessary since cbGoToDir() is called when bRunMonte is clicked
+Flow archive now pops the rest of the line for the filename (to handle spaces)
+qReleaseTool and its graph window are now closed as a pair (via the close button)
+-Now using destructive close
+qMonteAnalDlg and its graph window now close correctly as a pair with destructive close
+Fixed selection (highlighting) issues (namely precedence and classification problems)
+
+6/27: qGraphDialog.cpp, qMediatorBuilder.cpp, qMonteAnalDlg.cpp, qReleaseTool.cpp, qMonteCarloTool.h
+qGraphDialog no longer shows itself upon construction
+make*GraphDialog show created dialogs
+qReleaseTool still shows graph windows upon creation
+qMonteAnalDlg shows the graph approriately (upon a showEvent)
+Moved implementation of monteThread::run() into qMonteCarloTool.cpp
+
+6/24: parse_alt.c, monte_frame.c, qMonteCarloTool.cpp, qMonteAltCmpDlg.cpp, qMonteAnalDlg.cpp, qDataReportTool.cpp, qGraphDialog.h
+Altern parser now reads entire lines to allow filenames with colons and spaces in them
+Slight modification to alternative-writing method to use more reasonable indentation
+Filename editing box now updates properly (e.g. when selecting a new alternative)
+Opening a new directory in the Monte Carlo dialog now uses QT's functionality
+Help window now opens correct initial page
+qMonteAltCmpDlg no longer shows itself upon construction
+qMonteAnalDlg no longer shows itself upon construction
+qDataReportTool no longer shows itself upon construction
+-Classes that inherit from this one have been modified properly as well
+Fixed nested /* comment in qGraphDialog.h
+
+6/23: qMonteCarloTool.cpp, qPromptForString, montecarlobase.ui, (moc_)MonteCarloBase.cpp/h
+Fixed parsing of year/# of games
+Year field in Monte Carlo dialog is now read-only
+Alternative selection box (drop-down) should now work properly
+qPromptForString now sets the initial value properly
+Fixed Monte Carlo game/year count swap
+
+6/22: qDataReportTool.cpp/h
+Changed signals from highlighted to selectionChanged for reading in the selected items
+-highlighted means the user changed the current item
+-selectionChanged means the selection changed, DOES NOT IMPLY highlighted for Multi!!!
+
+6/21: qCheckBoxDialogBase.cpp
+Consolidated copied code in qCheckBoxDialogBase::drawStandardLayout
+Fixed spacing of column labels
+
+4/21: parse_archive.c
+When checking for absolute path, make sure to check for a drive letter (e.g. "C:")

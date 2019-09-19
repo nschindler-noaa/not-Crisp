@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Run Scenario Mode Interactively</title>
+</head>
+<body>
+<h4>Run Scenario Mode Interactively</h4>
+<ol>
+
+<li>Read parameter data into COMPASS.
+<br> - COMPASS reads in parameter data and model settings from a <a href="320.html"><code>base.dat</code></a> file when initially opened unless otherwise specified by command line options. Other parameter data can be read into the model by selecting <strong>File<img src="subm.jpg"></strong><a href="348.html"><strong>Open</strong></a> or by clicking <img src="fopen1.jpg">. The COMPASS distribution includes the "yearly.data" directory which contains <code>.dat</code> files with actual data for each year from 1965 to the present. All changes applied during a session will be used in the Scenario Mode run. In order to save changes made to parameter data and settings for another session, use the <a href="349.html">Save As</a> feature to save parameter data files or the whole database to a file.
+
+<li>Set Releases.
+<br> - New releases can be defined by right-clicking on a <img src="mfish.jpg"> on the <a href="346.html">River Map</a> to open a <strong>Release Tool</strong> or by selecting <strong>Release<img src="subm.jpg"></strong><a href="357.html"><strong>New</strong></a>. Existing releases are represented by <img src="maprel.jpg"> on the River Map. See the <a href="72.html">Release Tool</a> section for further information on creating, deleting, and editing releases.
+
+<li>Set Transports.
+<br> - Transports can be defined for any dam by selecting <strong>Dam<img src="subm.jpg"></strong><a href="73.html"><strong>Transport</strong></a>. See the <a href="73.html">Transport Tool</a> section for further information on creating and editing transports. Existing transports are represented by <img src="maptruck.jpg"> on the River Map.
+
+<li>Select Output Data by selecting <strong>Run<img src="subm.jpg"></strong><a href="63.html"><strong>Output Settings</strong></a>.
+<br>A. Set Passage Points: COMPASS computes daily fish passage on a release-specific basis through all river segments and dams. Fish survival and migration time at specific points along the river is displayed in Passage Histograms and in the <a href="84.html">Message Log</a> after the run completes. You can request specific passage points by setting the options you want in the <strong>Output Settings for Dams</strong> and <strong>Output Settings for Reaches</strong> windows.
+<br>B. Set Flow Observation Point: A representative river flow over the travel time of a release can be obtained by selecting the dam you want as the <strong>Flow Ind.</strong> in the <strong>Output Settings for Dams</strong> window. The average flow will be reported in the <a href="84.html">Message Log</a> and in the <code>summary.dat</code> file. Only one flow point can be specified.
+<br>C. Set Other Data: Other data such as water temperature at a dam can be requested by setting the options you want in the <strong>Output Settings for Dams</strong>, <strong>Output Settings for Reaches</strong> and <strong>Output Settings for Headwaters</strong> windows.
+<br><strong>Note. </strong>During a COMPASS session, the selected output settings can be used for multiple runs with various parameter data files by using the <a href="385.html">Lock Output Settings</a> option (Run menu) to lock the output settings and override any output settings contained in a parameter data file subsequently read into the model.
+
+<li>Set Model Configurations.
+<br> - COMPASS can be run with different functions that affect the movement and survival of fish through the river system. Specific functions can be set by selecting <strong>Run<img src="subm.jpg"></strong><a href="76.html"><strong>Runtime Settings</strong></a> and setting the runtime options you want.
+
+<li>Set Logging Options by selecting <a href="347.html"><strong>File</strong></a><strong><img src="subm.jpg"></strong><a href="84.html"><strong>Message Log</strong></a>.
+<br> - Select Messages from the Logging menu in the window to write results from the run to the log window. See <a href="84.html">Message Log</a> for other logging options.
+
+<li>Begin Scenario Run by selecting <a href="372.html"><strong>Run</strong></a><strong><img src="subm.jpg">Run Scenario</strong> or clicking <img src="run1.jpg">.
+<br><strong>Note.</strong> The progress of Scenario Mode run calculations will be displayed in the <strong>Status Bar</strong> of the GUI, lower-left corner.
+
+<li>View <a href="376.html">Scenario Mode Results (summary.dat)</a>.
+</ol>
+<p>
+You can produce the same output parameters from a model run during another session by saving output settings and runtime settings to a <code>.cnf</code> file.
+</p>
+
+</body>
+</html>

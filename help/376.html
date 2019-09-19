@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>Scenario Mode Results (summary.dat)</title>
+</head>
+<body>
+
+<h4>Scenario Mode Results (summary.dat)</h4>
+<p>
+Results produced by executing COMPASS in <a href="373.html">Scenario Mode</a> are written to the <code>summary.dat</code> file and the <a href="84.html">Message Log</a> which includes survival and travel time information for all selected points. Reports of parameter values used during the most recent Scenario Mode run can be generated from the <a href="78.html">Input Data Report</a> window (Analysis menu).
+</p><p>
+To see the number of fish passing a river segment or dam each day, the cumulative number that eventually pass over the whole season, and percent survival on a species-specific basis open <a href="34.html">Passage Histograms</a> by clicking the desired river segment or dam on the <a href="346.html">River Map</a>.
+</p><p>
+Information generated from the run is written to the <code>summary.dat</code> file and the Message Log. The output begins with each Release followed by the survival information for each passage point requested (see <a href="374.html">Run Scenario Mode Interactively</a>). Following the release survival information is a summary statement for all releases. Any other data you selected in <a href="63.html">Output Settings</a>, e.g. water temperature, will follow all the release and survival information.
+</p><p>
+Release
+</p><ul>
+<li>Dam or Reach, Species, Stock
+
+<li>Start date: first day of initial release
+
+<li>Released: number of fish in the specific release
+</ul>
+<p>
+Survival Below Reach or Dam Passage Point for Specific Release
+</p>
+<ul>
+<li>Passed: number of fish exiting the dam or reach.
+
+<li>Transported Out (transport dam only): number of fish transported out from the dam
+
+<li>Vn (transport dam only): survival fraction for non-transported fish from tailrace of transport dam to point of transport release based on Simple Mortality model, see <a href="87.html">Simple Mortality Equation</a>
+
+<li>FLUSH D (transport dam only): transport figure of merit based on Simple Mortality model, see <a href="88.html">FLUSH Transport Merit Equation</a>
+
+<li>Survival: percent survival for the release through this river segment (total passage / total in)
+
+<li>stats: see statistics fields below
+</ul>
+<p>
+Summary for all Releases
+</p>
+<ul>
+<li>Released: total number of fish in all releases
+
+<li>Passed: total number of fish passed (survived) for all releases
+
+<li>Survival: percent survival for all fish in all releases through the whole system
+</ul>
+<p>
+Statistics fields:
+</p>
+<ul>
+<li>first day: first day of passage
+
+<li>last day: last day of passage
+
+<li>total passage: number of fish exiting (surviving) the reach or dam
+
+<li>mean day: mean passage day
+
+<li>median day: median passage day
+
+<li>mode day: mode passage day
+
+<li>std.dev day: standard deviation of passage
+
+<li>avg.flow: average flow at a site while fish are migrating
+
+<li>bypass out: number of fish that survived the bypass route (dam only)
+
+<li>spillway out: number of fish that survived the spillway (dam only)
+
+<li>turbine out: number of fish that survived the turbine (dam only)
+
+<li>transport out: number of fish transported from the dam (dam only)
+
+<li>total in: total number of fish entering the reach or dam
+
+<li>bypass in: number of fish entering the bypass route (dam only)
+
+<li>spillway in: number of fish entering the spillway (dam only)
+
+<li>turbine in: number of fish entering the turbine route (dam only)
+
+<li>transport in: number of fish transported to a site and released (reach only)
+</ul>
+<p>
+<b>Sample portion of the <code>summary.dat</code> file</b>
+</p><pre>CRiSP1 Summary Output File
+Wed Jun 23 10:49:36 1999
+
+Scenario Mode
+McNary Dam was used as the average flow indicator.
+
+Statistics fields: first day, last day, total passage, mean day
+median day, mode day, std.dev day, avg.flow
+bypass out, spillway out, turbine out, transport out
+total in, bypass in, spillway in, turbine in, transport in
+
+Release:  Dworshak      Species:  Steelhead     Stock:  Generic Start date:  
+119        Released:  1192503
+
+Survival Below Lower Granite Pool
+Passed:         1078314
+Survival:       90.4%
+stats: 120   165        1078314.38      127.03          126.33          
+125.00          3.45    238.74          0.00    0.00    0.00    0.00    
+1179277.88      0.00    0.00    0.00    0.00  
+
+Survival Below Lower Granite Dam
+Passed:         229929
+Transported Out:783159
+Vn:             0.140
+FLUSH D:        0.272
+Survival:       19.3%
+stats: 120   160        229928.91       128.20          127.24          
+127.00          4.05    238.67          0.00    23894.62        230001.47       
+712674.81       1054854.88      783159.00       24382.27        247313.36       
+783159.00  
+
+...
+
+Summary for all Releases
+Released:       4411986
+Passed:         1780767
+Survival:       40.4%
+</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Spill Schedule: Spill at Dams</title>
+</head>
+<body>
+<h3>Spill Schedule: Spill at Dams</h3>
+<p>
+Selecting <a href="366.html"><strong>Dam</strong></a><strong><img src="subm.jpg">Spill Schedule</strong> opens two companion windows, <a href="66.html">Planned Spill Days</a> and <a href="67.html">Preferred Fish Spill Periods</a>. You can adjust spill operations at dams using these two windows. Spill refers to water that flows over the top of the dam.
+</p><p>
+COMPASS considers three types of spill: Planned Spill, Overgeneration Spill, and Forced Spill. The <a href="373.html">Scenario Mode</a> considers Planned Spill and Forced Spill only. In the <a href="75.html">Monte Carlo Mode</a>, Overgeneration Spill is obtained from the <a href="323.html"><code>flow.archive</code></a> file, and Planned Spill can be obtained from the flow archive file or set with the <strong>Spill Schedule</strong> windows. It is recommended that Planned Spill be set with the <strong>Spill Schedule</strong> windows--<strong>Planned Spill Days</strong> and <strong>Preferred Fish Spill Periods</strong>--when making Monte Carlo runs by selecting "user data" as the source for Planned Spill in the Monte Carlo window.
+</p><ul>
+<li><a href="371.html">Planned Spill</a> is set by agreement with fisheries agencies and can be adjusted by using the <strong>Spill Schedule</strong> windows. Spill is identified as a percentage of the instantaneous flow and is specified for given days and hours of the day.
+<li><strong>Overgeneration Spill</strong> results when the electrical generation demand is less than the dam's generating capacity and the excess water is spilled instead of being passed through the turbines. This type of spill is established from <code>flow.archive</code> files and is defined over periods of either two weeks or one month.
+<br> - Overgeneration Spill is added to the Planned Spill in Fish Spill Hours every day in a flow archive period.
+<br> - If total spill in Fish Spill Hours is then greater than 100% of the river flow over the hours identified, excess Overgeneration Spill is distributed over the rest of the day.
+<br> - If total spill for the entire day is greater than 100% then the excess Overgeneration Spill is ignored.
+
+<li><strong>Forced Spill</strong> results when river flow exceeds the hydraulic capacity of the dam and excess water is spilled.
+</ul>
+
+
+</body>
+</html>

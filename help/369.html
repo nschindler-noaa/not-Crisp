@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Set Transport Parameters</title>
+</head>
+<body>
+<h4>Set Transport Parameters</h4>
+<p>
+Parameters for each transport are set in the <a href="73.html">Transport Tool</a> window. Each element of the <strong>Transport Tool</strong> window is described below. There are several ways to edit each slider in this window.
+</p><ul>
+<li>Type a new value into the text box to the left of the slider (<strong>a</strong>).
+
+<li>Move the pointer to the slider (<strong>b</strong>) and drag the slider to adjust the value.
+
+<li>Click on either side of the slider box (<strong>c</strong>) to adjust the value by increments of 10.
+<br>OR
+
+<li>Click on the end-arrows (<strong>d</strong>) of the slider to adjust the value by an increment of one.
+</ul>
+<p>
+<img src="crisp149.jpg"><br>
+Transport Tool window
+</p>
+<p>
+<b>Transport Tool features and functions</b>
+</p>
+<ul>
+<li><strong>Transport Record Type</strong> (<strong>1</strong>): Defines the state of the transport.
+<br> - No title indicates a transport record is not active in COMPASS.
+<br> - <strong>Existing Transport</strong>: Indicates an active transport record.
+
+<li><strong>Transport Dam</strong> (<strong>2</strong>): Select dam from which transported fish are collected.
+
+<li><strong>Release Reach</strong> (<strong>3</strong>): Select river reach into which fish are released.
+
+<li><strong>Existing Transport</strong> (<strong>4</strong>): List of existing transport sites
+
+<li><strong>Start Transportation</strong> (<strong>5</strong>): Conditions to start transportation. Select from the menu to begin transport:
+<br> - <strong>On day</strong>: Julian day to start transportation, or
+<br> - <strong>If daily count above</strong>: Number of fish that pass the dam in a day. (Unless realistic numbers of fish are modeled in the system, transport by count will not itself be realistically simulated.)
+
+<li><strong>Restart Transportation</strong> (<strong>6</strong>): Conditions to restart transportation. Choices are:
+<br> - <strong>never</strong>: Indicates transportation is never restarted.
+<br> - <strong>once</strong>: Restarts transportation once on a specific Julian day (<strong>On day</strong>) or if passage exceeds a given count on a day (<strong>If daily count above</strong>).
+<br> - <strong>as necessary</strong>: Restarts transportation every time passage is above the specified count (<strong>If daily count above</strong>).
+
+<li><strong>Stop Transportation</strong> (<strong>7</strong>): Conditions to stop transportation. Choices are:
+<br> - <strong>on day</strong>: Julian day to stop transportation, or
+<br> - <strong>if daily count below</strong>: Number of fish that pass the dam in a day for the specified number of sequential days (<strong>for # required days</strong>).
+
+<li><strong>Separation </strong>(<strong>8</strong>): Separation refers to those fish which will be separated and returned to the tailrace instead of being transported. Separators in bypass systems of dams will separate and return smaller fish to the tailrace when flow is above a specified level. Separation is terminated and all fish are collected when passage of a specified stock, the indicator species, exceeds a specified percentage. All species are separated with likelihood defined by separation probability (see <a href="70.html">Separation Success Fractions</a>). Separator efficiency of each species is set for each dam. Criteria for starting and stopping separation:
+<br> - <strong>when flow &gt; (kcfs)</strong>: Identifies flows above which separation starts.
+<br> - <strong>Terminate when</strong>: Identifies indicator species (Chinook 0, Chinook 1, Steelhead) for which its passage will terminate separation.
+<br> - <strong>passage &gt; (%)</strong>: Identifies what percent of the indicator species must pass to terminate separation. If this value is set to 0, then separation will never start and all bypassed fish will be transported. If this value is set to 100, then separation will always occur and fish will be returned to the river as specified in <strong>Separation Success Fractions</strong> window.
+<br><strong>Note.</strong> At McNary Dam separation typically begins with flows of 220 kcfs and at Little Goose and Lower Monumental Dams with flows of 100 kcfs. Separation is stopped if 80 percent of spring chinook (Chinook 1) have passed and all bypassed fish are then transported thereafter.
+
+<li><strong>Transport speed (mi/day)</strong> (<strong>9</strong>): Identifies barge or truck transportation speed in miles per day from collection site to release site.
+
+<li><strong>Separation Success Fractions</strong> (<strong>10</strong>): Opens the <a href="70.html">Separation Success Fractions</a> window which defines percent of each species returned to the river at each dam.
+
+<li><strong>Help</strong>: Opens context-sensitive help information.
+
+<li><a href="330.html">Reset All, Apply All, Reset, Apply, Cancel, OK</a>
+</ul>
+
+
+</body>
+</html>

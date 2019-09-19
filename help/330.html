@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Two Level Editing and Display: Reset All, Apply All, Reset, Apply, Cancel, OK</title>
+</head>
+<body>
+
+<h2>Two Level Editing and Display: Reset All, Apply All, Reset, Apply, Cancel, OK</h2>
+<p>
+Throughout the model, COMPASS uses the concept of two level editing and display. The data being displayed on the screen may be different from the data in the underlying database. A red dot <img src="crisp173.jpg"> in each corner of a window indicates that the data being displayed is different from the data currently stored in the model and that changes have not been applied to the underlying database, yet. For changes to take effect, click <strong>Apply</strong> or <strong>Apply All</strong>. Modifications that have not been applied can be discarded by clicking <strong>Reset</strong> or <strong>Reset All</strong>.
+</p>
+<blockquote><strong>Note.</strong> For example, if you open windows for all three dams for <strong>Flows / Reservoirs</strong> and modify the Outflow at each dam, you can apply the changes in two ways. If you click <strong>Apply</strong> in the Chief Joseph Dam Outflow window, that will only save the changes made to Chief Joseph Dam Outflow. If you click <strong>Apply All</strong> in any of the three dam Outflow windows, that will save changes made to Outflow at all three dams.</blockquote>
+<p>
+All input windows in COMPASS contain all or a combination of the Standard Commands.
+</p><ul>
+<li><strong>Reset All</strong>: Discard all changes and revert back to the last saved changes for the data set.
+
+<li><strong>Apply All</strong>: Saves all changes made to the same data parameter set.
+
+<li><strong>Reset</strong>: Discard only changes made to the currently displayed parameter data in a particular window.
+
+<li><strong>Apply</strong>: Saves only the changes made to the currently displayed parameter data in a particular window.
+
+<li><strong>Cancel</strong>: Restores all values to last saved and closes window.
+
+<li><strong>OK</strong>: Applies all changes and closes window.
+</ul>
+<p>
+<img src="crisp113.jpg"><br>
+Powerhouse Schedule window (default) and before applying changes
+</p>
+<p>
+In general, any number of windows of the same type can be active at the same time - just select the same menu item several times to create several copies of the same type of window. For input windows (dialogs and editable graphs), it is possible to have multiple windows displaying the same data at the same time. If the data is changed in one window, the others will update automatically to reflect the changes.
+</p><p>
+Yellow dots <img src="crisp298.jpg"> will be displayed in the corners of all output graph windows when <strong>any</strong> input data has been changed, but the model has not been re-run to create new outputs. Yellow dots do not imply correlation between the data displayed in the output window and the changes to model input.
+</p><p>
+To demonstrate this, run the program in Scenario Mode, and the open a <strong>Passage</strong> graph for the Estuary and the <strong>VVar</strong> window. After you click <strong>Apply</strong> in the <strong>VVar</strong> window, the passage graph will display yellow dots. VVar has changed, but passage has not been recalculated. Now run the model again. Passage is now up to date with respect to model inputs, so the yellow dots disappear. Please take note that yellow dots would also appear on a <strong>TDG Saturation</strong> output graph, even though <strong>VVar</strong> does not influence total dissolved gas.
+</p><p>
+<img src="yelldot.jpg"><br>
+Yellow Dots in Passage for Estuary window
+</p>
+
+
+</body>
+</html>

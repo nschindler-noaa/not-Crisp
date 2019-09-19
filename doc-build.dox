@@ -1,0 +1,129 @@
+/**
+\page build Build Process 
+The COMPASS source code is used to build both a command line (batch) version (see \ref batch) and a GUI version (see \ref gui). Additionally, the build process on the UNIX platforms (Linux, Solaris) (see \ref build_unix) is different from the build process on Windows (see \ref build_windows). Finally, the use of the Qt library for the GUI version complicates the build process slightly (see \ref build_qt).
+
+\section build_unix UNIX Build Process
+On the UNIX platforms, a set of Makefiles are used. The Makefiles work in GNU make and probably don't work in any other make since they take advantage of a few special features. The GNU Compiler Collection (GCC) is used for its C and C++ compilers along with Qt-specific tools that are provided with Qt. GNU BASH is used to assist in compiling help files (see \ref build_help).
+
+The main Makefile contents are in the "Makefile.common" file. The appropriate Makefile for each platform is in one of the following files (note that these Makefiles are very short and you might want to look at their contents if you run into trouble):
+- Makefile.linux (produces 64-bit executables)
+- Makefile.linux32 (32-bit executables for use in \ref debug_valgrind)
+- Makefile.solaris (for use on gandhi)
+
+The make files support the following targets:
+- compass (COMPASS GUI version)
+- compassb (batch version; the extra_batch.c file is only compiled for this version and not the GUI)
+- clean (delete all build files)
+
+To build executables with debugging information, simply export the environment variable "DEBUG". Here is an example of building a 32-bit Linux GUI version and loading it with Valgrind:
+\code
+make clean	# Remove build files
+DEBUG=1 make -f Makefile.linux32 compass
+valgrind --tool=memcheck ./compass
+\endcode
+
+Note that the 64-bit Linux and Solaris Makefiles assume that you have properly defined the "QTDIR" environment variable (I have it set to "/usr/lib64/qt-3.3" on Linux and "/opt/QT333" on Solaris). The 32-bit Linux Makefile has a default of "/usr/lib/qt-3.3" but if it should be moved this definition should be updated.
+
+If other Linux users complain about library linking problems then use the "ldd" command to determine which libraries the executable is attempting to link with. One problem I experienced is that if one use "g++" to link the batch version, different libraries (including some that appear to be incompatibly-named between CBR and NOAA) are linked in. The solution to this was to use "gcc" to link the batch versions (which were all C code anyway) and only use "g++" for C++ code (i.e. the GUI).
+
+If you are curious about how the help files are built (or what the "bin2c" program is for) look at \ref build_help.
+
+\section build_windows Windows Build Process
+The Windows build process is a little more involved than the UNIX one simply because the tools are not as command line and automation-friendly under Windows. The code is compiled using Visual C++ with the Qt library (see \ref build_qt) for the GUI and then installers are created with Inno Setup (see \ref releasing). GNU BASH is used (even on Windows, using Cygwin) to assist in compiling the help files (see \ref build_help).
+
+The build files for Windows can be considered to be the following:
+- compass_cvs.dsw (workspace file--this is what should be opened in Visual C++)
+- notcrisp.dsp (batch version project file)
+- notcrisp_gui.dsp (GUI version project file)
+- bin2c_src/bin2c_src.dsp (bin2c project file, see \ref build_help)
+
+On Windows, the "QTDIR" environment variable is used (you can access environment variables using Start -> Control Panel -> System -> Advanced -> Environment Variables), for example I have QTDIR set to "c:\Qt\3.3.2". With that definition in place and the directories correctly set (it may be necessary to look in Project -> Settings... in Visual C++ and update directory references--also be sure to select "All configurations" when editing, rather than just release or debug mode).
+
+With the settings appropriately configured, it should be possible to build the selected version (the "active configuration") from the build menu. There are unfortunately differences between debug and release mode that may cause bugs that only occur in release mode. I think I have taken care of most of these, but the likely culprits are that standard output and standard input are not opened in release mode on Windows and some attempts to free NULLs are curiously ignored in debug mode on Windows.
+
+See the \ref build_add_files and \ref build_qt sections for more information on how to keep things updated for building on the Windows platform. For information on creating installers, see \ref releasing.
+
+\section build_add_files Adding Files
+Adding files to the build process is unfortunately not as straight-forward as I would like because the two main platforms' build processes differ a lot and they are both separate from source control.
+
+The naming convention for files is that C files should use all lowercase letters and end in ".c" for source and ".h" for headers. All C++ classes and files based on Qt objects should start with a lowercase "q" and then use concatenated capitalized words (e.g. "qIOTool") with ".cpp" or ".h" for extensions. There are some exceptions to these naming conventions (notably "Qcrisp"), but these mistakes were made before I got here so now I just deal with them. Qt UI files/classes do not (and should not) start with a lowercase "q".
+
+When adding a C source file (not a header) for the batch version, be sure that it gets added to each of the following:
+- Makefile.common
+ - Do this by adding an entry in the COBJS variable ending in ".o" instead of ".c" (this tells make that it is a C source file). Note that the backslash at the end of a line means that the end of line character should be ignored (like concatenating the lines onto a single line).
+- notcrisp.dsp
+ - This is accomplished by right-clicking on the "Source Files" folder in the project and selecting "Add files to folder".
+- notcrisp_gui.dsp
+ - This is accomplished by right-clicking on the "Source Files" folder in the project and selecting "Add files to folder".
+- CVS
+ - Use the "cvs add" command to add the file to source control.
+
+When adding a C header file for the batch version, be sure it gets added to these:
+- notcrisp.dsp
+- notcrisp_gui.dsp
+- CVS
+
+Help files can be added by putting ".html", ".jpg", or ".toc" files into the "help/" directory and adding them to CVS.
+
+For a discussion of adding C++ files (that probably contain Qt code), see \ref build_qt.
+
+\section build_qt Qt and the Build Process
+The Qt toolkit actually defines a language that is a superset of C++ and as such, many C++ files that use Qt will not compile using just an ordinary C++ compiler. The Qt documents the syntax (signals, slots, and the metaobject system), but the simple version is this: any file that defines a class using  Q_OBJECT or signals and slots must be run through the metaobject compiler ("moc") to generate a C++ implementation file (given a name like "moc_File.cpp") which should then be compiled.
+
+Additionally, the Qt user interface designer Qt Designer is used to graphically create some of the dialogs in COMPASS. Unfortunately, Qt Designer is rather limited in many of its abilities so it is not often used, but where it is used, it allows the dialog to be created graphically and then the code is generated automatically using the Qt user interface compiler "uic". This creates a header (which must then be run through the metaobject compiler) and an implementation file.
+
+The build process has support for these oddities, but they must be kept in mind when adding files.
+
+To add a C++ source file (".cpp"), update the following:
+- Makefile.common
+ - Add an entry to the CXXOBJS variable with the extension changed to ".o", as in "qIOTool.o"
+- notcrisp_gui.dsp
+ - Right click on the "Source files" folder and select "Add files to folder"
+- CVS
+
+To add a C++ header file that doesn't use the metaobject system, update the following:
+- notcrisp_gui.dsp
+- CVS
+
+To add a C++ header file that uses the metaobject system, update the following:
+- Makefile.common
+ - Add an entry to the MOCH variable with the exact filename, as in "qIOTool.h".
+- notcrisp_gui.dsp
+ - Right click on the "MOC Headers" and select "Add files to folder" and add the ".h" file.
+ - Then you must tell Visual C++ to build the file differently by right-clicking on the file and selecting "Settings...".
+ - The description, commands, and output fields should be copy and pasted from an already-existing file in the MOC Headers folder (the correct description should says "MOCing" in it and the commands should reference "$(QTDIR)/bin/moc").
+ - Finally, attempt to compile and an error should occur. However, in the process, the MOC implementation file (e.g. moc_qFileManager.cpp) should have been generated, so add that new file to the "MOC Files" folder.
+- CVS
+ - Only add the header file to source control and not the MOC implementation file since it is generated automatically.
+
+Adding a UI file proceeds in a similar manner:
+- Makefile.common
+ - Add an entry to the UI variable with the exact filename
+- notcrisp_gui.dsp
+ - Right click on the "UI Files" folder and select "Add files to folder" and add the ".ui" file.
+ - Copy and paste the settings from an already-existing file in the "UI Files" folder (not the "MOC Headers" folder!) in a manner similar to the one described for MOC headers.
+ - Attempt a compile and get an error.
+ - Add the generated implementation file (e.g. "AlternComparisonBase.cpp") to the "UI Implementations" folder.
+ - Now add the generated header file (e.g. "AlternComparisonBase.h") to the "MOC Headers" folder and copy the settings as described above.
+ - Finally, add the generated MOC implementation (e.g. "moc_AlternComparisonBase.cpp) to the "MOC Files" folder.
+- CVS
+ - Only add the ".ui" file and not any of the generated files to source control.
+*/
+
+/**
+\page releasing Making a New Release
+Releasing a new version of COMPASS takes some manual work, but it is pretty straight forward.
+
+-# Once a version is tested and ready to be released, make sure all the changes (including any new files) have been committed to CVS on the main development branch.
+-# Increment the minor (or perhaps major if COMPASS is finally at version 1.0) version number and string in version.h. 
+-# Tag the release in CVS using a command like "cvs tag COMPASS_0_33".
+-# On Linux, update the checked out version (if necessary) and run "make clean" and then "make compassb" (for the batch version)
+-# On gandhi, update the checked out version (if necessary) and run "make clean" and then "make compassb" (for the batch version)
+-# On Windows, after updating (if necessary), run Build -> Batch Build -> Rebuild All (check that all boxes are checked)
+-# Once compilation is done on Windows, run Inno Setup and open the "setup.iss" file (check to make sure the directories in this file are correct!) and click compile
+-# Finally take the compiled installer and send it out (also send out any other versions or notifications of new versions for Linux and on gandhi)
+-# Or upload the file on gandhi to /var/httpd/www/htdocs/downloads/compass/ and email the link which will be at "http://www.cbr.washington.edu/downloads/compass/<name of file>"
+
+Note that when sending out a new version, UW email filters often strip attachments ending in ".exe" so I have been changing it to ".dat" and instructing the recipients to save it as ".exe" themselves. This appears to work, but I'm not sure this extra step is still necessary.
+*/
+

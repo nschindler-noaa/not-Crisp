@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Run Scenario Mode in Batch Mode</title>
+</head>
+<body>
+
+<h4>Run Scenario Mode in Batch Mode</h4>
+<p>
+COMPASS can be run in batch scenario mode from a shell which would otherwise not be able to run the model using the graphical user interface. Please see the <a href="317.html">Running in Batch Mode</a> section for special instructions on running COMPASS in batch mode. 
+</p><ol>
+
+<li>All parameter data and model settings should be set and saved to files on disk before running COMPASS in batch scenario mode. See the <a href="374.html">Run Scenario Mode Interactively</a> section for details on setting up a Scenario Mode run.
+
+<li>You can start batch scenario mode runs from the command prompt by typing any of the following example commands.
+<br> - Unix using <code>crisp1</code>
+<br><code>crisp1 -bs</code>
+<br> - Unix using the batch mode only program, <code>crisp1bat</code>
+<br><code>crisp1bat -s -c batch.cnf</code>
+<br> - Windows 95/NT using <code>crisp1</code> (redirects both output streams to the same file)
+<br><code>crisp1 -bs -f batch.dat 1&gt;output.txt 2&gt;&amp;1</code>
+<br> - Windows 95/NT using <code>crisp1b</code> (redirects output streams to shell)
+<br><code>crisp1b -s -r columbia.desc</code>
+
+<li>View <a href="376.html">Scenario Mode Results (summary.dat)</a>.
+</ol>
+<p>
+See the <a href="316.html">Starting from the Command Prompt</a> section for further information on command prompt options for COMPASS.
+</p>
+<blockquote><strong>Warning.</strong> Do not quit while the model is running.</blockquote>
+
+
+</body>
+</html>

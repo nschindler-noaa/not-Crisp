@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Gas Mortality Equation</title>
+</head>
+<body>
+<h3>Gas Mortality Equation</h3>
+<p>
+Selecting <a href="363.html"><strong>Behavior</strong></a><strong><img src="subm.jpg">Gas Mortality Equation</strong> opens companion windows, the <strong>Gas Mortality </strong>window and the <a href="27.html">Population Density vs. Depth</a> window. These two windows are interrelated, and together define the mortality due to gas relationship. The average gas mortality for a reach is calculated by averaging over all gas levels in a reach and also using a fish depth distribution. There is roughly a three percent per foot compensation for every foot below the surface. The average is computed by multiplying the gas mortality equation by the fish depth distribution and integrating over the length and depth of the reach. The percent mortality per day for the reach is a flow-weighted average of the mortality in each flow.
+</p>
+<h4>Gas Mortality</h4>
+<p>
+The <strong>Gas Mortality </strong>window displays the average mortality due to gas for each species in a reach specified by a set of adjustable parameters. Gas Mortality is displayed in %mortality/day versus the percent of dissolved gas saturation above 100 in the right-bank flow. The <strong>Gas Mortality Equation</strong> uses the following parameters:
+</p><ul>
+<li><strong>mlow</strong>: Mortality rate for gas levels below the gas level specified by <strong>crit</strong>.
+
+<li><strong>mhi</strong>: Mortality rate for gas levels above the gas level specified by <strong>crit</strong>.
+
+<li><strong>crit</strong>: Critical dissolved gas saturation level (in percent above 100) which determines the switch from a low to high mortality rate. The critical gas saturation level at the surface of the water is assumed to be the same throughout the water column in this particular model.
+</ul>
+<p>
+The remaining parameters in this window are for display purposes only in order to describe and display attributes of a reach that affect its average gas mortality rate:
+</p>
+<ul>
+<li><strong>TDG2</strong>: Gas level in the left-bank flow in percent above 100.
+
+<li><strong>SplFr</strong>: Percentage of flow in the right bank flow.
+
+<li><strong>theta</strong>: Value for the <a href="85.html">Reach Gas Theta</a> parameter, which determines the amount of mixing between flows in the reach.
+
+<li><strong>Reach length</strong>: Length of the reach in miles.
+
+<li><strong>River vel</strong>: River velocity in the reach in miles/day.
+</ul>
+<p>
+This is an <a href="343.html">Equation Input</a> window.
+</p>
+<ul>
+<li><a href="344.html">Equation Input Features</a>
+
+<li><a href="332.html">Edit Single Slider Value</a>
+</ul>
+<p>
+<img src="gasmort.jpg"><br>
+Gas Mortality Window
+</p>
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Reach Parameters</title>
+</head>
+<body>
+
+<h3>Reach Parameters</h3>
+<p>
+The following is an example of a reach designation from a River Description File (<code>.desc</code>).
+</p><pre>	reach The Dalles Pool
+width 3624.5
+upper_depth	 47.05
+lower_depth	70.0
+slope		87.92
+lower_elev 55
+latlon 45 36 50 N 121 7 57 W
+latlon 45 37 38 N 121 6 48 W
+latlon 45 38 25 N 121 5 37 W
+latlon 45 38 58 N 121 4 46 W
+latlon 45 39 12 N 121 3 14 W
+latlon 45 39 8 N 121 1 22 W
+latlon 45 39 11 N 121 0 9 W
+latlon 45 38 57 N 120 58 52 W
+latlon 45 39 24 N 120 57 8 W
+latlon 45 39 18 N 120 56 18 W
+latlon 45 38 58 N 120 55 24 W
+latlon 45 38 55 N 120 54 21 W
+end (The Dalles)
+</pre>
+<h4>Keywords and descriptions for reaches</h4>
+<ul>
+<li><strong>reach</strong>: Designates the beginning of a reach and its name.
+
+<li><strong>width</strong>: Width of the reach in feet.
+
+<li><strong>upper_depth</strong>: Depth in feet of the upstream end of the reach.
+
+<li><strong>lower_depth</strong>: Depth in feet of the downstream end of the reach.
+
+<li><strong>slope</strong>: The inward slope of the sides of the reach, in degrees.
+
+<li><strong>lower_elev</strong>: Elevation above sea level of the river bottom at the lower end of each reach.
+<br><b>Note.</b> When elevation changes at dams are read from a flow archive
+file in Monte Carlo mode, they are propagated upstream until a reach is found
+whose "lower_elev" is higher than the full-pool elevation of the dam in
+question. That reach is not propagated, nor are any above it.
+
+<li><strong>latlon</strong>: Provides latitude and longitude for points in the course of the reach, e.g. latlon 46 09 00 N 123 16 00 W marks 46 degrees 9 minutes north latitude, 123 degrees 16 minutes west longitude.
+
+<li><strong>end</strong> (reach): Marks the end of a particular reach.
+
+<li>depth: Not recommended. Average depth in the reach, in feet. When possible, use the preferred parameters upper_depth and lower_depth.
+</ul>
+
+
+</body>
+</html>

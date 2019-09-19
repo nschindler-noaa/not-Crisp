@@ -1,0 +1,135 @@
+{
+   Qt Thing
+   Memcheck:Cond
+   fun:_ZN9QTextEdit10drawCursorEb
+   fun:_ZN9QTextEdit17setCursorPositionEii
+   fun:_ZN10QLogWindow6addMsgEPci
+   fun:_ZN10QLogWindow11customEventEP12QCustomEvent
+   fun:_ZN7QObject5eventEP6QEvent
+   fun:_ZN7QWidget5eventEP6QEvent
+   fun:_ZN11QMainWindow5eventEP6QEvent
+   fun:_ZN12QApplication14internalNotifyEP7QObjectP6QEvent
+   fun:_ZN12QApplication6notifyEP7QObjectP6QEvent
+   fun:_ZN12QApplication16sendPostedEventsEP7QObjecti
+   fun:_ZN12QApplication16sendPostedEventsEv
+   fun:_ZN10QEventLoop13processEventsEj
+}
+
+{
+   Another Qt thing
+   Memcheck:Cond
+   fun:_ZN9QTextEdit10drawCursorEb
+   fun:_ZN9QTextEdit6insertERK7QStringj
+   fun:_ZN10QLogWindow6addMsgEPci
+   fun:_ZN10QLogWindow11customEventEP12QCustomEvent
+   fun:_ZN7QObject5eventEP6QEvent
+   fun:_ZN7QWidget5eventEP6QEvent
+   fun:_ZN11QMainWindow5eventEP6QEvent
+   fun:_ZN12QApplication14internalNotifyEP7QObjectP6QEvent
+   fun:_ZN12QApplication6notifyEP7QObjectP6QEvent
+   fun:_ZN12QApplication16sendPostedEventsEP7QObjecti
+   fun:_ZN12QApplication16sendPostedEventsEv
+   fun:_ZN10QEventLoop13processEventsEj
+}
+
+
+{
+   Qt Event loop thing
+   Memcheck:Cond
+   fun:_ZN9QTextEdit10drawCursorEb
+   fun:_ZN9QTextEdit17setCursorPositionEii
+   fun:_ZN10QLogWindow6addMsgEPci
+   fun:_ZN10QLogWindow11customEventEP12QCustomEvent
+   fun:_ZN7QObject5eventEP6QEvent
+   fun:_ZN7QWidget5eventEP6QEvent
+   fun:_ZN11QMainWindow5eventEP6QEvent
+   fun:_ZN12QApplication14internalNotifyEP7QObjectP6QEvent
+   fun:_ZN12QApplication6notifyEP7QObjectP6QEvent
+   fun:_ZN12QApplication16sendPostedEventsEP7QObjecti
+   fun:_ZN12QApplication16sendPostedEventsEv
+   fun:_ZN10QEventLoop13processEventsEj
+}
+
+{
+   Another Qt event loop thing
+   Memcheck:Cond
+   fun:_ZN9QTextEdit10drawCursorEb
+   fun:_ZN9QTextEdit6insertERK7QStringj
+   fun:_ZN10QLogWindow6addMsgEPci
+   fun:_ZN10QLogWindow11customEventEP12QCustomEvent
+   fun:_ZN7QObject5eventEP6QEvent
+   fun:_ZN7QWidget5eventEP6QEvent
+   fun:_ZN11QMainWindow5eventEP6QEvent
+   fun:_ZN12QApplication14internalNotifyEP7QObjectP6QEvent
+   fun:_ZN12QApplication6notifyEP7QObjectP6QEvent
+   fun:_ZN12QApplication16sendPostedEventsEP7QObjecti
+   fun:_ZN12QApplication16sendPostedEventsEv
+   fun:_ZN10QEventLoop13processEventsEj
+}
+{
+   The last Qt event loop thing
+   Memcheck:Cond
+   fun:_ZN9QTextEdit10drawCursorEb
+   fun:_ZN9QTextEdit18removeSelectedTextEi
+   fun:_ZN9QTextEdit15removeParagraphEi
+   fun:_ZN10QLogWindow6addMsgEPci
+   fun:_ZN10QLogWindow11customEventEP12QCustomEvent
+   fun:_ZN7QObject5eventEP6QEvent
+   fun:_ZN7QWidget5eventEP6QEvent
+   fun:_ZN11QMainWindow5eventEP6QEvent
+   fun:_ZN12QApplication14internalNotifyEP7QObjectP6QEvent
+   fun:_ZN12QApplication6notifyEP7QObjectP6QEvent
+   fun:_ZN12QApplication16sendPostedEventsEP7QObjecti
+   fun:_ZN12QApplication16sendPostedEventsEv
+}
+{
+   More Qt event loop...
+   Memcheck:Cond
+   fun:_ZN9QTextEdit10drawCursorEb
+   fun:_ZN9QTextEdit17setCursorPositionEii
+   fun:_ZN10QLogWindow6addMsgEPci
+   fun:_ZN10QLogWindow11customEventEP12QCustomEvent
+   fun:_ZN7QObject5eventEP6QEvent
+   fun:_ZN7QWidget5eventEP6QEvent
+   fun:_ZN11QMainWindow5eventEP6QEvent
+   fun:_ZN12QApplication14internalNotifyEP7QObjectP6QEvent
+   fun:_ZN12QApplication6notifyEP7QObjectP6QEvent
+   fun:_ZN12QApplication16sendPostedEventsEP7QObjecti
+   fun:_ZN12QApplication16sendPostedEventsEv
+   fun:_ZN10QEventLoop13processEventsEj
+}
+{
+   QApplication thing
+   Memcheck:Param
+   write(buf)
+   obj:/lib/tls/libc-2.3.4.so
+   fun:_IceTransWrite
+   fun:_IceWrite
+   fun:IceFlush
+   fun:SmcSetProperties
+   obj:/usr/lib/qt-3.3/lib/libqt-mt.so.3.3.3
+   obj:/usr/lib/qt-3.3/lib/libqt-mt.so.3.3.3
+   obj:/usr/lib/qt-3.3/lib/libqt-mt.so.3.3.3
+   obj:/usr/lib/qt-3.3/lib/libqt-mt.so.3.3.3
+   fun:_SmcProcessMessage
+   fun:IceProcessMessages
+   fun:_ZN17QSmSocketReceiver15socketActivatedEi
+}
+{
+   Some thread thing
+   Memcheck:Cond
+   fun:run_monte_carlo
+   fun:_ZN17qMonteCarloThread3runEv
+   fun:_ZN15QThreadInstance5startEPv
+   fun:start_thread
+   fun:clone
+}
+{
+   Another thread thing
+   Memcheck:Cond
+   fun:run_monte_carlo
+   fun:_ZN17qMonteCarloThread3runEv
+   fun:_ZN15QThreadInstance5startEPv
+   fun:start_thread
+   fun:clone
+}

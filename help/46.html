@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>River Parameters</title>
+</head>
+<body>
+<h3>River Parameters</h3>
+<p>
+Selecting <a href="362.html"><strong>Reservoir</strong></a><strong><img src="subm.jpg">River Parameters</strong> opens a window for setting several parameters that are applied throughout the river system and do not depend on species or day. The model is fairly sensitive to changes in these parameters; caution is recommended when making changes to these parameters.
+</p><ul>
+<li><strong>gas dissp exp</strong>: An exponent controlling degassing of total dissolved gas from the water (*10^-4cm^2/sec). This depends on river velocity and depth.
+
+<li><strong>Ufree</strong>: River velocity in free flowing portions of river (in kfs*10^-1).
+
+<li><strong>fork threshold</strong>: Defines how big a river fork must be before elevation changes propagate up it.
+<br><strong>Note.</strong> In <a href="75.html">Monte Carlo Mode</a>, it is possible to read the river elevation (at selected dams and reaches) from a flow archive file. If this is done, the elevation changes are then propagated upriver under certain rules. One of the rules concerns how to handle a fork. As COMPASS propagates an elevation change upriver, it will come to a place where the river forks. COMPASS always propagates up the larger of the two forks; however, it may or may not propagate up the smaller as well, depending on the fork threshold and the ratio of the flow max value for the smaller fork to the flow max value for the reach below the fork. For example, suppose the flow max for fork A is 80, fork B is 20, and flow max for the river below the fork is 100. If the fork threshold is .19999999 or less, the model will propagate elevation changes up both forks. If the fork threshold is .2 or more, COMPASS will only propagate up fork A (the main branch).
+</ul>
+<p>
+This is a <a href="331.html">Slider Input</a> window.
+</p>
+<ul>
+<li><a href="332.html">Edit Single Slider Value</a>
+
+<li><a href="333.html">Edit Multiple Slider Values Simultaneously</a>
+
+<li><a href="334.html">Edit All Slider Values Simultaneously</a>
+
+<li><a href="335.html">Slider Input Additional Features</a>
+</ul>
+<p>
+<img src="rparm1.jpg"><br>
+River parameters window
+</p>
+
+
+</body>
+</html>

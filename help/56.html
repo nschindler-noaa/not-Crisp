@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Migration Rate Variance: Variance in Velocity</title>
+</head>
+<body>
+<h3>Migration Rate Variance: Variance in Velocity</h3>
+<p>
+Selecting <a href="363.html"><strong>Behavior</strong></a><strong><img src="subm.jpg">Migration Rate Variance </strong>opens a window for setting the variability of the velocity of each stock. This window contains three sliders for each stock, denoting a mean, low, and high value. These values produce the envelope around the velocity for each release of each stock: a larger envelope around the mean value means that stock velocity is highly variable from model run to model run. Migration rate variation differs from <a href="55.html">VVar</a> in that it applies to the entire stock and produces variation in velocity on a game by game basis. <strong>VVAR</strong>, conversely, operates to produce "spread" in a release over the entire course of migration.
+</p>
+<blockquote><strong>Warning.</strong> The impact of large variance in velocity can be substantial; it is not recommended to alter the calibrated values of migration rate variance.</blockquote>
+<p>
+Migration rate variance is defined by a piecewise linear distribution within the range identified by low and high values. When the low and high values are set to zero or when the low and high are set to the mean value, COMPASS uses the mean value at all times (the term becomes deterministic). When the low and high values are not equal, COMPASS uses the mean, low and high values to randomly generate a value when executed with <strong>variance suppression</strong> turned off in the <a href="76.html">Runtime Settings</a> window under the Run Menu. With <strong>variance suppression</strong> turned on, COMPASS uses the mean value and ignores the high and low values. In either case, the mean value must lie within the central two quartiles of the distribution (i.e., the middle 50%). For example, if the low value is set to 0 and the high value is set to 100 then the mean value must be set between 25 and 75. If the mean value does not conform to this restriction, COMPASS will abort the run and generate an error message in the <a href="84.html">Message Log</a> (if open) specifying which species or stocks have bad values.
+</p><p>
+This is a <a href="331.html">Slider Input</a> window. Click on the letter tabs to page through the species and stock list.
+</p><ul>
+<li><a href="332.html">Edit Single Slider Value</a>
+
+<li><a href="333.html">Edit Multiple Slider Values Simultaneously</a>
+
+<li><a href="334.html">Edit All Slider Values Simultaneously</a>
+
+<li><a href="335.html">Slider Input Additional Features</a>
+</ul>
+<p>
+<img src="mrv.jpg"><br>
+Migration Rate Variance window
+</p>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Required Files</title>
+</head>
+<body>
+
+<h2>Required Files</h2>
+<p>
+There are four files required to run COMPASS in both Scenario and Monte Carlo modes:
+</p><ul>
+<li><a href="319.html"><code>columbia.desc</code></a>: defines the river segments, locations of dams, and release sites
+
+<li><code>crisp1.exe</code>: COMPASS executable code
+
+<li><a href="320.html"><code>base.dat</code></a>: a database file that can be read into COMPASS
+
+<li><a href="323.html"><code>flow.archive</code></a>: A file of flows, spills and reservoir elevations (elevations are given in HYSSR files) initially generated from a hydroregulation model such as SAM, HYSSR or HYDROSIM. Outputs of these models are converted to COMPASS compatible flow files using a preprocessor.
+</ul>
+<p>
+In the simplest file arrangement, all files are placed in the same folder (or directory). For example, the configuration below shows these files contained within the folder named <code>CRiSP Passage</code>. By default, output files are written to the directory from which COMPASS was executed (the COMPASS "home directory"). On Windows 95/NT operating systems, this is the source directory for <code>crisp1.exe</code>. When saving files to the local system, you can override the default directory to specify any output directory. On the Unix system, the files can be written out to any directory for which the you have write permissions. For more information about these files and other input and output files, see the <a href="318.html">COMPASS Files</a> section.
+</p><p>
+<img src="filemgr.jpg"><br>
+Windows 95/NT installation of COMPASS
+</p>
+
+
+</body>
+</html>

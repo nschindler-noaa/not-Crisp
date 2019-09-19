@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Set Monte Carlo Parameters</title>
+</head>
+<body>
+
+<h4>Set Monte Carlo Parameters</h4>
+<p>
+Parameters for each alternative are set in the <a href="75.html">Monte Carlo</a> window. The Monte Carlo window is divided into three panels: Alternatives, Alternatives being edited and Run control. Each panel is described separately.
+</p><p>
+<img src="cris174a.jpg">
+<br>
+Monte Carlo window
+</p>
+<p>
+<b>Alternatives</b>
+</p><p>
+In the <strong>Alternatives </strong>panel (upper portion of the window), you can select alternatives to run, select an alternative to edit, <a href="378.html">Create New Alternatives</a>, and <a href="379.html">Delete Existing Alternatives</a>. It has the following controls:
+</p><ul>
+<li><strong>Alternatives to run</strong> (<strong>1</strong>): Displays a list of existing alternatives you can edit and run. Selected alternatives in this list will be computed when you click <strong>Run</strong>.
+
+<li><strong>Current directory</strong> (<strong>2</strong>): Identifies the working directory where files are located and where output files will be written, initially this is the CRiSP home directory.
+<br><img src="go.jpg"> changes the current directory to a directory you specified by typing in the text box.
+<br><img src="browse.jpg"> browses your local system to select the working directory. <strong>Note. </strong>Unix users, this function does not work properly. Use the text box and <img src="go.jpg"> to change working directory.
+
+<li><strong>New</strong> (<strong>3</strong>): Opens a dialog box in which you can type the name of a new alternative and adds the new alternative name to the <strong>Alternatives to run</strong> list and the <strong>Alternative being edited</strong> list (see <a href="378.html">Create New Alternatives</a>).
+
+<li><strong>Delete</strong> (<strong>4</strong>): Removes the selected alternative in the <strong>Alternative being edited </strong>list from disk (see <a href="379.html">Delete Existing Alternatives</a>).
+
+<li><strong>Rename</strong> (<strong>5</strong>): Opens a dialog box in which you can type the new name for the selected alternative in <strong>Alternative being edited </strong>list.
+
+<li><strong>Alternative being edited</strong> (<strong>6</strong>): Displays a list of existing alternatives you can edit. The selected alternative is loaded into the <strong>Alternative being edited</strong> panel and is ready to be edited.
+</ul>
+<p>
+<b>Alternative being edited</b>
+</p><p>
+The <strong>Alternative being edited</strong> control panel displays information based on the alternative selected in the <strong>Alternative being edited</strong> list (<strong>6</strong>) in the <strong>Alternatives</strong> panel, and sets flow and other model information. It contains the following controls:
+</p><ol>
+
+<li><strong>Flow from</strong> (<strong>7</strong>): Specify the source of flow from an <strong>archive</strong> file or <strong>user data.</strong>
+<p>A. If you select <strong>archive</strong> as source of flow, follow these steps:
+<br> - <strong>flow archive</strong>: Identify the <a href="323.html"><code>flow.archive</code></a> file by typing the name of the file in the text box and click <strong>Use</strong>, or by clicking <img src="browse.jpg"> to browse your local system to select the appropriate file. This file must be in a format that COMPASS can read. The COMPASS distribution includes single year flow files (flow.data directory) for 1961 through 1994. Flow archive files typically contain period averaged flows and spills at dams as computed by a hydroregulation model such as HYSSR or HYDROSIM for a number of water years, or games, each identified by a year (e.g. 1938).
+<br> - - Typically, the archive will contain specifications for spill amounts at each dam. This information, however, is also specified in the yearly input files. To avoid confusion, COMPASS requires that you decide which spill information to use: the data from the archive or the data from the <code>.dat</code> file. In the same manner, you will also need to specify the source of the elevation information.
+<br> - <strong>Planned spill from</strong> (<strong>8</strong>): Select source of planned spill information from period averaged data in the flow archive file (<strong>archive</strong>) or from hourly spill in yearly input (<strong>11</strong>) file (<strong>user data</strong>).
+<br> - <strong>Elevation from</strong> (<strong>9</strong>): Select source of reservoir elevation information from period averaged elevation in a flow archive file (<strong>archive</strong>) or from daily elevation in yearly input (<strong>11</strong>) file (<strong>user data</strong>).
+<br> - <strong>Customize games</strong> (<strong>10</strong>): Customize games with this control to run multiple games of different water years. After you select an archive, this window displays a list of all the water years in the archive, e.g. 1929:1. Type the preferred number of games for each water year (zero is acceptable). Select a water year to edit the number of times to run each year in the text box. Click <img src="larrow.jpg"> to update the changes to the number of games. Click <img src="lall.jpg"> to update all water years for the number of games typed into the <strong># games</strong> text box. Click <strong>Apply All</strong> / <strong>Apply</strong> to save changes made to the alternative.
+</p>
+<p>B. If you select <strong>user data</strong> as source of flow, follow these steps:
+<br> - <strong>Planned spill </strong>and <strong>Elevation</strong> data are automatically read from a <a href="320.html">Yearly Input Data File</a>. Use <a href="370.html">Spill Schedule</a> and <a href="32.html">Elevation</a> windows, respectively, to change the values and make sure to save your changes to the yearly input data files that will be used. The changes must be saved to disk.
+<br> - <strong># games</strong> (<strong>10</strong>): Set the number of games to run for each yearly input data file. Apply the changes by clicking <strong>Apply</strong>. You must first turn off <a href="386.html"><strong>variance suppression</strong></a> in <a href="76.html">Runtime Settings</a> (Run menu) and save the settings to the yearly input data file being used.
+</p>
+
+<li><strong>yearly input files</strong> (<strong>11</strong>): Specify a <a href="320.html">Yearly Input Data File</a> to be used for each power year in the alternative. You can specify any number of years for the alternative. Yearly input data files contain all the parameters that describe fish behavior, reservoir properties, spill schedules, elevation and loss information, dam parameters, releases, and river information. You can use a <a href="322.html">Control File</a> to "mix and match" pieces of information from various files. Once you have put together the pieces of interest, it is recommended that you write this information to a separate <code>.dat</code> file for later use.
+<br> - <strong>Use # files</strong> (<strong>12</strong>): Specify the number of years to be used in the alternative by typing the number in the text box and clicking <strong>Use</strong>. The <strong>yearly input files</strong> list will update to contain the specified number of entries. If you want to specify only one year, you do not need to enter a value in this box.
+<br> - <strong>filename</strong> (<strong>13</strong>): Select a line in the <strong>yearly input files</strong> list and identify the yearly input file by typing the name of the file in the text box or by clicking <img src="browse.jpg"> to browse the local file system to select a file. Click <img src="larrow.jpg"> to update the yearly input files list with your selection. Click <img src="lall.jpg"> to update all yearly input file entries to use the file specified in the text box even if other selections have already been applied. Click <strong>Apply All</strong> / <strong>Apply</strong> to save changes made to the alternative.
+</ol>
+<p>
+<b>Run control</b>
+</p><p>
+The <strong>Run control</strong> panel displays information about the alternatives and the status of a Monte Carlo run. It has the following controls:
+</p>
+<ul>
+<li><strong>Alt Games</strong> (<strong>14</strong>): Identifies the number of model runs to be completed for each year input data file of the alternative selected in the <strong>Alternative being edited</strong> list. After Run execution has begun, the display will update the information and status of completion of the alternative being run.
+<br><strong>Note.</strong> This is not the total number of games to be run when Monte Carlo is started.
+
+<li><strong>Alt Years</strong> (<strong>15</strong>): Identifies the number of years to be run of the alternative selected in the <strong>Alternative being edited</strong> list. After Run execution has begun, the display will update the information and status of completion of the alternative being run.
+<br><strong>Note.</strong> This is not the total number of years to be run when Monte Carlo is started.
+
+<li><strong>Alternatives</strong> (<strong>16</strong>): Identifies the total number of alternatives to be run determined by the alternatives highlighted in the <strong>Alternatives to run</strong> list.
+
+<li><strong>Lock current output settings</strong> check box (<strong>17</strong>): If selected (on), output settings specified in the <a href="63.html">Output Settings</a> windows will override any output settings specified in the yearly input data files for each Monte Carlo alternative run. <strong>Lock current output settings</strong> is paired with <a href="385.html">Lock Output Settings</a> (Run menu). You can turn the option on or off in by selecting <a href="372.html"><strong>Run</strong></a><strong><img src="subm.jpg"></strong><a href="385.html"><strong>Lock Output Settings</strong></a> or selecting <strong>Lock current output settings</strong> (i.e. making a selection in either place automatically updates both).
+
+<li><strong>Write supplemental data</strong> check box (<strong>18</strong>): If selected (on), COMPASS writes Messages from Log Window to the <code>summary.altern#</code> file on disk (default setting is off).
+
+<li><strong>Run</strong> (<strong>19</strong>): Starts the Monte Carlo Mode run using the alternatives highlighted in the <strong>Alternatives to run</strong> list. See the <a href="382.html">Run Monte Carlo Interactively</a>, <a href="383.html">Run Monte Carlo in Batch Mode</a> and <a href="381.html">Set Monte Carlo Output and Runtime Settings</a> sections for important information about running COMPASS in Monte Carlo Mode.
+
+<li><strong>Cancel Run</strong> (<strong>20</strong>): Stops the Monte Carlo run currently in progress. It may take some time for the model to stop a Monte Carlo run process.
+</ul>
+<p>
+The Monte Carlo window also includes the following:
+</p>
+<ul>
+<li><strong>Help</strong>: opens context-sensitive help information.
+
+<li><a href="330.html"><strong>Reset All, Apply All, Reset, Apply, Cancel, OK</strong></a>.
+</ul>
+<p>
+See the <a href="75.html">Monte Carlo</a> section for the list of related sections.
+</p>
+
+</body>
+</html>

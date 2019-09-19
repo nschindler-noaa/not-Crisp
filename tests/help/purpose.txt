@@ -1,0 +1,1 @@
+This tests to make sure that a usage message is printed out

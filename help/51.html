@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>TDG Saturation Equations: Total Dissolved Gas Supersaturation</title>
+</head>
+<body>
+<h3>TDG Saturation Equations: Total Dissolved Gas Supersaturation</h3>
+<p>
+Selecting <a href="366.html"><strong>Dam</strong></a><strong><img src="subm.jpg">TDG Saturation Equations</strong> opens three gas production equation windows--<strong>Day</strong>, <strong>Night</strong> and <strong>Backup</strong>--for defining the production of total dissolved gas supersaturation due to spilling at dams. The relationship between spill in kcfs and total dissolved gas above 100% saturation in the water is illustrated in the equation windows.
+</p><p>
+Operations at many dams differ during the day and night hours as a result different gas production equations are specified for each dam. Night is defined as hours 0-6 and 18-24 in the model. If the gas production characteristics are not significantly different for <strong>Night</strong> and <strong>Day</strong>, then these equations are specified to be the same.
+</p><p>
+The <strong>Backup</strong> equation is intended to supply a third equation in case the spill value falls out of a reasonable range for the equations provided for <strong>Day</strong> and <strong>Night</strong> characteristics. For example, the linear equations work best for McNary and Bonneville under normal spill operations; however, extremely high spills could create gas levels too high in an unbounded linear equation. Spill values less than <em>lb</em> (lower bound) or greater than <em>ub</em> (upper bound) determine the switch to the <strong>Backup</strong> equation.
+</p><p>
+There are six different gas production curves to choose from in each of the gas production windows. Bounded Linear and Bounded Exponential are the new and recommended production equations. Gas spill 1, Gas spill 2, and the other two equations offer other choices for gas production characteristics but are not implemented at any dam. The Gas spill equations have been the calibrated equations in previous versions of COMPASS. In general, the gas production equation parameters have been calibrated to existing data sets, and we recommend that you do not alter these values.
+</p><ul>
+<li><strong>Bounded Linear</strong>
+<br> - <strong>b</strong>, <strong>m</strong> = model parameters determining the gas production
+<br> - <strong>lb</strong>, <strong>ub</strong> = lower and upper bound limits
+
+<li><strong>Bounded Exponential</strong>
+<br> - <strong>a</strong>, <strong>b</strong>, <strong>c</strong> = model parameters determining the gas production
+<br> - <strong>lb</strong>, <strong>ub</strong> = lower and upper bound limits
+
+<li><strong>Gas Spill models</strong>: models of supersaturation based on entrainment of gas bubbles in the tailrace (gas spill 1 and gas spill 2). These models are mechanistic, taking into account dam geometry and hydrodynamics, but do not respond to reservoir elevation changes. They differ from each other in the way each computes gas bubble entrainment.
+
+<li><strong>Empirical models</strong>: these are simple empirical models and not responsive to changes in reservoir elevation. The two equations contain the parameters:
+<br> - <strong>Y</strong> = tdg supersaturation in percent above 100% saturation
+<br> - <strong>X</strong> = river spilled in kcfs 
+<br> - <strong>a</strong>, <strong>b</strong>, <strong>h</strong> or <strong>k</strong> = model coefficients set with sliders.
+</ul>
+<p>
+These are <a href="343.html">Equation Input</a> windows.
+</p>
+<ul>
+<li><a href="344.html">Equation Input Features</a>
+
+<li><a href="332.html">Edit Single Slider Value</a>
+</ul>
+<p>
+<img src="crisp174.jpg"><br>
+TDG Supersaturation Equation windows
+</p>
+
+
+</body>
+</html>

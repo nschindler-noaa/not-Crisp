@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Release Tokens and Parameters</title>
+</head>
+<body>
+<h3>Release Tokens and Parameters</h3>
+<p>
+Release parameters may or may not appear in the <code>base.dat</code> file. The following is an example of a release specification from a Yearly Input Data file (<code>.dat</code>).
+</p><pre>	release Chinook_1 Wild_Salmon_R_Stocks 115
+stock Generic
+smolt_onset 91
+smolt_finish 91
+vitality 0.00
+vitality_change 0.00
+length 0.00
+number 20860 26662 56295 35179 
+40586 27468 50287 46775 
+57106 46554 43438 63271 
+65714 64520 52087 62479 
+58712 28651 33423 
+[19:365] 0 
+end release (Chinook_1)
+</pre>
+
+<h4>Keywords and descriptions for release tokens and parameters</h4>
+<ul>
+<li><strong>release</strong>: Names release and species released. For example,
+<pre><code>	release Steelhead Lower_Granite_Hatchery 141</code></pre>
+where steelhead is the species, Lower Granite Hatchery is the release site (both of which must be defined in the <code>columbia.desc</code> file), and 141 is the Julian day of the first day of fish release (Release Start day). This token must be paired with an end statement.
+
+<li><strong>stock</strong>: Identifies the stock of release. This can be set to "Generic" or a specific stock can be specified, e.g. Catherine Creek Ch1.
+
+<li><strong>smolt_onset</strong>: The Julian day for the onset of smoltification. Fish released prior to this date do not actively migrate.
+
+<li><strong>smolt_finish</strong>: The Julian day for the finish of smoltification.
+
+<li>vitality: Not implemented, yet. A measure of the health of the fish in the release.
+
+<li>vitality_change: Not implemented, yet. Incremental change in vitality for the release.
+
+<li><strong>length</strong>: Specifies the average length (in mm) of the fish at the time of the release.
+
+<li><strong>number</strong>: An array of numbers of fish released for a period of days which may be a single day or many days. The Release Start day determines on which Julian days the releases occur. This array represents the range of the release and the number of fish released per day.
+</ul>
+
+
+</body>
+</html>

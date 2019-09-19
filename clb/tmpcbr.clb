@@ -1,0 +1,356 @@
+#============================================================================#
+# COMPASS Calibration File                           COMPASS v1.7 (WIN32)
+#
+#Written on Mon May 15 15:32:18 2006
+#============================================================================#
+version 9
+num_reach_classes 1
+	reach_class_name 0 Class_0
+
+	reach Estuary
+		reach_class Class_0
+		output_settings 1025
+	end reach (Estuary)
+
+	reach Jones_Beach
+		reach_class Class_0
+		output_settings 1025
+	end reach (Jones_Beach)
+
+	reach Columbia_Gorge
+		reach_class Class_0
+		output_settings 1025
+	end reach (Columbia_Gorge)
+
+	reach Bonneville_Tailrace
+		reach_class Class_0
+		output_settings 1025
+	end reach (Bonneville_Tailrace)
+
+	reach Bonneville_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (Bonneville_Pool)
+
+	reach The_Dalles_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (The_Dalles_Pool)
+
+	reach Deschutes_Confluence
+		reach_class Class_0
+		output_settings 1025
+	end reach (Deschutes_Confluence)
+
+	reach John_Day_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (John_Day_Pool)
+
+	reach McNary_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (McNary_Pool)
+
+	reach Columbia_above_Snake_Confluence
+		reach_class Class_0
+		output_settings 1025
+	end reach (Columbia_above_Snake_Confluence)
+
+	reach Hanford_Reach
+		reach_class Class_0
+		output_settings 1025
+	end reach (Hanford_Reach)
+
+	reach Priest_Rapids_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (Priest_Rapids_Pool)
+
+	reach Wanapum_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (Wanapum_Pool)
+
+	reach Rock_Island_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (Rock_Island_Pool)
+
+	reach Wenatchee_Columbia
+		reach_class Class_0
+		output_settings 1025
+	end reach (Wenatchee_Columbia)
+
+	reach Rocky_Reach_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (Rocky_Reach_Pool)
+
+	reach Wells_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (Wells_Pool)
+
+	reach Methow_Confluence
+		reach_class Class_0
+		output_settings 1025
+	end reach (Methow_Confluence)
+
+	reach Okanogan_Confluence
+		reach_class Class_0
+		output_settings 1025
+	end reach (Okanogan_Confluence)
+
+	reach Deschutes_River
+		reach_class Class_0
+		output_settings 1025
+	end reach (Deschutes_River)
+
+	reach Deschutes_above_Warm_Springs
+		reach_class Class_0
+		output_settings 1025
+	end reach (Deschutes_above_Warm_Springs)
+
+	reach Lower_Snake_River
+		reach_class Class_0
+		output_settings 1025
+	end reach (Lower_Snake_River)
+
+	reach Ice_Harbor_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (Ice_Harbor_Pool)
+
+	reach Lower_Monumental_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (Lower_Monumental_Pool)
+
+	reach Little_Goose_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (Little_Goose_Pool)
+
+	reach Lower_Granite_Pool
+		reach_class Class_0
+		output_settings 1025
+	end reach (Lower_Granite_Pool)
+
+	reach Snake_above_Clearwater
+		reach_class Class_0
+		output_settings 1025
+	end reach (Snake_above_Clearwater)
+
+	reach Snake_above_Grand_Ronde
+		reach_class Class_0
+		output_settings 1025
+	end reach (Snake_above_Grand_Ronde)
+
+	reach Snake_above_Salmon
+		reach_class Class_0
+		output_settings 1025
+	end reach (Snake_above_Salmon)
+
+	reach Snake_above_Imnaha
+		reach_class Class_0
+		output_settings 1025
+	end reach (Snake_above_Imnaha)
+
+	reach Clearwater_River
+		reach_class Class_0
+		output_settings 1025
+	end reach (Clearwater_River)
+
+	reach Clearwater_above_North_Fork
+		reach_class Class_0
+		output_settings 1025
+	end reach (Clearwater_above_North_Fork)
+
+	reach South_Fork_Clearwater
+		reach_class Class_0
+		output_settings 1025
+	end reach (South_Fork_Clearwater)
+
+	reach N_F_Clearwater
+		reach_class Class_0
+		output_settings 1025
+	end reach (N_F_Clearwater)
+
+	reach Middle_Fork_Clearwater
+		reach_class Class_0
+		output_settings 1025
+	end reach (Middle_Fork_Clearwater)
+
+	reach Salmon_River
+		reach_class Class_0
+		output_settings 1025
+	end reach (Salmon_River)
+
+	reach Wenatchee_River
+		reach_class Class_0
+		output_settings 1025
+	end reach (Wenatchee_River)
+
+	reach Methow_River
+		reach_class Class_0
+		output_settings 1025
+	end reach (Methow_River)
+
+num_reach_classes 1
+	reach_class_name 0 Class_0
+
+species Chinook_1
+end species (Chinook_1)
+
+species Steelhead
+end species (Steelhead)
+
+stock Snake_River_Steelhead
+	v_var Class_0 122.05
+	migration_eqn	Class_0	24
+		parameter 0 -12.739560
+		parameter 1 3.656390
+		parameter 2 3.129130
+		parameter 3 0.116050
+		parameter 4 32.090080
+		parameter 5 0.033460
+	end migration_eqn (Class_0)
+
+	inriver_return_eqn	51
+		parameter	0	0.00001
+		parameter	1	0.00002
+		parameter	2	0.00003
+	end inriver_return_eqn ( )
+
+	transport_return_eqn	51
+		parameter	0	0.00004
+		parameter	1	0.00005
+		parameter	2	0.00006
+	end transport_return_eqn ( )
+end stock (Snake_River_Steelhead)
+
+stock Snaketrap_Ch1
+end stock (Snaketrap_Ch1)
+
+	reach Estuary
+	end reach (Estuary)
+
+	reach Jones_Beach
+	end reach (Jones_Beach)
+
+	reach Columbia_Gorge
+	end reach (Columbia_Gorge)
+
+	reach Bonneville_Tailrace
+	end reach (Bonneville_Tailrace)
+
+	reach Bonneville_Pool
+	end reach (Bonneville_Pool)
+
+	reach The_Dalles_Pool
+		gas_theta 0.075000
+	end reach (The_Dalles_Pool)
+
+	reach Deschutes_Confluence
+	end reach (Deschutes_Confluence)
+
+	reach John_Day_Pool
+		gas_theta 0.075000
+	end reach (John_Day_Pool)
+
+	reach McNary_Pool
+		gas_theta 0.075000
+	end reach (McNary_Pool)
+
+	reach Columbia_above_Snake_Confluence
+	end reach (Columbia_above_Snake_Confluence)
+
+	reach Hanford_Reach
+	end reach (Hanford_Reach)
+
+	reach Priest_Rapids_Pool
+	end reach (Priest_Rapids_Pool)
+
+	reach Wanapum_Pool
+	end reach (Wanapum_Pool)
+
+	reach Rock_Island_Pool
+	end reach (Rock_Island_Pool)
+
+	reach Wenatchee_Columbia
+	end reach (Wenatchee_Columbia)
+
+	reach Rocky_Reach_Pool
+	end reach (Rocky_Reach_Pool)
+
+	reach Wells_Pool
+	end reach (Wells_Pool)
+
+	reach Methow_Confluence
+	end reach (Methow_Confluence)
+
+	reach Okanogan_Confluence
+	end reach (Okanogan_Confluence)
+
+	reach Deschutes_River
+	end reach (Deschutes_River)
+
+	reach Deschutes_above_Warm_Springs
+	end reach (Deschutes_above_Warm_Springs)
+
+	reach Lower_Snake_River
+	end reach (Lower_Snake_River)
+
+	reach Ice_Harbor_Pool
+		gas_theta 0.075000
+	end reach (Ice_Harbor_Pool)
+
+	reach Lower_Monumental_Pool
+	end reach (Lower_Monumental_Pool)
+
+	reach Little_Goose_Pool
+	end reach (Little_Goose_Pool)
+
+	reach Lower_Granite_Pool
+		gas_theta 0.075000
+	end reach (Lower_Granite_Pool)
+
+	reach Snake_above_Clearwater
+	end reach (Snake_above_Clearwater)
+
+	reach Snake_above_Grand_Ronde
+	end reach (Snake_above_Grand_Ronde)
+
+	reach Snake_above_Salmon
+	end reach (Snake_above_Salmon)
+
+	reach Snake_above_Imnaha
+	end reach (Snake_above_Imnaha)
+
+	reach Clearwater_River
+	end reach (Clearwater_River)
+
+	reach Clearwater_above_North_Fork
+	end reach (Clearwater_above_North_Fork)
+
+	reach South_Fork_Clearwater
+	end reach (South_Fork_Clearwater)
+
+	reach N_F_Clearwater
+	end reach (N_F_Clearwater)
+
+	reach Middle_Fork_Clearwater
+	end reach (Middle_Fork_Clearwater)
+
+	reach Salmon_River
+	end reach (Salmon_River)
+
+	reach Wenatchee_River
+	end reach (Wenatchee_River)
+
+	reach Methow_River
+	end reach (Methow_River)
+
+	runtime_settings 1
+	mortality_class custom

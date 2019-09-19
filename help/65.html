@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Output Settings: Specifying Desired Outputs</title>
+</head>
+<body>
+<h3>Output Settings: Specifying Desired Outputs</h3>
+<p>
+Selecting <a href="372.html"><strong>Run</strong></a><strong><img src="subm.jpg">Output Settings</strong> opens three windows for configuring dam, reach and headwater output to save for examination after run completion: <strong>Output Settings for Dams</strong>, <strong>Output Settings for Reaches</strong> and <strong>Output Settings for Headwaters</strong>. When running in either Scenario or Monte Carlo mode, a number of results are calculated by the model; however, only those requested by you will be available following the run. For <a href="373.html">Scenario Mode</a> runs, you can view the output either in histograms, e.g. <a href="34.html">Passage Histograms</a>, or in the <a href="84.html">Message Log</a>. For <a href="75.html">Monte Carlo Mode</a> runs, you can view the output with the <a href="77.html">Monte Data Report</a> and <a href="80.html">Monte Analysis</a> under the Analysis Menu.
+</p>
+<blockquote><strong>Note.</strong> Be sure to specify the desired outputs and save them to the yearly input data files to be used in the Monte Carlo alternatives or use the <a href="385.html">Lock Output Settings</a> feature.</blockquote>
+
+<h4>Output Settings for Dams</h4>
+<p>
+For <strong>Dams</strong>, you can select to record output from the following parameters.
+</p><ul>
+<li><strong>Passage</strong>: Total fish passage (survival).
+
+<li><strong>Transport</strong>: Total fish transport passage and percent of total run.
+
+<li><strong>Routing</strong>: Total fish passage through turbine, bypass and spillway routes at the dam and the percent of total run.
+
+<li><strong>Flow</strong>: Flow (in kcfs) exiting a dam based on headwater input flows and reservoir losses.
+
+<li><strong>WTemp</strong>: Daily water temperature at the dam based on water temperature set in the headwaters.
+
+<li><strong>TDG Sat</strong>: Level of total dissolved gas saturation above 100% exiting a dam for both powerhouse and spill flow.
+
+<li><strong>Spill</strong>: Day-averaged spill fraction at a dam.
+
+<li><strong>Flow Ind.</strong>: Flow Indicator dam keeps track of the average flow at the indicator dam during passage of the various stocks. Only one dam can be selected as the flow indicator.
+</ul>
+<p>
+Click the check boxes to select the desired outputs. A whole row or column can be selected by clicking the <strong>all</strong> check box in a dam row (selects all parameters for that dam) or parameter column (selects all dams for that parameter). All check boxes can be selected by clicking the <strong>all</strong> column check box in the <strong>all</strong> row.
+</p><p>
+<img src="outputd.jpg"><br>
+Output Settings for Dams window
+</p>
+<h4>Output Settings for Reaches</h4>
+<p>
+For <strong>Reaches</strong>, you can select to record output from the following parameters. 
+</p><ul>
+<li><strong>Passage</strong>: Total fish passage through the reach and the percent of the total run.
+
+<li><strong>Flow</strong>: Flow (in kcfs) exiting a reach.
+
+<li><strong>WTemp</strong>: Daily water temperature in the reach based on water temperature set in the headwaters.
+
+<li><strong>TDG Sat</strong>: Level of total dissolved gas saturation above 100% exiting a reach for both left-bank and right-bank flow.
+
+<li><strong>Velocity</strong>: Daily river velocity in miles per day based on water elevation, bathymetry and daily flow level.
+
+<li><strong>Loss</strong>: Flow loss in a river segment due to withdrawal, mainly from irrigation, and groundwater input (flow returned to the segment).
+
+<li><strong>Elevation</strong>: The mode used to run COMPASS determines how elevation is calculated. In <a href="373.html">Scenario Mode</a>, daily elevation is based on user input. In <a href="75.html">Monte Carlo Mode</a>, elevation is input from either the <a href="323.html"><code>flow.archive</code></a> file if it contains reservoir elevation or from specified yearly input files specified by you.
+</ul>
+<p>
+Click the check boxes to select the desired outputs. A whole row or column can be selected by clicking the <strong>all</strong> check box in a reach row (selects all parameters for that reach) or parameter column (selects all reaches for that parameter). All check boxes can be selected by clicking the <strong>all</strong> column check box in the <strong>all</strong> row.
+</p><p>
+<img src="outputr.jpg"><br>
+Output Settings for Reaches window
+</p>
+<h4>Output Settings for Headwaters</h4>
+<p>
+For <strong>Headwaters</strong>, Flow and Water Temperature are the only available output parameters.
+</p><ul>
+<li><strong>Flow</strong>: The mode used to run COMPASS determines how headwater flow is created. In <a href="373.html">Scenario Mode</a>, daily flows are based on specified input flows or randomly set using the <a href="47.html">Headwater Modulation</a> function. In <a href="75.html">Monte Carlo Mode</a>, headwater flows are calculated from flows at the dams as input by the <a href="323.html"><code>flow.archive</code></a> file, or as specified in the yearly input data file(s) used for the alternative.
+
+<li><strong>WTemp</strong>: Daily headwater temperature based on user input.
+</ul>
+<p>
+Click the check boxes to select the desired outputs. A whole row or column can be selected by clicking the <strong>all</strong> check box in a headwater row (selects all parameters for that headwater) or parameter column (selects all headwaters for that parameter).
+</p><p>
+<img src="outputh.jpg"><br>
+Output Settings for Headwaters window
+</p>
+
+
+</body>
+</html>

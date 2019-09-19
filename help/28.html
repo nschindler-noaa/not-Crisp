@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Migration Equation: Active Fish Migration Equation</title>
+</head>
+<body>
+<h3>Migration Equation: Active Fish Migration Equation</h3>
+<p>
+Selecting <a href="363.html"><strong>Behavior</strong></a><strong><img src="subm.jpg">Migration Equation</strong> opens a window for setting the migration rate equations for each stock. Several migration rate equations are available, ranging from a simple model with a constant migration rate to a more complex model which relates migration rate to river velocity, date in the season, and downstream acceleration. In addition, other equations relate migration rate to fish length and temperature. For the given stock, the parameter sliders in the equation window change the shape of the migration pattern in well-defined ways.
+</p><p>
+<b>Migration rate equations parameter definitions</b>
+</p><ul>
+<li><strong>B0: </strong>Constant migration rate term (m/day).
+
+<li><strong>Bmin</strong>: Minimum flow independent migration rate (m/day) at the time of release.
+
+<li><strong>Bmax</strong>: Maximum flow independent migration rate (m/day).
+<br><strong>Note.</strong> With Bmax &gt; Bmin, the fish have a tendency to migrate faster the longer they have been in the river. This tendency can be "turned off" by setting Bmax = Bmin. Also, flow independent migration can be turned off entirely by setting Bmax = Bmin = 0.
+
+<li><strong>Bflow</strong>: Determines the proportion of the river velocity used for downstream migration when the migrants are fully smolted.
+
+<li><strong>Btemp</strong>: Coefficient that relates temperature (degrees C) to migration rate.
+
+<li><strong>Blen</strong>: Coefficient that relates fish length to migration rate.
+
+<li><strong>Alpha</strong>: Slope parameter that determines how quickly fish change from early season to late season behavior in terms of flow response (1/days).
+
+<li><strong>Tseas</strong>: Inflection point of the flow dependent term that has the effect of shifting the flow effect through the season (Julian Days).
+
+<li><strong>Alpha2</strong>: Slope parameter that determines rate of change from the minimum flow-independent migration rate (Bmin) to the maximum flow-independent migration rate (Bmax).
+</ul>
+<p>
+In addition to parameters that vary the migration rate parameters, you may vary covariates that affect migration rate. These covariates are varied in the display only.
+</p>
+<ul>
+<li><strong>River vel</strong> (display only): Average river velocity during the average migration period for each of the reaches (mi/day).
+
+<li><strong>Release date</strong> (display only): Release date in Julian days.
+
+<li><strong>Fish len </strong>(display only): Length of fish at release (mm).
+
+<li><strong>River temp</strong> (display only): River temperature (degrees C).
+</ul>
+<p>
+This is an <a href="343.html">Equation Input</a> window.
+</p>
+<ul>
+<li><a href="344.html">Equation Input Features</a>
+
+<li><a href="332.html">Edit Single Slider Value</a>
+</ul>
+<p>
+<img src="meq.jpg"><br>
+Migration Equation window
+</p>
+
+
+</body>
+</html>
